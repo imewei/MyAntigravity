@@ -120,6 +120,21 @@ solution = diffrax.diffeqsolve(
 print(solution.ys)  # Solution trajectory
 ```
 
+### Output Control (SaveAt)
+
+```python
+# Save at specific times only
+saveat = diffrax.SaveAt(ts=jnp.linspace(0, 10, 100))
+
+# Just final state (memory efficient for long simulations)
+saveat = diffrax.SaveAt(t1=True)
+
+# Dense interpolation for arbitrary time queries
+saveat = diffrax.SaveAt(dense=True)
+solution = diffrax.diffeqsolve(..., saveat=saveat)
+value_at_3_7 = solution.evaluate(3.7)  # Query any time!
+```
+
 ### Solver Choice: Stiffness Matters
 
 | System Type | Solver | Why |
@@ -176,16 +191,19 @@ solution = diffrax.diffeqsolve(
 # Trade compute for memory on long simulations
 adjoint = diffrax.RecursiveCheckpointAdjoint(checkpoints=100)
 
-solution = diffrax.diffeqsolve(
-    term, solver,
-    t0=0, t1=1000,  # Long simulation
-    dt0=0.1,
-    y0=y0, args=args,
-    adjoint=adjoint  # Won't OOM!
-)
+# Correct gradient pattern (end-to-end)
+def solve_and_loss(params):
+    sol = diffrax.diffeqsolve(
+        term, solver,
+        t0=0, t1=1000, dt0=0.1,
+        y0=y0, args=params,
+        adjoint=adjoint
+    )
+    return sol.ys[-1].sum()
 
-# Gradients work
-grad_fn = jax.grad(lambda args: solution.ys[-1].sum())
+# Gradients flow through diffeqsolve via adjoint
+grad_fn = jax.grad(solve_and_loss)
+grads = grad_fn(params)  # Works on long simulations!
 ```
 
 ### BacksolveAdjoint (Use Carefully)
@@ -313,6 +331,21 @@ solution = diffrax.diffeqsolve(
 | **Itō** | `Euler`, `Milstein` | Physical noise (thermal fluctuations) |
 | **Stratonovich** | `Heun`, `StratonovichMilstein` | Wong-Zakai limit, smooth noise |
 
+### Float64 Precision (For Divergence Debugging)
+
+```python
+# Enable 64-bit precision BEFORE other imports
+import jax
+jax.config.update("jax_enable_x64", True)
+
+import jax.numpy as jnp
+import diffrax
+
+# Now all arrays default to float64
+y0 = jnp.array([1.0])  # dtype=float64
+# Helps with stiff systems and numerical stability
+```
+
 ---
 
 ## Domain Applications: Soft Matter & Rheology
@@ -346,6 +379,26 @@ solution = diffrax.diffeqsolve(term, solver, ...)
 def loss(model, data):
     sol = diffrax.diffeqsolve(diffrax.ODETerm(model), ...)
     return jnp.mean((sol.ys - data) ** 2)
+```
+
+### Continuous-Discrete Hybrids
+
+For systems with regime switching (bond breaking, phase transitions):
+
+```python
+def hybrid_vector_field(t, y, args):
+    """Switch physics based on state (differentiable)."""
+    # Use lax.cond for JIT-compatible branching
+    return jax.lax.cond(
+        y[0] > args['threshold'],
+        lambda _: fast_dynamics(y, args),   # Above threshold
+        lambda _: slow_dynamics(y, args),   # Below threshold
+        operand=None
+    )
+
+# Works seamlessly with diffrax
+term = diffrax.ODETerm(hybrid_vector_field)
+solution = diffrax.diffeqsolve(term, solver, ...)
 ```
 
 ### Steady State Finding (Optimistix)
