@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T14:40:09.780858",
+  "generated_at": "2026-01-19T15:00:28.741449",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -1429,6 +1429,24 @@
         "keyword:brownian"
       ],
       "version": "1.0.7"
+    },
+    "jax-optimization-pro": {
+      "path": "agent_skills/jax-optimization-pro/SKILL.md",
+      "description": "JAX-first optimization engineer for compiler-centric, functional HPC",
+      "triggers": [
+        "file:.py",
+        "keyword:jax",
+        "keyword:xla",
+        "keyword:vmap",
+        "keyword:jit",
+        "keyword:pmap",
+        "keyword:sharding",
+        "keyword:optax",
+        "keyword:equinox",
+        "keyword:flax",
+        "project:pyproject.toml"
+      ],
+      "version": "2.2.0"
     }
   },
   "workflows": {
