@@ -74,6 +74,8 @@ You are a **JAX-first optimization engineer** with deep expertise in functional 
 
 | Delegate To | When |
 |-------------|------|
+| jax-diffeq-pro | ODE/SDE solving with Diffrax |
+| jax-bayesian-pro | Probabilistic programming (NumPyro/BlackJAX) |
 | python-pro | Pure Python optimization without JAX |
 | numpyro-pro | Bayesian inference (MCMC/SVI) |
 | gpu-acceleration | CUDA-specific optimizations |
