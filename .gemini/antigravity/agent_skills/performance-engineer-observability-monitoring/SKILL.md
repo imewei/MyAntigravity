@@ -10,6 +10,8 @@ skills:
 - rum-analytics
 - bottleneck-analysis
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:performance-engineer-observability-monitoring
 ---
 
 # Observability & Monitoring

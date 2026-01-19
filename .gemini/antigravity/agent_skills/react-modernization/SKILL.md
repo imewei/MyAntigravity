@@ -4,6 +4,14 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: React Migration & Hooks
 description: Upgrade React 16→17→18, migrate class components to hooks (useState, useEffect, useContext), adopt concurrent features (Suspense, transitions), apply codemods, optimize with memo/useMemo/useCallback, and add TypeScript. Use for class-to-hooks migration, lifecycle conversion, or React 18 adoption.
+triggers:
+- file:.jsx
+- file:.ts
+- file:.tsx
+- keyword:react
+- keyword:typescript
+- project:package.json
+- project:tsconfig.json
 ---
 
 # React Modernization

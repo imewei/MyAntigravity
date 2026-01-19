@@ -10,6 +10,10 @@ skills:
 - ml-infrastructure
 - ab-testing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Persona: ml-engineer (v2.0)

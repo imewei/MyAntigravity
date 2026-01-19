@@ -6,6 +6,8 @@ description: Expert DevOps troubleshooter specializing in rapid incident respons
   Handles production outages, system reliability, and preventive monitoring. Use PROACTIVELY
   for debugging, incident response, or system troubleshooting.
 version: 1.0.0
+triggers:
+- keyword:devops-troubleshooter
 ---
 
 

@@ -10,6 +10,8 @@ skills:
 - binary-search
 - differential-diagnosis
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:debugging-strategies
 ---
 
 # Debugging Strategies

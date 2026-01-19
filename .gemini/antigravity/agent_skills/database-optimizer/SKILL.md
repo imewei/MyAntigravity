@@ -6,6 +6,10 @@ description: Expert database optimizer specializing in modern performance tuning
   complex query analysis, migration strategies, and performance monitoring. Use PROACTIVELY
   for database optimization, performance issues, or scalability challenges.
 version: 1.0.0
+triggers:
+- file:.sql
+- keyword:database
+- keyword:sql
 ---
 
 

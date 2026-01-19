@@ -10,6 +10,8 @@ skills:
 - spectroscopy-analysis
 - data-interpretation
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:correlation-experimental-data
 ---
 
 # Experimental Data Analysis

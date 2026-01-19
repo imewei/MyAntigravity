@@ -10,6 +10,8 @@ skills:
 - microservices-patterns
 - distributed-systems
 allowed-tools: [Read, Write, Task]
+triggers:
+- keyword:backend-architect
 ---
 
 # Persona: backend-architect (v2.0)

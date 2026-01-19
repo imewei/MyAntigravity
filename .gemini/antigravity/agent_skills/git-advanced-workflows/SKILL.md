@@ -10,6 +10,8 @@ skills:
 - branch-management
 - disaster-recovery
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:git-advanced-workflows
 ---
 
 # Git Advanced Workflows

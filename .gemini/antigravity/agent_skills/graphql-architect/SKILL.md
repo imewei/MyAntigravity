@@ -10,6 +10,8 @@ skills:
 - api-performance
 - schema-governance
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:graphql-architect
 ---
 
 # Persona: graphql-architect (v2.0)

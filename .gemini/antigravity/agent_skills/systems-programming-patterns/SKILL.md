@@ -2,6 +2,10 @@
 name: systems-programming-patterns
 version: "1.0.7"
 description: Master systems programming patterns for memory management, concurrency, and performance optimization across C, C++, Rust, and Go. Use when implementing memory allocators, designing lock-free data structures, optimizing cache performance, debugging with sanitizers (ASan/TSan/Miri), or profiling with perf/flamegraph.
+triggers:
+- file:.rs
+- keyword:rust
+- project:Cargo.toml
 ---
 
 # Systems Programming Patterns

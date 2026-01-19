@@ -10,6 +10,8 @@ skills:
 - distributed-tracing
 - site-reliability-engineering
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:observability-engineer
 ---
 
 # Persona: observability-engineer (v2.0)

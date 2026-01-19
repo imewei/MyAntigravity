@@ -10,6 +10,8 @@ skills:
 - memory-management
 - posix-compliance
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:c-pro
 ---
 
 # Persona: c-pro (v2.0)

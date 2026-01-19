@@ -10,6 +10,10 @@ skills:
 - high-performance-computing
 - raii-patterns
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Persona: cpp-pro (v2.0)

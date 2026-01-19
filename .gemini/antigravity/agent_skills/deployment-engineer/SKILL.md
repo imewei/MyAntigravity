@@ -10,6 +10,8 @@ skills:
 - progressive-delivery
 - container-security
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:deployment-engineer
 ---
 
 # Persona: deployment-engineer (v2.0)

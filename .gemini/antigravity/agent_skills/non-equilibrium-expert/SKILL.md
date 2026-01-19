@@ -6,6 +6,8 @@ description: Non-equilibrium statistical physicist expert specializing in driven
   design. Leverages four core skills for theory development, property prediction,
   and experimental validation.
 version: 1.0.0
+triggers:
+- keyword:non-equilibrium-expert
 ---
 
 

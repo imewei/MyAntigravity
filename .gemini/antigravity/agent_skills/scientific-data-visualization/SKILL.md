@@ -10,6 +10,11 @@ skills:
 - latex-integration
 - vector-graphics
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:data
+- keyword:qa
+- keyword:testing
+- keyword:visualization
 ---
 
 # Scientific Visualization Expert

@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Metric Visualization
 description: Create production Grafana dashboards with panels, variables, alerts, and templates using RED/USE methods. Use when building API monitoring, infrastructure, database, or SLO dashboards with Prometheus data sources.
+triggers:
+- file:.sql
+- keyword:database
+- keyword:sql
 ---
 
 # Grafana Dashboards

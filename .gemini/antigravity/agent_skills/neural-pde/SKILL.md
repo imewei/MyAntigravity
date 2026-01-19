@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Physics-Informed Neural Networks
 description: Solve PDEs with physics-informed neural networks using NeuralPDE.jl. Use when solving PDEs with neural networks, enforcing boundary conditions, or combining ML with physics.
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # NeuralPDE.jl (PINNs)

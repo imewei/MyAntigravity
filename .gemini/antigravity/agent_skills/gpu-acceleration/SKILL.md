@@ -10,6 +10,8 @@ skills:
 - memory-optimization
 - multi-gpu
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:gpu-acceleration
 ---
 
 # GPU Acceleration Expert

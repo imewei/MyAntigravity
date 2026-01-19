@@ -10,6 +10,8 @@ skills:
 - resilience-patterns
 - reliability-engineering
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:error-handling-patterns
 ---
 
 # Error Handling Patterns

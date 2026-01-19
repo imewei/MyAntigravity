@@ -10,6 +10,10 @@ skills:
 - massive-scale-fitting
 - diagnostics-advanced
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # NLSQ Core Mastery (v0.6.4+)

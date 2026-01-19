@@ -10,6 +10,8 @@ skills:
 - pipeline-security
 - leak-detection
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:secrets-management
 ---
 
 # Secrets Management

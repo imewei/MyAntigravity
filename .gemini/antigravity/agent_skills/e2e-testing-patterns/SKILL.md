@@ -10,6 +10,9 @@ skills:
 - accessibility-testing
 - ci-integration
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:qa
+- keyword:testing
 ---
 
 # E2E Testing Patterns

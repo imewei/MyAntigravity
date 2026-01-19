@@ -4,6 +4,8 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: SRE and Observability
 description: Production observability, monitoring, SRE with OpenTelemetry, Prometheus, Grafana, incident management. Use for tracing/metrics/logs, SLOs/SLIs, alerts with AlertManager, Golden Signals, incident response, post-mortems, error budgets.
+triggers:
+- keyword:observability-sre-practices
 ---
 
 # Observability and SRE

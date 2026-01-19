@@ -4,6 +4,11 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: CI/CD Architecture
 description: Design multi-stage CI/CD pipelines with approval gates, security checks, and progressive delivery (rolling, blue-green, canary, feature flags). Use when architecting deployment workflows, implementing GitOps, or establishing multi-environment promotion strategies.
+triggers:
+- file:.github/workflows/*.yml
+- keyword:audit
+- keyword:ci-cd
+- keyword:security
 ---
 
 # Deployment Pipeline Design

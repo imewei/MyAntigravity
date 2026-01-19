@@ -5,6 +5,8 @@ description: Master TDD orchestrator specializing in red-green-refactor discipli
   Enforces TDD best practices across teams with AI-assisted testing and modern frameworks.
   Use PROACTIVELY for TDD implementation and governance.
 version: 1.0.0
+triggers:
+- keyword:tdd-orchestrator
 ---
 
 

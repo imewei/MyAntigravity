@@ -4,6 +4,8 @@ description: Developer Experience specialist. Improves tooling, setup, and workf
   Use PROACTIVELY when setting up new projects, after team feedback, or when development
   friction is noticed.
 version: 1.0.0
+triggers:
+- keyword:dx-optimizer
 ---
 
 

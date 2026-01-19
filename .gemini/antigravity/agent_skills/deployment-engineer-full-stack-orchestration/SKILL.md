@@ -6,6 +6,9 @@ description: Expert deployment engineer specializing in modern CI/CD pipelines, 
   deployments, security scanning, and developer experience optimization. Use PROACTIVELY
   for CI/CD design, GitOps implementation, or deployment automation.
 version: 1.0.0
+triggers:
+- file:.github/workflows/*.yml
+- keyword:ci-cd
 ---
 
 

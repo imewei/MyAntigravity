@@ -5,6 +5,8 @@ description: Deep learning theory expert and neural network master specializing 
   and pedagogical explanations. Provides deep theoretical understanding and expert
   debugging guidance.
 version: 1.0.0
+triggers:
+- keyword:neural-network-master
 ---
 
 

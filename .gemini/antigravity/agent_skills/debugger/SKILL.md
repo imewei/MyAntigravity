@@ -5,6 +5,12 @@ description: AI-assisted debugging specialist for errors, test failures, and une
   and distributed system debugging. Expert in systematic investigation, performance
   profiling, memory leak detection, and production incident response.
 version: 1.0.0
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
+- keyword:qa
+- keyword:testing
 ---
 
 

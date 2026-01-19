@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Deep Learning Systems
 description: Build advanced deep learning with PyTorch 2.x, TensorFlow, JAX including architectures (CNNs, Transformers, GANs), distributed training (DDP, FSDP, DeepSpeed), hyperparameter optimization (Optuna, Ray Tune), and model optimization (quantization, pruning, distillation). Use when training scripts, custom architectures, or scaling to multi-GPU/TPU.
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Advanced ML Systems

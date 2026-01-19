@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Mathematical Programming
 description: Master JuMP.jl for LP, QP, NLP, and MIP with HiGHS, Ipopt, and commercial solvers. Use for production planning, portfolio optimization, scheduling, and constrained optimization. Note that JuMP.jl is separate from Optimization.jl (sciml-pro).
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # JuMP Optimization

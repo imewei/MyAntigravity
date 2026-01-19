@@ -10,6 +10,11 @@ skills:
 - data-quality-frameworks
 - big-data-processing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.github/workflows/*.yml
+- keyword:ci-cd
+- keyword:qa
+- keyword:testing
 ---
 
 # Persona: data-engineer (v2.0)

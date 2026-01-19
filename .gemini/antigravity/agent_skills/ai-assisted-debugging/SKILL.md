@@ -10,6 +10,10 @@ skills:
 - anomaly-detection
 - stack-trace-explanation
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # AI Assisted Debugging

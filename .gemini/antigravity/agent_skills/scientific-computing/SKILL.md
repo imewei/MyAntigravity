@@ -10,6 +10,8 @@ skills:
 - flax-nnx
 - orbax-checkpointing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:scientific-computing
 ---
 
 # Scientific Computing & JAX Expert

@@ -10,6 +10,8 @@ skills:
 - distributed-systems
 - backend-development
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:golang-pro
 ---
 
 # Persona: golang-pro (v2.0)

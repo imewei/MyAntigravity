@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Julia Compilation
 description: Create system images and standalone executables with PackageCompiler.jl. Use when reducing startup time or deploying Julia applications without requiring Julia installation.
+triggers:
+- file:.jl
+- keyword:julia
+- project:Project.toml
 ---
 
 # PackageCompiler.jl Patterns

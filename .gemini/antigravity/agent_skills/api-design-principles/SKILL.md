@@ -10,6 +10,8 @@ skills:
 - versioning-strategy
 - api-security
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:api-design-principles
 ---
 
 # API Design Principles

@@ -10,6 +10,8 @@ skills:
 - generation-grounding
 - vector-ops
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:rag-implementation
 ---
 
 # RAG Implementation

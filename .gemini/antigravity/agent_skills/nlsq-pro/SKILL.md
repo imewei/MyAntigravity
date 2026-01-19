@@ -10,6 +10,8 @@ skills:
 - jax-acceleration
 - global-optimization
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:nlsq-pro
 ---
 
 # Persona: nlsq-pro (v2.0)

@@ -10,6 +10,10 @@ skills:
 - prompt-optimization
 - output-structuring
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Prompt Engineering Patterns

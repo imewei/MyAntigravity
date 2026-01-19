@@ -4,6 +4,23 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Production ML Model Serving & Deployment
 description: Deploy ML models with FastAPI, TorchServe, BentoML, Docker, Kubernetes, and cloud platforms. Implement monitoring, A/B testing, and drift detection. Use when building model serving APIs, containerizing models, or setting up production ML infrastructure.
+triggers:
+- file:.ipynb
+- file:.py
+- file:Dockerfile
+- file:docker-compose.yml
+- file:helm/**/*.yaml
+- file:k8s*.yaml
+- keyword:ai
+- keyword:api
+- keyword:aws
+- keyword:cloud
+- keyword:docker
+- keyword:fastapi
+- keyword:kubernetes
+- keyword:ml
+- keyword:qa
+- keyword:testing
 ---
 
 # Model Deployment and Serving

@@ -10,6 +10,10 @@ skills:
 - convergence-diagnostics
 - arviz-integration
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # NumPyro Core Mastery

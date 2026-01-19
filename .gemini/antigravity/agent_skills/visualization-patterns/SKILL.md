@@ -10,6 +10,12 @@ skills:
 - publication-figures
 - interactive-viz
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.jl
+- keyword:data
+- keyword:julia
+- keyword:visualization
+- project:Project.toml
 ---
 
 # Julia Visualization Patterns

@@ -2,6 +2,14 @@
 name: python-performance-optimization
 version: "1.0.7"
 description: Profile and optimize Python code using cProfile, line_profiler, memory_profiler, and py-spy. Use when analyzing slow code, optimizing CPU-intensive operations, reducing memory consumption, implementing caching with lru_cache, using NumPy for vectorization, multiprocessing for CPU-bound tasks, or async/await for I/O-bound tasks.
+triggers:
+- file:.ipynb
+- file:.py
+- keyword:ai
+- keyword:ml
+- keyword:python
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Python Performance Optimization

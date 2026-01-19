@@ -10,6 +10,9 @@ skills:
 - compliance-auditing
 - devsecops
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:audit
+- keyword:security
 ---
 
 # Persona: security-auditor (v2.0)

@@ -10,6 +10,9 @@ skills:
 - maintainability-check
 - constructive-feedback
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:audit
+- keyword:security
 ---
 
 # Code Reviewer Workflows

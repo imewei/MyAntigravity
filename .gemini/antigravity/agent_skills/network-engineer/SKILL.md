@@ -10,6 +10,11 @@ skills:
 - performance-optimization
 - troubleshooting
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:audit
+- keyword:aws
+- keyword:cloud
+- keyword:security
 ---
 
 # Persona: network-engineer (v2.0)

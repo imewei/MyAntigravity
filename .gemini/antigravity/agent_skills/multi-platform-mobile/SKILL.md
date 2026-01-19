@@ -4,6 +4,11 @@ version: "2.0.0"
 maturity: "5-Expert"
 specialization: Unified Mobile Development (Flutter, React Native, Native)
 description: "The definitive authority on mobile development. Master of cross-platform frameworks (Flutter/React Native) and native ecosystems (iOS/Android). Use for ALL mobile tasks: architecture design, UI implementation, performance optimization, offline-first data sync, and app store deployment."
+triggers:
+- file:.jsx
+- file:.tsx
+- keyword:react
+- project:package.json
 ---
 
 # Multi-Platform Mobile Expert

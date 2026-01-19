@@ -10,6 +10,12 @@ skills:
 - data-pipeline
 - timescale-integration
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.github/workflows/*.yml
+- file:.ipynb
+- keyword:ai
+- keyword:ci-cd
+- keyword:ml
 ---
 
 # Airflow Scientific Workflows

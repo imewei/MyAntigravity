@@ -10,6 +10,10 @@ skills:
 - clean-code
 - refactoring
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Persona: code-reviewer (v2.0)

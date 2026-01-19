@@ -10,6 +10,10 @@ skills:
 - tool-integration
 - memory-management
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # LangChain Architecture

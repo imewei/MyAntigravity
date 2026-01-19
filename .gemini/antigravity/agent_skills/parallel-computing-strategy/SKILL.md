@@ -2,6 +2,10 @@
 name: parallel-computing-strategy
 version: "1.0.7"
 description: Design parallel strategies with MPI (distributed memory), OpenMP (shared memory), hybrid MPI+OpenMP, SLURM scheduling, Dask/Dagger.jl workflows, and load balancing. Use when implementing multi-node parallelization, writing job scripts, or optimizing HPC workflows.
+triggers:
+- file:.js
+- keyword:node
+- project:package.json
 ---
 
 # Parallel Computing Strategy

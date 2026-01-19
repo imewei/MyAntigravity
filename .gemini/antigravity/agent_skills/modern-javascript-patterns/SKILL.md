@@ -2,6 +2,13 @@
 name: modern-javascript-patterns
 version: "1.0.7"
 description: Master modern JavaScript (ES6-ES2024) including async/await, destructuring, spread operators, arrow functions, modules, optional chaining, nullish coalescing, and functional programming patterns. Use when writing ES6+ code, refactoring legacy JS, implementing async patterns, or applying functional programming with map/filter/reduce.
+triggers:
+- file:.ipynb
+- file:.js
+- keyword:ai
+- keyword:javascript
+- keyword:ml
+- project:package.json
 ---
 
 # Modern JavaScript Patterns

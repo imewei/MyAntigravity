@@ -10,6 +10,10 @@ skills:
 - memory-safety
 - type-driven-development
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.rs
+- keyword:rust
+- project:Cargo.toml
 ---
 
 # Persona: rust-pro (v2.0)

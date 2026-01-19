@@ -10,6 +10,12 @@ skills:
 - model-registry
 - ml-infrastructure
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.github/workflows/*.yml
+- file:.ipynb
+- keyword:ai
+- keyword:ci-cd
+- keyword:ml
 ---
 
 # Persona: mlops-engineer (v2.0)

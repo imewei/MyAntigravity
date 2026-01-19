@@ -10,6 +10,16 @@ skills:
 - large-data-plotting
 - real-time-viz
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.jl
+- file:.py
+- keyword:data
+- keyword:julia
+- keyword:python
+- keyword:visualization
+- project:Project.toml
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Python and Julia Visualization

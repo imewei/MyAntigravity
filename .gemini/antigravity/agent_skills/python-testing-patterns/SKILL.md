@@ -10,6 +10,13 @@ skills:
 - async-testing
 - fixture-management
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.py
+- keyword:python
+- keyword:qa
+- keyword:testing
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Python Testing Patterns

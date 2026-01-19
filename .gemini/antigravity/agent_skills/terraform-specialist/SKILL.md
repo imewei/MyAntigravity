@@ -10,6 +10,9 @@ skills:
 - state-management
 - policy-as-code
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.tf
+- keyword:terraform
 ---
 
 # Terraform Specialist

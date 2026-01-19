@@ -10,6 +10,8 @@ skills:
 - numerical-methods
 - parallel-computing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:hpc-numerical-coordinator
 ---
 
 # Persona: hpc-numerical-coordinator (v2.0)

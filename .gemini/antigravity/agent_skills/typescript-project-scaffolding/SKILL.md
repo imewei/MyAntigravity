@@ -10,6 +10,14 @@ skills:
 - monorepo-management
 - linting-formatting
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.js
+- file:.ts
+- file:.tsx
+- keyword:node
+- keyword:typescript
+- project:package.json
+- project:tsconfig.json
 ---
 
 # TypeScript Project Scaffolding

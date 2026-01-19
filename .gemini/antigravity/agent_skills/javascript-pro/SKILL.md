@@ -10,6 +10,10 @@ skills:
 - js-performance
 - browser-apis
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.js
+- keyword:javascript
+- project:package.json
 ---
 
 # Persona: javascript-pro (v2.0)

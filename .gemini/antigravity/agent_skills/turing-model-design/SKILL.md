@@ -4,6 +4,8 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Bayesian Modeling
 description: Design probabilistic models with Turing.jl including prior selection, hierarchical models, and non-centered parameterization. Use when building Bayesian models for inference.
+triggers:
+- keyword:turing-model-design
 ---
 
 # Turing.jl Model Design

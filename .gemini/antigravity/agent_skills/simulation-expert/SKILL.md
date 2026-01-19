@@ -10,6 +10,8 @@ skills:
 - ml-force-fields
 - scientific-computing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:simulation-expert
 ---
 
 # Persona: simulation-expert (v2.0)

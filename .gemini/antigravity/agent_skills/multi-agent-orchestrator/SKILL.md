@@ -10,6 +10,8 @@ skills:
 - distributed-coordination
 - system-resilience
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:multi-agent-orchestrator
 ---
 
 # Multi-Agent Orchestrator

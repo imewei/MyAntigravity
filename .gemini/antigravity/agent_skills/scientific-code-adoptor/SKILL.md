@@ -10,6 +10,14 @@ skills:
 - performance-benchmarking
 - cross-language-bridge
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.jl
+- file:.py
+- keyword:julia
+- keyword:python
+- project:Project.toml
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Scientific Code Adoptor

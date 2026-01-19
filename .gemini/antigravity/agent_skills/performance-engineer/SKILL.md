@@ -10,6 +10,8 @@ skills:
 - load-testing
 - caching-strategy
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:performance-engineer
 ---
 
 # Persona: performance-engineer (v2.0)

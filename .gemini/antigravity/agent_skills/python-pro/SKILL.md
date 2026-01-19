@@ -10,6 +10,11 @@ skills:
 - python-performance
 - type-hinting
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.py
+- keyword:python
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Persona: python-pro (v2.0)

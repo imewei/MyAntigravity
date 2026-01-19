@@ -4,6 +4,11 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Cross-Platform Strategy
 description: Design multi-platform apps with clean architecture, code sharing (Flutter, React Native, KMP), BFF patterns, offline-first sync, and team organization. Use when planning mobile/web/desktop architecture, choosing frameworks, or maximizing code reuse.
+triggers:
+- file:.jsx
+- file:.tsx
+- keyword:react
+- project:package.json
 ---
 
 # Multi-Platform Architecture

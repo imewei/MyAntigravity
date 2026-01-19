@@ -10,6 +10,11 @@ skills:
 - generics
 - strict-typing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ts
+- file:.tsx
+- keyword:typescript
+- project:tsconfig.json
 ---
 
 # Persona: typescript-pro (v2.0)

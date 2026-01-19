@@ -5,6 +5,8 @@ description: Master software architect specializing in modern architecture patte
   designs and code changes for architectural integrity, scalability, and maintainability.
   Use PROACTIVELY for architectural decisions.
 version: 1.0.0
+triggers:
+- keyword:architect-review-framework-migration
 ---
 
 

@@ -10,6 +10,14 @@ skills:
 - documentation-deploy
 - coverage-tracking
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.github/workflows/*.yml
+- file:.jl
+- keyword:ci-cd
+- keyword:julia
+- keyword:qa
+- keyword:testing
+- project:Project.toml
 ---
 
 # Julia CI/CD Patterns

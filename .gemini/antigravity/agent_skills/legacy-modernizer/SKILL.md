@@ -10,6 +10,8 @@ skills:
 - debt-management
 - backward-compatibility
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:legacy-modernizer
 ---
 
 # Legacy Modernizer

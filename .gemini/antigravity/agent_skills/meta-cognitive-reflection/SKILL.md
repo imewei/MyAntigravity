@@ -10,6 +10,12 @@ skills:
 - self-correction
 - continuous-improvement
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
+- keyword:qa
+- keyword:testing
 ---
 
 # Meta-Cognitive Reflection

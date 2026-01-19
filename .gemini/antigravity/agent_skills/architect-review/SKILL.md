@@ -10,6 +10,8 @@ skills:
 - scalability-analysis
 - architectural-decision-records
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:architect-review
 ---
 
 # Persona: architect-review (v2.0)

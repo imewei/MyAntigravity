@@ -10,6 +10,8 @@ skills:
 - load-balancing
 - system-tuning
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:agent-performance-optimization
 ---
 
 # Agent Performance Optimization

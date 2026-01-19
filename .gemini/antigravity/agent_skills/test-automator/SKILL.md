@@ -10,6 +10,12 @@ skills:
 - ci-cd-testing
 - quality-engineering
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
+- keyword:qa
+- keyword:testing
 ---
 
 # Persona: test-automator (v2.0)

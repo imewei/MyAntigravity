@@ -10,6 +10,8 @@ skills:
 - llm-optimization
 - chain-of-thought
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:prompt-engineer
 ---
 
 # Persona: prompt-engineer (v2.0)

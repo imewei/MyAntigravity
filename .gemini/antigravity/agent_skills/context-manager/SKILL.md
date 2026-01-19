@@ -10,6 +10,8 @@ skills:
 - memory-orchestration
 - privacy-preservation
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:context-manager
 ---
 
 # Context Manager

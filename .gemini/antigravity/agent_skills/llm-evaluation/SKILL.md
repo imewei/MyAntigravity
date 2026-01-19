@@ -10,6 +10,8 @@ skills:
 - ab-testing
 - regression-detection
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:llm-evaluation
 ---
 
 # LLM Evaluation

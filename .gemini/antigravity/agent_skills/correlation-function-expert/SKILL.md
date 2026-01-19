@@ -10,6 +10,8 @@ skills:
 - time-series-analysis
 - experimental-validation
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:correlation-function-expert
 ---
 
 # Correlation Function Expert

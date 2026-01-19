@@ -10,6 +10,11 @@ skills:
 - orm-optimization
 - celery-tasks
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.py
+- keyword:django
+- keyword:web
+- project:manage.py
 ---
 
 # Persona: django-pro (v2.0)

@@ -10,6 +10,10 @@ skills:
 - pod-security
 - observability-stack
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:helm/**/*.yaml
+- file:k8s*.yaml
+- keyword:kubernetes
 ---
 
 # Kubernetes Architect

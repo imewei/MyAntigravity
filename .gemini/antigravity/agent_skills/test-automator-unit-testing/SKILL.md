@@ -5,6 +5,12 @@ description: Master AI-powered test automation with modern frameworks, self-heal
   with advanced CI/CD integration. Use PROACTIVELY for testing automation or quality
   assurance.
 version: 1.0.0
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
+- keyword:qa
+- keyword:testing
 ---
 
 

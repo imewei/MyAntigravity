@@ -4,6 +4,11 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Multi-Language CLI Development
 description: Master CLI development across Python (Click, Typer), Bash, PowerShell, and Go (Cobra). Use when implementing argument parsing, creating shell automation scripts, building Go CLIs with Cobra, designing interactive prompts, handling subcommands, or creating cross-platform CLI tools.
+triggers:
+- file:.py
+- keyword:python
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Programming and Scripting Languages for CLI

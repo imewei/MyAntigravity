@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: MD Analysis
 description: Analyze MD trajectories to extract structural, thermodynamic, mechanical, and transport properties. Use when calculating RDF, MSD, viscosity, or validating simulations against experimental data.
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # MD Trajectory Analysis

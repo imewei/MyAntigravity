@@ -4,6 +4,10 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Multiscale Simulation
 description: Bridge atomistic MD to mesoscale using coarse-graining, DPD, and nanoscale DEM. Use when developing CG models, implementing DPD simulations, or coupling scales.
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Multiscale Modeling

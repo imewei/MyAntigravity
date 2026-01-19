@@ -9,6 +9,13 @@ skills:
 - ecosystem-navigation
 - integration-patterns
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- file:.jl
+- keyword:ai
+- keyword:julia
+- keyword:ml
+- project:Project.toml
 ---
 
 # SciML Ecosystem

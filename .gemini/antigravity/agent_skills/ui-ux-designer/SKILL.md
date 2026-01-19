@@ -5,6 +5,8 @@ description: Create interface designs, wireframes, and design systems. Masters u
   tokens, component libraries, and inclusive design. Use PROACTIVELY for design systems,
   user flows, or interface optimization.
 version: 1.0.0
+triggers:
+- keyword:ui-ux-designer
 ---
 
 

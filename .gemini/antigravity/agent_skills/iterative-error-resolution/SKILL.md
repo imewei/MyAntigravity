@@ -10,6 +10,8 @@ skills:
 - dependency-resolution
 - test-stabilization
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:iterative-error-resolution
 ---
 
 # Iterative Error Resolution

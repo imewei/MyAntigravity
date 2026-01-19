@@ -10,6 +10,8 @@ skills:
 - biophysics
 - non-equilibrium-thermodynamics
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:correlation-physical-systems
 ---
 
 # Physical Systems Correlations

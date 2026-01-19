@@ -10,6 +10,8 @@ skills:
 - hoomd-blue-scripting
 - force-field-selection
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:md-simulation-setup
 ---
 
 # MD Simulation Setup Expert

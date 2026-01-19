@@ -6,6 +6,8 @@ description: Expert backend architect specializing in scalable API design, micro
   boundary definition, inter-service communication, resilience patterns, and observability.
   Use PROACTIVELY when creating new backend services or APIs.
 version: 1.0.0
+triggers:
+- keyword:backend-architect-multi-platform-apps
 ---
 
 

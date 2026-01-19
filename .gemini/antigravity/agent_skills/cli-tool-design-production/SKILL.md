@@ -4,6 +4,14 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: CLI Tool Development
 description: Build production-ready CLI tools with Python Click/Typer, Node.js Commander/Inquirer, Go Cobra, and shell scripting. Use when creating command-line applications with interactive prompts, implementing developer workflow automation, designing project scaffolding tools, building TUIs with progress bars and spinners, or creating deployment and release automation tools.
+triggers:
+- file:.js
+- file:.py
+- keyword:node
+- keyword:python
+- project:package.json
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # CLI Tool Design and Production

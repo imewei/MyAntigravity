@@ -10,6 +10,8 @@ skills:
 - pattern-formation
 - non-equilibrium-physics
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:active-matter
 ---
 
 # Active Matter Expert

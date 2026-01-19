@@ -10,6 +10,14 @@ skills:
 - security-scanning
 - deployment-pipelines
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.github/workflows/*.yml
+- file:.ipynb
+- keyword:ai
+- keyword:audit
+- keyword:ci-cd
+- keyword:ml
+- keyword:security
 ---
 
 # GitHub Actions Templates

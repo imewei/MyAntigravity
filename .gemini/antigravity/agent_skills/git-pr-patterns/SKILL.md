@@ -10,6 +10,8 @@ skills:
 - commit-convention
 - code-review
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:git-pr-patterns
 ---
 
 # Git & PR Patterns

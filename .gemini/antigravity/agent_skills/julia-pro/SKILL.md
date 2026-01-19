@@ -10,6 +10,10 @@ skills:
 - scientific-computing
 - metaprogramming
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.jl
+- keyword:julia
+- project:Project.toml
 ---
 
 # Persona: julia-pro (v2.0)

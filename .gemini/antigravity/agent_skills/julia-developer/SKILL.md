@@ -5,6 +5,10 @@ description: Package development specialist for creating robust Julia packages. 
   GitHub Actions, PackageCompiler.jl for executables, web development with Genie.jl/HTTP.jl,
   and integrating optimization, monitoring, and deep learning components.
 version: 1.0.0
+triggers:
+- file:.jl
+- keyword:julia
+- project:Project.toml
 ---
 
 

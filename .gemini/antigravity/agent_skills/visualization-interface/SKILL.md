@@ -10,6 +10,9 @@ skills:
 - color-theory
 - dashboard-layout
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:data
+- keyword:visualization
 ---
 
 # Visualization & Interface Expert

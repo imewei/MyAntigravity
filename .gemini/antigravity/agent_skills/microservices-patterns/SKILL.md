@@ -9,6 +9,8 @@ skills:
 - resilience-engineering
 - event-driven-architecture
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:microservices-patterns
 ---
 
 # Skill: Microservices Patterns (v2.0)

@@ -10,6 +10,10 @@ skills:
 - sqlalchemy-async
 - async-architecture
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.py
+- keyword:api
+- keyword:fastapi
 ---
 
 # Persona: fastapi-pro (v2.0)

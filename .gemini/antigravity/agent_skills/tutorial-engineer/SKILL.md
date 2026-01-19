@@ -4,6 +4,8 @@ description: Creates step-by-step tutorials and educational content from code. T
   complex concepts into progressive learning experiences with hands-on examples. Use
   PROACTIVELY for onboarding guides, feature tutorials, or concept explanations.
 version: 1.0.0
+triggers:
+- keyword:tutorial-engineer
 ---
 
 

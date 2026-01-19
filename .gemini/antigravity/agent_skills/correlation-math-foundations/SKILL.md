@@ -9,6 +9,8 @@ skills:
 - signal-processing-theory
 - statistical-mechanics-theory
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:correlation-math-foundations
 ---
 
 # Correlation Math Foundations

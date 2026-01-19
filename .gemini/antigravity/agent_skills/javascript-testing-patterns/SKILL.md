@@ -10,6 +10,12 @@ skills:
 - mocking-patterns
 - tdd-workflow
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.js
+- keyword:javascript
+- keyword:qa
+- keyword:testing
+- project:package.json
 ---
 
 # JavaScript Testing Patterns

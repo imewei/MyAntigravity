@@ -5,6 +5,10 @@ description: Elite code review expert specializing in modern AI-powered code ana
   Masters static analysis tools, security scanning, and configuration review with
   2024/2025 best practices. Use PROACTIVELY for code quality assurance.
 version: 1.0.0
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 

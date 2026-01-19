@@ -4,6 +4,8 @@ description: Command systems engineer specializing in CLI tool design and develo
   automation. Expert in command development, interactive prompts, and workflow tools.
   Delegates web UIs to fullstack-developer.
 version: 1.0.0
+triggers:
+- keyword:command-systems-engineer
 ---
 
 

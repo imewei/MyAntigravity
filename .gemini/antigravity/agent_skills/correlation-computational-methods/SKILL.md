@@ -10,6 +10,8 @@ skills:
 - jax-optimization
 - statistical-sampling
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:correlation-computational-methods
 ---
 
 # Computational Methods (Correlation)

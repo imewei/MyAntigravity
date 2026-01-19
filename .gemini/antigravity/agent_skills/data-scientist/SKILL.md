@@ -10,6 +10,10 @@ skills:
 - data-visualization
 - experimental-design
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Persona: data-scientist (v2.0)

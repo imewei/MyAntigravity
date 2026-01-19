@@ -11,6 +11,9 @@ skills:
 - terraform-specialist
 - finops-cost-optimization
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:aws
+- keyword:cloud
 ---
 
 # Persona: cloud-architect (v2.0)

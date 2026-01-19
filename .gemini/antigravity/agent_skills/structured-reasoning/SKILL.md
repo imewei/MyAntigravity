@@ -10,6 +10,8 @@ skills:
 - root-cause-analysis
 - hypothesis-testing
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:structured-reasoning
 ---
 
 # Structured Reasoning

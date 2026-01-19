@@ -4,6 +4,8 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Non-Equilibrium Physics
 description: Apply non-equilibrium thermodynamics including fluctuation theorems, entropy production, and linear response theory. Use when modeling irreversible processes, analyzing driven systems, or deriving transport coefficients.
+triggers:
+- keyword:non-equilibrium-theory
 ---
 
 # Non-Equilibrium Theory

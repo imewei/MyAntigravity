@@ -2,6 +2,16 @@
 name: python-packaging
 version: "1.0.7"
 description: Create distributable Python packages with pyproject.toml, proper project structure, and publishing to PyPI. Use when writing pyproject.toml or setup.py, creating package structures with __init__.py, building wheel/source distributions, setting up CLI entry points, configuring build backends (setuptools, hatchling), or publishing to PyPI/TestPyPI.
+triggers:
+- file:.ipynb
+- file:.py
+- keyword:ai
+- keyword:ml
+- keyword:python
+- keyword:qa
+- keyword:testing
+- project:pyproject.toml
+- project:requirements.txt
 ---
 
 # Python Packaging

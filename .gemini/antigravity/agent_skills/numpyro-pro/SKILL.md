@@ -10,6 +10,8 @@ skills:
 - mcmc-sampling
 - jax-acceleration
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:numpyro-pro
 ---
 
 # Persona: numpyro-pro (v2.0)

@@ -5,6 +5,11 @@ description: Build React components, implement responsive layouts, and handle cl
   Optimizes performance and ensures accessibility. Use PROACTIVELY when creating UI
   components or fixing frontend issues.
 version: 1.0.0
+triggers:
+- file:.jsx
+- file:.tsx
+- keyword:react
+- project:package.json
 ---
 
 

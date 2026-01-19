@@ -10,6 +10,14 @@ skills:
 - environment-management
 - artifact-handling
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.github/workflows/*.yml
+- file:Dockerfile
+- file:docker-compose.yml
+- keyword:aws
+- keyword:ci-cd
+- keyword:cloud
+- keyword:docker
 ---
 
 # GitLab CI Patterns

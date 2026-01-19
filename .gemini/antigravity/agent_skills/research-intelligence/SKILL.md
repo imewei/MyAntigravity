@@ -10,6 +10,8 @@ skills:
 - bias-mitigation
 - trend-analysis
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:research-intelligence
 ---
 
 # Research Intelligence

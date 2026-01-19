@@ -1,1096 +1,1859 @@
 {
-  "generated_at": "2026-01-19T11:26:39.791760",
+  "generated_at": "2026-01-19T11:35:48.059126",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
       "description": "Core ML workflows with scikit-learn, XGBoost, LightGBM including algorithm selection, cross-validation, hyperparameter tuning (GridSearch, Optuna), handling imbalanced data (SMOTE), model evaluation, SHAP interpretability, and deployment. Use when building classification/regression models or evaluating ML performance.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "network-engineer": {
       "path": "agent_skills/network-engineer/SKILL.md",
       "description": "Expert network engineer for cloud networking, security, and performance.",
-      "triggers": [],
+      "triggers": [
+        "keyword:audit",
+        "keyword:aws",
+        "keyword:cloud",
+        "keyword:security"
+      ],
       "version": "2.0.0"
     },
     "comprehensive-reflection-framework": {
       "path": "agent_skills/comprehensive-reflection-framework/SKILL.md",
       "description": "Orchestrate reflection across cognitive, technical, scientific, and strategic dimensions for integrated insights and cross-cutting patterns. Use for quarterly reviews, major milestones, grant proposals, strategic planning, or comprehensive project health assessments.",
-      "triggers": [],
+      "triggers": [
+        "keyword:comprehensive-reflection-framework"
+      ],
       "version": "1.0.7"
     },
     "database-optimizer": {
       "path": "agent_skills/database-optimizer/SKILL.md",
       "description": "Expert database optimizer specializing in modern performance tuning,",
-      "triggers": [],
+      "triggers": [
+        "file:.sql",
+        "keyword:database",
+        "keyword:sql"
+      ],
       "version": "1.0.0"
     },
     "observability-engineer": {
       "path": "agent_skills/observability-engineer/SKILL.md",
       "description": "Expert observability engineer for monitoring, logging, tracing, and reliability.",
-      "triggers": [],
+      "triggers": [
+        "keyword:observability-engineer"
+      ],
       "version": "2.0.0"
     },
     "kubernetes-architect": {
       "path": "agent_skills/kubernetes-architect/SKILL.md",
       "description": "Design and manage scalable, secure, and observable Kubernetes clusters.",
-      "triggers": [],
+      "triggers": [
+        "file:helm/**/*.yaml",
+        "file:k8s*.yaml",
+        "keyword:kubernetes"
+      ],
       "version": "2.0.0"
     },
     "multi-platform-architecture": {
       "path": "agent_skills/multi-platform-architecture/SKILL.md",
       "description": "Design multi-platform apps with clean architecture, code sharing (Flutter, React Native, KMP), BFF patterns, offline-first sync, and team organization. Use when planning mobile/web/desktop architecture, choosing frameworks, or maximizing code reuse.",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.tsx",
+        "keyword:react",
+        "project:package.json"
+      ],
       "version": "1.0.7"
     },
     "dx-optimizer": {
       "path": "agent_skills/dx-optimizer/SKILL.md",
       "description": "Developer Experience specialist. Improves tooling, setup, and workflows.",
-      "triggers": [],
+      "triggers": [
+        "keyword:dx-optimizer"
+      ],
       "version": "1.0.0"
     },
     "web-development-julia": {
       "path": "agent_skills/web-development-julia/SKILL.md",
       "description": "Build web applications with Genie.jl MVC framework and HTTP.jl. Use when creating REST APIs, handling HTTP requests, or building web services in Julia.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "1.0.7"
     },
     "python-testing-patterns": {
       "path": "agent_skills/python-testing-patterns/SKILL.md",
       "description": "Pytest mastery including fixtures, parameterization, mocking, and property-based testing.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "keyword:python",
+        "keyword:qa",
+        "keyword:testing",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "2.0.0"
     },
     "gpu-acceleration": {
       "path": "agent_skills/gpu-acceleration/SKILL.md",
       "description": "Implement and optimize GPU algorithms using CUDA/CuPy/CUDA.jl.",
-      "triggers": [],
+      "triggers": [
+        "keyword:gpu-acceleration"
+      ],
       "version": "2.0.0"
     },
     "frontend-developer": {
       "path": "agent_skills/frontend-developer/SKILL.md",
       "description": "Build React components, implement responsive layouts, and handle client-side",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.tsx",
+        "keyword:react",
+        "project:package.json"
+      ],
       "version": "1.0.0"
     },
     "terraform-specialist": {
       "path": "agent_skills/terraform-specialist/SKILL.md",
       "description": "Infrastructure as Code (IaC) mastery using Terraform/OpenTofu.",
-      "triggers": [],
+      "triggers": [
+        "file:.tf",
+        "keyword:terraform"
+      ],
       "version": "2.0.0"
     },
     "api-design-principles": {
       "path": "agent_skills/api-design-principles/SKILL.md",
       "description": "REST, GraphQL, and gRPC design standards for scalable interfaces.",
-      "triggers": [],
+      "triggers": [
+        "keyword:api-design-principles"
+      ],
       "version": "2.0.0"
     },
     "airflow-scientific-workflows": {
       "path": "agent_skills/airflow-scientific-workflows/SKILL.md",
       "description": "Design Airflow DAGs for scientific pipelines, simulations, and data ingestion.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ci-cd",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "python-packaging": {
       "path": "agent_skills/python-packaging/SKILL.md",
       "description": "Create distributable Python packages with pyproject.toml, proper project structure, and publishing to PyPI. Use when writing pyproject.toml or setup.py, creating package structures with __init__.py, building wheel/source distributions, setting up CLI entry points, configuring build backends (setuptools, hatchling), or publishing to PyPI/TestPyPI.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.py",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:python",
+        "keyword:qa",
+        "keyword:testing",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "angular-migration": {
       "path": "agent_skills/angular-migration/SKILL.md",
       "description": "Migrate AngularJS (1.x) to Angular (2+) using hybrid mode, ngUpgrade, component conversion, dependency injection updates, and routing migration. Use when upgrading legacy AngularJS apps incrementally or implementing hybrid AngularJS/Angular applications.",
-      "triggers": [],
+      "triggers": [
+        "keyword:angular-migration"
+      ],
       "version": "1.0.7"
     },
     "rag-implementation": {
       "path": "agent_skills/rag-implementation/SKILL.md",
       "description": "Production RAG patterns: Chunking, Hybrid Search, Reranking, and Grounding.",
-      "triggers": [],
+      "triggers": [
+        "keyword:rag-implementation"
+      ],
       "version": "2.0.0"
     },
     "trajectory-analysis": {
       "path": "agent_skills/trajectory-analysis/SKILL.md",
       "description": "Analyze MD trajectories to extract structural, thermodynamic, mechanical, and transport properties. Use when calculating RDF, MSD, viscosity, or validating simulations against experimental data.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "ml-pipeline-workflow": {
       "path": "agent_skills/ml-pipeline-workflow/SKILL.md",
       "description": "Build end-to-end MLOps pipelines with Airflow, Dagster, Kubeflow, or Prefect for data preparation, training, validation, and deployment. Use when creating DAG definitions, workflow configs, or orchestrating ML lifecycle stages.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ci-cd",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "interop-patterns": {
       "path": "agent_skills/interop-patterns/SKILL.md",
       "description": "Master cross-language integration with PythonCall.jl, RCall.jl, and CxxWrap.jl. Use when calling Python/R libraries from Julia or minimizing data transfer overhead.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "file:.py",
+        "keyword:julia",
+        "keyword:python",
+        "project:Project.toml",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "llm-evaluation": {
       "path": "agent_skills/llm-evaluation/SKILL.md",
       "description": "Quantitative and qualitative evaluation of LLM outputs (BLEU, ROUGE, BERTScore, LLM-as-Judge).",
-      "triggers": [],
+      "triggers": [
+        "keyword:llm-evaluation"
+      ],
       "version": "2.0.0"
     },
     "numpyro-pro": {
       "path": "agent_skills/numpyro-pro/SKILL.md",
       "description": "Master Bayesian inference specialist using NumPyro/JAX.",
-      "triggers": [],
+      "triggers": [
+        "keyword:numpyro-pro"
+      ],
       "version": "2.0.0"
     },
     "architecture-patterns": {
       "path": "agent_skills/architecture-patterns/SKILL.md",
       "description": "Master Clean Architecture, Hexagonal Architecture, and DDD patterns including entities, value objects, aggregates, repositories, and domain events. Use when designing scalable backends, refactoring monoliths, or implementing domain-driven design.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "context-manager": {
       "path": "agent_skills/context-manager/SKILL.md",
       "description": "Orchestrate long-running context, memory retrieval, and 100k+ token windows.",
-      "triggers": [],
+      "triggers": [
+        "keyword:context-manager"
+      ],
       "version": "2.0.0"
     },
     "scientific-data-visualization": {
       "path": "agent_skills/scientific-data-visualization/SKILL.md",
       "description": "Publication-quality figures for journals (Nature/Science/PRL).",
-      "triggers": [],
+      "triggers": [
+        "keyword:data",
+        "keyword:qa",
+        "keyword:testing",
+        "keyword:visualization"
+      ],
       "version": "2.0.0"
     },
     "django-pro": {
       "path": "agent_skills/django-pro/SKILL.md",
       "description": "Master Django 5.x developer for scalable web apps and DRF APIs.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "keyword:django",
+        "keyword:web",
+        "project:manage.py"
+      ],
       "version": "2.0.0"
     },
     "ml-engineering-production": {
       "path": "agent_skills/ml-engineering-production/SKILL.md",
       "description": "Software and data engineering best practices for production ML. Type-safe code, pytest testing, pre-commit hooks, pandas/SQL pipelines, and modern project structure. Use when building maintainable ML systems.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.ipynb",
+        "file:.sql",
+        "keyword:ai",
+        "keyword:ci-cd",
+        "keyword:database",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:sql",
+        "keyword:testing"
+      ],
       "version": "1.0.7"
     },
     "gitlab-ci-patterns": {
       "path": "agent_skills/gitlab-ci-patterns/SKILL.md",
       "description": "GitLab CI/CD pipelines including caching, Docker-in-Docker, and multi-cloud deployment.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:Dockerfile",
+        "file:docker-compose.yml",
+        "keyword:aws",
+        "keyword:ci-cd",
+        "keyword:cloud",
+        "keyword:docker"
+      ],
       "version": "2.0.0"
     },
     "react-modernization": {
       "path": "agent_skills/react-modernization/SKILL.md",
       "description": "Upgrade React 16\u219217\u219218, migrate class components to hooks (useState, useEffect, useContext), adopt concurrent features (Suspense, transitions), apply codemods, optimize with memo/useMemo/useCallback, and add TypeScript. Use for class-to-hooks migration, lifecycle conversion, or React 18 adoption.",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.ts",
+        "file:.tsx",
+        "keyword:react",
+        "keyword:typescript",
+        "project:package.json",
+        "project:tsconfig.json"
+      ],
       "version": "1.0.7"
     },
     "javascript-testing-patterns": {
       "path": "agent_skills/javascript-testing-patterns/SKILL.md",
       "description": "Vitest, Jest, and Testing Library patterns for modern JS/TS apps.",
-      "triggers": [],
+      "triggers": [
+        "file:.js",
+        "keyword:javascript",
+        "keyword:qa",
+        "keyword:testing",
+        "project:package.json"
+      ],
       "version": "2.0.0"
     },
     "python-julia-visualization": {
       "path": "agent_skills/python-julia-visualization/SKILL.md",
       "description": "Cross-language visualization mastery: Matplotlib, Seaborn, Plotly, Bokeh, Plots.jl, Makie.jl.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "file:.py",
+        "keyword:data",
+        "keyword:julia",
+        "keyword:python",
+        "keyword:visualization",
+        "project:Project.toml",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "2.0.0"
     },
     "performance-tuning": {
       "path": "agent_skills/performance-tuning/SKILL.md",
       "description": "Profile and optimize Julia code with @code_warntype, @profview, and BenchmarkTools.jl. Use when debugging slow code, reducing allocations, or improving execution speed.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "1.0.7"
     },
     "programming-scripting-languages": {
       "path": "agent_skills/programming-scripting-languages/SKILL.md",
       "description": "Master CLI development across Python (Click, Typer), Bash, PowerShell, and Go (Cobra). Use when implementing argument parsing, creating shell automation scripts, building Go CLIs with Cobra, designing interactive prompts, handling subcommands, or creating cross-platform CLI tools.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "keyword:python",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "neural-architecture-engineer": {
       "path": "agent_skills/neural-architecture-engineer/SKILL.md",
       "description": "Neural architecture specialist for deep learning design and training",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.0"
     },
     "golang-pro": {
       "path": "agent_skills/golang-pro/SKILL.md",
       "description": "Master Go developer for high-concurrency systems and microservices.",
-      "triggers": [],
+      "triggers": [
+        "keyword:golang-pro"
+      ],
       "version": "2.0.0"
     },
     "performance-engineer-observability-monitoring": {
       "path": "agent_skills/performance-engineer-observability-monitoring/SKILL.md",
       "description": "Core Web Vitals, APM, Distributed Tracing, and RUM for full-stack optimization.",
-      "triggers": [],
+      "triggers": [
+        "keyword:performance-engineer-observability-monitoring"
+      ],
       "version": "2.0.0"
     },
     "auth-implementation-patterns": {
       "path": "agent_skills/auth-implementation-patterns/SKILL.md",
       "description": "Master authentication patterns including JWT (access/refresh tokens), OAuth2/OpenID Connect, session-based auth, RBAC/ABAC, API keys, MFA, SSO, password hashing (bcrypt/argon2), secure cookies, and CSRF protection. Use when implementing auth systems, securing APIs, or designing access control.",
-      "triggers": [],
+      "triggers": [
+        "keyword:auth-implementation-patterns"
+      ],
       "version": "1.0.7"
     },
     "prompt-engineering-patterns": {
       "path": "agent_skills/prompt-engineering-patterns/SKILL.md",
       "description": "Advanced techniques for Chain-of-Thought, Few-Shot, and Self-Consistency.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "test-automator": {
       "path": "agent_skills/test-automator/SKILL.md",
       "description": "Expert test automator for AI-powered testing, framework design, and CI/CD.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
+      "version": "2.0.0"
+    },
+    "skill-discovery": {
+      "path": "agent_skills/skill-discovery/SKILL.md",
+      "description": "Meta-skill for dynamically discovering and loading other Antigravity capabilities based on context or user intent.",
+      "triggers": [
+        "keyword:find",
+        "keyword:search",
+        "keyword:help",
+        "keyword:skills",
+        "keyword:capability"
+      ],
       "version": "2.0.0"
     },
     "visualization-patterns": {
       "path": "agent_skills/visualization-patterns/SKILL.md",
       "description": "Julia visualization with Plots.jl and Makie.jl.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:data",
+        "keyword:julia",
+        "keyword:visualization",
+        "project:Project.toml"
+      ],
       "version": "2.0.0"
     },
     "model-deployment-serving": {
       "path": "agent_skills/model-deployment-serving/SKILL.md",
       "description": "Deploy ML models with FastAPI, TorchServe, BentoML, Docker, Kubernetes, and cloud platforms. Implement monitoring, A/B testing, and drift detection. Use when building model serving APIs, containerizing models, or setting up production ML infrastructure.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.py",
+        "file:Dockerfile",
+        "file:docker-compose.yml",
+        "file:helm/**/*.yaml",
+        "file:k8s*.yaml",
+        "keyword:ai",
+        "keyword:api",
+        "keyword:aws",
+        "keyword:cloud",
+        "keyword:docker",
+        "keyword:fastapi",
+        "keyword:kubernetes",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.7"
     },
     "fastapi-pro": {
       "path": "agent_skills/fastapi-pro/SKILL.md",
       "description": "Master FastAPI developer for high-performance async APIs and Pydantic V2.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "keyword:api",
+        "keyword:fastapi"
+      ],
       "version": "2.0.0"
     },
     "code-reviewer-codebase-cleanup": {
       "path": "agent_skills/code-reviewer-codebase-cleanup/SKILL.md",
       "description": "Elite code review expert specializing in modern AI-powered code analysis,",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.0"
     },
     "react-native-patterns": {
       "path": "agent_skills/react-native-patterns/SKILL.md",
       "description": "Modern React Native patterns with New Architecture, TypeScript, and performance optimization. Use when building React Native components, optimizing FlatList performance, implementing state management (Redux Toolkit, Zustand), setting up React Navigation, integrating APIs with React Query, handling forms with React Hook Form, creating native modules, or implementing offline-first storage.",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.ts",
+        "file:.tsx",
+        "keyword:react",
+        "keyword:typescript",
+        "project:package.json",
+        "project:tsconfig.json"
+      ],
       "version": "1.0.7"
     },
     "multi-agent-orchestrator": {
       "path": "agent_skills/multi-agent-orchestrator/SKILL.md",
       "description": "Coordinate multi-agent workflows, team assembly, and distributed execution.",
-      "triggers": [],
+      "triggers": [
+        "keyword:multi-agent-orchestrator"
+      ],
       "version": "2.0.0"
     },
     "plugin-syntax-validator": {
       "path": "agent_skills/plugin-syntax-validator/SKILL.md",
       "description": "Validate Claude Code plugin syntax, structure, and cross-references with automated detection and auto-fixing of common errors. Use when validating agent/skill references, checking namespace syntax, or setting up CI validation pipelines.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "keyword:ci-cd"
+      ],
       "version": "1.0.7"
     },
     "iterative-error-resolution": {
       "path": "agent_skills/iterative-error-resolution/SKILL.md",
       "description": "Automated CI/CD troubleshooting, dependency conflict resolution, and self-correcting loops.",
-      "triggers": [],
+      "triggers": [
+        "keyword:iterative-error-resolution"
+      ],
       "version": "2.0.0"
     },
     "prompt-engineer": {
       "path": "agent_skills/prompt-engineer/SKILL.md",
       "description": "Expert prompt engineer for LLM optimization, CoT, and system prompts.",
-      "triggers": [],
+      "triggers": [
+        "keyword:prompt-engineer"
+      ],
       "version": "2.0.0"
     },
     "model-optimization-deployment": {
       "path": "agent_skills/model-optimization-deployment/SKILL.md",
       "description": "Optimize and deploy neural networks with quantization, pruning, knowledge distillation, and production serving. Use when compressing models, converting between frameworks (ONNX, TFLite), or setting up TorchServe/Triton serving infrastructure.",
-      "triggers": [],
+      "triggers": [
+        "keyword:model-optimization-deployment"
+      ],
       "version": "1.0.7"
     },
     "monorepo-management": {
       "path": "agent_skills/monorepo-management/SKILL.md",
       "description": "Master monorepo management with Turborepo, Nx, and pnpm workspaces. Use when setting up turbo.json or nx.json, organizing apps/* and packages/* directories, optimizing builds with caching, managing workspace dependencies, implementing shared configs, setting up CI/CD for monorepos, or publishing packages with changesets.",
-      "triggers": [],
+      "triggers": [
+        "keyword:monorepo-management"
+      ],
       "version": "1.0.7"
     },
     "jump-optimization": {
       "path": "agent_skills/jump-optimization/SKILL.md",
       "description": "Master JuMP.jl for LP, QP, NLP, and MIP with HiGHS, Ipopt, and commercial solvers. Use for production planning, portfolio optimization, scheduling, and constrained optimization. Note that JuMP.jl is separate from Optimization.jl (sciml-pro).",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "julia-pro": {
       "path": "agent_skills/julia-pro/SKILL.md",
       "description": "Master Julia programmer for HPC, scientific computing, and performance.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "2.0.0"
     },
     "turing-pro": {
       "path": "agent_skills/turing-pro/SKILL.md",
       "description": "Bayesian inference and probabilistic programming expert. Master of Turing.jl,",
-      "triggers": [],
+      "triggers": [
+        "keyword:turing-pro"
+      ],
       "version": "1.0.0"
     },
     "tdd-orchestrator": {
       "path": "agent_skills/tdd-orchestrator/SKILL.md",
       "description": "Master TDD orchestrator specializing in red-green-refactor discipline,",
-      "triggers": [],
+      "triggers": [
+        "keyword:tdd-orchestrator"
+      ],
       "version": "1.0.0"
     },
     "multiscale-modeling": {
       "path": "agent_skills/multiscale-modeling/SKILL.md",
       "description": "Bridge atomistic MD to mesoscale using coarse-graining, DPD, and nanoscale DEM. Use when developing CG models, implementing DPD simulations, or coupling scales.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "grafana-dashboards": {
       "path": "agent_skills/grafana-dashboards/SKILL.md",
       "description": "Create production Grafana dashboards with panels, variables, alerts, and templates using RED/USE methods. Use when building API monitoring, infrastructure, database, or SLO dashboards with Prometheus data sources.",
-      "triggers": [],
+      "triggers": [
+        "file:.sql",
+        "keyword:database",
+        "keyword:sql"
+      ],
       "version": "1.0.7"
     },
     "typescript-advanced-types": {
       "path": "agent_skills/typescript-advanced-types/SKILL.md",
       "description": "Master TypeScript's advanced type system including generics, conditional types, mapped types, template literal types, utility types, branded types, and discriminated unions. Use when implementing complex type logic, creating reusable generic components, designing type-safe APIs, building form validation systems, or working with advanced TypeScript patterns.",
-      "triggers": [],
+      "triggers": [
+        "file:.ts",
+        "file:.tsx",
+        "keyword:typescript",
+        "project:tsconfig.json"
+      ],
       "version": "1.0.7"
     },
     "legacy-modernizer": {
       "path": "agent_skills/legacy-modernizer/SKILL.md",
       "description": "Strategies for Strangler Fig migration, brownfield refactoring, and safely killing spaghetti code.",
-      "triggers": [],
+      "triggers": [
+        "keyword:legacy-modernizer"
+      ],
       "version": "2.0.0"
     },
     "meta-cognitive-reflection": {
       "path": "agent_skills/meta-cognitive-reflection/SKILL.md",
       "description": "Analyze reasoning patterns, detect biases, and improve AI decision quality.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "2.0.0"
     },
     "ml-engineer": {
       "path": "agent_skills/ml-engineer/SKILL.md",
       "description": "Expert ML engineer for serving, inference, and production architecture.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "optimization-patterns": {
       "path": "agent_skills/optimization-patterns/SKILL.md",
       "description": "Use Optimization.jl for parameter estimation in differential equations. Use when fitting models to data or solving inverse problems. For LP/QP/MIP, use JuMP.jl instead.",
-      "triggers": [],
+      "triggers": [
+        "keyword:optimization-patterns"
+      ],
       "version": "1.0.7"
     },
     "deployment-engineer": {
       "path": "agent_skills/deployment-engineer/SKILL.md",
       "description": "Expert deployment engineer for CI/CD, GitOps, and progressive delivery.",
-      "triggers": [],
+      "triggers": [
+        "keyword:deployment-engineer"
+      ],
       "version": "2.0.0"
     },
     "sciml-ecosystem": {
       "path": "agent_skills/sciml-ecosystem/SKILL.md",
       "description": "Overview and selection guide for the Julia SciML ecosystem packages.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.jl",
+        "keyword:ai",
+        "keyword:julia",
+        "keyword:ml",
+        "project:Project.toml"
+      ],
       "version": "2.0.0"
     },
     "uv-package-manager": {
       "path": "agent_skills/uv-package-manager/SKILL.md",
       "description": "Master uv for blazing-fast Python dependency management, virtual environments, and lockfiles. Use when running uv commands (init, add, sync, venv, run), managing dependencies 10-100x faster than pip/poetry, installing Python versions, working with uv.lock for reproducible builds, optimizing Docker/CI builds, or migrating from pip/poetry to uv.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "file:Dockerfile",
+        "file:docker-compose.yml",
+        "keyword:docker",
+        "keyword:python",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "devops-ml-infrastructure": {
       "path": "agent_skills/devops-ml-infrastructure/SKILL.md",
       "description": "DevOps for ML with GitHub Actions pipelines, Terraform IaC, Docker/Kubernetes, and cloud ML platforms (SageMaker, Azure ML, Vertex AI). Use when automating training, deploying models, or provisioning ML infrastructure.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.ipynb",
+        "file:.tf",
+        "file:Dockerfile",
+        "file:docker-compose.yml",
+        "file:helm/**/*.yaml",
+        "file:k8s*.yaml",
+        "keyword:ai",
+        "keyword:aws",
+        "keyword:ci-cd",
+        "keyword:cloud",
+        "keyword:docker",
+        "keyword:kubernetes",
+        "keyword:ml",
+        "keyword:terraform"
+      ],
       "version": "1.0.7"
     },
     "test-automator-full-stack-orchestration": {
       "path": "agent_skills/test-automator-full-stack-orchestration/SKILL.md",
       "description": "Master AI-powered test automation with modern frameworks, self-healing",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.0"
     },
     "md-simulation-setup": {
       "path": "agent_skills/md-simulation-setup/SKILL.md",
       "description": "Setup and config expert for LAMMPS, GROMACS, and HOOMD-blue.",
-      "triggers": [],
+      "triggers": [
+        "keyword:md-simulation-setup"
+      ],
       "version": "2.0.0"
     },
     "architect-review": {
       "path": "agent_skills/architect-review/SKILL.md",
       "description": "Master software architect for system design reviews and patterns.",
-      "triggers": [],
+      "triggers": [
+        "keyword:architect-review"
+      ],
       "version": "2.0.0"
     },
     "parallel-computing": {
       "path": "agent_skills/parallel-computing/SKILL.md",
       "description": "Master multi-threading, Distributed.jl, and GPU computing with CUDA.jl. Use when scaling computations across CPUs or GPUs for scientific computing.",
-      "triggers": [],
+      "triggers": [
+        "keyword:parallel-computing"
+      ],
       "version": "1.0.7"
     },
     "research-intelligence": {
       "path": "agent_skills/research-intelligence/SKILL.md",
       "description": "Methodological rigor for systematic reviews, trend analysis, and evidence synthesis.",
-      "triggers": [],
+      "triggers": [
+        "keyword:research-intelligence"
+      ],
       "version": "2.0.0"
     },
     "non-equilibrium-theory": {
       "path": "agent_skills/non-equilibrium-theory/SKILL.md",
       "description": "Apply non-equilibrium thermodynamics including fluctuation theorems, entropy production, and linear response theory. Use when modeling irreversible processes, analyzing driven systems, or deriving transport coefficients.",
-      "triggers": [],
+      "triggers": [
+        "keyword:non-equilibrium-theory"
+      ],
       "version": "1.0.7"
     },
     "typescript-pro": {
       "path": "agent_skills/typescript-pro/SKILL.md",
       "description": "Master TypeScript architect for type systems and enterprise patterns.",
-      "triggers": [],
+      "triggers": [
+        "file:.ts",
+        "file:.tsx",
+        "keyword:typescript",
+        "project:tsconfig.json"
+      ],
       "version": "2.0.0"
     },
     "variational-inference-patterns": {
       "path": "agent_skills/variational-inference-patterns/SKILL.md",
       "description": "Master ADVI variational inference with Turing.jl and Bijectors.jl for scalable approximate Bayesian inference. Use when MCMC is too slow for large datasets.",
-      "triggers": [],
+      "triggers": [
+        "keyword:variational-inference-patterns"
+      ],
       "version": "1.0.7"
     },
     "backend-architect": {
       "path": "agent_skills/backend-architect/SKILL.md",
       "description": "Expert backend architect specializing in scalable API design, microservices, and distributed systems.",
-      "triggers": [],
+      "triggers": [
+        "keyword:backend-architect"
+      ],
       "version": "2.0.0"
     },
     "microservices-patterns": {
       "path": "agent_skills/microservices-patterns/SKILL.md",
       "description": "Design microservices with proper boundaries, events, and resilience.",
-      "triggers": [],
+      "triggers": [
+        "keyword:microservices-patterns"
+      ],
       "version": "2.0.0"
     },
     "advanced-ml-systems": {
       "path": "agent_skills/advanced-ml-systems/SKILL.md",
       "description": "Build advanced deep learning with PyTorch 2.x, TensorFlow, JAX including architectures (CNNs, Transformers, GANs), distributed training (DDP, FSDP, DeepSpeed), hyperparameter optimization (Optuna, Ray Tune), and model optimization (quantization, pruning, distillation). Use when training scripts, custom architectures, or scaling to multi-GPU/TPU.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "data-engineer": {
       "path": "agent_skills/data-engineer/SKILL.md",
       "description": "Expert data engineer for pipelines, ETL/ELT, and data quality.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "keyword:ci-cd",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "2.0.0"
     },
     "error-handling-patterns": {
       "path": "agent_skills/error-handling-patterns/SKILL.md",
       "description": "Resilient error strategies: Circut breaking, Retries, and Graceful degradation.",
-      "triggers": [],
+      "triggers": [
+        "keyword:error-handling-patterns"
+      ],
       "version": "2.0.0"
     },
     "catalyst-reactions": {
       "path": "agent_skills/catalyst-reactions/SKILL.md",
       "description": "Model chemical reaction networks with Catalyst.jl for deterministic and stochastic simulations. Use when modeling biochemical pathways or chemical kinetics.",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.tsx",
+        "keyword:react",
+        "project:package.json"
+      ],
       "version": "1.0.7"
     },
     "correlation-math-foundations": {
       "path": "agent_skills/correlation-math-foundations/SKILL.md",
       "description": "Mathematical theory of correlation functions, transforms, and fluctuation-dissipation.",
-      "triggers": [],
+      "triggers": [
+        "keyword:correlation-math-foundations"
+      ],
       "version": "2.0.0"
     },
     "research-quality-assessment": {
       "path": "agent_skills/research-quality-assessment/SKILL.md",
       "description": "Evaluate scientific research quality across methodology, experimental design, statistical rigor, and publication readiness. Use when reviewing papers, grant proposals, or assessing reproducibility using CONSORT, STROBE, or PRISMA guidelines.",
-      "triggers": [],
+      "triggers": [
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.7"
     },
     "correlation-experimental-data": {
       "path": "agent_skills/correlation-experimental-data/SKILL.md",
       "description": "Interpretation of experimental correlation data (DLS, SAXS, XPCS, FCS).",
-      "triggers": [],
+      "triggers": [
+        "keyword:correlation-experimental-data"
+      ],
       "version": "2.0.0"
     },
     "docs-architect": {
       "path": "agent_skills/docs-architect/SKILL.md",
       "description": "Expert technical documentation architect for guides, API docs, and architecture manuals.",
-      "triggers": [],
+      "triggers": [
+        "keyword:docs-architect"
+      ],
       "version": "2.0.0"
     },
     "package-development-workflow": {
       "path": "agent_skills/package-development-workflow/SKILL.md",
       "description": "Create Julia packages following community standards with proper structure, exports, and PkgTemplates.jl. Use when creating new packages or organizing source code.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "1.0.7"
     },
     "git-pr-patterns": {
       "path": "agent_skills/git-pr-patterns/SKILL.md",
       "description": "Branching strategies, Conventional Commits, and PR Lifecycle management.",
-      "triggers": [],
+      "triggers": [
+        "keyword:git-pr-patterns"
+      ],
       "version": "2.0.0"
     },
     "testing-patterns": {
       "path": "agent_skills/testing-patterns/SKILL.md",
       "description": "Julia-specific testing strategies using Test.jl, Aqua.jl, and JET.jl.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "keyword:qa",
+        "keyword:testing",
+        "project:Project.toml"
+      ],
       "version": "2.0.0"
     },
     "scientific-code-adoptor": {
       "path": "agent_skills/scientific-code-adoptor/SKILL.md",
       "description": "Expert in modernizing legacy scientific code (Fortran/C/MATLAB) to JAX/Python/Julia.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "file:.py",
+        "keyword:julia",
+        "keyword:python",
+        "project:Project.toml",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "2.0.0"
     },
     "mlops-engineer": {
       "path": "agent_skills/mlops-engineer/SKILL.md",
       "description": "Expert MLOps engineer for pipelines, experiment tracking, and registries.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ci-cd",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "c-pro": {
       "path": "agent_skills/c-pro/SKILL.md",
       "description": "Master C programmer for systems, embedded, and high-performance code.",
-      "triggers": [],
+      "triggers": [
+        "keyword:c-pro"
+      ],
       "version": "2.0.0"
     },
     "neural-pde": {
       "path": "agent_skills/neural-pde/SKILL.md",
       "description": "Solve PDEs with physics-informed neural networks using NeuralPDE.jl. Use when solving PDEs with neural networks, enforcing boundary conditions, or combining ML with physics.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "correlation-physical-systems": {
       "path": "agent_skills/correlation-physical-systems/SKILL.md",
       "description": "Mapping correlation functions to Condensed Matter, Soft Matter, and Bio-systems.",
-      "triggers": [],
+      "triggers": [
+        "keyword:correlation-physical-systems"
+      ],
       "version": "2.0.0"
     },
     "debugging-strategies": {
       "path": "agent_skills/debugging-strategies/SKILL.md",
       "description": "Systematic approaches to solving software defects: Scientific Method, Bisect, Profiling.",
-      "triggers": [],
+      "triggers": [
+        "keyword:debugging-strategies"
+      ],
       "version": "2.0.0"
     },
     "tutorial-engineer": {
       "path": "agent_skills/tutorial-engineer/SKILL.md",
       "description": "Creates step-by-step tutorials and educational content from code. Transforms",
-      "triggers": [],
+      "triggers": [
+        "keyword:tutorial-engineer"
+      ],
       "version": "1.0.0"
     },
     "data-scientist": {
       "path": "agent_skills/data-scientist/SKILL.md",
       "description": "Expert data scientist for analytics, ML modeling, and stats.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "correlation-computational-methods": {
       "path": "agent_skills/correlation-computational-methods/SKILL.md",
       "description": "Implementation algorithms for correlation analysis (FFT, Multi-tau, Block averaging).",
-      "triggers": [],
+      "triggers": [
+        "keyword:correlation-computational-methods"
+      ],
       "version": "2.0.0"
     },
     "code-review-excellence": {
       "path": "agent_skills/code-review-excellence/SKILL.md",
       "description": "Systematic code review with constructive feedback, security/performance analysis, knowledge sharing. Use for PRs, feedback on changes, security/perf validation, test validation, review standards.",
-      "triggers": [],
+      "triggers": [
+        "keyword:audit",
+        "keyword:qa",
+        "keyword:security",
+        "keyword:testing"
+      ],
       "version": "1.0.7"
     },
     "numerical-methods-implementation": {
       "path": "agent_skills/numerical-methods-implementation/SKILL.md",
       "description": "Implement robust numerical algorithms for ODEs (RK45, BDF), PDEs (finite difference, FEM), optimization (L-BFGS, Newton), and linear algebra (LU, QR, SVD, iterative solvers). Use when selecting solvers, implementing adaptive stepping, handling stiff systems, or ensuring numerical stability.",
-      "triggers": [],
+      "triggers": [
+        "keyword:numerical-methods-implementation"
+      ],
       "version": "1.0.7"
     },
     "core-julia-patterns": {
       "path": "agent_skills/core-julia-patterns/SKILL.md",
       "description": "Master multiple dispatch, type system, parametric types, type stability, and metaprogramming for high-performance Julia. Use when designing type hierarchies, debugging @code_warntype issues, optimizing with @inbounds/@simd/StaticArrays, or writing macros and generated functions.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "1.0.7"
     },
     "frontend-developer-multi-platform-apps": {
       "path": "agent_skills/frontend-developer-multi-platform-apps/SKILL.md",
       "description": "Build React components, implement responsive layouts, and handle client-side",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.tsx",
+        "keyword:react",
+        "project:package.json"
+      ],
       "version": "1.0.0"
     },
     "sciml-pro": {
       "path": "agent_skills/sciml-pro/SKILL.md",
       "description": "Master of Julia SciML ecosystem (DiffEq, ModelingToolkit, NeuralPDE).",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.jl",
+        "keyword:ai",
+        "keyword:julia",
+        "keyword:ml",
+        "project:Project.toml"
+      ],
       "version": "2.0.0"
     },
     "scientific-computing": {
       "path": "agent_skills/scientific-computing/SKILL.md",
       "description": "The definitive JAX authority for functional transformations, HPC, and differentiable physics.",
-      "triggers": [],
+      "triggers": [
+        "keyword:scientific-computing"
+      ],
       "version": "2.0.0"
     },
     "active-matter": {
       "path": "agent_skills/active-matter/SKILL.md",
       "description": "Model active matter systems (ABPs, Vicsek, MIPS, Flocking).",
-      "triggers": [],
+      "triggers": [
+        "keyword:active-matter"
+      ],
       "version": "2.0.0"
     },
     "cpp-pro": {
       "path": "agent_skills/cpp-pro/SKILL.md",
       "description": "Master C++ programmer for Modern C++ (11-23), RAII, and templates.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "secrets-management": {
       "path": "agent_skills/secrets-management/SKILL.md",
       "description": "Secure lifecycle for API keys, certificates, and credentials.",
-      "triggers": [],
+      "triggers": [
+        "keyword:secrets-management"
+      ],
       "version": "2.0.0"
     },
     "deployment-pipeline-design": {
       "path": "agent_skills/deployment-pipeline-design/SKILL.md",
       "description": "Design multi-stage CI/CD pipelines with approval gates, security checks, and progressive delivery (rolling, blue-green, canary, feature flags). Use when architecting deployment workflows, implementing GitOps, or establishing multi-environment promotion strategies.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "keyword:audit",
+        "keyword:ci-cd",
+        "keyword:security"
+      ],
       "version": "1.0.7"
     },
     "nlsq-core-mastery": {
       "path": "agent_skills/nlsq-core-mastery/SKILL.md",
       "description": "Detailed reference for NLSQ v0.6.4+ workflows, global optimization, and streaming.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "multi-platform-mobile": {
       "path": "agent_skills/multi-platform-mobile/SKILL.md",
       "description": "The definitive authority on mobile development. Master of cross-platform frameworks (Flutter/React Native) and native ecosystems (iOS/Android). Use for ALL mobile tasks: architecture design, UI implementation, performance optimization, offline-first data sync, and app store deployment.",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.tsx",
+        "keyword:react",
+        "project:package.json"
+      ],
       "version": "2.0.0"
     },
     "deployment-engineer-full-stack-orchestration": {
       "path": "agent_skills/deployment-engineer-full-stack-orchestration/SKILL.md",
       "description": "Expert deployment engineer specializing in modern CI/CD pipelines, GitOps",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "keyword:ci-cd"
+      ],
       "version": "1.0.0"
     },
     "data-wrangling-communication": {
       "path": "agent_skills/data-wrangling-communication/SKILL.md",
       "description": "Comprehensive data wrangling, cleaning, feature engineering, and visualization workflows using pandas, NumPy, Matplotlib, Seaborn, and Plotly. Use when cleaning messy datasets, handling missing values, dealing with outliers, engineering features, performing EDA, creating statistical visualizations, building interactive dashboards with Plotly Dash or Streamlit, or presenting data-driven insights to stakeholders.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:data",
+        "keyword:ml",
+        "keyword:visualization"
+      ],
       "version": "1.0.7"
     },
     "code-reviewer-comprehensive-review": {
       "path": "agent_skills/code-reviewer-comprehensive-review/SKILL.md",
       "description": "Elite code review expert specializing in modern AI-powered code analysis,",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.0"
     },
     "multi-agent-coordination": {
       "path": "agent_skills/multi-agent-coordination/SKILL.md",
       "description": "Implementation patterns for agent communication, task allocation, and synchronization.",
-      "triggers": [],
+      "triggers": [
+        "keyword:multi-agent-coordination"
+      ],
       "version": "2.0.0"
     },
     "sql-optimization-patterns": {
       "path": "agent_skills/sql-optimization-patterns/SKILL.md",
       "description": "Master SQL optimization with EXPLAIN analysis, indexing strategies (B-Tree, GIN, partial, covering), N+1 elimination, pagination (cursor-based), aggregate optimization, materialized views, and partitioning. Use when debugging slow queries, designing schemas, or reducing database load.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.sql",
+        "keyword:ai",
+        "keyword:database",
+        "keyword:ml",
+        "keyword:sql"
+      ],
       "version": "1.0.7"
     },
     "python-pro": {
       "path": "agent_skills/python-pro/SKILL.md",
       "description": "Master Python developer (3.12+) for modern practices and performance.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "keyword:python",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "2.0.0"
     },
     "ux-design-scientific-interfaces": {
       "path": "agent_skills/ux-design-scientific-interfaces/SKILL.md",
       "description": "Design intuitive, accessible interfaces for scientific tools and research applications. Use when building Plotly Dash or Streamlit dashboards, creating Pluto.jl notebooks, implementing WCAG 2.1 AA accessibility, designing Jupyter widgets, building CLIs for scientific tools, implementing progressive disclosure patterns, or creating reproducibility features.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:data",
+        "keyword:ml",
+        "keyword:visualization"
+      ],
       "version": "1.0.7"
     },
     "ai-assisted-debugging": {
       "path": "agent_skills/ai-assisted-debugging/SKILL.md",
       "description": "Leverage LLMs and automated analysis tools for Root Cause Analysis (RCA).",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "numpyro-core-mastery": {
       "path": "agent_skills/numpyro-core-mastery/SKILL.md",
       "description": "Detailed reference for NumPyro inference methods, guides, and diagnostics.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "nlsq-pro": {
       "path": "agent_skills/nlsq-pro/SKILL.md",
       "description": "GPU-accelerated nonlinear least squares expert (JAX) for curve fitting.",
-      "triggers": [],
+      "triggers": [
+        "keyword:nlsq-pro"
+      ],
       "version": "2.0.0"
     },
     "performance-engineer": {
       "path": "agent_skills/performance-engineer/SKILL.md",
       "description": "Expert performance engineer for observability, optimization, and scalability.",
-      "triggers": [],
+      "triggers": [
+        "keyword:performance-engineer"
+      ],
       "version": "2.0.0"
     },
     "neural-network-master": {
       "path": "agent_skills/neural-network-master/SKILL.md",
       "description": "Deep learning theory expert and neural network master specializing in",
-      "triggers": [],
+      "triggers": [
+        "keyword:neural-network-master"
+      ],
       "version": "1.0.0"
     },
     "command-systems-engineer": {
       "path": "agent_skills/command-systems-engineer/SKILL.md",
       "description": "Command systems engineer specializing in CLI tool design and developer",
-      "triggers": [],
+      "triggers": [
+        "keyword:command-systems-engineer"
+      ],
       "version": "1.0.0"
     },
     "cli-tool-design-production": {
       "path": "agent_skills/cli-tool-design-production/SKILL.md",
       "description": "Build production-ready CLI tools with Python Click/Typer, Node.js Commander/Inquirer, Go Cobra, and shell scripting. Use when creating command-line applications with interactive prompts, implementing developer workflow automation, designing project scaffolding tools, building TUIs with progress bars and spinners, or creating deployment and release automation tools.",
-      "triggers": [],
+      "triggers": [
+        "file:.js",
+        "file:.py",
+        "keyword:node",
+        "keyword:python",
+        "project:package.json",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "package-management": {
       "path": "agent_skills/package-management/SKILL.md",
       "description": "Master Julia package management with Pkg.jl, Project.toml, and Manifest.toml for reproducible environments. Use when managing dependencies, specifying compatibility bounds, or setting up project environments.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.jl",
+        "keyword:ai",
+        "keyword:julia",
+        "keyword:ml",
+        "project:Project.toml"
+      ],
       "version": "1.0.7"
     },
     "parallel-computing-strategy": {
       "path": "agent_skills/parallel-computing-strategy/SKILL.md",
       "description": "Design parallel strategies with MPI (distributed memory), OpenMP (shared memory), hybrid MPI+OpenMP, SLURM scheduling, Dask/Dagger.jl workflows, and load balancing. Use when implementing multi-node parallelization, writing job scripts, or optimizing HPC workflows.",
-      "triggers": [],
+      "triggers": [
+        "file:.js",
+        "keyword:node",
+        "project:package.json"
+      ],
       "version": "1.0.7"
     },
     "observability-sre-practices": {
       "path": "agent_skills/observability-sre-practices/SKILL.md",
       "description": "Production observability, monitoring, SRE with OpenTelemetry, Prometheus, Grafana, incident management. Use for tracing/metrics/logs, SLOs/SLIs, alerts with AlertManager, Golden Signals, incident response, post-mortems, error budgets.",
-      "triggers": [],
+      "triggers": [
+        "keyword:observability-sre-practices"
+      ],
       "version": "1.0.7"
     },
     "structured-reasoning": {
       "path": "agent_skills/structured-reasoning/SKILL.md",
       "description": "Apply systematic cognitive frameworks (First Principles, Root Cause, Decision Analysis) to complex problems.",
-      "triggers": [],
+      "triggers": [
+        "keyword:structured-reasoning"
+      ],
       "version": "2.0.0"
     },
     "research-paper-implementation": {
       "path": "agent_skills/research-paper-implementation/SKILL.md",
       "description": "Translate research papers into production implementations through systematic analysis and architecture extraction. Use when implementing novel architectures, reproducing experiments, or adapting state-of-the-art methods.",
-      "triggers": [],
+      "triggers": [
+        "keyword:research-paper-implementation"
+      ],
       "version": "1.0.7"
     },
     "ui-ux-designer": {
       "path": "agent_skills/ui-ux-designer/SKILL.md",
       "description": "Create interface designs, wireframes, and design systems. Masters user",
-      "triggers": [],
+      "triggers": [
+        "keyword:ui-ux-designer"
+      ],
       "version": "1.0.0"
     },
     "prometheus-configuration": {
       "path": "agent_skills/prometheus-configuration/SKILL.md",
       "description": "Configure Prometheus for metric collection, alerting, and monitoring with scrape configs, recording rules, alert rules, and service discovery. Use when setting up Prometheus servers, creating alert rules, or implementing Kubernetes monitoring.",
-      "triggers": [],
+      "triggers": [
+        "file:helm/**/*.yaml",
+        "file:k8s*.yaml",
+        "keyword:kubernetes"
+      ],
       "version": "1.0.7"
     },
     "data-analysis": {
       "path": "agent_skills/data-analysis/SKILL.md",
       "description": "Analyze experimental correlation data from DLS, SAXS/SANS, rheology, and microscopy using Green-Kubo relations, Bayesian inference (MCMC), and model validation. Use when interpreting scattering data, validating non-equilibrium theories, or predicting transport coefficients.",
-      "triggers": [],
+      "triggers": [
+        "keyword:data-analysis"
+      ],
       "version": "1.0.7"
     },
     "slo-implementation": {
       "path": "agent_skills/slo-implementation/SKILL.md",
       "description": "Define SLIs, SLOs, error budgets, and burn rate alerting following SRE best practices. Use when establishing reliability targets, implementing error budget policies, creating SLO dashboards, or designing multi-window burn rate alerts.",
-      "triggers": [],
+      "triggers": [
+        "keyword:slo-implementation"
+      ],
       "version": "1.0.7"
     },
     "systems-programming-patterns": {
       "path": "agent_skills/systems-programming-patterns/SKILL.md",
       "description": "Master systems programming patterns for memory management, concurrency, and performance optimization across C, C++, Rust, and Go. Use when implementing memory allocators, designing lock-free data structures, optimizing cache performance, debugging with sanitizers (ASan/TSan/Miri), or profiling with perf/flamegraph.",
-      "triggers": [],
+      "triggers": [
+        "file:.rs",
+        "keyword:rust",
+        "project:Cargo.toml"
+      ],
       "version": "1.0.7"
     },
     "training-diagnostics": {
       "path": "agent_skills/training-diagnostics/SKILL.md",
       "description": "Diagnose and resolve neural network training failures through systematic analysis of gradient pathologies, loss curves, and convergence issues. Use when encountering vanishing/exploding gradients, dead ReLU neurons, loss anomalies (NaN, spikes, plateaus), overfitting/underfitting patterns, or when debugging training scripts requiring systematic troubleshooting.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "debugger": {
       "path": "agent_skills/debugger/SKILL.md",
       "description": "AI-assisted debugging specialist for errors, test failures, and unexpected",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.0"
     },
     "graphql-architect": {
       "path": "agent_skills/graphql-architect/SKILL.md",
       "description": "Master GraphQL architect for schema design, federation, and optimization.",
-      "triggers": [],
+      "triggers": [
+        "keyword:graphql-architect"
+      ],
       "version": "2.0.0"
     },
     "differential-equations": {
       "path": "agent_skills/differential-equations/SKILL.md",
       "description": "Solve ODE/SDE/PDE with DifferentialEquations.jl. Use when defining differential equation systems, selecting solvers, implementing callbacks, or creating ensemble simulations.",
-      "triggers": [],
+      "triggers": [
+        "keyword:differential-equations"
+      ],
       "version": "1.0.7"
     },
     "deep-learning-experimentation": {
       "path": "agent_skills/deep-learning-experimentation/SKILL.md",
       "description": "Design systematic deep learning experiments with hyperparameter optimization, ablation studies, and reproducible workflows. Use when tuning hyperparameters, conducting ablations, setting up experiment tracking (W&B, TensorBoard, MLflow), or managing reproducibility.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "security-auditor-full-stack-orchestration": {
       "path": "agent_skills/security-auditor-full-stack-orchestration/SKILL.md",
       "description": "Expert security auditor specializing in DevSecOps, comprehensive cybersecurity,",
-      "triggers": [],
+      "triggers": [
+        "keyword:audit",
+        "keyword:security"
+      ],
       "version": "1.0.0"
     },
     "typescript-project-scaffolding": {
       "path": "agent_skills/typescript-project-scaffolding/SKILL.md",
       "description": "Opinionated, production-ready setups for Next.js, Vite, and Node.js.",
-      "triggers": [],
+      "triggers": [
+        "file:.js",
+        "file:.ts",
+        "file:.tsx",
+        "keyword:node",
+        "keyword:typescript",
+        "project:package.json",
+        "project:tsconfig.json"
+      ],
       "version": "2.0.0"
     },
     "code-reviewer": {
       "path": "agent_skills/code-reviewer/SKILL.md",
       "description": "Elite code review expert for modern AI-powered code analysis.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "statistical-analysis-fundamentals": {
       "path": "agent_skills/statistical-analysis-fundamentals/SKILL.md",
       "description": "Comprehensive statistical analysis with scipy.stats, statsmodels, and PyMC3 including hypothesis testing, Bayesian methods, regression, experimental design, and causal inference. Use when conducting A/B tests, power analysis, or treatment effect estimation.",
-      "triggers": [],
+      "triggers": [
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.7"
     },
     "code-reviewer-git-pr-workflows": {
       "path": "agent_skills/code-reviewer-git-pr-workflows/SKILL.md",
       "description": "Expert code review workflows, security checks, and constructive feedback loops.",
-      "triggers": [],
+      "triggers": [
+        "keyword:audit",
+        "keyword:security"
+      ],
       "version": "2.0.0"
     },
     "modern-javascript-patterns": {
       "path": "agent_skills/modern-javascript-patterns/SKILL.md",
       "description": "Master modern JavaScript (ES6-ES2024) including async/await, destructuring, spread operators, arrow functions, modules, optional chaining, nullish coalescing, and functional programming patterns. Use when writing ES6+ code, refactoring legacy JS, implementing async patterns, or applying functional programming with map/filter/reduce.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.js",
+        "keyword:ai",
+        "keyword:javascript",
+        "keyword:ml",
+        "project:package.json"
+      ],
       "version": "1.0.7"
     },
     "github-actions-templates": {
       "path": "agent_skills/github-actions-templates/SKILL.md",
       "description": "Reusable workflows for CI/CD, Containerization, and Security Scanning on GitHub.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:audit",
+        "keyword:ci-cd",
+        "keyword:ml",
+        "keyword:security"
+      ],
       "version": "2.0.0"
     },
     "hpc-numerical-coordinator": {
       "path": "agent_skills/hpc-numerical-coordinator/SKILL.md",
       "description": "Coordinate HPC workflows, numerical methods, and scaling strategies.",
-      "triggers": [],
+      "triggers": [
+        "keyword:hpc-numerical-coordinator"
+      ],
       "version": "2.0.0"
     },
     "agent-performance-optimization": {
       "path": "agent_skills/agent-performance-optimization/SKILL.md",
       "description": "Optimize agent latency, throughput, and resource usage via monitoring and caching.",
-      "triggers": [],
+      "triggers": [
+        "keyword:agent-performance-optimization"
+      ],
       "version": "2.0.0"
     },
     "ci-cd-patterns": {
       "path": "agent_skills/ci-cd-patterns/SKILL.md",
       "description": "Julia CI/CD patterns for testing, documentation, and release automation.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.jl",
+        "keyword:ci-cd",
+        "keyword:julia",
+        "keyword:qa",
+        "keyword:testing",
+        "project:Project.toml"
+      ],
       "version": "2.0.0"
     },
     "debugger-unit-testing": {
       "path": "agent_skills/debugger-unit-testing/SKILL.md",
       "description": "AI-assisted debugging specialist for errors, test failures, and unexpected",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.0"
     },
     "ml-force-fields": {
       "path": "agent_skills/ml-force-fields/SKILL.md",
       "description": "Develop ML force fields (NequIP, MACE, DeepMD) achieving quantum accuracy with 1000x speedup. Use when training neural network potentials or deploying ML force fields in MD.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "async-python-patterns": {
       "path": "agent_skills/async-python-patterns/SKILL.md",
       "description": "Master Python asyncio, concurrent programming, and async/await patterns for high-performance non-blocking applications. Use when writing async/await code, implementing FastAPI or aiohttp applications, building WebSocket servers, creating async context managers or generators, handling async database operations with asyncpg, implementing async HTTP clients with aiohttp, writing async tests with pytest-asyncio, or converting synchronous code to asynchronous patterns.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.py",
+        "file:.sql",
+        "keyword:ai",
+        "keyword:api",
+        "keyword:database",
+        "keyword:fastapi",
+        "keyword:ml",
+        "keyword:python",
+        "keyword:qa",
+        "keyword:sql",
+        "keyword:testing",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "dependency-upgrade": {
       "path": "agent_skills/dependency-upgrade/SKILL.md",
       "description": "Manage major dependency upgrades with semver analysis, compatibility matrices, staged rollouts, codemods, and testing. Use when upgrading frameworks (React, Angular, Vue), resolving peer dependency conflicts, or implementing automated updates with Renovate/Dependabot.",
-      "triggers": [],
+      "triggers": [
+        "file:.jsx",
+        "file:.tsx",
+        "keyword:qa",
+        "keyword:react",
+        "keyword:testing",
+        "project:package.json"
+      ],
       "version": "1.0.7"
     },
     "security-auditor": {
       "path": "agent_skills/security-auditor/SKILL.md",
       "description": "Expert security auditor for DevSecOps, cybersecurity, and compliance.",
-      "triggers": [],
+      "triggers": [
+        "keyword:audit",
+        "keyword:security"
+      ],
       "version": "2.0.0"
     },
     "test-automator-unit-testing": {
       "path": "agent_skills/test-automator-unit-testing/SKILL.md",
       "description": "Master AI-powered test automation with modern frameworks, self-healing",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "1.0.0"
     },
     "neural-network-mathematics": {
       "path": "agent_skills/neural-network-mathematics/SKILL.md",
       "description": "Apply mathematical foundations of neural networks including linear algebra, calculus, probability theory, optimization, and information theory. Use when deriving backpropagation for custom layers, computing Jacobians/Hessians, implementing automatic differentiation, analyzing gradient flow, proving convergence, working with Bayesian deep learning, deriving loss functions from MLE principles, or understanding PAC learning theory.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "1.0.7"
     },
     "ai-engineer": {
       "path": "agent_skills/ai-engineer/SKILL.md",
       "description": "Expert AI engineer for LLM apps, RAG systems, and Agents.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "javascript-pro": {
       "path": "agent_skills/javascript-pro/SKILL.md",
       "description": "Master modern JavaScript (ES6+), async patterns, and JS performance.",
-      "triggers": [],
+      "triggers": [
+        "file:.js",
+        "keyword:javascript",
+        "project:package.json"
+      ],
       "version": "2.0.0"
     },
     "comprehensive-validation-framework": {
       "path": "agent_skills/comprehensive-validation-framework/SKILL.md",
       "description": "Systematic multi-dimensional validation framework for code, APIs, and systems. Use when validating before deployment, running security scans (OWASP Top 10, dependency vulnerabilities), checking test coverage (>80% target), verifying accessibility (WCAG 2.1 AA), profiling performance, validating breaking changes, or preparing deployment readiness reports.",
-      "triggers": [],
+      "triggers": [
+        "keyword:audit",
+        "keyword:qa",
+        "keyword:security",
+        "keyword:testing"
+      ],
       "version": "1.0.7"
     },
     "database-migration": {
       "path": "agent_skills/database-migration/SKILL.md",
       "description": "Execute database migrations across ORMs (Sequelize, TypeORM, Prisma, Django) with zero-downtime strategies, rollback procedures, and data transformations. Use when adding/removing columns, renaming tables, changing types, or implementing blue-green deployments.",
-      "triggers": [],
+      "triggers": [
+        "file:.py",
+        "file:.sql",
+        "keyword:database",
+        "keyword:django",
+        "keyword:sql",
+        "keyword:web",
+        "project:manage.py"
+      ],
       "version": "1.0.7"
     },
     "distributed-tracing": {
       "path": "agent_skills/distributed-tracing/SKILL.md",
       "description": "Implement distributed tracing with OpenTelemetry, Jaeger, and Tempo including instrumentation, context propagation, sampling strategies, and trace analysis. Use when debugging latency issues, understanding service dependencies, or tracing error propagation across microservices.",
-      "triggers": [],
+      "triggers": [
+        "keyword:distributed-tracing"
+      ],
       "version": "1.0.7"
     },
     "mcmc-diagnostics": {
       "path": "agent_skills/mcmc-diagnostics/SKILL.md",
       "description": "Master MCMC convergence diagnostics with R-hat, ESS, trace plots, and divergence checking. Use when validating Bayesian inference results from Turing.jl.",
-      "triggers": [],
+      "triggers": [
+        "keyword:data",
+        "keyword:visualization"
+      ],
       "version": "1.0.7"
     },
     "architect-review-framework-migration": {
       "path": "agent_skills/architect-review-framework-migration/SKILL.md",
       "description": "Master software architect specializing in modern architecture patterns,",
-      "triggers": [],
+      "triggers": [
+        "keyword:architect-review-framework-migration"
+      ],
       "version": "1.0.0"
     },
     "python-performance-optimization": {
       "path": "agent_skills/python-performance-optimization/SKILL.md",
       "description": "Profile and optimize Python code using cProfile, line_profiler, memory_profiler, and py-spy. Use when analyzing slow code, optimizing CPU-intensive operations, reducing memory consumption, implementing caching with lru_cache, using NumPy for vectorization, multiprocessing for CPU-bound tasks, or async/await for I/O-bound tasks.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.py",
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:python",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "compiler-patterns": {
       "path": "agent_skills/compiler-patterns/SKILL.md",
       "description": "Create system images and standalone executables with PackageCompiler.jl. Use when reducing startup time or deploying Julia applications without requiring Julia installation.",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "1.0.7"
     },
     "turing-model-design": {
       "path": "agent_skills/turing-model-design/SKILL.md",
       "description": "Design probabilistic models with Turing.jl including prior selection, hierarchical models, and non-centered parameterization. Use when building Bayesian models for inference.",
-      "triggers": [],
+      "triggers": [
+        "keyword:turing-model-design"
+      ],
       "version": "1.0.7"
     },
     "ecosystem-selection": {
       "path": "agent_skills/ecosystem-selection/SKILL.md",
       "description": "Select optimal scientific computing ecosystems and manage multi-language workflows. Use when evaluating Python vs Julia for performance-critical numerical computing, implementing hybrid PyJulia/PyCall.jl interoperability, or setting up reproducible toolchains with Conda or Pkg.jl.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "file:.jl",
+        "file:.py",
+        "keyword:ai",
+        "keyword:julia",
+        "keyword:ml",
+        "keyword:python",
+        "project:Project.toml",
+        "project:pyproject.toml",
+        "project:requirements.txt"
+      ],
       "version": "1.0.7"
     },
     "simulation-expert": {
       "path": "agent_skills/simulation-expert/SKILL.md",
       "description": "Molecular dynamics and multiscale simulation expert for atomistic modeling.",
-      "triggers": [],
+      "triggers": [
+        "keyword:simulation-expert"
+      ],
       "version": "2.0.0"
     },
     "modeling-toolkit": {
       "path": "agent_skills/modeling-toolkit/SKILL.md",
       "description": "Define symbolic differential equations with ModelingToolkit.jl for automatic simplification and code generation. Use when building complex mathematical models declaratively.",
-      "triggers": [],
+      "triggers": [
+        "keyword:modeling-toolkit"
+      ],
       "version": "1.0.7"
     },
     "security-ci-template": {
       "path": "agent_skills/security-ci-template/SKILL.md",
       "description": "Security scanning and lock file validation templates for CI/CD pipelines. Use when implementing SAST/DAST scanning, dependency vulnerability checks, lock file validation, or automated security gates in GitHub Actions or GitLab CI.",
-      "triggers": [],
+      "triggers": [
+        "file:.github/workflows/*.yml",
+        "keyword:audit",
+        "keyword:ci-cd",
+        "keyword:security"
+      ],
       "version": "1.0.7"
     },
     "non-equilibrium-expert": {
       "path": "agent_skills/non-equilibrium-expert/SKILL.md",
       "description": "Non-equilibrium statistical physicist expert specializing in driven systems,",
-      "triggers": [],
+      "triggers": [
+        "keyword:non-equilibrium-expert"
+      ],
       "version": "1.0.0"
     },
     "julia-developer": {
       "path": "agent_skills/julia-developer/SKILL.md",
       "description": "Package development specialist for creating robust Julia packages. Expert",
-      "triggers": [],
+      "triggers": [
+        "file:.jl",
+        "keyword:julia",
+        "project:Project.toml"
+      ],
       "version": "1.0.0"
     },
     "rust-pro": {
       "path": "agent_skills/rust-pro/SKILL.md",
       "description": "Master Rust developer for safe, concurrent, and high-performance systems.",
-      "triggers": [],
+      "triggers": [
+        "file:.rs",
+        "keyword:rust",
+        "project:Cargo.toml"
+      ],
       "version": "2.0.0"
     },
     "langchain-architecture": {
       "path": "agent_skills/langchain-architecture/SKILL.md",
       "description": "Patterns for Chains, Agents, Memory, and Tools using LangChain.",
-      "triggers": [],
+      "triggers": [
+        "file:.ipynb",
+        "keyword:ai",
+        "keyword:ml"
+      ],
       "version": "2.0.0"
     },
     "cloud-architect": {
       "path": "agent_skills/cloud-architect/SKILL.md",
       "description": "Expert cloud architect for AWS/Azure/GCP, IaC, and FinOps.",
-      "triggers": [],
+      "triggers": [
+        "keyword:aws",
+        "keyword:cloud"
+      ],
       "version": "2.0.0"
     },
     "visualization-interface": {
       "path": "agent_skills/visualization-interface/SKILL.md",
       "description": "UX-driven visualization design for maximum impact and accessibility.",
-      "triggers": [],
+      "triggers": [
+        "keyword:data",
+        "keyword:visualization"
+      ],
       "version": "2.0.0"
     },
     "neural-architecture-patterns": {
       "path": "agent_skills/neural-architecture-patterns/SKILL.md",
       "description": "Design neural architectures with skip connections, attention, normalization, and encoder-decoders. Use when designing CNNs, transformers, U-Nets, or selecting architectures for vision, NLP, and multimodal tasks.",
-      "triggers": [],
+      "triggers": [
+        "keyword:neural-architecture-patterns"
+      ],
       "version": "1.0.7"
     },
     "e2e-testing-patterns": {
       "path": "agent_skills/e2e-testing-patterns/SKILL.md",
       "description": "Robust End-to-End testing strategies using Playwright and Cypress.",
-      "triggers": [],
+      "triggers": [
+        "keyword:qa",
+        "keyword:testing"
+      ],
       "version": "2.0.0"
     },
     "correlation-function-expert": {
       "path": "agent_skills/correlation-function-expert/SKILL.md",
       "description": "Expert in correlation functions, bridging statistical physics to experimental data (DLS/SAXS/XPCS).",
-      "triggers": [],
+      "triggers": [
+        "keyword:correlation-function-expert"
+      ],
       "version": "2.0.0"
     },
     "git-advanced-workflows": {
       "path": "agent_skills/git-advanced-workflows/SKILL.md",
       "description": "Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery.",
-      "triggers": [],
+      "triggers": [
+        "keyword:git-advanced-workflows"
+      ],
       "version": "2.0.0"
     },
     "backend-architect-multi-platform-apps": {
       "path": "agent_skills/backend-architect-multi-platform-apps/SKILL.md",
       "description": "Expert backend architect specializing in scalable API design, microservices",
-      "triggers": [],
+      "triggers": [
+        "keyword:backend-architect-multi-platform-apps"
+      ],
       "version": "1.0.0"
     },
     "devops-troubleshooter": {
       "path": "agent_skills/devops-troubleshooter/SKILL.md",
       "description": "Expert DevOps troubleshooter specializing in rapid incident response,",
-      "triggers": [],
+      "triggers": [
+        "keyword:devops-troubleshooter"
+      ],
       "version": "1.0.0"
     },
     "nodejs-backend-patterns": {
       "path": "agent_skills/nodejs-backend-patterns/SKILL.md",
       "description": "Build scalable Node.js backends with Express/Fastify/NestJS. Implement middleware, authentication, database integration, and API design. Use when creating REST APIs, microservices, or backend services.",
-      "triggers": [],
+      "triggers": [
+        "file:.js",
+        "file:.sql",
+        "keyword:database",
+        "keyword:node",
+        "keyword:sql",
+        "project:package.json"
+      ],
       "version": "1.0.7"
     },
     "stochastic-dynamics": {
       "path": "agent_skills/stochastic-dynamics/SKILL.md",
       "description": "Model stochastic dynamics using master equations, Fokker-Planck, Langevin dynamics, and Green-Kubo transport theory. Use when simulating noise-driven systems, calculating transport coefficients, or modeling rare events.",
-      "triggers": [],
+      "triggers": [
+        "keyword:stochastic-dynamics"
+      ],
       "version": "1.0.7"
     }
   },
@@ -1285,6 +2048,11 @@
         "/c-project",
         "workflow for c project"
       ]
+    },
+    "auto-solve": {
+      "path": "global_workflows/auto-solve.md",
+      "description": "",
+      "triggers": []
     },
     "julia-optimize": {
       "path": "global_workflows/julia-optimize.md",

@@ -4,6 +4,17 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: Production ML Engineering Practices
 description: Software and data engineering best practices for production ML. Type-safe code, pytest testing, pre-commit hooks, pandas/SQL pipelines, and modern project structure. Use when building maintainable ML systems.
+triggers:
+- file:.github/workflows/*.yml
+- file:.ipynb
+- file:.sql
+- keyword:ai
+- keyword:ci-cd
+- keyword:database
+- keyword:ml
+- keyword:qa
+- keyword:sql
+- keyword:testing
 ---
 
 # ML Engineering Production Practices

@@ -4,6 +4,22 @@ version: "1.0.7"
 maturity: "5-Expert"
 specialization: CI/CD & Infrastructure for ML Systems
 description: DevOps for ML with GitHub Actions pipelines, Terraform IaC, Docker/Kubernetes, and cloud ML platforms (SageMaker, Azure ML, Vertex AI). Use when automating training, deploying models, or provisioning ML infrastructure.
+triggers:
+- file:.github/workflows/*.yml
+- file:.ipynb
+- file:.tf
+- file:Dockerfile
+- file:docker-compose.yml
+- file:helm/**/*.yaml
+- file:k8s*.yaml
+- keyword:ai
+- keyword:aws
+- keyword:ci-cd
+- keyword:cloud
+- keyword:docker
+- keyword:kubernetes
+- keyword:ml
+- keyword:terraform
 ---
 
 # DevOps and ML Infrastructure

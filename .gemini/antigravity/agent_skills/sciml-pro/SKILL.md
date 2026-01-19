@@ -10,6 +10,13 @@ skills:
 - modeling-toolkit
 - julia-optimization
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- file:.jl
+- keyword:ai
+- keyword:julia
+- keyword:ml
+- project:Project.toml
 ---
 
 # Persona: sciml-pro (v2.0)

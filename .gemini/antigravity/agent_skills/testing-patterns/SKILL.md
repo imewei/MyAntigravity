@@ -10,6 +10,12 @@ skills:
 - quality-assurance
 - package-validation
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.jl
+- keyword:julia
+- keyword:qa
+- keyword:testing
+- project:Project.toml
 ---
 
 # Julia Testing Patterns

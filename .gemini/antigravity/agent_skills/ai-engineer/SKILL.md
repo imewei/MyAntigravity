@@ -10,6 +10,10 @@ skills:
 - agent-orchestration
 - vector-search
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 # Persona: ai-engineer (v2.0)

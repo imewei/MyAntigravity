@@ -21,41 +21,54 @@ def parse_frontmatter(file_path):
     data = {}
     in_frontmatter = False
 
-    # Simple state machine for parsing
+    current_key = None
+    
     for i, line in enumerate(lines):
         line = line.rstrip()
+        stripped = line.strip()
+        
         if i == 0:
             in_frontmatter = True
             continue
 
-        if line == '---':
+        if line == '---' or line == '...':
             break
 
         if in_frontmatter:
-            if ':' in line:
-                # Handle basic key: value
+            if ':' in line and not line.startswith('-'):
+                # Handle key: value or key: list start
                 parts = line.split(':', 1)
                 key = parts[0].strip()
                 val = parts[1].strip()
-
-                # Handle lists (very basic implementation)
-                if not val and i+1 < len(lines) and lines[i+1].strip().startswith('-'):
+                
+                # Check if it's a list start (empty value)
+                if not val:
                     data[key] = []
-                    continue
-
-                # Remove quotes if present
+                    current_key = key
+                else:
+                    # Remove quotes
+                    if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                        val = val[1:-1]
+                    data[key] = val
+                    current_key = None # Scalar value, reset list context
+            
+            elif stripped.startswith('-'):
+                # List item
+                val = stripped[1:].strip()
+                # Remove quotes from list items too
                 if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
-                    val = val[1:-1]
-
-                data[key] = val
-
-            elif line.strip().startswith('-') and data:
-                # Handle list items for the last key found
-                # This is a bit fragile but works for simple lists like triggers
-                last_key = list(data.keys())[-1]
-                val = line.strip()[1:].strip()
-                if isinstance(data[last_key], list):
-                    data[last_key].append(val)
+                     val = val[1:-1]
+                     
+                if current_key and isinstance(data.get(current_key), list):
+                    data[current_key].append(val)
+                elif data:
+                     # Fallback: append to the last key defined if simple dict
+                     # This covers cases like:
+                     # triggers:
+                     # - foo
+                     last_key = list(data.keys())[-1]
+                     if isinstance(data[last_key], list):
+                         data[last_key].append(val)
 
     return data
 

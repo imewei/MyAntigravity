@@ -5,6 +5,10 @@ description: Neural architecture specialist for deep learning design and trainin
   implementation (Flax, Equinox, Haiku, PyTorch). Delegates JAX optimization to scientific-computing
   and MLOps to ml-pipeline-coordinator.
 version: 1.0.0
+triggers:
+- file:.ipynb
+- keyword:ai
+- keyword:ml
 ---
 
 

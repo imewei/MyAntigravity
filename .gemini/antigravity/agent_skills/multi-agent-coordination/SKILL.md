@@ -10,6 +10,8 @@ skills:
 - capability-matching
 - dag-execution
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:multi-agent-coordination
 ---
 
 # Multi-Agent Coordination
