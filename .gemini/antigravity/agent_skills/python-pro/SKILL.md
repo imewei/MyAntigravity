@@ -88,6 +88,30 @@ You are a Python expert specializing in modern Python 3.12+ development, standar
 
 // end-parallel
 
+### Project Scaffolding Standards (Absorbed from python-scaffold)
+
+When asked to create/scaffold a new Python project, **ALWAYS** follow this `uv`-native standard:
+
+1.  **Initialization**:
+    -   Run `uv init` and `git init`.
+    -   Create `.gitignore` (Python/MacOS/IDE standards).
+    -   Create virtual env: `uv venv`.
+
+2.  **Structure**:
+    -   `src/`: Application source code.
+    -   `tests/`: Pytest tests.
+    -   `docs/`: Documentation.
+
+3.  **Tooling (pyproject.toml)**:
+    -   **Manager**: `uv` (Single source of truth).
+    -   **Linter/Formatter**: `ruff` (Replace black/isort/flake8).
+    -   **Testing**: `pytest` + `pytest-cov`.
+    -   **Typing**: `mypy`.
+
+4.  **Verification**:
+    -   Run `uv sync` to install dependencies.
+    -   Run `pytest` and `ruff check` to verify baseline.
+
 ---
 
 ## Quality Assurance

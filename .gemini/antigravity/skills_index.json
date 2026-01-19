@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T11:35:48.059126",
+  "generated_at": "2026-01-19T12:03:46.970408",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -76,6 +76,18 @@
         "keyword:dx-optimizer"
       ],
       "version": "1.0.0"
+    },
+    "test-engineering-lead": {
+      "path": "agent_skills/test-engineering-lead/SKILL.md",
+      "description": "Expert in full-stack test automation, framework architecture, and TDD/CI strategies.",
+      "triggers": [
+        "keyword:qa",
+        "keyword:test",
+        "keyword:automation",
+        "file:.spec.ts",
+        "file:conftest.py"
+      ],
+      "version": "2.1.0"
     },
     "web-development-julia": {
       "path": "agent_skills/web-development-julia/SKILL.md",
@@ -180,6 +192,20 @@
       ],
       "version": "2.0.0"
     },
+    "software-quality-engineer": {
+      "path": "agent_skills/software-quality-engineer/SKILL.md",
+      "description": "Elite code review and quality assurance expert. Masters security, performance, and maintainability audits.",
+      "triggers": [
+        "keyword:audit",
+        "keyword:review",
+        "keyword:security",
+        "keyword:qa",
+        "keyword:test",
+        "file:.ipynb",
+        "file:PR_TEMPLATE.md"
+      ],
+      "version": "2.1.0"
+    },
     "trajectory-analysis": {
       "path": "agent_skills/trajectory-analysis/SKILL.md",
       "description": "Analyze MD trajectories to extract structural, thermodynamic, mechanical, and transport properties. Use when calculating RDF, MSD, viscosity, or validating simulations against experimental data.",
@@ -271,23 +297,6 @@
         "project:manage.py"
       ],
       "version": "2.0.0"
-    },
-    "ml-engineering-production": {
-      "path": "agent_skills/ml-engineering-production/SKILL.md",
-      "description": "Software and data engineering best practices for production ML. Type-safe code, pytest testing, pre-commit hooks, pandas/SQL pipelines, and modern project structure. Use when building maintainable ML systems.",
-      "triggers": [
-        "file:.github/workflows/*.yml",
-        "file:.ipynb",
-        "file:.sql",
-        "keyword:ai",
-        "keyword:ci-cd",
-        "keyword:database",
-        "keyword:ml",
-        "keyword:qa",
-        "keyword:sql",
-        "keyword:testing"
-      ],
-      "version": "1.0.7"
     },
     "gitlab-ci-patterns": {
       "path": "agent_skills/gitlab-ci-patterns/SKILL.md",
@@ -407,18 +416,6 @@
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
-      ],
-      "version": "2.0.0"
-    },
-    "test-automator": {
-      "path": "agent_skills/test-automator/SKILL.md",
-      "description": "Expert test automator for AI-powered testing, framework design, and CI/CD.",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml",
-        "keyword:qa",
-        "keyword:testing"
       ],
       "version": "2.0.0"
     },
@@ -639,16 +636,6 @@
       ],
       "version": "2.0.0"
     },
-    "ml-engineer": {
-      "path": "agent_skills/ml-engineer/SKILL.md",
-      "description": "Expert ML engineer for serving, inference, and production architecture.",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml"
-      ],
-      "version": "2.0.0"
-    },
     "optimization-patterns": {
       "path": "agent_skills/optimization-patterns/SKILL.md",
       "description": "Use Optimization.jl for parameter estimation in differential equations. Use when fitting models to data or solving inverse problems. For LP/QP/MIP, use JuMP.jl instead.",
@@ -691,40 +678,6 @@
         "project:requirements.txt"
       ],
       "version": "1.0.7"
-    },
-    "devops-ml-infrastructure": {
-      "path": "agent_skills/devops-ml-infrastructure/SKILL.md",
-      "description": "DevOps for ML with GitHub Actions pipelines, Terraform IaC, Docker/Kubernetes, and cloud ML platforms (SageMaker, Azure ML, Vertex AI). Use when automating training, deploying models, or provisioning ML infrastructure.",
-      "triggers": [
-        "file:.github/workflows/*.yml",
-        "file:.ipynb",
-        "file:.tf",
-        "file:Dockerfile",
-        "file:docker-compose.yml",
-        "file:helm/**/*.yaml",
-        "file:k8s*.yaml",
-        "keyword:ai",
-        "keyword:aws",
-        "keyword:ci-cd",
-        "keyword:cloud",
-        "keyword:docker",
-        "keyword:kubernetes",
-        "keyword:ml",
-        "keyword:terraform"
-      ],
-      "version": "1.0.7"
-    },
-    "test-automator-full-stack-orchestration": {
-      "path": "agent_skills/test-automator-full-stack-orchestration/SKILL.md",
-      "description": "Master AI-powered test automation with modern frameworks, self-healing",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml",
-        "keyword:qa",
-        "keyword:testing"
-      ],
-      "version": "1.0.0"
     },
     "md-simulation-setup": {
       "path": "agent_skills/md-simulation-setup/SKILL.md",
@@ -800,16 +753,6 @@
         "keyword:microservices-patterns"
       ],
       "version": "2.0.0"
-    },
-    "advanced-ml-systems": {
-      "path": "agent_skills/advanced-ml-systems/SKILL.md",
-      "description": "Build advanced deep learning with PyTorch 2.x, TensorFlow, JAX including architectures (CNNs, Transformers, GANs), distributed training (DDP, FSDP, DeepSpeed), hyperparameter optimization (Optuna, Ray Tune), and model optimization (quantization, pruning, distillation). Use when training scripts, custom architectures, or scaling to multi-GPU/TPU.",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml"
-      ],
-      "version": "1.0.7"
     },
     "data-engineer": {
       "path": "agent_skills/data-engineer/SKILL.md",
@@ -889,18 +832,6 @@
       "description": "Branching strategies, Conventional Commits, and PR Lifecycle management.",
       "triggers": [
         "keyword:git-pr-patterns"
-      ],
-      "version": "2.0.0"
-    },
-    "testing-patterns": {
-      "path": "agent_skills/testing-patterns/SKILL.md",
-      "description": "Julia-specific testing strategies using Test.jl, Aqua.jl, and JET.jl.",
-      "triggers": [
-        "file:.jl",
-        "keyword:julia",
-        "keyword:qa",
-        "keyword:testing",
-        "project:Project.toml"
       ],
       "version": "2.0.0"
     },
@@ -989,17 +920,6 @@
         "keyword:correlation-computational-methods"
       ],
       "version": "2.0.0"
-    },
-    "code-review-excellence": {
-      "path": "agent_skills/code-review-excellence/SKILL.md",
-      "description": "Systematic code review with constructive feedback, security/performance analysis, knowledge sharing. Use for PRs, feedback on changes, security/perf validation, test validation, review standards.",
-      "triggers": [
-        "keyword:audit",
-        "keyword:qa",
-        "keyword:security",
-        "keyword:testing"
-      ],
-      "version": "1.0.7"
     },
     "numerical-methods-implementation": {
       "path": "agent_skills/numerical-methods-implementation/SKILL.md",
@@ -1129,16 +1049,6 @@
         "keyword:visualization"
       ],
       "version": "1.0.7"
-    },
-    "code-reviewer-comprehensive-review": {
-      "path": "agent_skills/code-reviewer-comprehensive-review/SKILL.md",
-      "description": "Elite code review expert specializing in modern AI-powered code analysis,",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml"
-      ],
-      "version": "1.0.0"
     },
     "multi-agent-coordination": {
       "path": "agent_skills/multi-agent-coordination/SKILL.md",
@@ -1371,6 +1281,21 @@
       ],
       "version": "2.0.0"
     },
+    "ml-systems-architect": {
+      "path": "agent_skills/ml-systems-architect/SKILL.md",
+      "description": "Expert in End-to-End ML Systems, from JAX/PyTorch model design to Kubernetes serving.",
+      "triggers": [
+        "keyword:ai",
+        "keyword:ml",
+        "keyword:pytorch",
+        "keyword:jax",
+        "keyword:training",
+        "file:.ipynb",
+        "file:dvc.yaml",
+        "file:mlruns"
+      ],
+      "version": "2.1.0"
+    },
     "differential-equations": {
       "path": "agent_skills/differential-equations/SKILL.md",
       "description": "Solve ODE/SDE/PDE with DifferentialEquations.jl. Use when defining differential equation systems, selecting solvers, implementing callbacks, or creating ensemble simulations.",
@@ -1412,16 +1337,6 @@
       ],
       "version": "2.0.0"
     },
-    "code-reviewer": {
-      "path": "agent_skills/code-reviewer/SKILL.md",
-      "description": "Elite code review expert for modern AI-powered code analysis.",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml"
-      ],
-      "version": "2.0.0"
-    },
     "statistical-analysis-fundamentals": {
       "path": "agent_skills/statistical-analysis-fundamentals/SKILL.md",
       "description": "Comprehensive statistical analysis with scipy.stats, statsmodels, and PyMC3 including hypothesis testing, Bayesian methods, regression, experimental design, and causal inference. Use when conducting A/B tests, power analysis, or treatment effect estimation.",
@@ -1430,15 +1345,6 @@
         "keyword:testing"
       ],
       "version": "1.0.7"
-    },
-    "code-reviewer-git-pr-workflows": {
-      "path": "agent_skills/code-reviewer-git-pr-workflows/SKILL.md",
-      "description": "Expert code review workflows, security checks, and constructive feedback loops.",
-      "triggers": [
-        "keyword:audit",
-        "keyword:security"
-      ],
-      "version": "2.0.0"
     },
     "modern-javascript-patterns": {
       "path": "agent_skills/modern-javascript-patterns/SKILL.md",
@@ -1561,18 +1467,6 @@
         "keyword:security"
       ],
       "version": "2.0.0"
-    },
-    "test-automator-unit-testing": {
-      "path": "agent_skills/test-automator-unit-testing/SKILL.md",
-      "description": "Master AI-powered test automation with modern frameworks, self-healing",
-      "triggers": [
-        "file:.ipynb",
-        "keyword:ai",
-        "keyword:ml",
-        "keyword:qa",
-        "keyword:testing"
-      ],
-      "version": "1.0.0"
     },
     "neural-network-mathematics": {
       "path": "agent_skills/neural-network-mathematics/SKILL.md",
@@ -1794,15 +1688,6 @@
       ],
       "version": "1.0.7"
     },
-    "e2e-testing-patterns": {
-      "path": "agent_skills/e2e-testing-patterns/SKILL.md",
-      "description": "Robust End-to-End testing strategies using Playwright and Cypress.",
-      "triggers": [
-        "keyword:qa",
-        "keyword:testing"
-      ],
-      "version": "2.0.0"
-    },
     "correlation-function-expert": {
       "path": "agent_skills/correlation-function-expert/SKILL.md",
       "description": "Expert in correlation functions, bridging statistical physics to experimental data (DLS/SAXS/XPCS).",
@@ -1858,22 +1743,6 @@
     }
   },
   "workflows": {
-    "deps-upgrade": {
-      "path": "global_workflows/deps-upgrade.md",
-      "description": "Safe dependency upgrade orchestration with rollback protection",
-      "triggers": [
-        "/deps-upgrade",
-        "workflow for deps upgrade"
-      ]
-    },
-    "doc-generate": {
-      "path": "global_workflows/doc-generate.md",
-      "description": "Generate comprehensive documentation with AI analysis",
-      "triggers": [
-        "/doc-generate",
-        "workflow for doc generate"
-      ]
-    },
     "prompt-optimize": {
       "path": "global_workflows/prompt-optimize.md",
       "description": "Optimize prompts for LLM performance",
@@ -1882,28 +1751,12 @@
         "optimize prompt"
       ]
     },
-    "merge-all": {
-      "path": "global_workflows/merge-all.md",
-      "description": "Merge all local branches into main and clean up",
-      "triggers": [
-        "/merge-all",
-        "workflow for merge all"
-      ]
-    },
     "smart-debug": {
       "path": "global_workflows/smart-debug.md",
       "description": "Intelligent debugging with automated RCA",
       "triggers": [
         "/smart-debug",
         "intelligent debugging"
-      ]
-    },
-    "typescript-scaffold": {
-      "path": "global_workflows/typescript-scaffold.md",
-      "description": "Generate complete TypeScript project structures with modern tooling",
-      "triggers": [
-        "/typescript-scaffold",
-        "workflow for typescript scaffold"
       ]
     },
     "speckit-specify": {
@@ -1919,14 +1772,6 @@
         "workflow for run all tests"
       ]
     },
-    "python-scaffold": {
-      "path": "global_workflows/python-scaffold.md",
-      "description": "Scaffold production-ready Python projects with modern tooling (uv, ruff, pytest)",
-      "triggers": [
-        "/python-scaffold",
-        "scaffold production ready python projects"
-      ]
-    },
     "double-check": {
       "path": "global_workflows/double-check.md",
       "description": "Multi-dimensional code validation (Lint, Test, Security, Perf)",
@@ -1935,74 +1780,10 @@
         "workflow for double check"
       ]
     },
-    "monitor-setup": {
-      "path": "global_workflows/monitor-setup.md",
-      "description": "Set up observability stack (Prometheus/Grafana)",
-      "triggers": [
-        "/monitor-setup",
-        "setup monitoring"
-      ]
-    },
     "speckit-constitution": {
       "path": "global_workflows/speckit-constitution.md",
       "description": "Create or update the project constitution from principle inputs.",
       "triggers": []
-    },
-    "code-explain": {
-      "path": "global_workflows/code-explain.md",
-      "description": "Detailed code explanation with visual aids and domain expertise",
-      "triggers": [
-        "/code-explain",
-        "detailed code explanation"
-      ]
-    },
-    "rust-project": {
-      "path": "global_workflows/rust-project.md",
-      "description": "Scaffold production-ready Rust projects with Cargo tooling and idiomatic patterns",
-      "triggers": [
-        "/rust-project",
-        "workflow for rust project"
-      ]
-    },
-    "code-migrate": {
-      "path": "global_workflows/code-migrate.md",
-      "description": "Orchestrate systematic code migration with test-first discipline",
-      "triggers": [
-        "/code-migrate",
-        "orchestrate systematic code migration"
-      ]
-    },
-    "legacy-modernize": {
-      "path": "global_workflows/legacy-modernize.md",
-      "description": "Comprehensive legacy system modernization using Strangler Fig pattern",
-      "triggers": [
-        "/legacy-modernize",
-        "comprehensive legacy system modernization"
-      ]
-    },
-    "test-generate": {
-      "path": "global_workflows/test-generate.md",
-      "description": "Generate comprehensive test suites",
-      "triggers": [
-        "/test-generate",
-        "generate tests"
-      ]
-    },
-    "pr-enhance": {
-      "path": "global_workflows/pr-enhance.md",
-      "description": "Enhance PRs with automated review and insights",
-      "triggers": [
-        "/pr-enhance",
-        "enhance pr"
-      ]
-    },
-    "langchain-agent": {
-      "path": "global_workflows/langchain-agent.md",
-      "description": "Create production-ready LangChain agents",
-      "triggers": [
-        "/langchain-agent",
-        "create langchain agent"
-      ]
     },
     "multi-agent-optimize": {
       "path": "global_workflows/multi-agent-optimize.md",
@@ -2025,30 +1806,6 @@
       "description": "Identify underspecified areas in the feature spec by asking targeted clarification questions.",
       "triggers": []
     },
-    "full-stack-feature": {
-      "path": "global_workflows/full-stack-feature.md",
-      "description": "Orchestrate end-to-end full-stack feature development",
-      "triggers": [
-        "/full-stack-feature",
-        "orchestrate full stack feature"
-      ]
-    },
-    "slo-implement": {
-      "path": "global_workflows/slo-implement.md",
-      "description": "Implement SLO/SLA monitoring",
-      "triggers": [
-        "/slo-implement",
-        "implement slo"
-      ]
-    },
-    "c-project": {
-      "path": "global_workflows/c-project.md",
-      "description": "Scaffold production-ready C projects with memory safety tools",
-      "triggers": [
-        "/c-project",
-        "workflow for c project"
-      ]
-    },
     "auto-solve": {
       "path": "global_workflows/auto-solve.md",
       "description": "",
@@ -2067,50 +1824,10 @@
       "description": "Convert tasks.md into GitHub issues.",
       "triggers": []
     },
-    "deps-audit": {
-      "path": "global_workflows/deps-audit.md",
-      "description": "Audit project dependencies for security vulnerabilities and license compliance",
-      "triggers": [
-        "/deps-audit",
-        "workflow for deps audit"
-      ]
-    },
-    "workflow-automate": {
-      "path": "global_workflows/workflow-automate.md",
-      "description": "Automate development workflows (CI/CD)",
-      "triggers": [
-        "/workflow-automate",
-        "automate workflow"
-      ]
-    },
     "speckit-checklist": {
       "path": "global_workflows/speckit-checklist.md",
       "description": "Generate a custom checklist for the current feature based on user requirements.",
       "triggers": []
-    },
-    "profile-performance": {
-      "path": "global_workflows/profile-performance.md",
-      "description": "Comprehensive performance profiling",
-      "triggers": [
-        "/profile-performance",
-        "profile performance"
-      ]
-    },
-    "ai-assistant": {
-      "path": "global_workflows/ai-assistant.md",
-      "description": "Build production-ready AI assistants",
-      "triggers": [
-        "/ai-assistant",
-        "build ai assistant"
-      ]
-    },
-    "update-docs": {
-      "path": "global_workflows/update-docs.md",
-      "description": "Update documentation from code analysis",
-      "triggers": [
-        "/update-docs",
-        "update documentation"
-      ]
     },
     "refactor-clean": {
       "path": "global_workflows/refactor-clean.md",
@@ -2120,34 +1837,10 @@
         "workflow for refactor clean"
       ]
     },
-    "julia-package-ci": {
-      "path": "global_workflows/julia-package-ci.md",
-      "description": "Generate GitHub Actions CI/CD for Julia packages",
-      "triggers": [
-        "/julia-package-ci",
-        "generate julia ci/cd"
-      ]
-    },
-    "multi-platform": {
-      "path": "global_workflows/multi-platform.md",
-      "description": "Build and deploy features across web, mobile, and desktop",
-      "triggers": [
-        "/multi-platform",
-        "build multi platform feature"
-      ]
-    },
     "speckit-plan": {
       "path": "global_workflows/speckit-plan.md",
       "description": "Execute implementation planning workflow to generate design artifacts.",
       "triggers": []
-    },
-    "component-scaffold": {
-      "path": "global_workflows/component-scaffold.md",
-      "description": "Orchestrate production-ready React/React Native component generation",
-      "triggers": [
-        "/component-scaffold",
-        "orchestrate production ready react/react native"
-      ]
     },
     "speckit-analyze": {
       "path": "global_workflows/speckit-analyze.md",
@@ -2191,14 +1884,6 @@
         "design ml pipeline"
       ]
     },
-    "fix-imports": {
-      "path": "global_workflows/fix-imports.md",
-      "description": "Systematically fix broken imports across the codebase",
-      "triggers": [
-        "/fix-imports",
-        "workflow for fix imports"
-      ]
-    },
     "commit": {
       "path": "global_workflows/commit.md",
       "description": "Intelligent git commit with automated analysis, quality validation, and atomic commit enforcement",
@@ -2207,74 +1892,10 @@
         "workflow for commit"
       ]
     },
-    "tech-debt": {
-      "path": "global_workflows/tech-debt.md",
-      "description": "Analyze and prioritize technical debt",
-      "triggers": [
-        "/tech-debt",
-        "analyze technical debt"
-      ]
-    },
-    "sciml-setup": {
-      "path": "global_workflows/sciml-setup.md",
-      "description": "Scaffolding for Scientific Machine Learning",
-      "triggers": [
-        "/sciml-setup",
-        "setup sciml project"
-      ]
-    },
     "speckit-implement": {
       "path": "global_workflows/speckit-implement.md",
       "description": "Execute the implementation plan by processing tasks.md.",
       "triggers": []
-    },
-    "julia-scaffold": {
-      "path": "global_workflows/julia-scaffold.md",
-      "description": "Bootstrap new Julia package with proper structure, testing, and CI/CD",
-      "triggers": [
-        "/julia-scaffold",
-        "bootstrap new julia package"
-      ]
-    },
-    "improve-agent": {
-      "path": "global_workflows/improve-agent.md",
-      "description": "Systematic agent improvement through analysis",
-      "triggers": [
-        "/improve-agent",
-        "improve agent performance"
-      ]
-    },
-    "reflection": {
-      "path": "global_workflows/reflection.md",
-      "description": "Advanced reflection engine for AI reasoning",
-      "triggers": [
-        "/reflection",
-        "workflow for reflection"
-      ]
-    },
-    "adopt-code": {
-      "path": "global_workflows/adopt-code.md",
-      "description": "Analyze and modernize scientific computing codebases for adoption",
-      "triggers": [
-        "/adopt-code",
-        "analyze and modernize scientific"
-      ]
-    },
-    "feature-development": {
-      "path": "global_workflows/feature-development.md",
-      "description": "Orchestrate end-to-end feature development with parallel architecture, security, and full-stack implementation streams",
-      "triggers": [
-        "/feature-development",
-        "workflow for feature development"
-      ]
-    },
-    "full-review": {
-      "path": "global_workflows/full-review.md",
-      "description": "Multi-agent code review workflow",
-      "triggers": [
-        "/full-review",
-        "workflow for full review"
-      ]
     }
   }
 }

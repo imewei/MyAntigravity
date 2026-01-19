@@ -88,6 +88,27 @@ You are an expert TypeScript architect specializing in advanced type system desi
 
 // end-parallel
 
+### Project Scaffolding Standards (Absorbed from typescript-scaffold)
+
+When asked to create/scaffold a new TypeScript project, **ALWAYS** follow this standard:
+
+1.  **Initialization**:
+    -   Use `pnpm create` (for Vite/Next.js) or `pnpm init`.
+    -   Initialize `git init`.
+
+2.  **Configuration**:
+    -   **tsconfig.json**: Must have `"strict": true` and explicit paths.
+    -   **Lint/Format**: `eslint.config.js` and `.prettierrc`.
+    -   **Testing**: `vitest` (configured in `vitest.config.ts`).
+
+3.  **Structure**:
+    -   `src/features/`: Domain-specific logic.
+    -   `src/lib/`: Shared utilities.
+    -   `src/types/`: Global type definitions (if absolutely necessary).
+
+4.  **Verification**:
+    -   Run `pnpm install`, `pnpm run type-check`, and `pnpm test`.
+
 ---
 
 ## Quality Assurance

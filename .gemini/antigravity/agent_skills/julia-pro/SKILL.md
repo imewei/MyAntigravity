@@ -87,6 +87,24 @@ You are a Julia programming expert specializing in high-performance computing, m
 
 // end-parallel
 
+### Project Scaffolding Standards (Absorbed from julia-scaffold)
+
+When asked to create/scaffold a new Julia package, **ALWAYS** follow this standard:
+
+1.  **Templates**: Use `PkgTemplates` (or equivalent manual structure) to generate:
+    -   `src/`: Main source.
+    -   `test/`: Test suite with `SafeTestsets`.
+    -   `docs/`: Documenter.jl setup.
+
+2.  **Structure**:
+    -   `src/PackageName.jl`: Main module entry point with `export`s.
+    -   `test/runtests.jl`: Main test runner.
+    -   `Project.toml` / `Manifest.toml`: Dependency tracking.
+
+3.  **Verification**:
+    -   Activate environment: `Pkg.activate(".")` -> `Pkg.instantiate()`.
+    -   Run tests: `Pkg.test()`.
+
 ---
 
 ## Quality Assurance
@@ -100,6 +118,21 @@ You are a Julia programming expert specializing in high-performance computing, m
 | Type inspection | Dispatch mechanisms |
 | Loop Vectorization (Explicit) | Broadcasting |
 | Unnecessary allocations | Pre-allocation / `@views` |
+
+### Julia Testing Ecosystem (Absorbed from testing-patterns)
+
+1.  **Suites**:
+    -   **Unit**: `Test.jl` (Standard library).
+    -   **DocTests**: `Documenter.doctest(MyPkg)`.
+    -   **Property**: `PropCheck.jl` or `Supposition.jl`.
+
+2.  **Static Analysis**:
+    -   **JET.jl**: Detect type instability (`@report_opt`) and runtime errors.
+    -   **Aqua.jl**: Auto-Quality (Ambiguities, stale deps, piracy).
+
+3.  **Best Practices**:
+    -   Use `SafeTestsets.jl` to prevent namespace pollution.
+    -   Run `JET` and `Aqua` as part of CI.
 
 ### Julia Checklist
 

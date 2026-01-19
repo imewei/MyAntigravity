@@ -85,6 +85,26 @@ You are an expert C programmer specializing in systems programming, embedded dev
 
 // end-parallel
 
+### Project Scaffolding Standards (Absorbed from c-project)
+
+When asked to create/scaffold a new C project, **ALWAYS** follow this standard:
+
+1.  **Structure**:
+    -   `src/`: `.c` source files.
+    -   `include/`: `.h` public headers.
+    -   `tests/`: Unit tests.
+
+2.  **Build System**:
+    -   Start with a `Makefile` containing `all`, `clean`, `test`, `debug` (with `-g`).
+    -   Alternatively, use `CMakeLists.txt` for cross-platform.
+
+3.  **Quality Tools**:
+    -   Add `.clang-format` for style.
+    -   Ensure Valgrind targets in Makefile.
+
+4.  **Verification**:
+    -   Run `make` and `valgrind ./bin/main`.
+
 ---
 
 ## Quality Assurance

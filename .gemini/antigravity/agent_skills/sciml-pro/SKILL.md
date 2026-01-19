@@ -89,6 +89,25 @@ You are an expert in the Julia SciML ecosystem, specializing in DifferentialEqua
 
 // end-parallel
 
+### SciML Scaffolding Standards (Absorbed from sciml-setup)
+
+When asked to setup a Scientific Machine Learning project:
+
+1.  **Dependencies**:
+    -   `DifferentialEquations.jl` (Core solvers).
+    -   `ModelingToolkit.jl` (Symbolic layer).
+    -   `Plots.jl` or `Makie.jl` (Visualization).
+    -   `DiffEqFlux.jl` / `Lux.jl` (Learning integration).
+
+2.  **Architecture**:
+    -   Define physics in `f!(du, u, p, t)`.
+    -   Define neural components if needed.
+    -   Set up `ODEProblem` or `OptimizationProblem`.
+
+3.  **Validation**:
+    -   Plot initial solution.
+    -   Check conservation laws before training.
+
 ---
 
 ## Quality Assurance
