@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T16:52:38.923264",
+  "generated_at": "2026-01-19T17:59:44.725509",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -157,7 +157,13 @@
       "description": "Infrastructure as Code (IaC) mastery using Terraform/OpenTofu.",
       "triggers": [
         "file:.tf",
-        "keyword:terraform"
+        "file:.tfvars",
+        "keyword:terraform",
+        "keyword:opentofu",
+        "keyword:iac",
+        "keyword:infrastructure",
+        "keyword:state",
+        "project:terraform.tfstate"
       ],
       "version": "2.0.0"
     },
@@ -475,7 +481,12 @@
       "description": "Validate Claude Code plugin syntax, structure, and cross-references with automated detection and auto-fixing of common errors. Use when validating agent/skill references, checking namespace syntax, or setting up CI validation pipelines.",
       "triggers": [
         "file:.github/workflows/*.yml",
-        "keyword:ci-cd"
+        "file:.md",
+        "keyword:ci-cd",
+        "keyword:plugin",
+        "keyword:validation",
+        "keyword:syntax",
+        "keyword:claude"
       ],
       "version": "1.0.7"
     },
@@ -780,9 +791,14 @@
       "path": "agent_skills/git-pr-patterns/SKILL.md",
       "description": "Branching strategies, Conventional Commits, and PR Lifecycle management.",
       "triggers": [
+        "file:.github/pull_request_template.md",
+        "file:.github/PULL_REQUEST_TEMPLATE.md",
         "keyword:pr",
         "keyword:pull-request",
-        "keyword:review"
+        "keyword:review",
+        "keyword:github",
+        "keyword:issue",
+        "keyword:codeowners"
       ],
       "version": "2.0.0"
     },
@@ -1185,8 +1201,13 @@
       "path": "agent_skills/statistical-analysis-fundamentals/SKILL.md",
       "description": "Comprehensive statistical analysis with scipy.stats, statsmodels, and PyMC3 including hypothesis testing, Bayesian methods, regression, experimental design, and causal inference. Use when conducting A/B tests, power analysis, or treatment effect estimation.",
       "triggers": [
-        "keyword:qa",
-        "keyword:testing"
+        "file:.py",
+        "keyword:statistics",
+        "keyword:hypothesis",
+        "keyword:bayesian",
+        "keyword:regression",
+        "keyword:a/b test",
+        "keyword:causal"
       ],
       "version": "1.0.7"
     },
@@ -1227,8 +1248,14 @@
       "path": "agent_skills/security-auditor/SKILL.md",
       "description": "Expert security auditor specializing in DevSecOps, comprehensive cybersecurity,",
       "triggers": [
+        "file:.py",
         "keyword:audit",
-        "keyword:security"
+        "keyword:security",
+        "keyword:owasp",
+        "keyword:vulnerability",
+        "keyword:authentication",
+        "keyword:oauth",
+        "keyword:compliance"
       ],
       "version": "1.0.0"
     },
@@ -1295,8 +1322,14 @@
       "path": "agent_skills/mcmc-diagnostics/SKILL.md",
       "description": "Master MCMC convergence diagnostics with R-hat, ESS, trace plots, and divergence checking. Use when validating Bayesian inference results from Turing.jl.",
       "triggers": [
-        "keyword:data",
-        "keyword:visualization"
+        "file:.jl",
+        "keyword:mcmc",
+        "keyword:diagnostics",
+        "keyword:r-hat",
+        "keyword:ess",
+        "keyword:convergence",
+        "keyword:turing",
+        "keyword:trace"
       ],
       "version": "1.0.7"
     },
@@ -1443,8 +1476,15 @@
       "path": "agent_skills/cloud-architect/SKILL.md",
       "description": "Expert cloud architect for AWS/Azure/GCP, IaC, and FinOps.",
       "triggers": [
+        "file:.tf",
+        "file:.yaml",
         "keyword:aws",
-        "keyword:cloud"
+        "keyword:cloud",
+        "keyword:azure",
+        "keyword:gcp",
+        "keyword:terraform",
+        "keyword:kubernetes",
+        "project:terraform.tfstate"
       ],
       "version": "2.0.0"
     },
@@ -1452,9 +1492,14 @@
       "path": "agent_skills/git-advanced-workflows/SKILL.md",
       "description": "Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery.",
       "triggers": [
+        "file:.github/workflows/*.yml",
+        "file:.github/CODEOWNERS",
         "keyword:git",
+        "keyword:github",
         "keyword:rebase",
-        "keyword:bisect"
+        "keyword:bisect",
+        "keyword:branch",
+        "keyword:worktree"
       ],
       "version": "2.0.0"
     },
@@ -1539,6 +1584,7 @@
       "description": "Complete Git workflow orchestration from code review through PR creation with parallel validation",
       "triggers": [
         "/git-workflow",
+        "/github",
         "workflow for git workflow"
       ]
     },

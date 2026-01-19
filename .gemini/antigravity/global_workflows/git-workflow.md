@@ -2,6 +2,7 @@
 description: Complete Git workflow orchestration from code review through PR creation with parallel validation
 triggers:
 - /git-workflow
+- /github
 - workflow for git workflow
 version: 2.0.0
 allowed-tools: [Bash(git:*), Read, Grep, Task]

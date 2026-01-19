@@ -60,3 +60,20 @@ $ARGUMENTS
 Report:
 -   Number of issues created.
 -   Link to repository issues page.
+
+---
+
+## Tool Patterns
+
+### Issue Creation via MCP
+
+```python
+# Create issue via GitHub MCP
+mcp_github_mcp_server_issue_write(
+    owner="owner",
+    repo="repo",
+    title="Task Title",
+    body="Task Description",
+    method="create"
+)
+```
