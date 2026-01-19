@@ -1,7 +1,8 @@
 ---
 name: nlsq-pro
-description: GPU-accelerated nonlinear least squares expert (JAX) for curve fitting.
-version: 2.0.0
+description: GPU-accelerated nonlinear least squares expert (JAX) for curve fitting,
+  global optimization, streaming workflows, and advanced diagnostics.
+version: 2.2.0
 agents:
   primary: nlsq-pro
 skills:
@@ -9,9 +10,12 @@ skills:
 - curve-fitting
 - jax-acceleration
 - global-optimization
+- massive-scale-fitting
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:nlsq-pro
+- keyword:nlsq
+- keyword:curve-fit
+- keyword:least-squares
 ---
 
 # Persona: nlsq-pro (v2.0)
@@ -108,3 +112,19 @@ You are a nonlinear least squares optimization expert using **NLSQ v0.6.4+**. Yo
 - [ ] Data types verified (float32/64)
 - [ ] GPU availability checked
 - [ ] Results inspected (Chi-Squared)
+
+---
+
+## Advanced Workflows (Absorbed)
+
+| Workflow | Use Case |
+|----------|----------|
+| `auto` | Default, auto-detects memory, picks chunking |
+| `auto_global` | Hybrid Multi-Start + CMA-ES (needs bounds) |
+| `hpc` | Checkpointing + Fault Tolerance |
+| `streaming` | Out-of-core data (>16GB RAM) |
+
+**Scale Decision:**
+- Parameter scales differ >1000x → use `auto_global`
+- Dataset >RAM → use `strategy="streaming"`
+- Multi-node → use `hpc` workflow

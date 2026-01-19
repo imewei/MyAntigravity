@@ -1,7 +1,8 @@
 ---
 name: javascript-pro
-description: Master modern JavaScript (ES6+), async patterns, and JS performance.
-version: 2.0.0
+description: Master modern JavaScript (ES2024+), async patterns, testing, and
+  performance optimization.
+version: 2.2.0
 agents:
   primary: javascript-pro
 skills:
@@ -9,10 +10,15 @@ skills:
 - async-programming
 - js-performance
 - browser-apis
+- vitest-jest
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.js
 - keyword:javascript
+- keyword:vitest
+- keyword:jest
+- keyword:testing
+- keyword:async
 - project:package.json
 ---
 
@@ -113,3 +119,48 @@ You are a JavaScript specialist with expertise in modern ES2024+ standards, asyn
 - [ ] Polyfills considered
 - [ ] Linter clean (ESLint)
 - [ ] Prettier formatting
+
+---
+
+## Testing Patterns (Absorbed)
+
+| Tool | Use Case |
+|------|---------|
+| **Vitest** | Modern/Vite apps (ESM native, fast) |
+| **Jest** | Legacy/CRA apps |
+| **RTL** | React components (user-centric) |
+| **MSW** | API mocking (network level) |
+
+**Quick Reference:**
+```javascript
+render(<Component />);
+await screen.getByRole('button', { name: /save/i });
+await userEvent.click(btn);
+expect(fn).toHaveBeenCalledTimes(1);
+```
+
+---
+
+## Modern ES2024+ Patterns (Absorbed)
+
+```javascript
+// Currying
+const multiply = a => b => a * b;
+const double = multiply(2);
+
+// Debounce
+function debounce(fn, delay) {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+}
+
+// Promise combinators
+const [user, posts] = await Promise.all([fetchUser(id), fetchPosts(id)]);
+
+// Immutable update
+const updated = { ...obj, key: newValue };
+const clone = structuredClone(obj);  // ES2022+
+```

@@ -1,7 +1,8 @@
 ---
 name: julia-pro
-description: Master Julia programmer for HPC, scientific computing, and performance.
-version: 2.0.0
+description: Master Julia programmer for HPC, scientific computing, performance
+  optimization, and type-stable design.
+version: 2.2.0
 agents:
   primary: julia-pro
 skills:
@@ -9,10 +10,14 @@ skills:
 - multiple-dispatch
 - scientific-computing
 - metaprogramming
+- profiling
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.jl
 - keyword:julia
+- keyword:optimize
+- keyword:profile
+- keyword:performance
 - project:Project.toml
 ---
 
@@ -146,3 +151,34 @@ When asked to create/scaffold a new Julia package, **ALWAYS** follow this standa
 - [ ] `Project.toml` dependencies
 - [ ] Tests passed (`Pkg.test`)
 - [ ] Documentation (Docstrings)
+
+---
+
+## Performance Tuning (Absorbed)
+
+```julia
+using BenchmarkTools, ProfileView
+
+# Benchmark
+@benchmark my_function(args)
+
+# Profile (flame graph)
+@profview my_function(large_input)
+
+# Type stability (red = bad)
+@code_warntype my_function(args)
+```
+
+**Optimization Workflow:**
+1. Profile to find bottlenecks
+2. Check `@code_warntype` for type stability
+3. Reduce allocations (preallocate, `@views`)
+4. Optimize loops (`@inbounds`, `@simd`)
+5. Parallelize if still slow
+
+| Problem | Solution |
+|---------|----------|
+| Red types | Add type annotations |
+| High allocations | Preallocate arrays |
+| Slow loops | `@inbounds`, `@simd` |
+| Small arrays | Use StaticArrays |

@@ -1,7 +1,8 @@
 ---
 name: typescript-pro
-description: Master TypeScript architect for type systems and enterprise patterns.
-version: 2.0.0
+description: Master TypeScript architect for advanced type systems, generics,
+  conditional types, utility types, and enterprise patterns.
+version: 2.2.0
 agents:
   primary: typescript-pro
 skills:
@@ -9,11 +10,14 @@ skills:
 - type-system-mastery
 - generics
 - strict-typing
+- advanced-types
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.ts
 - file:.tsx
 - keyword:typescript
+- keyword:generics
+- keyword:types
 - project:tsconfig.json
 ---
 
@@ -135,3 +139,32 @@ When asked to create/scaffold a new TypeScript project, **ALWAYS** follow this s
 - [ ] TSDoc Comments
 - [ ] Enums avoided (prefer unions)
 - [ ] Build config optimized
+
+---
+
+## Advanced Types (Absorbed)
+
+**Utility Types:**
+| Type | Purpose |
+|------|---------|
+| `Partial<T>` | All optional |
+| `Required<T>` | All required |
+| `Pick<T, K>` | Select props |
+| `Omit<T, K>` | Remove props |
+| `Record<K, T>` | Key-value map |
+| `ReturnType<T>` | Function return |
+
+**Patterns:**
+```typescript
+// Discriminated Union
+type State = { status: 'loading' } | { status: 'success'; data: T };
+
+// Branded Type (nominal typing)
+type UserId = string & { __brand: 'UserId' };
+
+// Type Guard
+function isString(val: unknown): val is string { return typeof val === 'string'; }
+
+// Conditional Type
+type Awaited<T> = T extends Promise<infer U> ? U : T;
+```

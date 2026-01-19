@@ -1,7 +1,8 @@
 ---
 name: python-pro
-description: Master Python developer (3.12+) for modern practices and performance.
-version: 2.0.0
+description: Master Python developer (3.12+) for modern practices, async programming,
+  testing patterns, and performance optimization.
+version: 2.2.0
 agents:
   primary: python-pro
 skills:
@@ -9,10 +10,16 @@ skills:
 - async-python
 - python-performance
 - type-hinting
+- pytest-mastery
+- asyncio-patterns
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.py
 - keyword:python
+- keyword:pytest
+- keyword:asyncio
+- keyword:async
+- keyword:testing
 - project:pyproject.toml
 - project:requirements.txt
 ---
@@ -138,3 +145,47 @@ When asked to create/scaffold a new Python project, **ALWAYS** follow this `uv`-
 - [ ] Exception handling specific
 - [ ] List/Dict comprehensions
 - [ ] Generators for large data
+
+---
+
+## Pytest Mastery (Absorbed)
+
+| Concept | Usage |
+|---------|-------|
+| **Fixture** | `@pytest.fixture` (scope: function/module/session) |
+| **Parametrize** | `@pytest.mark.parametrize("input,expected", [...])` |
+| **Mock** | `unittest.mock.patch` or `pytest-mock` |
+| **Marker** | `@pytest.mark.slow`, `@pytest.mark.asyncio` |
+
+**Quick Reference:**
+- `conftest.py`: Shared fixtures
+- `tmp_path`: Built-in temp file fixture
+- `monkeypatch`: Safe environment mods
+- `pytest -v -k "login"`: Run specific tests
+
+---
+
+## Async Patterns (Absorbed)
+
+```python
+# Concurrent execution
+async def fetch_all(ids: list[int]) -> list[dict]:
+    return await asyncio.gather(*[fetch(id) for id in ids])
+
+# Rate limiting with semaphore
+async def rate_limited(urls: list[str], max_concurrent: int = 5):
+    sem = asyncio.Semaphore(max_concurrent)
+    async def fetch_with_limit(url: str):
+        async with sem:
+            return await fetch(url)
+    return await asyncio.gather(*[fetch_with_limit(u) for u in urls])
+
+# Timeout pattern
+result = await asyncio.wait_for(slow_op(), timeout=2.0)
+```
+
+| Pitfall | Fix |
+|---------|-----|
+| Forgetting await | `result = await async_func()` |
+| Blocking event loop | Use `asyncio.sleep()`, not `time.sleep()` |
+| No timeout | Always use `wait_for()` for external calls |
