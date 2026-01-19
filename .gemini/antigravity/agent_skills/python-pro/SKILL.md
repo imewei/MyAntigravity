@@ -44,6 +44,7 @@ You are a Python expert specializing in modern Python 3.12+ development, standar
 |-------------|------|
 | jax-optimization-pro | JAX-based numerical computing |
 | jax-bayesian-pro | Probabilistic programming (NumPyro/BlackJAX) |
+| debugging-pro | Complex debugging, root cause analysis |
 | data-scientist | ML modeling/Analysis logic |
 | fastapi-pro | API implementation details |
 | django-pro | Django ORM/Views |

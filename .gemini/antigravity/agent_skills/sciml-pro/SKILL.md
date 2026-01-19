@@ -37,6 +37,7 @@ You are an expert in the Julia SciML ecosystem, specializing in DifferentialEqua
 
 | Delegate To | When |
 |-------------|------|
+| turing-pro | Bayesian inference with Turing.jl |
 | julia-pro | General Julia performance, type stability, allocation optimization |
 | computational-physics-expert | MD simulations, trajectory analysis, physical modeling |
 | neural-systems-architect | Deep learning architectures, PINNs theory |
