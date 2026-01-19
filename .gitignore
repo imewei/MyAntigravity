@@ -1,0 +1,178 @@
+# ============================================
+# MyAntigravity .gitignore
+# Optimized for Python, Mac, and Agentic workflows
+# ============================================
+
+# -----------------
+# System & Environment
+# -----------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# -----------------
+# IDE & Editors
+# -----------------
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Other Editors
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.directory
+
+# -----------------
+# Python
+# -----------------
+# Byte-compiled / Optimized / DLLs
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.pytest_cache/
+.hypothesis/
+
+# Profiling
+*.prof
+*.lprof
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# uv (modern package manager)
+.uv/
+
+# -----------------
+# Node / JavaScript
+# -----------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.next/
+.nuxt/
+.parcel-cache/
+.cache/
+
+# -----------------
+# Compiled Languages (Rust/Julia)
+# -----------------
+target/
+Cargo.lock
+**/*.rs.bk
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+.julia/
+
+# -----------------
+# Data & Models (Scientific Computing)
+# -----------------
+# Large binary files
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.npy
+*.npz
+
+# Data directories (common conventions)
+data/
+datasets/
+models/saved/
+checkpoints/
+
+# Simulation outputs
+*.xyz
+*.lammpstrj
+*.dcd
+*.xtc
+trajectories/
+
+# -----------------
+# Agentic & Workflows
+# -----------------
+# Internal log directories
+logs/
+*.log
+
+# Secrets & Environment Variables (CRITICAL)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# Tool specific
+.mypy_cache/
+.ruff_cache/
