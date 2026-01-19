@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T15:47:13.479152",
+  "generated_at": "2026-01-19T16:32:10.036265",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -968,6 +968,25 @@
         "keyword:testing",
         "project:pyproject.toml",
         "project:requirements.txt"
+      ],
+      "version": "2.2.0"
+    },
+    "jax-diffeq-pro": {
+      "path": "agent_skills/jax-diffeq-pro/SKILL.md",
+      "description": "JAX-first differential equations expert for Diffrax, stiff solvers, adjoint",
+      "triggers": [
+        "file:.py",
+        "keyword:diffrax",
+        "keyword:ode",
+        "keyword:sde",
+        "keyword:solver",
+        "keyword:differential",
+        "keyword:adjoint",
+        "keyword:stiff",
+        "keyword:runge-kutta",
+        "keyword:jacobian",
+        "keyword:euler",
+        "project:pyproject.toml"
       ],
       "version": "2.2.0"
     },
