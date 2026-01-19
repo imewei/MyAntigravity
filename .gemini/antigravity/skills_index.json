@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T15:22:28.419562",
+  "generated_at": "2026-01-19T15:25:36.922401",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -51,6 +51,25 @@
         "keyword:traces"
       ],
       "version": "2.0.0"
+    },
+    "jax-bayesian-pro": {
+      "path": "agent_skills/jax-bayesian-pro/SKILL.md",
+      "description": "JAX-first Bayesian expert for inference-as-transformation, NumPyro/BlackJAX",
+      "triggers": [
+        "file:.py",
+        "keyword:bayesian",
+        "keyword:mcmc",
+        "keyword:numpyro",
+        "keyword:blackjax",
+        "keyword:posterior",
+        "keyword:inference",
+        "keyword:hmc",
+        "keyword:nuts",
+        "keyword:prior",
+        "keyword:likelihood",
+        "project:pyproject.toml"
+      ],
+      "version": "2.2.0"
     },
     "kubernetes-architect": {
       "path": "agent_skills/kubernetes-architect/SKILL.md",
