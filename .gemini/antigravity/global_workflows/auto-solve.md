@@ -1,4 +1,4 @@
-# Auto-Solve Workflow (v2.0)
+# Auto-Solve Workflow (v2.2)
 
 // turbo-all
 
@@ -22,7 +22,26 @@
 
 3.  **Load Specialists**
     - Based on Phase 1 results, identifying the best agent for the job.
-    - (Note: In a real run, you would now call the identified agent).
+    - Route to consolidated v2.2 personas:
+
+    | Domain | Primary Persona |
+    |--------|-----------------|
+    | Debugging | `debugging-pro` |
+    | Performance | `performance-engineering-lead` |
+    | Multi-Agent | `multi-agent-systems-lead` |
+    | Correlation/Scattering | `correlation-science-lead` |
+    | Neural Networks | `neural-systems-architect` |
+    | Infrastructure/DevOps | `infrastructure-operations-lead` |
+    | Physics/Simulation | `computational-physics-expert` |
+    | Visualization | `scientific-visualization-lead` |
+    | Research/Papers | `research-pro` |
+    | NLSQ/Fitting | `nlsq-pro` |
+    | Bayesian/MCMC | `numpyro-pro` |
+    | Python | `python-pro` |
+    | Julia | `julia-pro` |
+    | TypeScript | `typescript-pro` |
+    | JavaScript | `javascript-pro` |
 
 4.  **Triage**
     - If no relevant skill found, default to `python-pro` or `generalist`.
+
