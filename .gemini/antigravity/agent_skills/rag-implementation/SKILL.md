@@ -11,8 +11,10 @@ skills:
 - vector-ops
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:rag-implementation
----
+- keyword:rag
+- keyword:retrieval
+- keyword:vector
+- keyword:embedding
 
 # RAG Implementation
 

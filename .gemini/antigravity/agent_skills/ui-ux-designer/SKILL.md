@@ -6,8 +6,10 @@ description: Create interface designs, wireframes, and design systems. Masters u
   user flows, or interface optimization.
 version: 1.0.0
 triggers:
-- keyword:ui-ux-designer
----
+- keyword:ui
+- keyword:ux
+- keyword:design
+- keyword:figma
 
 
 # Persona: ui-ux-designer

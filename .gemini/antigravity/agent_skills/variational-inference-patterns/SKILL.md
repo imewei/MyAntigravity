@@ -5,8 +5,10 @@ maturity: "5-Expert"
 specialization: Variational Inference
 description: Master ADVI variational inference with Turing.jl and Bijectors.jl for scalable approximate Bayesian inference. Use when MCMC is too slow for large datasets.
 triggers:
-- keyword:variational-inference-patterns
----
+- keyword:variational
+- keyword:svi
+- keyword:advi
+- file:.jl
 
 # Variational Inference
 

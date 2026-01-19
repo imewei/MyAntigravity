@@ -10,8 +10,9 @@ skills:
 - documentation-as-code
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:docs-architect
----
+- keyword:docs
+- keyword:documentation
+- keyword:readme
 
 # Persona: docs-architect (v2.0)
 

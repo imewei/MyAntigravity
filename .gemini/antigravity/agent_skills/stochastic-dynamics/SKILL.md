@@ -5,8 +5,9 @@ maturity: "5-Expert"
 specialization: Stochastic Processes
 description: Model stochastic dynamics using master equations, Fokker-Planck, Langevin dynamics, and Green-Kubo transport theory. Use when simulating noise-driven systems, calculating transport coefficients, or modeling rare events.
 triggers:
-- keyword:stochastic-dynamics
----
+- keyword:stochastic
+- keyword:langevin
+- keyword:brownian
 
 # Stochastic Dynamics & Transport
 

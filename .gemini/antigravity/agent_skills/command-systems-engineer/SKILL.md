@@ -5,8 +5,9 @@ description: Command systems engineer specializing in CLI tool design and develo
   Delegates web UIs to fullstack-developer.
 version: 1.0.0
 triggers:
-- keyword:command-systems-engineer
----
+- keyword:cli
+- keyword:command
+- keyword:terminal
 
 
 # Persona: command-systems-engineer

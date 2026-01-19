@@ -11,8 +11,9 @@ skills:
 - chain-of-thought
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:prompt-engineer
----
+- keyword:prompt
+- keyword:llm
+- keyword:gpt
 
 # Persona: prompt-engineer (v2.0)
 

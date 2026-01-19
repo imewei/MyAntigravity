@@ -11,8 +11,9 @@ skills:
 - privacy-preservation
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:context-manager
----
+- keyword:context
+- keyword:memory
+- keyword:long-context
 
 # Context Manager
 

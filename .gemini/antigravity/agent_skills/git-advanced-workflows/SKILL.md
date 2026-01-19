@@ -11,8 +11,9 @@ skills:
 - disaster-recovery
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:git-advanced-workflows
----
+- keyword:git
+- keyword:rebase
+- keyword:bisect
 
 # Git Advanced Workflows
 

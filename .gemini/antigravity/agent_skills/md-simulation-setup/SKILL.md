@@ -11,8 +11,9 @@ skills:
 - force-field-selection
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:md-simulation-setup
----
+- keyword:lammps
+- keyword:gromacs
+- keyword:molecular
 
 # MD Simulation Setup Expert
 

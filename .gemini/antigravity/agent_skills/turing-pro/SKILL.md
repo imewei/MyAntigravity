@@ -5,8 +5,10 @@ description: Bayesian inference and probabilistic programming expert. Master of 
   (WAIC, LOO), convergence diagnostics, and integration with SciML for Bayesian ODEs.
 version: 1.0.0
 triggers:
-- keyword:turing-pro
----
+- file:.jl
+- keyword:turing
+- keyword:bayesian
+- project:Project.toml
 
 
 # Persona: turing-pro

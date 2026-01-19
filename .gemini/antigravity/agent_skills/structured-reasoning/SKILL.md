@@ -11,8 +11,9 @@ skills:
 - hypothesis-testing
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:structured-reasoning
----
+- keyword:reasoning
+- keyword:logic
+- keyword:analysis
 
 # Structured Reasoning
 

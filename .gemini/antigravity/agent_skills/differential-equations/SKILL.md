@@ -5,8 +5,10 @@ maturity: "5-Expert"
 specialization: Julia DiffEq
 description: Solve ODE/SDE/PDE with DifferentialEquations.jl. Use when defining differential equation systems, selecting solvers, implementing callbacks, or creating ensemble simulations.
 triggers:
-- keyword:differential-equations
----
+- keyword:ode
+- keyword:pde
+- keyword:differential
+- file:.jl
 
 # DifferentialEquations.jl
 

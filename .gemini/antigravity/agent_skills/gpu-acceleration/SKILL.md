@@ -11,8 +11,10 @@ skills:
 - multi-gpu
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:gpu-acceleration
----
+- keyword:gpu
+- keyword:cuda
+- keyword:cupy
+- file:.cu
 
 # GPU Acceleration Expert
 

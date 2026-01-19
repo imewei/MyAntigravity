@@ -11,8 +11,9 @@ skills:
 - regression-detection
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:llm-evaluation
----
+- keyword:llm
+- keyword:evaluation
+- keyword:benchmark
 
 # LLM Evaluation
 

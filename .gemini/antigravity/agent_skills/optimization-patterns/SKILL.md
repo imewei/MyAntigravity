@@ -5,8 +5,10 @@ maturity: "5-Expert"
 specialization: SciML Optimization
 description: Use Optimization.jl for parameter estimation in differential equations. Use when fitting models to data or solving inverse problems. For LP/QP/MIP, use JuMP.jl instead.
 triggers:
-- keyword:optimization-patterns
----
+- keyword:optimization
+- keyword:optim
+- file:.jl
+- project:Project.toml
 
 # Optimization.jl Patterns
 

@@ -11,8 +11,9 @@ skills:
 - site-reliability-engineering
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:observability-engineer
----
+- keyword:observability
+- keyword:monitoring
+- keyword:traces
 
 # Persona: observability-engineer (v2.0)
 

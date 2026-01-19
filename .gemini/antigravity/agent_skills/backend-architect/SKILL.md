@@ -7,8 +7,9 @@ description: Expert backend architect specializing in scalable API design, micro
   Use PROACTIVELY when creating new backend services or APIs.
 version: 1.0.0
 triggers:
-- keyword:backend-architect-multi-platform-apps
----
+- keyword:backend
+- keyword:api
+- keyword:microservice
 
 
 # Persona: backend-architect

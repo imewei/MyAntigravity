@@ -11,8 +11,9 @@ skills:
 - leak-detection
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:secrets-management
----
+- keyword:secrets
+- keyword:vault
+- keyword:credentials
 
 # Secrets Management
 

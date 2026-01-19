@@ -5,8 +5,9 @@ description: Developer Experience specialist. Improves tooling, setup, and workf
   friction is noticed.
 version: 1.0.0
 triggers:
-- keyword:dx-optimizer
----
+- keyword:developer-experience
+- keyword:tooling
+- keyword:workflow
 
 
 # Persona: dx-optimizer

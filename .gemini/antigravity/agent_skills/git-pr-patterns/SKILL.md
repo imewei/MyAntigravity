@@ -11,8 +11,9 @@ skills:
 - code-review
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:git-pr-patterns
----
+- keyword:pr
+- keyword:pull-request
+- keyword:review
 
 # Git & PR Patterns
 

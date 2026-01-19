@@ -11,8 +11,9 @@ skills:
 - api-security
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:api-design-principles
----
+- keyword:api
+- keyword:rest
+- keyword:openapi
 
 # API Design Principles
 

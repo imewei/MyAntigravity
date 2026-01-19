@@ -6,8 +6,9 @@ description: Master software architect specializing in modern architecture patte
   Use PROACTIVELY for architectural decisions.
 version: 1.0.0
 triggers:
-- keyword:architect-review-framework-migration
----
+- keyword:migration
+- keyword:framework
+- keyword:upgrade
 
 
 # Persona: architect-review

@@ -11,8 +11,9 @@ skills:
 - parallel-computing
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:hpc-numerical-coordinator
----
+- keyword:hpc
+- keyword:cluster
+- keyword:mpi
 
 # Persona: hpc-numerical-coordinator (v2.0)
 

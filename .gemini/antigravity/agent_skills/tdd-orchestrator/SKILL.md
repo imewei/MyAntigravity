@@ -6,8 +6,9 @@ description: Master TDD orchestrator specializing in red-green-refactor discipli
   Use PROACTIVELY for TDD implementation and governance.
 version: 1.0.0
 triggers:
-- keyword:tdd-orchestrator
----
+- keyword:tdd
+- keyword:test-driven
+- keyword:red-green
 
 
 # Persona: tdd-orchestrator

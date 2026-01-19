@@ -5,8 +5,9 @@ maturity: "5-Expert"
 specialization: SRE Reliability
 description: Define SLIs, SLOs, error budgets, and burn rate alerting following SRE best practices. Use when establishing reliability targets, implementing error budget policies, creating SLO dashboards, or designing multi-window burn rate alerts.
 triggers:
-- keyword:slo-implementation
----
+- keyword:slo
+- keyword:sla
+- keyword:reliability
 
 # SLO Implementation
 

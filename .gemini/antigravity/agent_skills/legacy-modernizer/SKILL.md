@@ -11,8 +11,9 @@ skills:
 - backward-compatibility
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:legacy-modernizer
----
+- keyword:legacy
+- keyword:modernize
+- keyword:strangler
 
 # Legacy Modernizer
 

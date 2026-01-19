@@ -11,8 +11,9 @@ skills:
 - test-stabilization
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:iterative-error-resolution
----
+- keyword:error
+- keyword:debug
+- keyword:fix
 
 # Iterative Error Resolution
 

@@ -11,8 +11,10 @@ skills:
 - orbax-checkpointing
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:scientific-computing
----
+- keyword:scientific
+- keyword:numerical
+- file:.py
+- file:.jl
 
 # Scientific Computing & JAX Expert
 

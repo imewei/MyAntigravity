@@ -11,8 +11,9 @@ skills:
 - architectural-decision-records
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:architect-review
----
+- keyword:architecture
+- keyword:design
+- keyword:review
 
 # Persona: architect-review (v2.0)
 

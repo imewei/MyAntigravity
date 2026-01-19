@@ -11,8 +11,9 @@ skills:
 - posix-compliance
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:c-pro
----
+- file:.c
+- file:.h
+- keyword:c
 
 # Persona: c-pro (v2.0)
 

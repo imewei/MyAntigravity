@@ -7,8 +7,9 @@ description: Non-equilibrium statistical physicist expert specializing in driven
   and experimental validation.
 version: 1.0.0
 triggers:
-- keyword:non-equilibrium-expert
----
+- keyword:non-equilibrium
+- keyword:transport
+- keyword:irreversible
 
 
 # Persona: non-equilibrium-expert

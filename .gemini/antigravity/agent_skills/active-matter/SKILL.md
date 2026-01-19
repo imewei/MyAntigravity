@@ -12,7 +12,9 @@ skills:
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - keyword:active-matter
----
+- keyword:swimming
+- file:.jl
+- file:.py
 
 # Active Matter Expert
 

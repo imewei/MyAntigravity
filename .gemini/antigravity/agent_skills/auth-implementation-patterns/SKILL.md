@@ -3,8 +3,9 @@ name: auth-implementation-patterns
 version: "1.0.7"
 description: Master authentication patterns including JWT (access/refresh tokens), OAuth2/OpenID Connect, session-based auth, RBAC/ABAC, API keys, MFA, SSO, password hashing (bcrypt/argon2), secure cookies, and CSRF protection. Use when implementing auth systems, securing APIs, or designing access control.
 triggers:
-- keyword:auth-implementation-patterns
----
+- keyword:auth
+- keyword:oauth
+- keyword:jwt
 
 # Authentication & Authorization Patterns
 

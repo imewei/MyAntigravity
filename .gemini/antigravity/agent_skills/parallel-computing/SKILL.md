@@ -5,8 +5,10 @@ maturity: "5-Expert"
 specialization: Julia Parallelism
 description: Master multi-threading, Distributed.jl, and GPU computing with CUDA.jl. Use when scaling computations across CPUs or GPUs for scientific computing.
 triggers:
-- keyword:parallel-computing
----
+- keyword:parallel
+- keyword:threading
+- keyword:distributed
+- file:.jl
 
 # Julia Parallel Computing
 

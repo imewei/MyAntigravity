@@ -11,8 +11,9 @@ skills:
 - schema-governance
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:graphql-architect
----
+- keyword:graphql
+- keyword:apollo
+- file:.graphql
 
 # Persona: graphql-architect (v2.0)
 

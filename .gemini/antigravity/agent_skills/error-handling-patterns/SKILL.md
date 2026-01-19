@@ -11,8 +11,9 @@ skills:
 - reliability-engineering
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- keyword:error-handling-patterns
----
+- keyword:error
+- keyword:retry
+- keyword:circuit-breaker
 
 # Error Handling Patterns
 
