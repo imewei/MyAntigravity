@@ -109,10 +109,33 @@ def train_step(params, batch, *, learning_rate):  # lr can be kwarg
 batched_predict = jax.vmap(predict, in_axes=(None, 0))
 
 # Compiled loop (NOT Python for-loop)
-def rnn_scan(params, carry, xs):
+def rnn_forward(cell_fn, params, carry, xs):
     def step(carry, x):
-        return cell(params, carry, x), carry
+        new_carry = cell_fn(params, carry, x)
+        return new_carry, new_carry
     return jax.lax.scan(step, carry, xs)
+```
+
+---
+
+## Random Key Management (Critical)
+
+JAX uses **stateless PRNG**. Never reuse keys!
+
+```python
+# Initialize and split keys
+key = jax.random.PRNGKey(42)
+key, subkey1, subkey2 = jax.random.split(key, 3)
+
+# Use subkeys for randomness
+x = jax.random.normal(subkey1, (100,))
+weights = jax.random.uniform(subkey2, (10, 10))
+
+# In training loops: thread key through
+def train_step(params, batch, key):
+    key, dropout_key = jax.random.split(key)
+    loss = forward_with_dropout(params, batch, dropout_key)
+    return params, key  # Return updated key
 ```
 
 ---
@@ -128,13 +151,40 @@ squared = jax.tree_map(jnp.square, params)
 leaves, treedef = jax.tree_util.tree_flatten(params)
 params_restored = jax.tree_util.tree_unflatten(treedef, leaves)
 
-# Custom PyTree registration
+# Custom PyTree registration (dataclass)
+from dataclasses import dataclass
+
 @dataclass
 class ModelState:
     params: dict
     opt_state: optax.OptState
-    
-jax.tree_util.register_dataclass(ModelState, ...)
+
+# Register as PyTree (JAX 0.4.1+)
+jax.tree_util.register_dataclass(
+    ModelState, data_fields=['params', 'opt_state'], meta_fields=[]
+)
+```
+
+---
+
+## Custom Derivatives (VJP/JVP)
+
+Define custom backward passes for numerical stability or efficiency:
+
+```python
+@jax.custom_vjp
+def safe_sqrt(x):
+    return jnp.sqrt(jnp.maximum(x, 0.0))
+
+def safe_sqrt_fwd(x):
+    return safe_sqrt(x), x  # Return primal and residuals
+
+def safe_sqrt_bwd(res, g):
+    x = res
+    # Avoid division by zero in gradient
+    return (jnp.where(x > 1e-10, g / (2 * jnp.sqrt(x)), 0.0),)
+
+safe_sqrt.defvjp(safe_sqrt_fwd, safe_sqrt_bwd)
 ```
 
 ---
@@ -152,6 +202,23 @@ print(compiled.as_text())  # HLO text
 with jax.profiler.trace("/tmp/jax-trace"):
     result = fn(x)
 # Visualize with Perfetto: perfetto /tmp/jax-trace
+```
+
+### Debugging Utilities
+
+```python
+# Escape JIT for eager debugging
+with jax.disable_jit():
+    result = fn(x)  # Runs in Python eager mode
+
+# Debug print inside JIT (won't break compilation)
+@jax.jit
+def fn(x):
+    jax.debug.print("x shape: {shape}, mean: {mean}", shape=x.shape, mean=x.mean())
+    return x * 2
+
+# Debug callback for complex inspection
+jax.debug.callback(lambda v: print(f"Traced value: {v}"), traced_value)
 ```
 
 ### Memory Management
@@ -235,6 +302,23 @@ final_state, trajectory = jax.lax.scan(euler_step, init, ts)
 | **Diffrax** | Differentiable ODEs/SDEs | `diffrax.diffeqsolve()` |
 | **Lineax** | Linear solvers | `lineax.linear_solve()` |
 | **Optimistix** | Root finding/least squares | `optimistix.least_squares()` |
+| **interpax** | JIT-safe interpolation | `interpax.interp1d()` |
+| **BlackJAX** | MCMC samplers | `blackjax.nuts()`, `blackjax.hmc()` |
+| **Oryx** | Effect handlers | Probabilistic programming |
+
+### Advanced: Pallas Kernels
+
+For extreme optimization, write custom XLA kernels with **Pallas**:
+
+```python
+from jax.experimental import pallas as pl
+
+# Custom fused kernel (bypasses XLA limitations)
+@pl.pallas_call(...)
+def custom_kernel(x):
+    # Low-level kernel code
+    pass
+```
 
 ---
 
