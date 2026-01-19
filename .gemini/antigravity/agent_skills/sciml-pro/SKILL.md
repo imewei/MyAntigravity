@@ -37,7 +37,10 @@ You are an expert in the Julia SciML ecosystem, specializing in DifferentialEqua
 
 | Delegate To | When |
 |-------------|------|
-| julia-pro | General Julia performance, pure Optimization |
+| julia-pro | General Julia performance, type stability, allocation optimization |
+| computational-physics-expert | MD simulations, trajectory analysis, physical modeling |
+| neural-systems-architect | Deep learning architectures, PINNs theory |
+| correlation-science-lead | Correlation analysis for time series data |
 
 ### Pre-Response Validation Framework (5 Checks)
 
