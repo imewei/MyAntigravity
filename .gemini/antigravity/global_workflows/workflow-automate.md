@@ -1,93 +1,50 @@
 ---
-description: Workflow for workflow-automate
+description: Automate development workflows (CI/CD)
 triggers:
 - /workflow-automate
-- workflow for workflow automate
-allowed-tools: [Write, Bash, Read, Task]
-version: 1.0.0
+- automate workflow
+version: 2.0.0
+allowed-tools: [Read, Write, Bash]
+agents:
+  primary: devops-architect
+skills:
+- ci-cd-pipelines
+- infrastructure-as-code
+argument-hint: '[--platform=github|gitlab]'
 ---
 
+# Automation Architect (v2.0)
 
+// turbo-all
 
-# Workflow Automation
+## Phase 1: Discovery (Parallel)
 
-$ARGUMENTS
+// parallel
 
-## Mode Coverage
+1.  **Platform Check**
+    - Action: Detect GitHub/GitLab.
 
-| Feature | Quick | Standard | Enterprise |
-|---------|-------|----------|------------|
-| Analysis + GitHub/GitLab* | ✅ | ✅ | ✅ |
-| Release automation | - | ✅ | ✅ |
-| Security scanning | - | ✅ | ✅ |
-| Monitoring + orchestration | - | ✅ | ✅ |
-| Terraform IaC + compliance | - | - | ✅ |
+2.  **Gap Analysis**
+    - Action: Check for existing CI files.
 
-*Quick: Select one platform
+// end-parallel
 
-## 1. Analysis
+## Phase 2: Design (Sequential)
 
-Detect existing workflows (`.github/workflows/*.yml`, `.gitlab-ci.yml`), manual processes (scripts, README), automation opportunities
+3.  **Pipeline Strategy**
+    - Design stages: Quality -> Test -> Build -> Deploy.
 
-## 2. GitHub Actions
+## Phase 3: Implementation (Parallel)
 
-**Pipeline:** quality → test → build → deploy → verify
+// parallel
 
-- Quality: Lint, type check, security audit
-- Test: Unit + integration, matrix (OS × versions)
-- Build: Multi-environment, artifacts
-- Deploy: ECS/K8s, environment gates
-- Verify: Smoke tests, E2E, performance
-- Features: Caching, Trivy scanning, notifications
+4.  **CI Configuration**
+    - Action: Generate YAML files.
 
-## 3. Release Automation
+5.  **Security Scanning**
+    - Action: Add Trivy/Snyk steps.
 
-semantic-release: commit-analyzer, changelog, npm, GitHub releases. Branches: `main`, `beta`
+6.  **Release Automation**
+    - Action: Add Semantic Release.
 
-## 4. GitLab CI
-
-**Stages:** quality → test → build → deploy
-
-- Matrix testing: `parallel: matrix`
-- Artifacts: `expire_in: 1 week`
-- Environments: staging/production with approval
-
-## 5. Terraform IaC (Enterprise)
-
-fmt → init → validate → plan → apply (main only). PR comments, S3 remote state
-
-## 6. Security
-
-Trivy (vulnerabilities), Snyk (dependencies), OWASP, SonarCloud, Semgrep (SAST), Gitleaks (secrets). Run: push, PR, weekly
-
-## 7. Monitoring
-
-Prometheus + Grafana + Alertmanager (Helm). Custom dashboards, alerts
-
-## 8. Dependency Updates
-
-Renovate: Auto-merge minor/patch, dev deps, `@types/*`. Vulnerability auto-merge. Schedule: 10pm+ weekdays, max 3 PRs
-
-## 9. Orchestration
-
-Parallel (independent tasks), Sequential (deploy→tests), Retry (transient failures), Conditional (env-specific)
-
-## Usage
-
-```bash
-/workflow-automate --mode=quick-start --platform=github
-/workflow-automate --mode=standard --security-level=high
-/workflow-automate --mode=enterprise --compliance=soc2 --iac-tool=terraform
-```
-
-**Options:** `--platform=github|gitlab|both`, `--environment=dev,staging,prod`, `--security-level=basic|standard|high`, `--compliance=none|soc2|hipaa|pci`
-
-## Deliverables
-
-- Quick: Single workflow, basic security, guide
-- Standard: + Release automation, security scanning, monitoring, pre-commit hooks
-- Enterprise: + Terraform IaC, compliance validation, auto-docs, dependency automation
-
-## Success
-
-CI/CD runs on first commit, security blocks critical vulns, automated deployments, monitoring active, zero manual steps
+// end-parallel

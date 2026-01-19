@@ -1,68 +1,37 @@
 ---
-description: Generate GitHub Actions CI/CD workflows for Julia packages
+description: Generate GitHub Actions CI/CD for Julia packages
 triggers:
 - /julia-package-ci
-- generate github actions ci/cd
-allowed-tools: [Read, Task, Bash]
-version: 1.0.0
+- generate julia ci/cd
+version: 2.0.0
+allowed-tools: [Read, Write, Bash]
+agents:
+  primary: devops-engineer
+skills:
+- julia-package-development
+argument-hint: ''
 ---
 
+# Julia CI Generator (v2.0)
 
+// turbo-all
 
-# Generate CI/CD Workflows for Julia Packages
+## Phase 1: Generation (Parallel)
 
-**Docs**: [ci-cd-workflows.md](../../plugins/julia-development/docs/ci-cd-workflows.md) (~400 lines)
+// parallel
 
-## Workflow Structure
+1.  **CI Workflow**
+    - Action: Generate `.github/workflows/CI.yml` (Test, Coverage).
 
-| Component | Purpose |
-|-----------|---------|
-| actions/checkout@v4 | Checkout code |
-| julia-actions/setup-julia@v1 | Install Julia |
-| julia-actions/cache@v1 | Cache packages |
-| julia-actions/julia-buildpkg@v1 | Build |
-| julia-actions/julia-runtest@v1 | Test |
+2.  **CompatHelper**
+    - Action: Generate `.github/workflows/CompatHelper.yml`.
 
-## Configuration
+3.  **TagBot**
+    - Action: Generate `.github/workflows/TagBot.yml`.
 
-### Platform
-- Linux (ubuntu-latest): Always
-- macOS: Platform-specific code
-- Windows: Windows compatibility
+// end-parallel
 
-### Julia Versions
-- LTS (1.6): Long-term support
-- Latest (1): Current
-- Nightly: Future compatibility
+## Phase 2: Deployment (Sequential)
 
-### Features
-- Coverage: Codecov/Coveralls
-- Documentation: Documenter.jl
-- CompatHelper: Dependency updates
-- TagBot: Release automation
-- JuliaFormatter: Code formatting
-- Quality: Aqua.jl, JET.jl
-
-## Coverage Setup
-
-1. Add julia-processcoverage action
-2. Add codecov-action with lcov.info
-3. Create .codecov.yml (target 80%)
-4. Add badge to README
-
-## Documentation
-
-Generate Documentation.yml:
-- Trigger on main, tags, PRs
-- Install docs dependencies
-- Deploy with DOCUMENTER_KEY
-
-## Post-Generation
-
-1. `git add .github/workflows/ && git commit`
-2. `DocumenterTools.genkeys()` (setup secrets)
-3. `git push`
-4. Add badges to README
-5. Monitor GitHub Actions
-
-**Outcome**: Production-ready CI/CD with tests, coverage, docs, and automation
+4.  **Commit & Push**
+    - Action: `git add .github && git commit -m "add ci" && git push`.

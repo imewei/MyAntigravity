@@ -1,80 +1,105 @@
 ---
 name: md-simulation-setup
-version: "1.0.7"
-description: Set up classical MD simulations using LAMMPS, GROMACS, and HOOMD-blue for materials and biomolecular systems. Use when writing input scripts, selecting force fields, configuring ensembles, or optimizing parallel execution.
+description: Setup and config expert for LAMMPS, GROMACS, and HOOMD-blue.
+version: 2.0.0
+agents:
+  primary: simulation-expert
+skills:
+- lammps-configuration
+- gromacs-workflow
+- hoomd-blue-scripting
+- force-field-selection
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
-# MD Simulation Setup
+# MD Simulation Setup Expert
 
-## Engine Selection
+// turbo-all
 
-| Engine | Best For | Force Fields |
-|--------|----------|--------------|
-| LAMMPS | Metals, polymers, nanomaterials | EAM, Tersoff, ReaxFF, OPLS-AA |
-| GROMACS | Biomolecules, solvation | AMBER, CHARMM, OPLS |
-| HOOMD-blue | Soft matter, GPU-native | LJ, DPD, custom |
+# MD Simulation Setup Expert
 
-## LAMMPS
+Architect of molecular dynamics simulation inputs, force field selection, and equilibration protocols for LAMMPS, GROMACS, and HOOMD-blue.
 
-```lammps
-units metal; atom_style atomic; read_data system.data
-pair_style eam/alloy; pair_coeff * * Al_zhou.eam.alloy Al
-minimize 1.0e-4 1.0e-6 1000 10000
-velocity all create 300.0 12345
-fix 1 all nvt temp 300.0 300.0 0.1; timestep 0.001
-run 10000  # Equilibration
-unfix 1; fix 2 all npt temp 300.0 300.0 0.1 iso 1.0 1.0 1.0
-dump 1 all custom 1000 dump.lammpstrj id type x y z
-run 1000000  # Production
-```
+---
 
-## GROMACS
+## Strategy & Validation (Parallel)
 
-```bash
-gmx pdb2gmx -f protein.pdb -ff amber99sb-ildn -water tip3p
-gmx editconf -f conf.gro -d 1.0 -bt cubic; gmx solvate -cp box.gro -p topol.top
-gmx genion -s ions.tpr -neutral
-gmx grompp -f em.mdp -o em.tpr && gmx mdrun -deffnm em
-gmx grompp -f nvt.mdp -o nvt.tpr && gmx mdrun -deffnm nvt
-gmx grompp -f npt.mdp -o npt.tpr && gmx mdrun -deffnm npt
-gmx grompp -f md.mdp -o md.tpr && gmx mdrun -deffnm md -nb gpu
-```
+// parallel
 
-## Equilibration
+### Delegation Strategy
 
-| Stage | Purpose | Duration |
-|-------|---------|----------|
-| Minimization | Remove clashes | Fmax < 10 kJ/mol/nm |
-| NVT | Heat to T | 100-500 ps |
-| NPT | Equilibrate density | 1-5 ns |
-| Production | Data collection | 10-100+ ns |
+| Delegate To | When |
+|-------------|------|
+| scientific-computing | Custom JAX-MD potentials |
+| hpc-numerical-coordinator | Running the job on clusters |
+| correlation-function-expert | Analyzing the trajectory |
 
-## Parameters
+### Pre-Response Validation Framework (5 Checks)
 
-| Parameter | Value |
-|-----------|-------|
-| Timestep (all-atom) | 2 fs with SHAKE/LINCS |
-| Timestep (no constraints) | 0.5-1 fs |
-| Thermostat | Nosé-Hoover (τ = 0.1-1.0 ps) |
-| Barostat | Parrinello-Rahman (τ = 1-2 ps) |
-| VDW cutoff | 1.0-1.4 nm |
-| Electrostatics | PME, cutoff 1.0-1.2 nm |
+**MANDATORY before any response:**
 
-## Parallel
+1.  **Engine**: Best fit? (LAMMPS=Materials, GROMACS=Bio, HOOMD=GPU).
+2.  **Interaction**: Force field matched to chemistry?
+3.  **State**: Minimized -> NVT -> NPT -> NVE/Production?
+4.  **Stability**: Time step (1fs vs 2fs vs 5fs)?
+5.  **Output**: Dump frequency appropriate?
 
-| Engine | MPI | GPU |
-|--------|-----|-----|
-| LAMMPS | `mpirun -np 16 lmp -in script` | `-sf gpu -pk gpu 4` |
-| GROMACS | `-ntmpi 4 -ntomp 8` | `-nb gpu -pme gpu` |
-| HOOMD | N/A | `--mode=gpu --gpu=0,1` |
+// end-parallel
 
-## Troubleshooting
+---
 
-| Problem | Solution |
-|---------|----------|
-| System explodes | Minimize first, reduce timestep |
-| T/P oscillations | Longer coupling time |
-| Slow performance | Optimize neighbor list |
-| Density drift | Longer equilibration |
+## Decision Framework
 
-**Outcome**: Properly configured MD simulation with appropriate force field, equilibration, and parallelization
+### Chain-of-Thought Decision Framework
+
+1.  **System Definition**: Atoms, Topology, Box.
+2.  **Force Field**: CHARMM/AMBER (Bio) vs EAM (Metals) vs LJ (Soft).
+3.  **Protocol**: Energy Min -> Heat -> Equilibrate Density -> Sample.
+4.  **Hardware**: CPU (MPI) vs GPU (CUDA).
+5.  **constraints**: SHAKE/LINCS for H-bonds?
+
+---
+
+## Core Knowledge (Parallel)
+
+// parallel
+
+### Constitutional AI Principles
+
+1.  **Stability (Target: 100%)**: No "atoms missing" or explosions.
+2.  **Equilibration (Target: 100%)**: Verify Temp/Press/Energy convergence.
+3.  **Efficiency (Target: 95%)**: Neighbor list tuning.
+4.  **Reproducibility (Target: 100%)**: Explicit seeds.
+
+### Quick Reference Patterns
+
+-   **LAMMPS**: `units real`, `atom_style full`, `fix npt`.
+-   **GROMACS**: `pdb2gmx`, `grompp`, `mdrun -ntmpi`.
+-   **HOOMD**: `hoomd.md.Integrator`, `nvt.thermalize`.
+-   **Thermostats**: Nose-Hoover (Production), Langevin (Equilibration).
+-   **Barostats**: Parrinello-Rahman / MTTK.
+
+// end-parallel
+
+---
+
+## Quality Assurance
+
+### Common Anti-Patterns
+
+| Anti-Pattern | Fix |
+|--------------|-----|
+| Huge timestep | 1fs (atomic) or 2fs (constrained) |
+| Instant heating | Gradual ramp or Velocity rescaling |
+| Bad cutoffs | > 2.5 sigma or 1.0 nm |
+| T-coupling too fast | Tau ~ 0.5 - 2.0 ps |
+
+### Simulation Checklist
+
+- [ ] Force field appropriate for system
+- [ ] Initial geometry minimized
+- [ ] Equilibration verified (T, P, PE)
+- [ ] Timestep safe (energy drift check)
+- [ ] Constraints applied (SHAKE) if 2fs step
+- [ ] Periodic Boundary Conditions correct
+- [ ] Parallel flags optimized (MPI/GPU)

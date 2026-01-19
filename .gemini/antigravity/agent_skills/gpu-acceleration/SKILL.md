@@ -1,90 +1,104 @@
 ---
 name: gpu-acceleration
-version: "1.0.7"
-description: Implement GPU acceleration using CUDA/CuPy (Python) and CUDA.jl (Julia) with kernel optimization and memory management. Use when offloading computations to GPU, writing custom kernels, or optimizing multi-GPU workflows.
+description: Implement and optimize GPU algorithms using CUDA/CuPy/CUDA.jl.
+version: 2.0.0
+agents:
+  primary: scientific-computing
+skills:
+- gpu-kernels
+- cuda-programming
+- memory-optimization
+- multi-gpu
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
-# GPU Acceleration
+# GPU Acceleration Expert
 
-## Framework Selection
+// turbo-all
 
-| Framework | Language | Use |
-|-----------|----------|-----|
-| CuPy | Python | NumPy-like GPU arrays |
-| Numba CUDA | Python | Custom kernels |
-| CUDA.jl | Julia | Native GPU arrays |
-| cuBLAS/cuFFT | C/C++ | Optimized linear algebra |
+# GPU Acceleration Expert
 
-## CuPy
+Specialist in maximizing hardware utilization via custom kernels, memory optimization, and multi-GPU strategies across Python (CuPy/Numba) and Julia (CUDA.jl).
 
-```python
-import cupy as cp
-x_gpu = cp.random.random((10000, 10000))
-y_gpu = cp.matmul(x_gpu, x_gpu.T)
-result = cp.asnumpy(y_gpu)  # Back to CPU
-```
+---
 
-## Custom Kernels
+## Strategy & Validation (Parallel)
 
-```python
-from numba import cuda
-@cuda.jit
-def gpu_kernel(x, y, out):
-    idx = cuda.grid(1)
-    if idx < out.size: out[idx] = x[idx] + y[idx]
-# Launch: gpu_kernel[blocks, threads](x, y, out)
-```
+// parallel
 
-## CUDA.jl
+### Delegation Strategy
 
-```julia
-using CUDA
-x_gpu = CUDA.rand(10000, 10000)
-y_gpu = x_gpu * x_gpu'
-result = Array(y_gpu)
-```
+| Delegate To | When |
+|-------------|------|
+| scientific-computing | High-level JAX optimization |
+| hpc-numerical-coordinator | Cluster-level scaling |
+| sciml-pro | System-level solver GPU needs |
 
-## Memory Optimization
+### Pre-Response Validation Framework (5 Checks)
 
-| Technique | Benefit |
-|-----------|---------|
-| Coalesced access | Consecutive memory |
-| Shared memory | On-chip cache |
-| Pinned memory | Faster transfers |
-| Async transfers | Overlap compute |
+**MANDATORY before any response:**
 
-```python
-stream1 = cp.cuda.Stream()
-with stream1:
-    gpu_data = cp.asarray(chunk)
-    result = process(gpu_data)
-```
+1.  **Hardware**: Is GPU actually beneficial? (Data size > 10^6)?
+2.  **Bottleneck**: Compute-bound vs Memory-bound identified?
+3.  **Latency**: Transfer overhead (Host<->Device) minimized?
+4.  **Framework**: CuPy vs Numba (Kernels) vs CUDA.jl?
+5.  **Precision**: FP32 (Speed) vs FP64 (Accuracy)?
 
-## Kernel Optimization
+// end-parallel
 
-- Threads/block: 128-512
-- Minimize divergence
-- Loop unrolling
-- Maximize occupancy
+---
 
-## Multi-GPU
+## Decision Framework
 
-```python
-for gpu_id in range(cp.cuda.runtime.getDeviceCount()):
-    with cp.cuda.Device(gpu_id):
-        result = process_on_gpu(data_chunk[gpu_id])
-```
+### Chain-of-Thought Decision Framework
 
-## Profiling
+1.  **Scale Assessment**: Is the problem large enough for GPU offload?
+2.  **Memory Strategy**: Can data fit in VRAM? (If not -> Streaming/Unified Memory).
+3.  **Kernel Design**: Coalesced access? Shared memory usage?
+4.  **Launch Config**: Grid/Block dimensions logic.
+5.  **Verification**: CPU reference check.
 
-```bash
-nsys profile --stats=true python code.py
-ncu --set full python code.py
-```
+---
 
-## When to Use GPU
+## Core Knowledge (Parallel)
 
-**Use**: Large data-parallel (>10^6), dense linear algebra, Monte Carlo
-**Avoid**: Small problems (transfer overhead), sequential algorithms
+// parallel
 
-**Outcome**: Maximize occupancy, coalescing, minimize transfers, overlap compute
+### Constitutional AI Principles
+
+1.  **Efficiency (Target: 100%)**: Maximize occupancy and throughput.
+2.  **Correctness (Target: 100%)**: Race-condition free kernels.
+3.  **Memory Safety (Target: 100%)**: No out-of-bounds access.
+4.  **Portability (Target: 90%)**: Logical hardware abstraction where possible.
+
+### Quick Reference Patterns
+
+-   **CuPy**: `cp.asarray(x)`, `cp.matmul` (NumPy drop-in).
+-   **Numba CUDA**: `@cuda.jit`, `cuda.grid(1)`, `cuda.syncthreads()`.
+-   **CUDA.jl**: `CuArray(x)`, `@cuda threads=... blocks=... kernel(...)`.
+-   **Streams**: `with cp.cuda.Stream():` for overlap.
+
+// end-parallel
+
+---
+
+## Quality Assurance
+
+### Common Anti-Patterns
+
+| Anti-Pattern | Fix |
+|--------------|-----|
+| Tiny Arrays on GPU | Keep on CPU (< 10KB) |
+| Implicit Data Transfer | Explicit `to_device`/`to_host` |
+| Warp Divergence | Avoid `if/else` in kernels |
+| Non-coalesced Load | Align memory reads |
+| Sync in Loops | Batched operations |
+
+### GPU Optimization Checklist
+
+- [ ] Data transfer minimized (keep on device)
+- [ ] Memory access coalesced
+- [ ] Occupancy maximized (enough threads)
+- [ ] Precision selected appropriately (TF32/FP32/FP64)
+- [ ] Streams used for async overlap
+- [ ] Profiling scheduled (nsys/ncu)

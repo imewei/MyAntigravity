@@ -1,223 +1,98 @@
 ---
 name: secrets-management
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Credential Security
-description: Implement secrets management with HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, or platform-native solutions with encryption, rotation, and access control. Use when storing API keys, database passwords, TLS certificates, or implementing secret rotation.
+description: Secure lifecycle for API keys, certificates, and credentials.
+version: 2.0.0
+agents:
+  primary: security-auditor
+skills:
+- secret-rotation
+- vault-operations
+- pipeline-security
+- leak-detection
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Secrets Management
 
-Secure credential storage with rotation and access control.
+// turbo-all
+
+# Secrets Management
+
+"Zero Trust" credential handling: Store, Inject, Rotate, Audit.
 
 ---
 
-## Tool Selection
+## Strategy & Storage (Parallel)
 
-| Tool | Best For | Features |
-|------|----------|----------|
-| HashiCorp Vault | Multi-cloud, dynamic secrets | Rotation, audit, fine-grained access |
-| AWS Secrets Manager | AWS-native | RDS integration, auto-rotation |
-| Azure Key Vault | Azure-native | HSM-backed, RBAC |
-| GitHub Secrets | GitHub Actions | Environment scopes |
-| GitLab CI Variables | GitLab CI | Masked, protected |
+// parallel
 
----
+### Secret Stores
 
-## HashiCorp Vault
+| Store | Best For | Pattern |
+|-------|----------|---------|
+| **Vault** | Enterprise, Dynamic Secrets | App authenticates -> Gets short-lived token. |
+| **AWS Secrets** | AWS-Native, RDS Rotation | App IAM Role -> SDK call. |
+| **K8s Secrets** | Cluster-Internal | Encrypted ETCD + RBAC. |
+| **GitHub** | CI/CD Pipelines | Repository Secrets (Masked). |
 
-### GitHub Actions Integration
+### Injection patterns
 
-```yaml
-- name: Import Secrets from Vault
-  uses: hashicorp/vault-action@v2
-  with:
-    url: https://vault.example.com:8200
-    token: ${{ secrets.VAULT_TOKEN }}
-    secrets: |
-      secret/data/database username | DB_USERNAME ;
-      secret/data/database password | DB_PASSWORD
+-   **Env Vars**: Standard (`process.env.API_KEY`).
+-   **Files**: Volume Mount (`/etc/secrets/key`).
+-   **Sidecar**: Agent fetches and rotates (transparent).
 
-- run: echo "Connecting as $DB_USERNAME"
-```
-
-### CLI Usage
-
-```bash
-vault kv put secret/database username=admin password=secret
-vault kv get -field=password secret/database
-```
+// end-parallel
 
 ---
 
-## AWS Secrets Manager
+## Decision Framework
 
-### GitHub Actions
+### Leak Prevention
 
-```yaml
-- uses: aws-actions/configure-aws-credentials@v4
-  with:
-    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-- name: Get secret
-  run: |
-    SECRET=$(aws secretsmanager get-secret-value \
-      --secret-id production/database \
-      --query SecretString --output text)
-    echo "::add-mask::$SECRET"
-    echo "DB_PASSWORD=$SECRET" >> $GITHUB_ENV
-```
-
-### Terraform
-
-```hcl
-data "aws_secretsmanager_secret_version" "db" {
-  secret_id = "production/database"
-}
-
-resource "aws_db_instance" "main" {
-  password = jsondecode(data.aws_secretsmanager_secret_version.db.secret_string)["password"]
-}
-```
+1.  **Pre-Commit**: `trufflehog` / `gitleaks` scans local git.
+2.  **CI Scan**: Pipeline fails if high-entropy string found.
+3.  **Runtime**: Secrets in memory only (no swap/logs).
+4.  **Rotation**: Automated cron to change keys monthly/daily.
 
 ---
 
-## Platform-Native Secrets
+## Core Knowledge (Parallel)
 
-### GitHub Secrets
+// parallel
 
-```yaml
-- run: |
-    echo "API Key: ${{ secrets.API_KEY }}"
-    echo "DB URL: ${{ secrets.DATABASE_URL }}"
+### Constitutional AI Principles
 
-# Environment-specific
-deploy:
-  environment: production
-  steps:
-    - run: echo "${{ secrets.PROD_API_KEY }}"
-```
+1.  **Ephemeral (Target: 90%)**: Short-lived dynamic secrets preferred.
+2.  **Masked (Target: 100%)**: Logs must never show plaintext values.
+3.  **Encrypted (Target: 100%)**: At rest and in transit.
 
-### GitLab CI Variables
+### Quick Reference
 
-```yaml
-deploy:
-  script:
-    - echo "Deploying with $API_KEY"
-  # Variables: Protected (protected branches only), Masked (hidden in logs)
-```
+-   `vault kv put secret/app key=value`
+-   `aws secretsmanager get-secret-value`
+-   `external-secrets` (K8s Operator).
+-   `::add-mask::${SECRET}` (GitHub Actions).
+
+// end-parallel
 
 ---
 
-## External Secrets Operator (K8s)
+## Quality Assurance
 
-```yaml
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  name: database-credentials
-spec:
-  refreshInterval: 1h
-  secretStoreRef:
-    name: vault-backend
-  target:
-    name: database-credentials
-  data:
-  - secretKey: password
-    remoteRef:
-      key: database/config
-      property: password
-```
+### Common Pitfalls
 
----
+| Pitfall | Fix |
+|---------|-----|
+| Committing `.env` | Add to `.gitignore` strictly. |
+| Hardcoded Defaults | Fail startup if secret missing, don't fallback to "password". |
+| Logs | Audit log aggregators for leaks. |
+| Broad Access | App A should not see App B's secrets. |
 
-## Secret Rotation
+### Secrets Checklist
 
-### Automated (AWS Lambda)
-
-```python
-def lambda_handler(event, context):
-    client = boto3.client('secretsmanager')
-    new_password = generate_strong_password()
-    update_database_password(new_password)
-    client.put_secret_value(
-        SecretId='my-secret',
-        SecretString=json.dumps({'password': new_password})
-    )
-```
-
-### Manual Process
-
-1. Generate new secret
-2. Update in secret store
-3. Deploy applications
-4. Verify functionality
-5. Revoke old secret
-
----
-
-## Secret Scanning
-
-### Pre-commit Hook
-
-```bash
-#!/bin/bash
-docker run --rm -v "$(pwd):/repo" \
-  trufflesecurity/trufflehog filesystem /repo
-
-if [ $? -ne 0 ]; then
-  echo "Secret detected! Commit blocked."
-  exit 1
-fi
-```
-
-### CI Pipeline
-
-```yaml
-secret-scan:
-  image: trufflesecurity/trufflehog:latest
-  script: trufflehog filesystem .
-  allow_failure: false
-```
-
----
-
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| Never commit secrets | Use .gitignore, scanning |
-| Environment separation | Different secrets per env |
-| Rotate regularly | Automate rotation |
-| Least privilege | Minimal access per service |
-| Audit logging | Track secret access |
-| Mask in logs | Use ::add-mask:: |
-
----
-
-## Common Pitfalls
-
-| Pitfall | Solution |
-|---------|----------|
-| Secrets in code | Use secret stores |
-| Same secret everywhere | Per-environment secrets |
-| No rotation | Automate rotation |
-| Overly broad access | Apply least privilege |
-| Secrets in logs | Mask all sensitive values |
-
----
-
-## Checklist
-
-- [ ] Central secret store selected
-- [ ] Secrets not committed to Git
-- [ ] Environment-specific secrets
-- [ ] Rotation policy defined
-- [ ] Secret scanning in CI
-- [ ] Audit logging enabled
-- [ ] Least-privilege access
-
----
-
-**Version**: 1.0.5
+- [ ] Central store configured (Vault/AWS/Azure)
+- [ ] Automated rotation enabled
+- [ ] Pre-commit hooks active (Gitleaks)
+- [ ] CI Logs checked for leakage
+- [ ] Least Privilege Access Policies
+- [ ] `.gitignore` audit

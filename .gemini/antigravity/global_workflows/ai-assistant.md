@@ -1,46 +1,46 @@
 ---
-description: Build production-ready AI assistants with NLU, conversation management,
-  and intelligent response generation
+description: Build production-ready AI assistants
 triggers:
 - /ai-assistant
-- build production ready ai assistants
+- build ai assistant
+version: 2.0.0
 allowed-tools: [Read, Task, Bash]
-version: 1.0.0
+agents:
+  primary: ai-architect
+skills:
+- llm-application-dev
+- conversation-design
+argument-hint: '[assistant-description]'
 ---
 
+# AI Assistant Builder (v2.0)
 
+// turbo-all
 
-## User Input
-Input arguments pattern: `<assistant_description>`
-The agent should parse these arguments from the user's request.
+## Phase 1: Architecture (Parallel)
 
-# AI Assistant Development
+// parallel
 
-Build AI assistant: $ARGUMENTS
+1.  **NLU Definition**
+    - Action: Define Intents and Entities.
 
-## Mode
-- Quick (5-10m): Basic architecture, template responses
-- Standard (15-25m): Full NLP, LLM, Docker
-- Comprehensive (30-45m): Multi-LLM, hierarchical memory, K8s, monitoring
+2.  **Flow Design**
+    - Action: Define Dialog States and Transitions.
 
-## Architecture
-**NLU** → **Dialog Manager** → **Response Generator** → **Context Manager**
-- Intent classification, entity extraction, sentiment
-- Conversation state, flow control, action selection
-- Template or LLM responses, personalization
-- Short/long-term memory
+3.  **Persona Design**
+    - Action: Define Tone, Voice, and Constraints.
 
-## Phases
+// end-parallel
 
-1. **NLU Pipeline**: Intent, entities, sentiment with parallel processing, fallback handling
-2. **Conversation Flows**: State machine (greeting, task_completion, error, farewell) with slot filling
-3. **LLM Integration**: Claude Sonnet 4.5 (primary) → GPT-4 (fallback) → Ollama (local) → static
-4. **Context**: Working (request) → Short-term (session) → Long-term (persistent) with pruning
-5. **Testing**: Unit, integration, conversation, performance
-6. **Deployment**: Docker/K8s/Serverless
-7. **Monitoring**: Response time, success rate, fallback rate, inference time
+## Phase 2: Implementation (Sequential)
 
-## Success Criteria
-Architecture, NLP pipeline, conversation flows, LLM with fallbacks, context management, testing, deployment, monitoring
+4.  **System Prompting**
+    - Action: Draft primary system prompt.
 
-Refs: ai-assistant-architecture.md, llm-integration-patterns.md, ai-testing-deployment.md
+5.  **Tool Registration**
+    - Action: Define function schemas.
+
+## Phase 3: Validation
+
+6.  **Test Cases**
+    - Action: Run conversation simulation.

@@ -1,217 +1,102 @@
 ---
 name: iterative-error-resolution
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: CI/CD Error Resolution & Knowledge-Based Fixing
-description: Iterative CI/CD error resolution with pattern recognition, automated fixes, and learning from outcomes. Use when debugging GitHub Actions, fixing dependency/build/test failures, or implementing automated error resolution loops.
+description: Automated CI/CD troubleshooting, dependency conflict resolution, and self-correcting loops.
+version: 2.0.0
+agents:
+  primary: devops-troubleshooter
+skills:
+- log-analysis
+- automated-fixing
+- dependency-resolution
+- test-stabilization
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
-# Iterative Error Resolution for CI/CD
+# Iterative Error Resolution
 
-Systematic framework for analyzing failures, applying intelligent fixes, and iterating until zero errors.
+// turbo-all
 
----
+# Iterative Error Resolution
 
-## Error Categories
-
-| Category | Examples | Fix Strategy |
-|----------|----------|--------------|
-| Dependency | npm ERESOLVE, pip conflicts | Version relaxation, flags |
-| Build | TypeScript errors, ESLint | Auto-fix, type corrections |
-| Test | Jest failures, pytest | Snapshot update, assertions |
-| Runtime | OOM, timeout | Resource limits, retries |
-| Network | ETIMEDOUT, ENOTFOUND | Retry logic, fallback |
-
----
-
-## Fix Patterns
-
-### npm Dependency Fixes
-
-```bash
-# ERESOLVE conflicts
-sed -i 's/npm install/npm install --legacy-peer-deps/g' .github/workflows/*.yml
-
-# 404 package
-npm uninstall "$package_name"
-jq "del(.dependencies[\"$package_name\"])" package.json > temp.json && mv temp.json package.json
-```
-
-### Python Dependency Fixes
-
-```bash
-# Version conflict - relax constraint
-sed -i "s/${package}==.*/${package}/g" requirements.txt
-
-# Missing module
-pip install "$missing_module" && pip freeze | grep -i "$missing_module" >> requirements.txt
-```
-
-### TypeScript Fixes
-
-```typescript
-// Object possibly undefined -> add optional chaining
-fixed = content.replace(/(\w+)\.(\w+)/g, '$1?.$2');
-
-// Type assertion for unknown properties
-fixed = addTypeAssertion(content, line);
-```
-
-### Runtime Fixes
-
-```bash
-# OOM - increase heap
-sed -i '/env:/a\        NODE_OPTIONS: "--max-old-space-size=4096"' .github/workflows/*.yml
-
-# Timeout - increase limit
-sed -i 's/timeout-minutes: [0-9]*/timeout-minutes: 60/' .github/workflows/*.yml
-
-# Network - add retry
-# Use nick-invision/retry@v2 action with max_attempts: 3
-```
+Systematic engine for resolving persistent failures in CI/CD, builds, and tests through iterative diagnosis and repair.
 
 ---
 
-## Iterative Fix Engine
+## Strategy & Diagnosis (Parallel)
 
-```python
-class IterativeFixEngine:
-    def __init__(self, repo: str, workflow: str, max_iterations: int = 5):
-        self.repo = repo
-        self.workflow = workflow
-        self.max_iterations = max_iterations
+// parallel
 
-    def run(self, initial_run_id: str) -> bool:
-        current_run_id = initial_run_id
+### Error Categories & Strategies
 
-        for iteration in range(1, self.max_iterations + 1):
-            errors = self.analyze_run(current_run_id)
+| Category | Fix Strategy |
+|----------|--------------|
+| **Dependency** | Relax versions, `--legacy-peer-deps`, align lockfiles |
+| **Build/Types** | TypeScript assertion, ignore (if safe), correct types |
+| **Test** | Update snapshot, fix logic, mock external service |
+| **Runtime** | Increase memory (OOM), timeout extension, retry logic |
+| **Network** | Retries, fallback mirrors |
 
-            if not errors:
-                return True  # Zero errors!
+### Validation Framework
 
-            fixes_applied = []
-            for error in self.prioritize_fixes(errors):
-                if self.apply_fix(error):
-                    fixes_applied.append(error.suggested_fix)
+1.  **Isolate**: Can I reproduce this locally?
+2.  **Fix**: Apply high-confidence patch.
+3.  **Verify**: Run minimal test case.
+4.  **Loop**: If specific error gone -> Next error. If same -> Escalate.
 
-            if not fixes_applied:
-                return False  # Manual intervention needed
-
-            self.commit_and_push(fixes_applied, iteration)
-            new_run_id = self.trigger_workflow()
-            self.wait_for_completion(new_run_id)
-
-            if self.get_run_status(new_run_id) == "success":
-                return True
-
-            current_run_id = new_run_id
-
-        return False  # Max iterations reached
-```
+// end-parallel
 
 ---
 
-## Knowledge Base
+## Decision Framework
 
-```python
-class KnowledgeBase:
-    def get_fix_strategy(self, error_type: str) -> str:
-        defaults = {
-            'npm_eresolve': 'Add --legacy-peer-deps flag',
-            'npm_404': 'Remove unavailable package',
-            'ts_error': 'Fix TypeScript type errors',
-            'eslint_error': 'Run ESLint auto-fix',
-            'test_failure': 'Update test snapshots',
-            'python_import': 'Install missing module',
-            'timeout': 'Increase timeout duration',
-            'oom': 'Increase memory allocation'
-        }
-        return defaults.get(error_type, 'Manual review required')
+### Iterative Engine Logic
 
-    def calculate_confidence(self, error_type: str, fix: str) -> float:
-        # Recency-weighted success rate
-        history = self.success_history.get(f"{error_type}:{fix}", [])
-        if len(history) < 3:
-            return 0.5
-        weights = [2 ** i for i in range(len(history))]
-        return sum(w * s for w, s in zip(weights, history)) / sum(weights)
-```
+1.  **Capture**: Grep error logs for patterns (e.g., `ERESOLVE`, `ETIMEDOUT`).
+2.  **Match**: Lookup `KnowledgeBase` for known fix.
+3.  **Apply**: Execute fix (sed, npm install, code edit).
+4.  **Commit**: Tag as `fix(ci): attempt N`.
+5.  **Watch**: Monitor next run.
+6.  **Learn**: If success, boost confidence of fix pattern.
 
 ---
 
-## Validation & Rollback
+## Core Knowledge (Parallel)
 
-```bash
-validate_fix() {
-    git tag "checkpoint-$(date +%s)"
-    npm test || { rollback_fix; return 1; }
-    npm run build || { rollback_fix; return 1; }
-    return 0
-}
+// parallel
 
-rollback_fix() {
-    git revert --no-commit HEAD
-    git commit -m "fix(ci): rollback failed fix"
-    git push
-}
-```
+### Constitutional AI Principles
 
----
+1.  **Safety (Target: 100%)**: Don't break prod to fix CI.
+2.  **Convergence (Target: 100%)**: Error count must decrease.
+3.  **Efficiency (Target: 90%)**: Max 5 iterations.
 
-## Integration with /fix-commit-errors
+### Quick Fix Patterns
 
-```bash
-python3 engine.py "$RUN_ID" \
-    --repo "$REPO" \
-    --workflow "$WORKFLOW" \
-    --max-iterations 5
+-   **NPM ERESOLVE**: `npm i --legacy-peer-deps` or `overrides` in package.json.
+-   **Python Pip**: `pip install --no-cache-dir`.
+-   **OOM**: `NODE_OPTIONS="--max-old-space-size=4096"`.
+-   **Flaky Test**: Search `@flaky` -> Mark or Retry.
 
-# Engine will:
-# 1. Analyze errors from failed run
-# 2. Apply fixes automatically
-# 3. Trigger new workflow
-# 4. Wait for completion
-# 5. Repeat until zero errors or max iterations
-# 6. Learn from outcomes
-```
+// end-parallel
 
 ---
 
-## Best Practices
+## Quality Assurance
 
-| Practice | Rationale |
-|----------|-----------|
-| High-confidence first | Apply >80% confidence fixes first |
-| Validate locally | Run tests before pushing |
-| Limit iterations | 3-5 max to prevent infinite loops |
-| Learn from failures | Record failed fixes to avoid repeating |
-| Rollback on regression | Auto-revert if new errors introduced |
-| Manual threshold | Escalate if confidence <50% |
+### Common Pitfalls
 
----
+| Pitfall | Fix |
+|---------|-----|
+| Infinite Loop | Set max_iterations (e.g., 5) |
+| Shotgun Debugging | Apply one fix at a time per error type |
+| Regression | Rollback if new errors > old errors |
+| Masking | Don't just `// @ts-ignore` without reason |
 
-## Success Metrics
+### Resolution Checklist
 
-| Metric | Target |
-|--------|--------|
-| Resolution rate | >80% per iteration |
-| Rollback rate | <10% |
-| Time to resolution | <30 min |
-| Zero-error achievement | >90% of runs |
-
----
-
-## Error Resolution Checklist
-
-- [ ] Errors categorized by type
-- [ ] Fix strategies prioritized by confidence
-- [ ] Local validation before push
-- [ ] Rollback mechanism ready
-- [ ] Knowledge base updated
-- [ ] Iteration limit set
-- [ ] Success metrics tracked
-
----
-
-**Version**: 1.0.5
+- [ ] Logs captured and analyzed
+- [ ] Error type identified
+- [ ] Fix strategy selected from Knowledge Base
+- [ ] Local validation attempted
+- [ ] Iteration limit enforced
+- [ ] Rollback plan present

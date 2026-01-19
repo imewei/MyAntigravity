@@ -1,130 +1,107 @@
 ---
-name: "git-pr-patterns & PR Patterns"
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Version Control
-description: Master Git workflows, branching strategies, and PR best practices. Use when writing git commands, creating branches, committing, resolving conflicts, or managing pull requests.
+name: git-pr-patterns
+description: Branching strategies, Conventional Commits, and PR Lifecycle management.
+version: 2.0.0
+agents:
+  primary: code-reviewer
+skills:
+- branching-strategy
+- pr-management
+- commit-convention
+- code-review
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Git & PR Patterns
 
-Git workflow patterns, branching strategies, and PR best practices.
+// turbo-all
+
+# Git & PR Patterns
+
+Standards for collaboration, version control, and change management.
 
 ---
 
-<!-- SECTION: BRANCHING -->
-## Branching Strategies
+## Strategy & Standards (Parallel)
 
-| Strategy | Use Case |
-|----------|----------|
-| GitHub Flow | Simple, continuous deployment |
-| Git Flow | Scheduled releases, multiple versions |
-| Trunk-Based | Short-lived branches, frequent merges |
-<!-- END_SECTION: BRANCHING -->
+// parallel
 
----
+### Branching Models
 
-<!-- SECTION: CONVENTIONAL_COMMITS -->
-## Conventional Commits
+| Model | Flow | Use Case |
+|-------|------|----------|
+| **GitHub Flow** | `main` <- `feature/*` | CD, Web Apps (Deploy on merge). |
+| **GitFlow** | `main`, `develop`, `release/*` | Versioned Software, Mobile Apps. |
+| **Trunk-Based** | `main` (Short-lived branches) | High-Velocity Teams. |
 
-| Type | Purpose |
-|------|---------|
-| feat | New feature |
-| fix | Bug fix |
-| docs | Documentation |
-| refactor | Code restructuring |
-| perf | Performance |
-| test | Adding tests |
-| chore | Maintenance |
-| ci | CI/CD changes |
+### Semantic Commits
 
-```bash
-git commit -m "feat(auth): add OAuth2 login support"
-```
-<!-- END_SECTION: CONVENTIONAL_COMMITS -->
+-   `feat`: New feature.
+-   `fix`: Bug fix.
+-   `docs`: Documentation only.
+-   `style`: Formatting (lint).
+-   `refactor`: No logic change.
+-   `test`: Add/Edit tests.
+-   `chore`: Build/Tooling.
+
+// end-parallel
 
 ---
 
-<!-- SECTION: GITHUB_FLOW -->
-## GitHub Flow Pattern
+## Decision Framework
 
-```bash
-# Create feature branch
-git checkout main && git pull origin main
-git checkout -b feature/new-feature
+### PR Lifecycle
 
-# Commit and push
-git add . && git commit -m "feat: implement feature"
-git push -u origin feature/new-feature
-
-# Create and merge PR
-gh pr create --title "Add feature"
-gh pr merge --squash
-```
-<!-- END_SECTION: GITHUB_FLOW -->
+1.  **Draft**: Work in progress (WIP).
+2.  **Open**: Ready for review (CI running).
+3.  **Review**: Code review feedback loop.
+4.  **Approved**: All checks pass + Approval.
+5.  **Merge**: Squash & Merge (Cleaner history) or Rebase.
 
 ---
 
-<!-- SECTION: REBASE -->
-## Interactive Rebase
+## Core Knowledge (Parallel)
 
-```bash
-git rebase -i HEAD~5
-# pick, squash, reword, drop, edit
-git push --force-with-lease  # Feature branches only!
-```
-<!-- END_SECTION: REBASE -->
+// parallel
+
+### Constitutional AI Principles
+
+1.  **Atomicity (Target: 100%)**: One logical change per PR.
+2.  **Context (Target: 100%)**: PR description explains "Why", not just "What".
+3.  **Quality (Target: 100%)**: CI must pass before merge.
+
+### Quick Reference Templates
+
+-   **PR Title**: `feat(auth): enable sso login`
+-   **PR Body**:
+    ```markdown
+    ## Summary
+    Adds SSO via SAML.
+    ## Testing
+    - [x] Unit tests
+    - [x] Tested with Okta
+    ```
+
+// end-parallel
 
 ---
 
-<!-- SECTION: RECOVERY -->
-## Recovery Commands
+## Quality Assurance
 
-| Situation | Command |
-|-----------|---------|
-| Undo last commit | `git reset --soft HEAD~1` |
-| Discard changes | `git checkout -- .` |
-| Recover branch | `git reflog` + checkout |
-| Abort merge | `git merge --abort` |
-| Stash changes | `git stash` / `git stash pop` |
-<!-- END_SECTION: RECOVERY -->
+### Common Bad Habits
 
----
+| Habit | Fix |
+|-------|-----|
+| "Huge PR" (1000+ lines) | Split into stacked PRs. |
+| "WIP" title forever | Convert to Draft PR. |
+| Ignoring CI | Fix build *before* asking for review. |
+| Force Push Reviews | Communicate before overwriting history during review. |
 
-<!-- SECTION: PR_TEMPLATE -->
-## PR Template
+### PR Checklist
 
-```markdown
-## Summary
-Brief description
-
-## Changes
-- Added X, Fixed Y, Updated Z
-
-## Testing
-- [ ] Unit tests pass
-- [ ] Integration tests pass
-
-## Checklist
+- [ ] Title follows semantic convention
+- [ ] Description filled out
+- [ ] Related Issues linked (`Fixes #123`)
+- [ ] CI passing
 - [ ] Self-review completed
-- [ ] Documentation updated
-```
-<!-- END_SECTION: PR_TEMPLATE -->
-
----
-
-<!-- SECTION: BEST_PRACTICES -->
-## Best Practices
-
-| Practice | Guideline |
-|----------|-----------|
-| PR size | Small, focused changes |
-| Titles | Descriptive, follows conventions |
-| Issues | Link related tickets |
-| CI | Never merge failing builds |
-| Feedback | Address all before merge |
-<!-- END_SECTION: BEST_PRACTICES -->
-
----
-
-**Version**: 1.0.5
+- [ ] No merge conflicts

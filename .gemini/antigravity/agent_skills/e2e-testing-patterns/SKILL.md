@@ -1,165 +1,97 @@
 ---
 name: e2e-testing-patterns
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: E2E Test Automation
-description: Build reliable E2E tests with Playwright and Cypress for web testing, browser automation, and CI/CD integration. Use when writing E2E tests, implementing Page Object Model, mocking APIs, visual regression, or accessibility testing.
+description: Robust End-to-End testing strategies using Playwright and Cypress.
+version: 2.0.0
+agents:
+  primary: test-automator
+skills:
+- browser-automation
+- visual-regression
+- accessibility-testing
+- ci-integration
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # E2E Testing Patterns
 
-Reliable end-to-end testing with Playwright and Cypress.
+// turbo-all
+
+# E2E Testing Patterns
+
+Verifying the full stack from the user's perspective.
 
 ---
 
-## Framework Comparison
+## Strategy & Tooling (Parallel)
+
+// parallel
+
+### Framework Choice
 
 | Feature | Playwright | Cypress |
 |---------|------------|---------|
-| Multi-browser | Chrome, Firefox, Safari, WebKit | Chrome, Firefox, Edge |
-| Parallel execution | Built-in | Paid feature |
-| API testing | Full support | Limited |
-| Mobile testing | Device emulation | Viewport only |
-| Language | JS/TS/Python/Java | JS/TS |
+| **Speed** | ⚡️ Fast (Parallel) | 🚶 Moderate |
+| **Browsers**| All (WebKit/Gecko) | Chrome/Fox |
+| **Events** | Native (Trusted) | Synthetic |
+| **Tabs** | Multiple supported | Single tab only |
+
+### Core Patterns
+
+-   **Page Object Model (POM)**: Class representing a page. Encapsulates selectors.
+-   **Interception**: Mock API responses to test edge cases (500 errors).
+-   **Visual Diff**: Pixel-perfect regression testing.
+
+// end-parallel
 
 ---
 
-## Page Object Model (Playwright)
+## Decision Framework
 
-```typescript
-// pages/login.page.ts
-export class LoginPage {
-  constructor(private page: Page) {}
+### Test Design
 
-  readonly emailInput = this.page.getByLabel('Email');
-  readonly passwordInput = this.page.getByLabel('Password');
-  readonly submitButton = this.page.getByRole('button', { name: 'Sign in' });
-
-  async goto() { await this.page.goto('/login'); }
-
-  async login(email: string, password: string) {
-    await this.emailInput.fill(email);
-    await this.passwordInput.fill(password);
-    await this.submitButton.click();
-  }
-}
-
-// tests/login.spec.ts
-test('successful login', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  await loginPage.goto();
-  await loginPage.login('user@example.com', 'password');
-  await expect(page).toHaveURL('/dashboard');
-});
-```
+1.  **Scenario**: "User logs in and buys item."
+2.  **Selectors**: Use `getByRole` or `data-testid`. (Never CSS classes).
+3.  **Action**: `click`, `fill`, `press`.
+4.  **Assertion**: `expect(page).toHaveURL(...)`.
 
 ---
 
-## API Mocking
+## Core Knowledge (Parallel)
 
-```typescript
-await page.route('**/api/users/me', (route) => {
-  route.fulfill({
-    status: 200,
-    contentType: 'application/json',
-    body: JSON.stringify({ id: 1, name: 'Test User' })
-  });
-});
-```
+// parallel
 
----
+### Constitutional AI Principles
 
-## Visual Regression
+1.  **Resilience (Target: 100%)**: Use "Auto-waiting" locators. No manual `sleep()`.
+2.  **Accessibility (Target: 100%)**: Run `axe-core` scan on every page load.
+3.  **Traceability (Target: 100%)**: Record video/trace on failure.
 
-```typescript
-await expect(page).toHaveScreenshot('homepage.png', {
-  fullPage: true,
-  maxDiffPixels: 100
-});
-```
+### Quick Reference (Playwright)
+
+-   `page.getByRole('button', { name: 'Save' })`.
+-   `expect(page.getByText('Success')).toBeVisible()`.
+-   `await page.route('**/api/data', route => route.fulfill(...))`.
+
+// end-parallel
 
 ---
 
-## Accessibility Testing
+## Quality Assurance
 
-```typescript
-import AxeBuilder from '@axe-core/playwright';
+### Common Pitfalls
 
-test('no a11y violations', async ({ page }) => {
-  await page.goto('/');
-  const results = await new AxeBuilder({ page }).analyze();
-  expect(results.violations).toEqual([]);
-});
-```
+| Pitfall | Fix |
+|---------|-----|
+| Flaky Tests | usually network race conditions. Use `await expect`. |
+| Hard Coded Auth | Use global setup to save "Storage State" (Cookies) once. |
+| Testing External Sites | Don't. Mock Stripe/Auth0. |
+| Brittle Selectors | `div > span:nth-child(3)` -> `getByTestId('price')`. |
 
----
+### E2E Checklist
 
-## CI/CD Integration (GitHub Actions)
-
-```yaml
-name: E2E Tests
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: 'pnpm' }
-      - run: pnpm install && pnpm playwright install --with-deps
-      - run: pnpm playwright test
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with: { name: playwright-report, path: playwright-report/ }
-```
-
----
-
-## Debugging
-
-```typescript
-// Headed mode: npx playwright test --headed
-// Pause for debugging:
-await page.pause();
-
-// playwright.config.ts - trace on failure
-export default {
-  use: {
-    trace: 'on-first-retry',
-    video: 'on-first-retry',
-    screenshot: 'only-on-failure'
-  }
-};
-```
-
----
-
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| Stable selectors | Use data-testid over CSS classes |
-| Avoid sleeps | Use proper waits and assertions |
-| Isolate tests | No shared state between tests |
-| Parallel execution | Speed up CI |
-| Retry flaky tests | But fix root cause |
-| Page objects | Encapsulate selectors |
-
----
-
-## Checklist
-
-- [ ] Page Object Model for reusability
-- [ ] data-testid for stable selectors
-- [ ] No hard-coded waits (use assertions)
-- [ ] Tests isolated (no dependencies)
-- [ ] Parallel execution enabled
-- [ ] API mocking for isolation
-- [ ] CI/CD integration with artifacts
-- [ ] Accessibility testing included
-
----
-
-**Version**: 1.0.5
+- [ ] Playwright configured
+- [ ] POM implemented
+- [ ] HTML Reports enable
+- [ ] Traces captured on failure
+- [ ] Visual Regression (Snapshot)
+- [ ] A11y Audit (Axe)

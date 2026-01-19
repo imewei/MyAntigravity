@@ -116,19 +116,68 @@ def generate_index(root_dir):
 if __name__ == "__main__":
     import datetime
 
-    ROOT_DIR = ".agent"
-    OUTPUT_FILE = ".agent/skills_index.json"
+    ROOT_DIR = "."
+    OUTPUT_FILE = "skills_index.json"
 
     # Ensure we are running from the project root or adjust paths
-    if not os.path.exists(ROOT_DIR):
-        # specific logic for this environment if needed, but assuming standard layout
-        pass
+    if not os.path.exists("agent_skills") and not os.path.exists("global_workflows"):
+         print("Error: Must run from project root conforming to v2.0 structure.")
+         exit(1)
 
-    index_data = generate_index(ROOT_DIR)
-    index_data["generated_at"] = datetime.datetime.now().isoformat()
+    index = {
+        "generated_at": None,
+        "skills": {},
+        "workflows": {}
+    }
+
+    skills_dir = Path("agent_skills")
+    workflows_dir = Path("global_workflows")
+
+    # Index Skills
+    print(f"Scanning skills in {skills_dir}...")
+    if skills_dir.exists():
+        for skill_file in skills_dir.glob("**/SKILL.md"):
+            try:
+                metadata = parse_frontmatter(skill_file)
+                if metadata:
+                    skill_name = metadata.get('name') or skill_file.parent.name
+
+                    # Create the index entry
+                    entry = {
+                        "path": str(skill_file),
+                        "description": metadata.get('description', ''),
+                        "triggers": metadata.get('triggers', []),
+                        "version": metadata.get('version', '1.0.0')
+                    }
+
+                    index["skills"][skill_name] = entry
+            except Exception as e:
+                print(f"Skipping {skill_file}: {e}")
+
+    # Index Workflows
+    # Consolidate_workflows.py might have moved them into subdirs, need glob glob
+    print(f"Scanning workflows in {workflows_dir}...")
+    if workflows_dir.exists():
+        for workflow_file in workflows_dir.glob("**/*.md"):
+            if workflow_file.name == "SKILL.md": continue # Skip skills if accidentally there
+            
+            try:
+                metadata = parse_frontmatter(workflow_file)
+                workflow_name = workflow_file.stem
+
+                entry = {
+                    "path": str(workflow_file),
+                    "description": metadata.get('description', '') if metadata else '',
+                    "triggers": metadata.get('triggers', []) if metadata else []
+                }
+                index["workflows"][workflow_name] = entry
+            except Exception as e:
+                print(f"Skipping {workflow_file}: {e}")
+
+    index["generated_at"] = datetime.datetime.now().isoformat()
 
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(index_data, f, indent=2)
+        json.dump(index, f, indent=2)
 
     print(f"Index generated at {OUTPUT_FILE}")
-    print(f"Indexed {len(index_data['skills'])} skills and {len(index_data['workflows'])} workflows.")
+    print(f"Indexed {len(index['skills'])} skills and {len(index['workflows'])} workflows.")

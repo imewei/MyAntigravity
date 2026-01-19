@@ -1,73 +1,43 @@
 ---
-description: Interactive SciML project scaffolding with auto-detection of problem
-  types (ODE, PDE, SDE, optimization) and generation of template code
+description: Scaffolding for Scientific Machine Learning
 triggers:
 - /sciml-setup
-- interactive sciml project scaffolding
+- setup sciml project
+version: 2.0.0
 allowed-tools: [Read, Task, Bash]
-version: 1.0.0
+agents:
+  primary: sciml-specialist
+skills:
+- julia-development
+- machine-learning-ops
+argument-hint: '<problem-description>'
 ---
 
+# SciML Scaffolder (v2.0)
 
+// turbo-all
 
-## User Input
-Input arguments pattern: `<problem-description>`
-The agent should parse these arguments from the user's request.
+## Phase 1: Analysis (Sequential)
 
-# Interactive SciML Project Scaffolding
+1.  **Problem Detection**
+    - Action: Identify ODE/PDE/SDE/Optimization from input.
 
-Auto-detect problem type and generate template code with DifferentialEquations.jl, ModelingToolkit.jl, or Optimization.jl.
+## Phase 2: Implementation (Parallel)
 
-<!-- SYSTEM: Use .agent/skills_index.json for O(1) skill discovery. Do not scan directories. -->
+// parallel
 
-**Docs**: [sciml-templates.md](../../plugins/julia-development/docs/sciml-templates.md) (~550 lines of complete templates)
+2.  **Solver Setup**
+    - Action: Select and configure solver (DifferentialEquations.jl).
 
-## Requirements
+3.  **Visualization**
+    - Action: Generate plotting code (Plots.jl).
 
-$ARGUMENTS
+4.  **Optimzation Loop**
+    - Action: Generate optimization boilerplate (DiffEqFlux.jl).
 
-## Workflow
+// end-parallel
 
-### 1. Detect Problem Type (Analysis)
+## Phase 3: Verification
 
-Auto-detect from keywords:
-- **ODE**: "ordinary", "ODE", "dynamics", "population", "oscillator"
-- **PDE**: "partial", "PDE", "spatial", "diffusion", "heat", "wave"
-- **SDE**: "stochastic", "SDE", "noise", "Brownian"
-- **Optimization**: "minimize", "maximize", "fitting", "calibration"
-
-### 2. Select Approach (Strategy)
-
-- **Symbolic** (ModelingToolkit): Complex systems, automatic differentiation
-- **Direct API**: Simple systems, performance-critical
-
-### 3. Generate Template (Implementation)
-
-Structure:
-```julia
-# Imports
-# Problem definition (ODE/PDE/SDE/Optimization)
-# TODO comments for customization
-# Solver call
-# Visualization
-# [Optional] Callbacks, ensemble, sensitivity
-```
-
-### 4. Solver Recommendation (Validation)
-
-| Problem | Solver | Reason |
-|---------|--------|--------|
-| ODE (non-stiff) | `Tsit5()` | Fast, accurate |
-| ODE (stiff) | `Rodas5()` | Handles stiffness |
-| PDE | Method of Lines → ODE | Spatial discretization |
-| SDE | `SOSRI()` | General SDEs |
-| Optimization | `BFGS()` | Quasi-Newton |
-
-### 5. Next Steps
-
-1. Fill TODO sections
-2. Run template
-3. Use `/julia-optimize` for performance
-4. See [sciml-templates.md](../../plugins/julia-development/docs/sciml-templates.md) for detailed examples
-
-**Outcome**: Working SciML template with recommended solvers and clear customization points
+5.  **Template Validation**
+    - Action: Ensure code is runnable.

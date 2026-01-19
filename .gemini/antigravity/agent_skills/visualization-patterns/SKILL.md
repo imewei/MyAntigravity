@@ -1,86 +1,94 @@
 ---
 name: visualization-patterns
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Julia Visualization
-description: Master Plots.jl and Makie.jl for data visualization in Julia. Use when creating plots, selecting backends, building statistical visualizations, or making publication-quality figures.
+description: Julia visualization with Plots.jl and Makie.jl.
+version: 2.0.0
+agents:
+  primary: julia-pro
+skills:
+- julia-plotting
+- makie-mastery
+- publication-figures
+- interactive-viz
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Julia Visualization Patterns
 
-Plots.jl (unified interface) and Makie.jl (high-performance) visualization.
+// turbo-all
+
+# Julia Visualization Patterns
+
+High-performance plotting for scientific computing.
 
 ---
 
-## Backend Selection
+## Strategy & Backends (Parallel)
 
-| Backend | Use Case |
-|---------|----------|
-| GR (Plots.jl) | Fast, default |
-| Plotly | Interactive HTML |
-| CairoMakie | Publication-quality |
-| GLMakie | 3D, interactive |
+// parallel
 
----
+### Tools
 
-## Plots.jl
+| Backend | Use Case | Implementation |
+|---------|----------|----------------|
+| **Plots.jl (GR)** | Fast Prototyping | `using Plots; gr()` |
+| **CairoMakie** | Static/Publication | `using CairoMakie` (Vector PDF) |
+| **GLMakie** | Interactive/3D | `using GLMakie` (GPU Accelerated) |
+| **PlotlyJS** | Web/Interactive HTML | `using Plots; plotlyjs()` |
 
-```julia
-using Plots
+### Core Concepts
 
-gr()  # Set backend
-x = range(0, 2π, length=100)
+-   **Observables**: Reactive values used in Makie (`Node(0.0)`).
+-   **Layouts**: `fig[1, 2]` indexing in Makie.
 
-plot(x, sin.(x), label="sin", xlabel="x", ylabel="y")
-plot!(x, cos.(x), label="cos")  # Add to existing
-scatter!(x[1:10:end], sin.(x[1:10:end]))
-
-# Subplots
-plot(plot(x, sin.(x)), plot(x, cos.(x)), layout=(1, 2))
-
-# Heatmap
-heatmap(rand(20, 20), c=:viridis)
-```
+// end-parallel
 
 ---
 
-## Makie.jl
+## Decision Framework
 
-```julia
-using CairoMakie  # or GLMakie
+### Choosing a Library
 
-fig = Figure()
-ax = Axis(fig[1, 1], xlabel="x", ylabel="y")
-lines!(ax, x, sin.(x))
-scatter!(ax, x[1:10:end], sin.(x[1:10:end]))
-save("figure.pdf", fig)
-
-# Animation
-record(fig, "anim.mp4", 1:100; framerate=30) do i
-    # Update plot each frame
-end
-```
+1.  **Exploration**: Use `Plots.jl`. It works out of the box.
+2.  **Publication**: Use `CairoMakie`. Pixel perfect layouts and proper font support (`Computer Modern`).
+3.  **Simulation GUI**: Use `GLMakie`. High FPS 3D rendering.
 
 ---
 
-## Best Practices
+## Core Knowledge (Parallel)
 
-| Practice | Implementation |
-|----------|----------------|
-| Quick prototyping | Plots.jl with GR |
-| Publication figures | CairoMakie |
-| Interactive 3D | GLMakie |
-| Statistical plots | StatsPlots.jl |
+// parallel
+
+### Constitutional AI Principles
+
+1.  **Performance (Target: 60FPS)**: Avoid recreating plots in loops. Update data in place.
+2.  **Clarity (Target: 100%)**: Always label axes (`xlabel!`).
+3.  **Portability (Target: 100%)**: Save as script, not just Notebook state.
+
+### Quick Reference
+
+-   `plot(x, y, label="Data")`
+-   `heatmap(matrix, c=:viridis)`
+-   `save("fig.png", current_figure())`
+
+// end-parallel
 
 ---
 
-## Checklist
+## Quality Assurance
 
-- [ ] Appropriate backend selected
-- [ ] Labels and legends added
-- [ ] Color scheme accessible
-- [ ] Figure saved at proper resolution
+### Common Pitfalls
 
----
+| Pitfall | Fix |
+|---------|-----|
+| Slow compilation | Use `PackageCompiler` or `sysimage` for Makie. |
+| Overplotting | Use `alpha=0.5` or 2D histograms. |
+| Wrong Size | Specify `size=(800, 600)`. |
+| Raster Text | Use PDF/SVG export for papers. |
 
-**Version**: 1.0.5
+### Viz Checklist
+
+- [ ] Backend selected appropriately
+- [ ] Axis labels and units present
+- [ ] Legend readable
+- [ ] Colors are accessible (`:viridis`)
+- [ ] Saved in Vector format (PDF/SVG)

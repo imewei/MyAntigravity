@@ -1,130 +1,101 @@
 ---
 name: meta-cognitive-reflection
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: AI Reasoning Analysis
-description: Analyze AI reasoning patterns, cognitive biases, problem-solving quality, and communication effectiveness through systematic meta-cognitive reflection. Use for session reflections, reasoning audits, bias detection, and continuous improvement.
+description: Analyze reasoning patterns, detect biases, and improve AI decision quality.
+version: 2.0.0
+agents:
+  primary: ai-engineer
+skills:
+- bias-detection
+- reasoning-audit
+- self-correction
+- continuous-improvement
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Meta-Cognitive Reflection
 
-Systematic analysis of AI reasoning, decision-making, and interaction quality.
+// turbo-all
+
+# Meta-Cognitive Reflection
+
+The "Watcher" skill: observing the observer to ensure reasoning quality, bias mitigation, and continuous improvement.
 
 ---
 
-## Reasoning Types
+## Strategy & Analysis (Parallel)
 
-| Type | Description | Detection |
-|------|-------------|-----------|
-| Deductive | General → specific | "If A then B" patterns |
-| Inductive | Specific → general | Pattern recognition |
-| Abductive | Best explanation | Inference to cause |
-| Analogical | Cross-domain mapping | "Similar to X" patterns |
-| Causal | Cause-effect | "Because" relationships |
+// parallel
 
----
+### Cognitive Bias Detection
 
-## Cognitive Biases
+| Bias | Detection Trigger | Mitigation |
+|------|-------------------|------------|
+| **Confirmation** | Seeking only supporting data | "What would disprove this?" |
+| **Anchoring** | Stuck on first solution | "Reset context. Approach afresh." |
+| **Availability** | Recency bias | "Check historical patterns." |
+| **Sunk Cost** | "We already wrote usage code" | "Is the code actually good?" |
 
-| Bias | Detection | Mitigation |
-|------|-----------|------------|
-| Availability | Over-relying on recent examples | Seek diverse examples |
-| Anchoring | First info dominates | Consider alternatives |
-| Confirmation | Seeking supporting evidence | Test contradictions |
-| Recency | Overweighting recent | Review full context |
-| Selection | Non-representative sampling | Systematic coverage |
+### Communication Assessment
 
----
+-   **Clarity**: Jargon level appropriate?
+-   **Conciseness**: Signal-to-noise ratio?
+-   **Structure**: Logical flow?
+-   **Tone**: collaborative vs authoritative?
 
-## Problem-Solving Evaluation
-
-| Stage | Questions |
-|-------|-----------|
-| Understanding | Clear problem definition? Requirements covered? |
-| Strategy | Approaches considered? Rationale documented? |
-| Implementation | Quality execution? Errors handled? |
-| Validation | Testing thorough? Edge cases covered? |
-| Iteration | Adapted to feedback? Learned? |
+// end-parallel
 
 ---
 
-## Communication Assessment
+## Decision Framework
 
-| Dimension | Criteria |
-|-----------|----------|
-| Clarity | Appropriate jargon, structure, depth |
-| Accuracy | Factual correctness, precision |
-| Pedagogy | Example quality, scaffolding |
-| Relevance | On-topic, priority alignment |
-| Engagement | Interactivity, collaboration |
+### Reflection Workflow
 
----
-
-## Reflection Workflow
-
-1. **Define Scope** - Single conversation, decision, or session
-2. **Gather Context** - Conversation history, outcomes, feedback
-3. **Analyze Reasoning** - Identify types, count instances, evaluate
-4. **Detect Biases** - Check indicators, assess severity
-5. **Evaluate Problem-Solving** - Score each stage
-6. **Assess Communication** - Rate dimensions
-7. **Generate Insights** - Patterns, strengths, weaknesses
-8. **Create Report** - Summary, recommendations, actions
+1.  **Pause**: Stop execution.
+2.  **Audit**: Review last N thoughts/actions.
+3.  **Classify**: Identify reasoning type (Deductive, Inductive, Abductive).
+4.  **Critique**: Apply "Six Thinking Hats" (Black Hat = Critique).
+5.  **Adjust**: Create correction plan if quality is low.
+6.  **Resume**: Continue execution with improved context.
 
 ---
 
-## Session Report Template
+## Core Knowledge (Parallel)
+
+// parallel
+
+### Constitutional AI Principles
+
+1.  **Objective Truth (Target: 100%)**: Prefer facts over hallucinations/guesses.
+2.  **Self-Correction (Target: 100%)**: Admit mistakes immediately.
+3.  **Growth (Target: N/A)**: Learn from every error interaction.
+
+### Quick Reference Patterns
+
+-   **Reasoning Types**:
+    -   *Deductive*: Rule -> Case (Sure).
+    -   *Inductive*: Cases -> Rule (Probable).
+    -   *Abductive*: Effect -> Most Likely Cause (Diagnostic).
+
+// end-parallel
+
+---
+
+## Quality Assurance
+
+### Session Report Template
 
 ```markdown
-## Executive Summary
-[Overall assessment, key findings]
-
-## Reasoning Analysis
-| Type | Instances | Effectiveness |
-|------|-----------|---------------|
-| Deductive | X | High/Medium/Low |
-...
-
-## Cognitive Biases Detected
-| Bias | Severity | Mitigation Applied |
-|------|----------|---------------------|
-...
-
-## Problem-Solving Scores
-| Stage | Score (1-5) | Notes |
-|-------|-------------|-------|
-...
-
-## Recommendations
-1. [Actionable improvement]
-2. [Actionable improvement]
+## Meta-Reflection Report
+**Reasoning Quality**: 4/5
+**Biases Detected**: Anchoring (Initial solution).
+**Correction**: Shifted to Option B after finding complexity.
+**Key Lesson**: Always check `package.json` before assuming dependencies.
 ```
 
----
+### Reflection Checklist
 
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| Be Objective | Base on evidence, not assumptions |
-| Quantify | Use metrics and counts |
-| Context Matters | Consider task complexity |
-| Balance | Acknowledge strengths and weaknesses |
-| Actionable | Provide specific improvements |
-| Meta-Reflect | Assess reflection quality itself |
-
----
-
-## Checklist
-
-- [ ] Reasoning patterns identified and evaluated
-- [ ] Cognitive biases checked and documented
-- [ ] Problem-solving stages scored
-- [ ] Communication effectiveness assessed
-- [ ] Cross-cutting patterns synthesized
-- [ ] Actionable recommendations provided
-- [ ] Report generated with metrics
-
----
-
-**Version**: 1.0.5
+- [ ] Stopped to reflect?
+- [ ] Bias check complete?
+- [ ] Reasoning valid/logical?
+- [ ] Tone appropriate?
+- [ ] Actionable improvements identified?

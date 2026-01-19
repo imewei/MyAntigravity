@@ -2,7 +2,7 @@
 import shutil
 from pathlib import Path
 
-WORKFLOWS_DIR = Path(".agent/workflows")
+WORKFLOWS_DIR = Path("global_workflows")
 
 TAXONOMY = {
     # 1. AI Engineering

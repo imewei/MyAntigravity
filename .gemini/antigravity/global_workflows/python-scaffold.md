@@ -1,168 +1,62 @@
 ---
-description: Scaffold production-ready Python projects with modern tooling across
-  3 execution modes
+description: Scaffold production-ready Python projects with modern tooling (uv, ruff, pytest)
 triggers:
 - /python-scaffold
 - scaffold production ready python projects
 allowed-tools: [Read, Task, Bash]
-version: 1.0.0
+version: 2.0.0
+agents:
+  primary: python-developer
+skills:
+- python-pro
+- project-scaffolding-best-practices
+argument-hint: '[project-name] [--mode=quick|standard|enterprise] [--type=fastapi|django|lib|cli]'
 ---
 
+# Python Project Scaffolding (v2.0)
 
+// turbo-all
 
-# Python Project Scaffolding
+## Phase 1: Initialization (Sequential)
 
-Create production-ready Python project: $ARGUMENTS
+1. **UV Init**
+   - Action: `uv init`, `git init`.
+   - Action: Create `.gitignore` (Python/MacOS/IDE standards).
+   - Action: Create virtual env (`uv venv`).
 
-## Execution Mode Selection
+## Phase 2: Structural Generation (Parallel)
 
-<AskUserQuestion>
-questions:
-  - question: "Which execution mode best fits your project requirements?"
-    header: "Execution Mode"
-    multiSelect: false
-    options:
-      - label: "Quick (1-2 hours)"
-        description: "Simple script, prototype, or basic CLI tool. Minimal viable structure with ~15 files."
+// parallel
 
-      - label: "Standard (3-6 hours)"
-        description: "Production FastAPI/Django web app or distributable library. Complete structure with testing, CI/CD, Docker (~50 files)."
+2. **Core Directory Structure**
+   - Action: Create `src/`, `tests/`, `docs/`.
+   - Action: Create specific folders based on `--type` (e.g., `app/routers` for FastAPI).
 
-      - label: "Enterprise (1-2 days)"
-        description: "Microservices architecture or complex platform. Multi-service setup with K8s, observability, security (~100 files)."
-</AskUserQuestion>
+3. **Tool Configuration**
+   - Action: Generate `pyproject.toml` (Ruff, Pytest settings).
+   - Action: Generate `.env.example`, `Makefile`, `Dockerfile`.
 
-## Instructions
+4. **Documentation**
+   - Action: Generate `README.md` with setup/usage instructions.
+   - Action: Generate `CONTRIBUTING.md`.
 
-### 1. Analyze Project Type
+// end-parallel
 
-Determine the project type from user requirements:
+## Phase 3: Dependencies (Sequential)
 
-**Quick Mode**: Simple script, basic CLI, minimal library
-**Standard Mode**:
-- **FastAPI**: REST APIs, microservices, async applications → [FastAPI Structure](../../plugins/python-development/docs/python-scaffold/fastapi-structure.md)
-- **Django**: Full-stack web apps, admin panels, ORM-heavy projects → [Django Structure](../../plugins/python-development/docs/python-scaffold/django-structure.md)
-- **Library**: Reusable packages, utilities → [Library Packaging](../../plugins/python-development/docs/python-scaffold/library-packaging.md)
-- **CLI**: Command-line tools, automation scripts → [CLI Tools](../../plugins/python-development/docs/python-scaffold/cli-tools.md)
-**Enterprise Mode**: All standard types + distributed systems, microservices
+5. **Dependency Installation**
+   - Action: `uv add` runtime deps (fastapi, typer, etc.).
+   - Action: `uv add --dev` dev deps (ruff, pytest, mypy).
 
-### 2. Initialize Project with uv
+## Phase 4: Verification (Parallel)
 
-```bash
-# Create new project
-uv init <project-name>
-cd <project-name>
+// parallel
 
-# Initialize git
-git init
-cat >> .gitignore << 'EOF'
-.venv/
-__pycache__/
-*.pyc
-.pytest_cache/
-.ruff_cache/
-.env
-EOF
+6. **Sanity Check**
+   - Action: Run `pytest`.
+   - Action: Run `ruff check`.
 
-# Create virtual environment
-uv venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-```
+7. **Build Check**
+   - Action: Verify Docker build (if Standard/Enterprise).
 
-### 3. Generate Project Structure
-
-Based on project type and execution mode:
-
-#### Quick Mode
-- Basic `pyproject.toml` with minimal dependencies
-- Single main file (`main.py`, `cli.py`, or `__init__.py`)
-- Simple test file
-- README.md and .gitignore
-
-#### Standard Mode
-Select appropriate structure:
-- **FastAPI Project**: Full structure from [FastAPI Guide](../../plugins/python-development/docs/python-scaffold/fastapi-structure.md)
-- **Django Project**: Complete setup from [Django Guide](../../plugins/python-development/docs/python-scaffold/django-structure.md)
-- **Library**: Package structure from [Library Guide](../../plugins/python-development/docs/python-scaffold/library-packaging.md)
-- **CLI Tool**: Typer-based structure from [CLI Guide](../../plugins/python-development/docs/python-scaffold/cli-tools.md)
-
-#### Enterprise Mode
-All Standard features plus:
-- Multi-service architecture (if microservices)
-- Kubernetes manifests and Helm charts
-- Distributed tracing setup (OpenTelemetry)
-- Comprehensive observability (Prometheus/Grafana)
-- Security hardening (secrets management, RBAC)
-- Production deployment configs
-
-### 4. Configure Development Tools
-
-For all modes, set up modern Python tooling:
-
-**See comprehensive configuration**: [Development Tooling Guide](../../plugins/python-development/docs/python-scaffold/development-tooling.md)
-
-**Quick Setup**:
-```toml
-# pyproject.toml
-[tool.ruff]
-line-length = 100
-target-version = "py312"
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "N", "W", "UP"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-```
-
-### 5. Project-Specific Configuration
-
-**Standard/Enterprise**: Add production-ready configurations:
-- `.env.example` with all required environment variables
-- `Makefile` with common development tasks
-- `docker-compose.yml` for local development
-- CI/CD workflows (`.github/workflows/tests.yml`)
-
-**Full configurations available**: [Development Tooling Guide](../../plugins/python-development/docs/python-scaffold/development-tooling.md)
-
-## Output Format
-
-Deliver complete project with:
-
-1. **Project Structure**: All files and directories for selected mode
-2. **Configuration**: pyproject.toml with dependencies and tool settings
-3. **Entry Point**: Main application file (main.py, manage.py, cli.py)
-4. **Tests**: Test structure with pytest configuration
-5. **Documentation**: README.md with setup and usage instructions
-6. **Development Tools** (Standard/Enterprise): Makefile, Docker, CI/CD
-
-## Success Criteria
-
-**Quick Mode**:
-- ✅ Project initializes with uv
-- ✅ Virtual environment activates
-- ✅ Basic tests pass (`pytest`)
-- ✅ Type checking passes (`mypy`)
-- ✅ Linting passes (`ruff check`)
-
-**Standard Mode**:
-- ✅ All Quick criteria met
-- ✅ Framework-specific structure complete (FastAPI/Django/Library/CLI)
-- ✅ Integration tests pass
-- ✅ Docker builds successfully
-- ✅ CI pipeline configured
-
-**Enterprise Mode**:
-- ✅ All Standard criteria met
-- ✅ Multi-service coordination working
-- ✅ Observability stack deployed
-- ✅ K8s manifests validate
-- ✅ Security scanning passes
-
-## External Documentation
-
-- [FastAPI Structure Guide](../../plugins/python-development/docs/python-scaffold/fastapi-structure.md) - Complete FastAPI project templates
-- [Django Structure Guide](../../plugins/python-development/docs/python-scaffold/django-structure.md) - Django 5.x project structure
-- [Library Packaging Guide](../../plugins/python-development/docs/python-scaffold/library-packaging.md) - PyPI-ready package setup
-- [CLI Tools Guide](../../plugins/python-development/docs/python-scaffold/cli-tools.md) - Typer-based command-line tools
-- [Development Tooling Guide](../../plugins/python-development/docs/python-scaffold/development-tooling.md) - Makefiles, Docker, CI/CD
+// end-parallel

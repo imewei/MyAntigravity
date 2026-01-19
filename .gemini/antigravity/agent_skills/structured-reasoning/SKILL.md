@@ -1,195 +1,113 @@
 ---
 name: structured-reasoning
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Systematic Problem-Solving
-description: Apply structured reasoning with systematic thought processing, branching exploration, multi-framework analysis (First Principles, Root Cause Analysis, Decision Analysis), and auditability. Use for complex debugging, architectural decisions, strategic planning, novel problems, and high-stakes decisions requiring explicit reasoning chains.
+description: Apply systematic cognitive frameworks (First Principles, Root Cause, Decision Analysis) to complex problems.
+version: 2.0.0
+agents:
+  primary: ai-engineer
+skills:
+- systematic-analysis
+- decision-matrices
+- root-cause-analysis
+- hypothesis-testing
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Structured Reasoning
 
-Systematic problem-solving with explicit reasoning chains and cognitive frameworks.
+// turbo-all
+
+# Structured Reasoning
+
+Systematic problem-solving engine using explicit reasoning chains, auditability, and multiple mental models.
 
 ---
 
-## Framework Selection
+## Strategy & Frameworks (Parallel)
 
-| Framework | Use Case | Example |
-|-----------|----------|---------|
-| First Principles | Novel problems, paradigm shifts | Design new architecture |
-| Root Cause Analysis | Debugging, incidents, quality issues | Production outage |
-| Decision Analysis | Technology choices, strategic planning | Framework selection |
-| Systems Thinking | Complex interdependencies | Distributed systems |
-| OODA Loop | Rapid adaptive decisions | Incident response |
+// parallel
+
+### Framework Selection Strategy
+
+| Framework | Use Case |
+|-----------|----------|
+| **First Principles** | Novel/Fundamental problems. "Is this physically impossible?" |
+| **Root Cause (RCA)** | Debugging/Incidents. "Why did this fail?" (5 Whys) |
+| **Decision Analysis** | Trade-offs/Selection. "React vs Vue?" (Weighted Matrix) |
+| **Systems Thinking** | Distributes Systems/Side-Effects. "What breaks if I change X?" |
+
+### Six-Phase Process
+
+1.  **Understand**: Define constraints & success criteria.
+2.  **Approach**: Select framework (above).
+3.  **Analyze**: Branching exploration (Hypothesis A vs B).
+4.  **Synthesize**: Converge on best solution.
+5.  **Validate**: Challenge assumptions (Red Teaming).
+6.  **Finalize**: Generate action plan.
+
+// end-parallel
 
 ---
 
-## Six-Phase Process
+## Decision Framework
 
-| Phase | Goal | Key Outputs |
-|-------|------|-------------|
-| 1. Understanding | Comprehend problem space | Constraints, assumptions, success criteria |
-| 2. Approach | Select framework | Framework choice, reasoning strategy |
-| 3. Analysis | Execute framework | Multiple solution branches, evidence |
-| 4. Synthesis | Integrate findings | Key insights, conclusions |
-| 5. Validation | Verify integrity | Contradiction check, confidence levels |
-| 6. Finalization | Generate outputs | Summary, action plan, decisions |
-
----
-
-## Thought Structure
+### Chain-of-Thought Structure
 
 ```yaml
 thought:
-  id: "T3.2.1"  # Phase.Step.Branch
-  stage: "analysis"  # planning|analysis|synthesis|revision|validation
-  dependencies: ["T3.1", "T3.2"]
-  content: "[Detailed reasoning]"
-  evidence: "[Supporting facts]"
-  assumptions: "[Stated assumptions]"
-  confidence: 0.85  # 0-1 scale
-  status: "active"  # active|revised|superseded|validated
+  id: "T1.1"
+  stage: "analysis"
+  content: "If we use Redis, we introduce a new dependency."
+  evidence: "Infra docs show no current Redis cluster."
+  confidence: 0.9
+  status: "active"
 ```
 
----
+### Branching Strategy
 
-## First Principles Framework
-
-**When**: Novel problems, deep understanding needed
-
-```
-T3.1: List all assumptions
-T3.2: Challenge each - "Is this necessarily true?"
-T3.3: Identify fundamental truths (physics, math, logic)
-T3.4: Reconstruct solution from fundamentals
-T3.5: Validate reconstruction
-```
+-   **Explore**: `T1.1` -> `T1.1.1` (Option A) vs `T1.1.2` (Option B).
+-   **Revise**: `T1.1` -> `T1.1-REV` (New evidence invalidates T1.1).
+-   **Prune**: Mark paths as `dead-end` if constraints violated.
 
 ---
 
-## Root Cause Analysis
+## Core Knowledge (Parallel)
 
-**When**: Debugging, incident response, quality issues
+// parallel
 
-```
-T3.1: Define problem precisely (symptoms, scope, timeline)
-T3.2: Gather evidence (logs, metrics, observations)
-T3.3: Generate hypotheses
-  T3.3.1: Test hypothesis 1
-  T3.3.2: Test hypothesis 2
-T3.4: Validate root cause
-T3.5: Propose solutions
-```
+### Constitutional AI Principles
 
-**Techniques**: 5 Whys, Fishbone diagram, Fault Tree Analysis
+1.  **Rigor (Target: 100%)**: No conclusion without evidence/reasoning.
+2.  **Breadth (Target: 90%)**: Explore at least 2 alternatives for major decisions.
+3.  **Auditability (Target: 100%)**: Reasoning trail must be reconstructible.
+4.  **Intellectual Honesty (Target: 100%)**: Explicitly state low confidence.
 
----
+### Quick Reference Patterns
 
-## Decision Analysis
+-   **Hypothesis Testing**: Hypothesis -> Test -> Validate/Reject.
+-   **Trade-off Matrix**: Row=Option, Col=Criteria, Cell=Score.
+-   **Premortem**: "Assume it failed. Why?"
+-   **Inversion**: "How would I guarantee failure?" (Avoid those).
 
-**When**: Technology choices, architectural decisions
-
-```
-T3.1: Define criteria with weights
-T3.2: Generate 3-5 alternatives
-T3.3-T3.5: Score each alternative
-T3.6: Compare tradeoffs
-T3.7: Make recommendation with confidence
-```
+// end-parallel
 
 ---
 
-## Branching & Revision
+## Quality Assurance
 
-### When to Branch
-- Alternative solutions: T3.1.1, T3.1.2, T3.1.3
-- Hypothesis testing: T3.2.v (validation)
-- Different frameworks: T3.1.f (framework switch)
+### Common Pitfalls
 
-### When to Revise
-- New evidence contradicts previous thought
-- Assumption found invalid
-- Better approach identified
+| Pitfall | Fix |
+|---------|-----|
+| Jumping to Solution | Force Phase 1 (Understanding) & 2 (Approach) |
+| Confirmation Bias | Actively search for disconfirming evidence |
+| False Dilemma | Look for Option C (Synthesis) |
+| Hidden Assumptions | "Assuming network is reliable..." -> Make explicit |
 
-```
-T3.5.1 [Revision of T3.5]
-Original: [Previous reasoning]
-Reason: [Why update needed]
-Updated: [Corrected analysis]
-Confidence: +0.10 (0.75 → 0.85)
-```
+### Reasoning Checklist
 
----
-
-## Confidence Levels
-
-| Level | Range | Criteria |
-|-------|-------|----------|
-| High | 0.85-1.0 | Strong evidence, validated, low uncertainty |
-| Medium | 0.60-0.84 | Moderate evidence, some assumptions unvalidated |
-| Low | 0.0-0.59 | Weak evidence, high uncertainty, needs investigation |
-
----
-
-## Contradiction Detection
-
-| Level | Type | Example |
-|-------|------|---------|
-| Semantic | Conflicting statements | "Read-heavy" vs "Needs write optimization" |
-| Constraint | Requirement violation | Budget $50K vs Cost $75K |
-| Temporal | Cause-effect inconsistency | "Reduces latency" vs "Increases latency" |
-
-**Resolution**: Flag → Analyze root cause → Create revision branch → Update chain → Validate downstream
-
----
-
-## Depth Modes
-
-| Mode | Thoughts | Duration | Branches | Use Case |
-|------|----------|----------|----------|----------|
-| Shallow | 5-15 | 5-10 min | 1-2 | Quick analysis, initial exploration |
-| Deep | 20-40 | 30-60 min | 3-5 | Important decisions, complex problems |
-| Ultra-Deep | 50-100+ | 2-4 hrs | 10+ | Strategic decisions, high-stakes |
-
----
-
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| Explicit dependencies | List which thoughts each builds upon |
-| Evidence-based | Support with concrete facts/data |
-| Assumption tracking | Make all assumptions explicit |
-| Confidence honesty | Low confidence acceptable if uncertain |
-| Branch early | Explore alternatives before committing |
-| Revise freely | Course-correct with new information |
-| Validate thoroughly | Apply full checklist before finalizing |
-
----
-
-## Common Pitfalls
-
-| Pitfall | Problem |
-|---------|---------|
-| Skipping phases | Miss critical constraints or assumptions |
-| Single path | No alternative exploration |
-| Implicit assumptions | Unvalidated beliefs affect conclusions |
-| Overconfidence | High confidence without evidence |
-| No revision | Failing to update with new information |
-
----
-
-## Checklist
-
-- [ ] Problem fully understood with constraints
-- [ ] Framework selected appropriate to problem type
-- [ ] Multiple branches explored
-- [ ] Evidence gathered for key claims
-- [ ] Assumptions made explicit and validated
-- [ ] Confidence levels assigned honestly
-- [ ] Contradictions checked and resolved
-- [ ] Conclusions synthesized with rationale
-
----
-
-**Version**: 1.0.5
+- [ ] Framework selected explicitly
+- [ ] Constraints defined clearly
+- [ ] At least 2 branches explored (for complex tasks)
+- [ ] Assumptions listed and challenged
+- [ ] Confidence score assigned
+- [ ] Contradictions resolved

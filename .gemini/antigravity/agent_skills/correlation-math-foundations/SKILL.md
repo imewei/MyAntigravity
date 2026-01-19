@@ -1,126 +1,99 @@
 ---
 name: correlation-math-foundations
-version: "1.0.7"
-description: Mathematical foundations of correlation functions including two-point C(r), higher-order χ₄(t), cumulants, Fourier/Laplace/wavelet transforms, Wiener-Khinchin theorem, Ornstein-Zernike equations, fluctuation-dissipation theorem, and Green's functions. Use when developing correlation theory or connecting microscopic correlations to macroscopic response.
+description: Mathematical theory of correlation functions, transforms, and fluctuation-dissipation.
+version: 2.0.0
+agents:
+  primary: correlation-function-expert
+skills:
+- mathematical-physics
+- signal-processing-theory
+- statistical-mechanics-theory
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
-# Mathematical Foundations of Correlation Functions
+# Correlation Math Foundations
 
-## Two-Point Correlation
+// turbo-all
 
-**Definition**: C(r) = ⟨φ(r)φ(0)⟩ - ⟨φ⟩²
+# Correlation Math Foundations
 
-| Property | Expression |
-|----------|------------|
-| Variance | C(0) = ⟨(δφ)²⟩ |
-| Decay | C(r→∞) → 0 |
-| Symmetry | C(r) = C(-r) |
-| Time | C(t) = ⟨A(t)A(0)⟩ - ⟨A⟩² |
+The theoretical backbone for correlation analysis: Wiener-Khinchin, Ornstein-Zernike, Fluctuation-Dissipation, and Green's Functions.
 
-## Higher-Order
+---
 
-- **Three-point**: C³(r₁,r₂) = ⟨φ(0)φ(r₁)φ(r₂)⟩ - factorizable
-- **Four-point**: χ₄(t) = ⟨[C(0,t)]²⟩ - ⟨C(0,t)⟩² (dynamic heterogeneity)
-- **Cumulants**: κ₂ (variance), κ₃ (skewness), κ₄ (non-Gaussian tails)
+## Strategy & Validation (Parallel)
 
-## Transforms
+// parallel
 
-### Fourier
-**Spatial**: C̃(k) = ∫ C(r) e^(ik·r) dr
-**Temporal**: C̃(ω) = ∫ C(t) e^(iωt) dt
+### Delegation Strategy
 
-```python
-def structure_factor(positions, box_size, k_max=10):
-    bins = int(box_size * k_max / (2*np.pi))
-    rho, _ = np.histogramdd(positions, bins=bins, range=[(0,box_size)]*3)
-    return radial_average(np.abs(np.fft.fftn(rho))**2)
+| Delegate To | When |
+|-------------|------|
+| correlation-computational-methods | Implementing the math |
+| correlation-physical-systems | Applying to verified physics |
 
-def spectral_density(time_series, dt):
-    C = np.correlate(time_series - time_series.mean(),
-                     time_series - time_series.mean(), mode='full')
-    C = C[len(C)//2:]
-    S = np.fft.fft(C)
-    return np.fft.fftfreq(len(C), dt)[:len(C)//2], S[:len(S)//2].real
-```
+### Pre-Response Validation Framework (5 Checks)
 
-### Laplace & Wavelet
-- **Laplace**: C̃(s) = ∫₀^∞ C(t) e^(-st) dt (relaxation spectra)
-- **Wavelet**: W(a,b) = ∫ C(t) ψ*((t-b)/a) dt / √a (multi-scale)
+**MANDATORY before any response:**
 
-## Wiener-Khinchin
+1.  **Definition**: Autocorrelation vs Cross-correlation correctly formatted?
+2.  **Domain**: Frequency (Spectrum) vs Time?
+3.  **Stationarity**: Is the process WSS (Wide-Sense Stationary)?
+4.  **Normalization**: Variance or Unity?
+5.  **Limits**: t=0 and t->inf behavior correct?
 
-S(ω) = ∫₋∞^∞ C(t) e^(-iωt) dt
+// end-parallel
 
-| Application | Observable |
-|-------------|------------|
-| DLS | S(ω) from g₂(τ) |
-| Johnson-Nyquist | Voltage correlations |
+---
 
-## Ornstein-Zernike
+## Decision Framework
 
-**Fourier**: h̃(k) = c̃(k) / [1 - ρc̃(k)]
+### Chain-of-Thought Decision Framework
 
-| Closure | Use |
-|---------|-----|
-| Percus-Yevick | Hard spheres |
-| HNC | Charged systems |
+1.  **Identify Quantity**: Scalar, Vector, or Tensor correlation?
+2.  **Select Transform**: Fourier (Steady state) vs Laplace (Relaxation).
+3.  **Apply Theorem**: Wiener-Khinchin (Spectrum), FDT (Response).
+4.  **Check Constraints**: Kramers-Kronig, Sum Rules.
+5.  **Derive Relation**: Microscopic -> Macroscopic.
 
-## Fluctuation-Dissipation
+---
 
-**FDT**: χ_AB(t) = β d/dt ⟨A(t)B(0)⟩_eq
+## Core Knowledge (Parallel)
 
-| Response | Correlation |
-|----------|-------------|
-| σ (conductivity) | ⟨j(t)j(0)⟩ |
-| χ (susceptibility) | ⟨M(t)M(0)⟩ |
-| ε(ω) (dielectric) | Dipole |
+// parallel
 
-**Non-equilibrium**: χ(t,t') = β T_eff ∂C/∂t' (T_eff > T for driven)
+### Constitutional AI Principles
 
-## Green's Functions
+1.  **Exactness (Target: 100%)**: Correct mathematical definitions.
+2.  **Rigor (Target: 100%)**: Theoretical constraints satisfied.
+3.  **Clarity (Target: 95%)**: Notation consistency.
 
-G(r,t) = ⟨φ(r,t)φ(0,0)⟩
+### Quick Reference Patterns
 
-| System | G(r,t) |
-|--------|--------|
-| Diffusion | (4πDt)^(-d/2) exp(-r²/4Dt) |
-| DOS | ρ(ω) ∝ Im G(ω) |
+-   **Wiener-Khinchin**: S(w) = FFT(C(t)).
+-   **FDT**: Chi''(w) ~ w * S(w).
+-   **Ornstein-Zernike**: h(k) = c(k) / (1 - rho*c(k)).
+-   **Diffusion**: <r^2> ~ 2dDt.
 
-## Finite-Size
+// end-parallel
 
-| Regime | Behavior |
-|--------|----------|
-| ξ << L | Minimal effects |
-| ξ ~ L | ξ(L) ~ L^ν |
-| ξ >> L | Extrapolate L→∞ |
+---
 
-**Critical**: T_c(L) = T_c(∞) + aL^(-1/ν)
+## Quality Assurance
 
-## Sum Rules
+### Common Anti-Patterns
 
-| Rule | Expression |
-|------|------------|
-| Compressibility | S(k→0) = ρkTκ_T |
-| Conservation | ∫[S(k)-1]dk = 0 |
-| Moments | ⟨ω^n⟩ = i^n d^n/dt^n C(t)|_{t=0} |
+| Anti-Pattern | Fix |
+|--------------|-----|
+| Confusing S(k) and S(q) | 2pi factor consistency |
+| Ignoring imaginary parts | Check Kramers-Kronig |
+| Non-stationary assumptions | Check aging / two-time |
+| Divergent integrals | Regularization criteria |
 
-**Constraints**: C(0) ≥ |C(t)|, χ(t<0) = 0, Kramers-Kronig
+### Math Logic Checklist
 
-## Implementation
-
-```python
-class CorrelationAnalyzer:
-    def two_point(self, data, max_lag=None):
-        data = data - data.mean()
-        C = np.correlate(data, data, mode='full')
-        C = C[len(C)//2:] / C[len(C)//2]
-        return C[:max_lag] if max_lag else C
-
-    def cumulant(self, data, order):
-        if order == 2: return np.var(data)
-        elif order == 3: return np.mean((data - data.mean())**3)
-        elif order == 4:
-            return np.mean((data - data.mean())**4) - 3*np.var(data)**2
-```
-
-**Outcome**: Transform methods, FDT, Ornstein-Zernike, finite-size scaling, sum rules
+- [ ] Definitions consistent (Conjugate variables)
+- [ ] Normalization factors tracked (1/N, 1/V)
+- [ ] Sum rules satisfied
+- [ ] Causality enforced
+- [ ] Symmetry properties verified

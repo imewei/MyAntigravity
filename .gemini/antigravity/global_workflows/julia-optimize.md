@@ -1,75 +1,44 @@
 ---
-description: Profile Julia code and provide optimization recommendations through type
-  stability, allocation, and bottleneck analysis
+description: Profile and optimize Julia code
 triggers:
 - /julia-optimize
-- profile julia code and
+- profile julia code
+version: 2.0.0
 allowed-tools: [Read, Task, Bash]
-version: 1.0.0
+agents:
+  primary: julia-scientific-programmer
+skills:
+- julia-performance
+argument-hint: '<file-path>'
 ---
 
+# Julia Optimizer (v2.0)
 
+// turbo-all
 
-## User Input
-Input arguments pattern: `<file_path>`
-The agent should parse these arguments from the user's request.
+## Phase 1: Baseline (Sequential)
 
-# Performance Profiling and Optimization
+1.  **Benchmark**
+    - Action: Run `@benchmark` to capture current state.
 
-Target: $ARGUMENTS
+## Phase 2: Analysis (Parallel)
 
-## Phase 1: Baseline
+// parallel
 
-```julia
-using BenchmarkTools
-@benchmark target_function($args)  # Capture: median time, memory, allocs, GC%
-```
+2.  **Type Stability**
+    - Action: Run `@code_warntype`. Identify red flags.
 
-## Phase 2: Type Stability
+3.  **Allocation Profile**
+    - Action: Run allocation profiler.
 
-```julia
-@code_warntype target_function(args)
-```
+// end-parallel
 
-| Color | Fix |
-|-------|-----|
-| Red (`Any`, `Union`) | Critical - fix immediately |
-| Yellow (Abstract) | Consider concretizing |
+## Phase 3: Optimization (Iterative)
 
-**Common issues**: Conditional returns, abstract containers, empty `[]`, globals
+4.  **Apply Fixes**
+    - Priority: Type Stability -> Allocations -> Algorithmic.
 
-## Phase 3: Profiling
+## Phase 4: Verification
 
-```julia
-using Profile, ProfileView
-@profile for _ in 1:1000; target_function(args); end
-ProfileView.view()  # Width = time, red = hot spots
-```
-
-## Phase 4: Allocations
-
-```julia
-@allocations target_function(args)
-Profile.Allocs.@profile target_function(args)
-```
-
-**Fixes**: Pre-allocate, use `@view`, fix type instabilities, reuse buffers
-
-## Recommendations Priority
-
-| Priority | Category | Speedup |
-|----------|----------|---------|
-| ⭐⭐⭐⭐⭐ | Type stability | 3-10x |
-| ⭐⭐⭐⭐⭐ | Algorithm | 10-100x |
-| ⭐⭐⭐⭐ | Allocations | 2-5x |
-| ⭐⭐⭐ | Pre-allocation | 1.5-3x |
-
-## Verification
-
-```julia
-baseline = @benchmark original($data)
-optimized = @benchmark improved($data)
-speedup = median(baseline).time / median(optimized).time
-```
-
-**Docs**: `optimization-patterns.md`, `profiling-guide.md`
+5.  **Compare**
+    - Action: Re-run benchmark. Calculate speedup.

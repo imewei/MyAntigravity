@@ -1,218 +1,99 @@
 ---
 name: gitlab-ci-patterns
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: GitLab CI/CD
-description: Build GitLab CI/CD pipelines with multi-stage workflows, caching, Docker builds, Kubernetes deployments, and security scanning. Use when creating .gitlab-ci.yml pipelines, setting up runners, implementing Terraform/IaC, or configuring GitOps workflows.
+description: GitLab CI/CD pipelines including caching, Docker-in-Docker, and multi-cloud deployment.
+version: 2.0.0
+agents:
+  primary: devops-engineer
+skills:
+- pipeline-architecture
+- docker-services
+- environment-management
+- artifact-handling
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # GitLab CI Patterns
 
-Production-ready GitLab CI/CD pipeline patterns and automation.
+// turbo-all
+
+# GitLab CI Patterns
+
+Enterprise-grade pipeline definitions for `.gitlab-ci.yml`.
 
 ---
 
-## Pipeline Stages
+## Strategy & Stages (Parallel)
 
-| Stage | Purpose | Jobs |
-|-------|---------|------|
-| build | Compile, containerize | npm build, docker build |
-| test | Validate | unit, integration, lint |
-| deploy | Release | staging, production |
+// parallel
 
----
+### Pipeline Structure
 
-## Basic Pipeline
+| Stage | Activities |
+|-------|------------|
+| **.pre** | Linting, Static Analysis. |
+| **build** | Compile, Docker Build (`dind`), Kaniko. |
+| **test** | Unit/Integration Tests. |
+| **security** | Container Scanning, SAST. |
+| **deploy** | Helm Upgrade, Terraform Apply. |
+| **.post** | Notifications (Slack/Email). |
 
-```yaml
-stages: [build, test, deploy]
+### Caching Strategy
 
-variables:
-  DOCKER_TLS_CERTDIR: "/certs"
+-   **Workspace**: Pass artifacts between stages (temporary).
+-   **Cache**: Persist dependencies between runs (long-term).
+-   **Key**: `${CI_COMMIT_REF_SLUG}` (Branch-specific) or `global`.
 
-build:
-  stage: build
-  image: node:20
-  script:
-    - npm ci && npm run build
-  artifacts:
-    paths: [dist/]
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths: [node_modules/]
-
-test:
-  stage: test
-  image: node:20
-  script:
-    - npm ci && npm run lint && npm test
-
-deploy:
-  stage: deploy
-  script: kubectl apply -f k8s/
-  only: [main]
-  environment:
-    name: production
-    url: https://app.example.com
-```
+// end-parallel
 
 ---
 
-## Docker Build
+## Decision Framework
 
-```yaml
-build-docker:
-  stage: build
-  image: docker:24
-  services: [docker:24-dind]
-  before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-  script:
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA .
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-  only: [main, tags]
-```
+### Dynamic Pipelines
+
+1.  **Generate**: Script creates child YAML based on changes.
+2.  **Trigger**: Parent pipeline triggers child.
+3.  **Execute**: Child runs subset of jobs (e.g., only backend tests).
 
 ---
 
-## Multi-Environment Deployment
+## Core Knowledge (Parallel)
 
-```yaml
-.deploy_template: &deploy_template
-  image: bitnami/kubectl:latest
-  before_script:
-    - kubectl config set-cluster k8s --server="$KUBE_URL"
-    - kubectl config set-credentials admin --token="$KUBE_TOKEN"
-    - kubectl config set-context default --cluster=k8s --user=admin
-    - kubectl config use-context default
+// parallel
 
-deploy:staging:
-  <<: *deploy_template
-  stage: deploy
-  script: kubectl apply -f k8s/ -n staging
-  environment: { name: staging }
-  only: [develop]
+### Constitutional AI Principles
 
-deploy:production:
-  <<: *deploy_template
-  stage: deploy
-  script: kubectl apply -f k8s/ -n production
-  environment: { name: production }
-  when: manual
-  only: [main]
-```
+1.  **Feedback (Target: <10m)**: Devs get feedback fast.
+2.  **Security (Target: 100%)**: Protected variables for Prod secrets.
+3.  **Traceability (Target: 100%)**: Deployments link to Commit SHA.
+
+### Quick Reference Variables
+
+-   `CI_COMMIT_SHA`: Current commit.
+-   `CI_REGISTRY_IMAGE`: Project container registry.
+-   `CI_ENVIRONMENT_NAME`: prod/staging.
+-   `CI_PIPELINE_SOURCE`: trigger, push, schedule.
+
+// end-parallel
 
 ---
 
-## Terraform Pipeline
+## Quality Assurance
 
-```yaml
-stages: [validate, plan, apply]
+### Common Pitfalls
 
-validate:
-  stage: validate
-  image: hashicorp/terraform:1.6
-  script:
-    - terraform init -backend=false
-    - terraform validate && terraform fmt -check
+| Pitfall | Fix |
+|---------|-----|
+| Artifact Bloat | Set `expire_in` for artifacts. |
+| Zombie Runners | Use timeouts. |
+| Secrets in Variables | Check "Masked" and "Protected" boxes. |
+| Docker Limit | Use internal registry mirror. |
 
-plan:
-  stage: plan
-  image: hashicorp/terraform:1.6
-  script: terraform init && terraform plan -out=tfplan
-  artifacts:
-    paths: [tfplan]
+### GitLab Checklist
 
-apply:
-  stage: apply
-  image: hashicorp/terraform:1.6
-  script: terraform apply -auto-approve tfplan
-  dependencies: [plan]
-  when: manual
-  only: [main]
-```
-
----
-
-## Security Scanning
-
-```yaml
-include:
-  - template: Security/SAST.gitlab-ci.yml
-  - template: Security/Dependency-Scanning.gitlab-ci.yml
-  - template: Security/Container-Scanning.gitlab-ci.yml
-
-trivy-scan:
-  stage: test
-  image: aquasec/trivy:latest
-  script: trivy image --exit-code 1 --severity HIGH,CRITICAL $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-  allow_failure: true
-```
-
----
-
-## Caching Strategies
-
-| Strategy | Key | Use Case |
-|----------|-----|----------|
-| Branch-based | `${CI_COMMIT_REF_SLUG}` | Dependencies per branch |
-| Global | `global-cache` | Shared across branches |
-| Job-specific | `job-name-cache` | Isolated per job |
-
-```yaml
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths: [node_modules/, .cache/]
-  policy: pull-push
-```
-
----
-
-## Dynamic Child Pipelines
-
-```yaml
-generate-pipeline:
-  stage: build
-  script: python generate_pipeline.py > child-pipeline.yml
-  artifacts:
-    paths: [child-pipeline.yml]
-
-trigger-child:
-  stage: deploy
-  trigger:
-    include:
-      - artifact: child-pipeline.yml
-        job: generate-pipeline
-    strategy: depend
-```
-
----
-
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| Specific image tags | `node:20` not `node:latest` |
-| Cache dependencies | Reduce install time |
-| Artifacts for builds | Pass between stages |
-| Manual production gates | `when: manual` |
-| Environments for tracking | Link to URLs |
-| Security scanning | Include templates |
-| CI/CD variables | Masked for secrets |
-
----
-
-## Checklist
-
-- [ ] Stages defined (build, test, deploy)
-- [ ] Caching configured for dependencies
-- [ ] Artifacts for build outputs
-- [ ] Manual approval for production
-- [ ] Environments with URLs
-- [ ] Security scanning enabled
-- [ ] Secrets in masked variables
-- [ ] Image tags pinned
-
----
-
-**Version**: 1.0.5
+- [ ] `stages` defined clearly
+- [ ] `image` pinned to SHA/Tag
+- [ ] `cache` keys distinct (no thrashing)
+- [ ] `before_script` handles auth
+- [ ] `rules` optimize execution (avoid redundant jobs)
+- [ ] Security scanners (SAST) included

@@ -1,177 +1,98 @@
 ---
 name: api-design-principles
-version: "1.0.7"
-description: Master REST and GraphQL API design including resource-oriented architecture, HTTP semantics, pagination (cursor/offset), versioning strategies, error handling, HATEOAS, DataLoader patterns, and documentation. Use when designing new APIs, implementing pagination, handling errors, or establishing API standards.
+description: REST, GraphQL, and gRPC design standards for scalable interfaces.
+version: 2.0.0
+agents:
+  primary: backend-architect
+skills:
+- rest-design
+- graphql-schema
+- versioning-strategy
+- api-security
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # API Design Principles
 
-REST and GraphQL API design for intuitive, scalable, and maintainable APIs.
+// turbo-all
 
-## Paradigm Selection
+# API Design Principles
 
-| Paradigm | Best For | Key Characteristics |
-|----------|----------|---------------------|
-| REST | CRUD operations, caching, simplicity | Resource-oriented, HTTP semantics |
-| GraphQL | Complex queries, mobile apps | Single endpoint, client-driven |
-| gRPC | Internal services, high performance | Binary protocol, streaming |
+Architecting intuitive, consistent, and lasting interfaces.
 
-## REST Resource Design
+---
 
-```python
-# ✅ Good: Resource-oriented
-GET    /api/users              # List users
-POST   /api/users              # Create user
-GET    /api/users/{id}         # Get user
-PUT    /api/users/{id}         # Replace user
-PATCH  /api/users/{id}         # Update fields
-DELETE /api/users/{id}         # Delete user
-GET    /api/users/{id}/orders  # Nested resource
+## Strategy & Paradigms (Parallel)
 
-# ❌ Bad: Action-oriented
-POST   /api/createUser
-POST   /api/getUserById
-```
+// parallel
 
-## HTTP Methods
+### Paradigm Selection
 
-| Method | Purpose | Idempotent | Safe |
-|--------|---------|------------|------|
-| GET | Retrieve resources | Yes | Yes |
-| POST | Create new resource | No | No |
-| PUT | Replace entire resource | Yes | No |
-| PATCH | Partial update | No | No |
-| DELETE | Remove resource | Yes | No |
+| Style | Use Case | Strength |
+|-------|----------|----------|
+| **REST** | Public API, CRUD | Cacheable, Simple, Standard. |
+| **GraphQL** | Mobile, Complex Data | No Over/Under-fetching, Type System. |
+| **gRPC** | Internal Microservices | Fast (Protobuf), Streaming, Typed. |
 
-## Pagination
+### REST Maturity
 
-### Offset-Based
-```python
-@app.get("/api/users")
-async def list_users(page: int = 1, page_size: int = 20):
-    offset = (page - 1) * page_size
-    users = await fetch_users(limit=page_size, offset=offset)
-    total = await count_users()
-    return {
-        "items": users,
-        "total": total,
-        "page": page,
-        "pages": (total + page_size - 1) // page_size
-    }
-```
+1.  **Level 1**: Resources (URI).
+2.  **Level 2**: Verbs (GET/POST) + Codes (200/404).
+3.  **Level 3**: HATEOAS (Hypermedia links).
 
-### Cursor-Based (GraphQL Relay)
-```graphql
-type UserConnection {
-  edges: [UserEdge!]!
-  pageInfo: PageInfo!
-}
+// end-parallel
 
-type PageInfo {
-  hasNextPage: Boolean!
-  endCursor: String
-}
-```
+---
 
-## Error Handling
+## Decision Framework
 
-| Status | Meaning | Example |
-|--------|---------|---------|
-| 200 | Success | GET succeeded |
-| 201 | Created | POST succeeded |
-| 204 | No Content | DELETE succeeded |
-| 400 | Bad Request | Invalid input |
-| 401 | Unauthorized | Missing/invalid token |
-| 403 | Forbidden | Insufficient permissions |
-| 404 | Not Found | Resource doesn't exist |
-| 422 | Unprocessable | Validation failed |
-| 500 | Server Error | Internal failure |
+### Action Mapping
 
-### Consistent Error Response
-```python
-class ErrorResponse(BaseModel):
-    error: str      # Error type
-    message: str    # Human-readable message
-    details: dict   # Additional context
+-   **List**: `GET /resources` (Paginated).
+-   **Read**: `GET /resources/{id}`.
+-   **Create**: `POST /resources` (Return 201 + Location header).
+-   **Update**: `PATCH /resources/{id}` (Partial).
+-   **Replace**: `PUT /resources/{id}` (Full idempotency).
+-   **Delete**: `DELETE /resources/{id}` (Return 204).
 
-def raise_not_found(resource: str, id: str):
-    raise HTTPException(
-        status_code=404,
-        detail={"error": "NotFound", "message": f"{resource} not found", "details": {"id": id}}
-    )
-```
+---
 
-## GraphQL Schema Design
+## Core Knowledge (Parallel)
 
-```graphql
-type User {
-  id: ID!
-  email: String!
-  orders(first: Int = 20, after: String): OrderConnection!
-}
+// parallel
 
-type Mutation {
-  createUser(input: CreateUserInput!): CreateUserPayload!
-}
+### Constitutional AI Principles
 
-type CreateUserPayload {
-  user: User
-  errors: [Error!]  # Errors in payload, not exceptions
-}
-```
+1.  **Consistency (Target: 100%)**: Standardize Error formats and Case (snake_case vs camelCase).
+2.  **Versioning (Target: 100%)**: Breaking changes must be a new version (URL or Header).
+3.  **Security (Target: 100%)**: Rate limits and Auth on *every* endpoint.
 
-## DataLoader (N+1 Prevention)
+### Quick Reference Patterns
 
-```python
-from aiodataloader import DataLoader
+-   **Pagination**: `limit=20&cursor=xyz` (Better than Offset).
+-   **Filters**: `status=active&created_gt=2023-01-01`.
+-   **Fields**: `fields=id,name,email` (Partial response).
 
-class UserLoader(DataLoader):
-    async def batch_load_fn(self, user_ids: list[str]) -> list[dict]:
-        users = await fetch_users_by_ids(user_ids)
-        user_map = {u["id"]: u for u in users}
-        return [user_map.get(uid) for uid in user_ids]
+// end-parallel
 
-# In resolver
-@user_type.field("orders")
-async def resolve_orders(user: dict, info):
-    return await info.context["loaders"]["orders_by_user"].load(user["id"])
-```
+---
 
-## API Versioning
+## Quality Assurance
 
-| Strategy | Example | Pros/Cons |
-|----------|---------|-----------|
-| URL Path | `/api/v1/users` | Clear, cacheable |
-| Header | `Accept: application/vnd.api+json; version=1` | Clean URLs |
-| Query Param | `/api/users?version=1` | Easy testing |
+### Common Pitfalls
 
-## Best Practices
+| Pitfall | Fix |
+|---------|-----|
+| Verbs in URL | `/createUser` -> `POST /users`. |
+| 200 OK for Error | Use 400/500 codes. Don't hide errors in JSON body. |
+| Breaking Change | Ensure backward compatibility. Add `@deprecated`. |
+| N+1 (GraphQL) | Use DataLoader pattern. |
 
-| Practice | REST | GraphQL |
-|----------|------|---------|
-| Naming | Plural nouns (`/users`) | camelCase fields |
-| Pagination | Always paginate collections | Cursor-based (Relay) |
-| Errors | HTTP status codes | Errors in payload |
-| Versioning | Plan from day one | Use `@deprecated` |
-| Documentation | OpenAPI/Swagger | Schema introspection |
+### API Checklist
 
-## Common Pitfalls
-
-| Pitfall | Problem |
-|---------|---------|
-| Breaking changes | No versioning strategy |
-| N+1 queries | No DataLoader in GraphQL |
-| Inconsistent errors | Different formats per endpoint |
-| Over-fetching | Fixed response shapes |
-| Poor documentation | Undocumented APIs frustrate devs |
-
-## Checklist
-
-- [ ] Resources named as plural nouns
-- [ ] Correct HTTP methods and status codes
-- [ ] Pagination on all collections
+- [ ] Plural nouns for resources
+- [ ] Proper HTTP Status Codes
 - [ ] Versioning strategy defined
-- [ ] Consistent error response format
-- [ ] Rate limiting implemented
-- [ ] DataLoader for GraphQL relationships
-- [ ] OpenAPI/GraphQL schema documented
+- [ ] Pagination (Cursor preference)
+- [ ] Error objects standardized
+- [ ] Documentation (OpenAPI/Swagger)

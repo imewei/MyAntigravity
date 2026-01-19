@@ -1,122 +1,56 @@
 ---
-description: Automatically analyzes GitHub Actions failures, identifies root causes,
-  applies intelligent solutions, validates, and reruns workflows with adaptive learning.
+description: Analyze and fix CI/CD failures using multi-agent error analysis
 triggers:
 - /fix-commit-errors
 - workflow for fix commit errors
-version: 1.0.7
-category: cicd-automation
-command: /fix-commit-errors
-execution-modes:
-  quick-fix: '5-10m: Discovery + Fix'
-  standard: '15-30m: Full resolution + learning'
-  comprehensive: '30-60m: Deep analysis + correlation'
-documentation:
-  multi-agent-system: ../docs/cicd-automation/multi-agent-error-analysis.md
-  error-patterns: ../docs/cicd-automation/error-pattern-library.md
-  fix-strategies: ../docs/cicd-automation/fix-strategies.md
-allowed-tools: Bash(gh:*), Bash(git:*), Bash(npm:*), Bash(yarn:*), Bash(pip:*), Bash(cargo:*),
-  Bash(go:*)
-argument-hint: '[workflow-id|commit-sha|pr-number] [--auto-fix] [--learn] [--mode=quick-fix|standard|comprehensive]'
-color: red
+version: 2.0.0
+allowed-tools: [Bash(gh:*), Bash(git:*), Bash(npm:*), Bash(pip:*), Read]
+agents:
+  primary: devops-troubleshooter
+  conditional:
+  - agent: python-developer
+    trigger: error "ModuleNotFoundError"
+  - agent: frontend-developer
+    trigger: error "npm ERR"
+skills:
+- ci-cd-debugging
+- error-pattern-matching
+argument-hint: '[run-id] [--auto-fix]'
 ---
 
+# CI/CD Forensics (v2.0)
 
-# Intelligent GitHub Actions Failure Resolution
+// turbo-all
 
-$ARGUMENTS
+## Phase 1: Forensics (Parallel)
 
-**Flags:** `--auto-fix`, `--learn`, `--mode=quick-fix|standard|comprehensive`
+// parallel
 
-## Phase 1: Detection
+1.  **Log Extraction**
+    - Action: `gh run view --log-failed`.
+    - Goal: Extract error stack trace.
 
-Target: run ID, commit SHA, PR number, or latest failure
+2.  **Context Diff**
+    - Action: `git show` (what changed in this commit?).
+    - Goal: Correlate changes to errors.
 
-```bash
-gh run list --status failure --limit 10
-gh run view $RUN_ID --log-failed > error_logs.txt
-```
+// end-parallel
 
-## Phase 2: Pattern Analysis
+## Phase 2: Diagnosis (Sequential)
 
-**Error Categories:**
-- Dependency: `npm ERR!`, `ERESOLVE`, `No module named`, `unresolved import`
-- Build: `TS[0-9]+:`, `Module not found`, `undefined reference`
-- Test: `FAIL`, `AssertionError`, `timeout`, `panic:`
-- Runtime: `OOM`, `ECONNREFUSED`, `ETIMEDOUT`
-- CI Setup: cache failures, `setup-*` failures
+3.  **Pattern Matching**
+    - Match error against known patterns (missing deps, env vars, syntax errors).
 
-**Root Cause:**
-1. Technical: What, why, when
-2. Historical: Compare successful runs
-3. Correlation: Systemic vs job-specific
-4. Environmental: OS/version/timing
+4.  **Solution Hypothesis**
+    - Generate High/Medium/Low confidence solution.
 
-## Phase 3: Solution Selection
+## Phase 3: Remediation (Sequential)
 
-**Confidence Scoring:**
-- HIGH (>80% success): Auto-apply
-- MEDIUM (>50%): Test branch first
-- LOW (<50%): Manual review
+5.  **Apply Fix** (if auto-fix or High confidence)
+    - Action: Apply code change or config update.
 
-**Risk Levels:**
-- L1 (Safe): Config, `--legacy-peer-deps`, `go mod tidy` → Auto-apply
-- L2 (Moderate): Code fixes, tests → Validate first
-- L3 (Risky): Major upgrades, API changes → PR only
+6.  **Local Verification**
+    - Action: Run affected test/build locally.
 
-## Phase 4: Apply & Validate
-
-```bash
-npm test && npm run build && npm run lint
-# Pass → commit/push | Fail → rollback, try next
-```
-
-## Phase 5: Re-run
-
-```bash
-git push origin $(git branch --show-current)
-gh run watch
-```
-
-**Auto-fix loop (max 5 iterations):**
-1. Analyze errors
-2. Apply highest-confidence fix
-3. Trigger run
-4. Monitor result
-5. Update knowledge base
-
-## Phase 6: Knowledge Base
-
-**Location:** `.github/fix-commit-errors/knowledge.json`
-
-```json
-{
-  "error_patterns": [{
-    "pattern": "ERESOLVE.*peer dependency",
-    "solutions": [{"action": "npm_install_legacy_peer_deps", "success_rate": 0.85}]
-  }]
-}
-```
-
-## Success Criteria
-
-- Resolution rate: >65%
-- Time to fix: <15 min
-- Confidence accuracy: >80%
-- Regressions: 0
-
-## Safety
-
-- Validate locally before push
-- Rollback available for all changes
-- Confidence threshold enforcement
-- Transparent commit messages
-
-## Examples
-
-```bash
-/fix-commit-errors                                      # Analysis only
-/fix-commit-errors --auto-fix                           # Fix latest
-/fix-commit-errors 12345 --auto-fix --learn            # Specific run
-/fix-commit-errors PR#123 --mode=comprehensive          # Deep analysis
-```
+7.  **Push & Watch**
+    - Action: `git push`, `gh run watch`.

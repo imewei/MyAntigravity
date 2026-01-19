@@ -1,140 +1,96 @@
 ---
 name: typescript-project-scaffolding
-version: "1.0.7"
-description: Set up production-ready TypeScript projects with modern tooling. Use when initializing projects, configuring tsconfig.json, setting up Vite/ESLint/Vitest, creating Next.js/React apps, or scaffolding Node.js APIs and CLI tools.
+description: Opinionated, production-ready setups for Next.js, Vite, and Node.js.
+version: 2.0.0
+agents:
+  primary: typescript-pro
+skills:
+- project-setup
+- build-configuration
+- monorepo-management
+- linting-formatting
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # TypeScript Project Scaffolding
 
-Production-ready TypeScript project setup with modern tooling.
+// turbo-all
 
-## Project Types
+# TypeScript Project Scaffolding
 
-| Type | Quick Start |
-|------|-------------|
-| Next.js App | `pnpm create next-app@latest --typescript --tailwind --eslint --app` |
-| React SPA | `pnpm create vite my-app --template react-ts` |
-| Node.js API | `pnpm add -D typescript @types/node tsx vitest` |
-| CLI Tool | Add `commander`, `inquirer`, `chalk` |
-| Library | Configure `tsconfig.build.json` with declarations |
+Starting correctly to avoid pain later.
 
-## tsconfig.json (Optimized)
+---
 
-```json
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": { "@/*": ["./src/*"] }
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
-}
-```
+## Strategy & Templates (Parallel)
 
-## ESLint (Flat Config)
+// parallel
 
-```javascript
-// eslint.config.js
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+### Stack Choice
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strictTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: { project: true }
-    },
-    rules: {
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/consistent-type-imports': 'error'
-    }
-  }
-);
-```
+| Type | Stack | Command |
+|------|-------|---------|
+| **Web App** | Next.js (App Router) | `pnpm create next-app@latest` |
+| **SPA** | Vite + React + SWC | `pnpm create vite my-app --template react-ts` |
+| **Library** | tsup/Rollup | `pnpm create tsup` |
+| **Monorepo** | Turbo + pnpm | `pnpm dlx create-turbo@latest` |
 
-## Vitest Configuration
+### The "Gold Standard" Config
 
-```typescript
-// vitest.config.ts
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+-   `strict: true` (No `any`).
+-   `skipLibCheck: true` (Speed).
+-   `moduleResolution: bundler` (Modern).
+-   `paths`: `@/*` -> `./src/*` (Clean imports).
 
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    coverage: { provider: 'v8', reporter: ['text', 'json', 'html'] }
-  },
-  resolve: {
-    alias: { '@': path.resolve(__dirname, './src') }
-  }
-});
-```
+// end-parallel
 
-## Package.json Scripts
+---
 
-```json
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "lint": "eslint . --ext .ts,.tsx",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
-  }
-}
-```
+## Decision Framework
 
-## Monorepo Setup
+### Monorepo or Polyrepo?
 
-```bash
-# pnpm workspace
-echo "packages:\n  - 'packages/*'\n  - 'apps/*'" > pnpm-workspace.yaml
-pnpm add -D turbo
+1.  **Monorepo**: Shared code, atomic commits, consistent tooling. (Use for Products).
+2.  **Polyrepo**: Independent lifecycle, strong boundaries. (Use for Microservices/Plugins).
 
-# turbo.json
-{
-  "pipeline": {
-    "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
-    "test": { "dependsOn": ["build"] },
-    "lint": {}
-  }
-}
-```
+---
 
-## Best Practices
+## Core Knowledge (Parallel)
 
-| Practice | Implementation |
-|----------|----------------|
-| Strict mode | Enable all strict checks |
-| Path aliases | Use `@/*` for clean imports |
-| Fast testing | Vitest over Jest |
-| Modern bundling | Vite over Webpack |
-| Consistent formatting | Prettier with shared config |
-| Type-only imports | `import type { T }` syntax |
+// parallel
 
-## Checklist
+### Constitutional AI Principles
 
-- [ ] Strict TypeScript enabled
-- [ ] Path aliases configured
-- [ ] ESLint with TypeScript plugin
-- [ ] Prettier for formatting
-- [ ] Vitest for testing
-- [ ] Package scripts defined
-- [ ] .gitignore includes node_modules, dist
+1.  **Strictness (Target: 100%)**: `noImplicitAny` must be on.
+2.  **Speed (Target: <100ms)**: Build tooling (Vite/Esbuild/SWC) over Webpack/Babel.
+3.  **Hygiene (Target: 100%)**: Prettier + ESLint on save.
+
+### Quick Reference
+
+-   `pnpm add -D typescript @types/node tsx vitest`
+-   `tsc --noEmit` (Type check only).
+-   `vitest` (Fast testing).
+
+// end-parallel
+
+---
+
+## Quality Assurance
+
+### Common Bad Habits
+
+| Bad Habit | Fix |
+|-----------|-----|
+| `any` | Use `unknown` or Generic. |
+| Relative Imports `../../../` | Use Paths `@/components`. |
+| Committing `dist/` | Add to `.gitignore`. |
+| Slow Tests (Jest) | Use Vitest. |
+
+### Setup Checklist
+
+- [ ] `tsconfig.json` (Strict)
+- [ ] `.gitignore` (node_modules, dist, .env)
+- [ ] ESLint Flat Config
+- [ ] Prettier configured
+- [ ] Github Actions (CI)
+- [ ] `pnpm-lock.yaml` present

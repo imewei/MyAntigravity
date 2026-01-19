@@ -1,61 +1,96 @@
 ---
 name: testing-patterns
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Julia Testing
-description: Master Test.jl, Aqua.jl quality checks, and JET.jl static analysis for Julia testing. Use when writing unit tests, organizing test suites, or validating package quality.
+description: Julia-specific testing strategies using Test.jl, Aqua.jl, and JET.jl.
+version: 2.0.0
+agents:
+  primary: julia-pro
+skills:
+- julia-testing
+- static-analysis
+- quality-assurance
+- package-validation
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Julia Testing Patterns
 
-Test.jl, Aqua.jl, and JET.jl for comprehensive testing.
+// turbo-all
+
+# Julia Testing Patterns
+
+Ensuring correctness and stability in the Julia ecosystem.
 
 ---
 
-## Test Organization
+## Strategy & Suites (Parallel)
 
-```julia
-using Test, MyPackage
+// parallel
 
-@testset "MyPackage.jl" begin
-    @testset "Feature 1" begin
-        @test compute(5) == 25
-        @test_throws ArgumentError compute(-1)
-    end
+### Test Organization
 
-    @testset "Feature 2" begin
-        result = process_data([1,2,3])
-        @test length(result) == 3
-        @test all(x -> x > 0, result)
-    end
-end
-```
+| Component | Tool | Purpose |
+|-----------|------|---------|
+| **Unit** | `Test.jl` | Correctness of functions. |
+| **Quality** | `Aqua.jl` | Ambiguities, unbound args, stale deps. |
+| **Static** | `JET.jl` | Type stability and optimization passes. |
+| **Doctest** | `Documenter.jl` | Verify examples in docstrings. |
 
----
+### Suite Structure
 
-## Quality Checks
+-   `test/runtests.jl`: Entry point.
+-   `@testset "Feature"`: Logical grouping.
+-   `@test_throws`: Error handling checks.
 
-```julia
-using Aqua, JET
-
-# Aqua.jl: Package quality
-Aqua.test_all(MyPackage)
-
-# JET.jl: Static analysis
-@test_opt my_function(args)
-@test_call my_function(args)
-```
+// end-parallel
 
 ---
 
-## Checklist
+## Decision Framework
 
-- [ ] Unit tests in test/runtests.jl
-- [ ] @testset blocks for organization
-- [ ] Aqua.jl quality checks pass
-- [ ] JET.jl type inference validated
-- [ ] Edge cases and errors tested
+### Testing Hierarchy
+
+1.  **Fast**: Unit tests in `test/`. Run on every save.
+2.  **Strict**: `JET.report_package()` to catch type instability.
+3.  **Clean**: `Aqua.test_all(MyPackage)` to catch rot.
+4.  **Slow**: Integration/Simulation tests (CI only).
 
 ---
 
-**Version**: 1.0.5
+## Core Knowledge (Parallel)
+
+// parallel
+
+### Constitutional AI Principles
+
+1.  **Stability (Target: 100%)**: No "MethodError" at runtime. (Use JET).
+2.  **Privacy (Target: 100%)**: Test data must be synthetic.
+3.  **Coverage (Target: 90%)**: Critical math functions tested.
+
+### Quick Reference
+
+-   `@test x ≈ y` (Approx equality for floats).
+-   `@testset "Name" begin ... end`.
+-   `Pkg.test()`.
+
+// end-parallel
+
+---
+
+## Quality Assurance
+
+### Common Pitfalls
+
+| Pitfall | Fix |
+|---------|-----|
+| Running tests global | Use `@testset` to isolate scope. |
+| Ignoring Type Instability | Code will be slow. Fix red warnings in JET. |
+| Flaky Tests | Avoid `rand()` without `Random.seed!`. |
+| Missing Docs | `Documenter.doctest` ensures examples work. |
+
+### Checklist
+
+- [ ] `runtests.jl` includes all sub-files
+- [ ] Aqua.jl checks enabled (Ambiguity/Stale/Compat)
+- [ ] JET.jl static analysis passing (opt/call)
+- [ ] Doctests passing
+- [ ] CI Matrix for Julia Versions (LTS/Stable)

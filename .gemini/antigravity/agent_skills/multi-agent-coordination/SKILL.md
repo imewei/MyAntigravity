@@ -1,291 +1,101 @@
 ---
 name: multi-agent-coordination
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Multi-Agent Workflow Orchestration
-description: Coordinate multiple AI agents through workflow orchestration, task allocation, and distributed systems. Use when designing DAG-based workflows with task dependencies, building agent team assembly with capability matching, implementing inter-agent communication protocols, orchestrating parallel execution with synchronization, designing fault-tolerant systems with retry logic, or managing distributed agent teams.
+description: Implementation patterns for agent communication, task allocation, and synchronization.
+version: 2.0.0
+agents:
+  primary: multi-agent-orchestrator
+skills:
+- inter-agent-messaging
+- task-scheduling
+- capability-matching
+- dag-execution
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Multi-Agent Coordination
 
-Production-ready patterns for multi-agent orchestration and workflow management.
+// turbo-all
+
+# Multi-Agent Coordination
+
+Implementation of the protocols, messaging, and scheduling logic that powers multi-agent systems.
 
 ---
 
-## Coordination Patterns
+## Strategy & Validation (Parallel)
 
-| Pattern | Use Case | Complexity |
-|---------|----------|------------|
-| Sequential | Linear task chains | Low |
-| Parallel | Independent tasks | Medium |
-| DAG-based | Complex dependencies | High |
-| Broadcast | Status updates | Low |
-| Request/Response | Inter-agent queries | Medium |
+// parallel
 
----
+### Delegation Strategy
 
-## Agent Team Assembly
+| Delegate To | When |
+|-------------|------|
+| multi-agent-orchestrator | High-level strategy decisions |
+| agent-performance-optimization | Load balancing logic |
 
-```python
-from dataclasses import dataclass
-from enum import Enum
-from typing import Set, List, Dict
+### Pre-Response Validation Framework (5 Checks)
 
-class AgentCapability(Enum):
-    BACKEND_DEV = "backend-development"
-    FRONTEND_DEV = "frontend-development"
-    ML_ENGINEERING = "ml-engineering"
-    DEVOPS = "devops"
-    TESTING = "testing"
+**MANDATORY before any response:**
 
-@dataclass
-class Agent:
-    name: str
-    capabilities: Set[AgentCapability]
-    specializations: List[str]
-    availability: float  # 0.0 to 1.0
-    performance_score: float
-    max_concurrent_tasks: int
+1.  **Protocol**: Async vs Sync communication?
+2.  **Format**: JSON/Protobuf message strictness?
+3.  **Queue**: Is a broker needed (RabbitMQ/Redis)?
+4.  **Idempotency**: Can tasks be retried safely?
+5.  **Timeout**: Are deadlines set?
 
-@dataclass
-class Task:
-    id: str
-    required_capabilities: Set[AgentCapability]
-    required_specializations: List[str]
-    priority: int
-    dependencies: List[str]
-
-class AgentRegistry:
-    def __init__(self):
-        self.agents: Dict[str, Agent] = {}
-
-    def find_capable_agents(
-        self,
-        required_capabilities: Set[AgentCapability],
-        required_specializations: List[str] = None
-    ) -> List[Agent]:
-        capable = [
-            agent for agent in self.agents.values()
-            if required_capabilities.issubset(agent.capabilities)
-            and (not required_specializations or
-                 all(s in agent.specializations for s in required_specializations))
-        ]
-        return sorted(capable, key=lambda a: a.performance_score * a.availability, reverse=True)
-
-class TeamBuilder:
-    def __init__(self, registry: AgentRegistry):
-        self.registry = registry
-
-    def build_team(self, tasks: List[Task]) -> Dict[str, List[str]]:
-        assignments: Dict[str, List[str]] = {}
-        workload: Dict[str, int] = {}
-
-        for task in sorted(tasks, key=lambda t: (len(t.dependencies), -t.priority)):
-            capable = self.registry.find_capable_agents(
-                task.required_capabilities, task.required_specializations
-            )
-            for agent in capable:
-                if workload.get(agent.name, 0) < agent.max_concurrent_tasks:
-                    assignments[task.id] = [agent.name]
-                    workload[agent.name] = workload.get(agent.name, 0) + 1
-                    break
-
-        return assignments
-```
+// end-parallel
 
 ---
 
-## DAG Workflow Engine
+## Decision Framework
 
-```python
-from enum import Enum
-from dataclasses import dataclass, field
-from typing import Dict, Set, Any, Callable, Optional
-import asyncio
-from datetime import datetime
+### Chain-of-Thought Decision Framework
 
-class TaskStatus(Enum):
-    PENDING = "pending"
-    RUNNING = "running"
-    COMPLETED = "completed"
-    FAILED = "failed"
-    SKIPPED = "skipped"
-
-@dataclass
-class WorkflowTask:
-    id: str
-    name: str
-    agent: str
-    action: Callable
-    dependencies: List[str] = field(default_factory=list)
-    retry_count: int = 3
-    timeout: int = 300
-    status: TaskStatus = TaskStatus.PENDING
-    result: Any = None
-
-class WorkflowEngine:
-    def __init__(self):
-        self.tasks: Dict[str, WorkflowTask] = {}
-        self.results: Dict[str, Any] = {}
-
-    def add_task(self, task: WorkflowTask) -> None:
-        self.tasks[task.id] = task
-
-    async def execute_task(self, task: WorkflowTask) -> None:
-        for attempt in range(task.retry_count):
-            try:
-                task.status = TaskStatus.RUNNING
-                task.result = await asyncio.wait_for(task.action(), timeout=task.timeout)
-                task.status = TaskStatus.COMPLETED
-                self.results[task.id] = task.result
-                return
-            except Exception as e:
-                if attempt < task.retry_count - 1:
-                    await asyncio.sleep(2 ** attempt)  # Exponential backoff
-        task.status = TaskStatus.FAILED
-
-    async def execute_workflow(self) -> Dict[str, Any]:
-        # Build dependency graph
-        pending = set(self.tasks.keys())
-        ready = [tid for tid, t in self.tasks.items() if not t.dependencies]
-        pending -= set(ready)
-
-        while ready or any(t.status == TaskStatus.RUNNING for t in self.tasks.values()):
-            if ready:
-                await asyncio.gather(*[self.execute_task(self.tasks[tid]) for tid in ready])
-                ready.clear()
-
-            # Find newly ready tasks
-            for tid in list(pending):
-                task = self.tasks[tid]
-                if all(self.tasks[d].status == TaskStatus.COMPLETED for d in task.dependencies):
-                    ready.append(tid)
-                    pending.remove(tid)
-                elif any(self.tasks[d].status == TaskStatus.FAILED for d in task.dependencies):
-                    task.status = TaskStatus.SKIPPED
-                    pending.remove(tid)
-
-        return self.results
-```
+1.  **Pattern**: Pub/Sub vs Request/Response.
+2.  **Discovery**: How do agents find each other? (Registry).
+3.  **Allocation**: Round-robin vs Capability-based vs Least-loaded.
+4.  **Synchronization**: Wait for all (Barrier) vs First result?
+5.  **State**: Shared DB vs Message Passing.
 
 ---
 
-## Inter-Agent Messaging
+## Core Knowledge (Parallel)
 
-```python
-from dataclasses import dataclass, field
-from enum import Enum
-from uuid import uuid4
-import asyncio
+// parallel
 
-class MessageType(Enum):
-    TASK_REQUEST = "task_request"
-    TASK_RESPONSE = "task_response"
-    STATUS_UPDATE = "status_update"
-    BROADCAST = "broadcast"
+### Constitutional AI Principles
 
-@dataclass
-class Message:
-    id: str = field(default_factory=lambda: str(uuid4()))
-    type: MessageType = MessageType.TASK_REQUEST
-    sender: str = ""
-    receiver: Optional[str] = None  # None for broadcast
-    payload: Dict[str, Any] = field(default_factory=dict)
-    correlation_id: Optional[str] = None
+1.  **Decoupling (Target: 100%)**: Agents shouldn't know internal details of others.
+2.  **Reliability (Target: 95%)**: Message delivery guarantees.
+3.  **Scalability (Target: 90%)**: Add agents without code changes.
 
-class MessageBroker:
-    def __init__(self):
-        self.subscribers: Dict[str, List[Callable]] = {}
-        self.pending_responses: Dict[str, asyncio.Future] = {}
+### Quick Reference Patterns
 
-    def subscribe(self, agent_name: str, handler: Callable) -> None:
-        self.subscribers.setdefault(agent_name, []).append(handler)
+-   **Registry**: `find_capable_agents(required_caps)`.
+-   **Broker**: `publish(topic, msg)`, `subscribe(topic)`.
+-   **DAG Engine**: Topological sort -> Execute ready -> Mark complete.
+-   **Exponential Backoff**: `sleep(2**attempt)`.
 
-    async def publish(self, message: Message) -> None:
-        if message.receiver:
-            for handler in self.subscribers.get(message.receiver, []):
-                await handler(message)
-        else:  # Broadcast
-            for name, handlers in self.subscribers.items():
-                if name != message.sender:
-                    for handler in handlers:
-                        await handler(message)
-
-        # Handle response pairing
-        if message.type == MessageType.TASK_RESPONSE and message.correlation_id:
-            if message.correlation_id in self.pending_responses:
-                self.pending_responses[message.correlation_id].set_result(message)
-
-    async def request(self, sender: str, receiver: str, payload: Dict, timeout: float = 30) -> Message:
-        request_msg = Message(type=MessageType.TASK_REQUEST, sender=sender, receiver=receiver, payload=payload)
-        response_future = asyncio.Future()
-        self.pending_responses[request_msg.id] = response_future
-
-        await self.publish(request_msg)
-
-        try:
-            return await asyncio.wait_for(response_future, timeout=timeout)
-        finally:
-            self.pending_responses.pop(request_msg.id, None)
-```
+// end-parallel
 
 ---
 
-## Agent Implementation
+## Quality Assurance
 
-```python
-class Agent:
-    def __init__(self, name: str, broker: MessageBroker):
-        self.name = name
-        self.broker = broker
-        broker.subscribe(name, self.handle_message)
+### Common Anti-Patterns
 
-    async def handle_message(self, message: Message) -> None:
-        if message.type == MessageType.TASK_REQUEST:
-            result = await self.process_task(message.payload)
-            response = Message(
-                type=MessageType.TASK_RESPONSE,
-                sender=self.name,
-                receiver=message.sender,
-                payload={'result': result},
-                correlation_id=message.id
-            )
-            await self.broker.publish(response)
+| Anti-Pattern | Fix |
+|--------------|-----|
+| Hardcoded Agents | Use Dynamic Registry |
+| Blocking Calls | Use Async/Await everywhere |
+| Infinite Retries | Max retry count + Dead Letter Queue |
+| Global Mutable State | Pass state in messages |
 
-    async def process_task(self, task_data: Dict) -> Any:
-        # Agent-specific task processing
-        return {'status': 'completed', 'data': task_data}
+### Coordination Checklist
 
-    async def request_help(self, target: str, task: Dict) -> Message:
-        return await self.broker.request(self.name, target, task)
-```
-
----
-
-## Best Practices
-
-| Area | Practice |
-|------|----------|
-| Team Assembly | Capability-based agent selection |
-| Workflow | DAG for dependency management |
-| Execution | Parallel where possible |
-| Failures | Retry with exponential backoff |
-| Communication | Message broker for loose coupling |
-| Monitoring | Track workload and availability |
-
----
-
-## Checklist
-
-- [ ] Define agent capabilities and specializations
-- [ ] Build dependency graph (DAG) for tasks
-- [ ] Implement retry logic with backoff
-- [ ] Use message broker for inter-agent communication
-- [ ] Handle agent failures gracefully
-- [ ] Monitor agent workload and performance
-- [ ] Implement request/response correlation
-- [ ] Support broadcast for status updates
-
----
-
-**Version**: 1.0.5
+- [ ] Agent registry active
+- [ ] Message schema defined
+- [ ] Async execution model used
+- [ ] Retry logic implemented
+- [ ] Dead Letter Queue for failures
+- [ ] Task ID correlation enabled

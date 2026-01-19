@@ -2,134 +2,54 @@
 description: Detailed code explanation with visual aids and domain expertise
 triggers:
 - /code-explain
-- detailed code explanation with
+- detailed code explanation
+version: 2.0.0
 allowed-tools: [Read, Glob, Grep, Task]
-version: 1.0.0
+agents:
+  primary: code-tutor
+  conditional:
+  - agent: scientific-tutor
+    trigger: domain "scientific|math|physics"
+skills:
+- code-comprehension
+- technical-writing
+argument-hint: '<code-path>'
 ---
 
+# Code Explanation Engine (v2.0)
 
+// turbo-all
 
-## User Input
-Input arguments pattern: `<code-path-or-snippet>`
-The agent should parse these arguments from the user's request.
+## Phase 1: Comprehension (Parallel)
 
-# Code Explanation
+// parallel
 
-$ARGUMENTS
+1.  **Structure Analysis**
+    - Action: Identify classes, functions, imports.
 
-## Modes
+2.  **Complexity Scan**
+    - Action: detailed complexity metrics.
 
-| Mode | Time | Phases |
-|------|------|--------|
-| Quick | 5-10min | Overview + Key Concepts |
-| Standard | 15-25min | + Diagrams + Examples + Pitfalls |
-| Comprehensive | 30-45min | + Learning Resources + Practice |
+3.  **Concept Extraction**
+    - Action: Tag key patterns (Decorator, Async, Singleton).
 
-## External Docs
+// end-parallel
 
-- `code-analysis-framework.md` (~350 lines)
-- `visualization-techniques.md` (~400 lines)
-- `learning-resources.md` (~450 lines)
-- `scientific-code-explanation.md` (~400 lines)
+## Phase 2: Explanation Generation (Sequential)
 
-## Process
+4.  **High-Level Overview**
+    - Summary of purpose and architecture.
 
-1. **Comprehension Analysis**:
-   | Analysis | Output |
-   |----------|--------|
-   | Structure | Classes, functions, imports |
-   | Complexity | Cyclomatic complexity, nesting |
-   | Concepts | Async, decorators, generators |
-   | Patterns | Singleton, Observer, Factory |
-   | Difficulty | Beginner/intermediate/advanced/expert |
+5.  **Detailed Breakdown**
+    - Step-by-step logic flow.
 
-2. **Visual Explanation** (Standard+):
-   | Diagram | Use |
-   |---------|-----|
-   | Flowcharts | Control flow (if/else, loops) |
-   | Class diagrams | OOP structure, relationships |
-   | Sequence | Object interactions |
-   | Algorithm viz | Step-by-step execution |
-   | Architecture | System components |
+6.  **Visuals**
+    - Generate Mermaid diagrams (Flowchart/Sequence).
 
-   Use Mermaid for inline diagrams
+## Phase 3: Contextualization
 
-3. **Progressive Disclosure**:
-   - High-level: What does this code do?
-   - Function breakdown: How does each part work?
-   - Concepts: Deep dive into patterns
-   - Design patterns: Why these patterns?
-   - Performance: Efficiency notes
+7.  **Pitfalls & Best Practices**
+    - Highlight potential issues (Performance, Safety).
 
-4. **Interactive Examples** (Standard+):
-   - Basic usage: Simple cases
-   - Edge cases: Error scenarios
-   - Try-it-yourself: Hands-on practice
-   - Comparison: Alternative approaches
-
-5. **Pitfalls & Best Practices**:
-   | Category | Examples |
-   |----------|----------|
-   | Error handling | Bare except clauses |
-   | State | Global vars, mutable defaults |
-   | Security | eval(), SQL injection |
-   | Performance | Memory inefficiencies |
-
-6. **Scientific Computing**:
-   | Domain | Focus |
-   |--------|-------|
-   | NumPy/SciPy | Broadcasting, vectorization, memory layout |
-   | JAX | @jit, grad, vmap, pmap transforms |
-   | Pandas | Method chaining, GroupBy, memory |
-   | Julia | Type stability, multiple dispatch |
-   | MD Sims | Integrators, forces, neighbor lists |
-   | ML Training | Forward/backward, optimizers |
-
-7. **Learning Resources** (Comprehensive):
-   - Knowledge gaps from complexity analysis
-   - Topic recommendations
-   - Curated resources (tutorials, books, docs)
-   - Practice projects by skill level
-   - Learning plan (week-by-week)
-
-## Output
-
-```markdown
-# Code Explanation: [Name]
-
-## Complexity
-- Difficulty: [level]
-- Concepts: [list]
-- Patterns: [patterns]
-
-## What This Does
-[Clear explanation]
-
-## Visual Representation
-[Mermaid diagrams]
-
-## Step-by-Step Breakdown
-[Detailed walkthrough]
-
-## Common Pitfalls
-[Issues to avoid]
-
-## [If scientific]
-## Scientific Context
-[Domain-specific explanations]
-
-## [Comprehensive]
-## Your Learning Path
-[Personalized resources]
-```
-
-## Success
-
-- [ ] Complexity assessed
-- [ ] Concepts explained
-- [ ] Diagrams where helpful
-- [ ] Step-by-step breakdown
-- [ ] Pitfalls highlighted
-- [ ] Examples runnable
-- [ ] Matches user skill level
-- [ ] Scientific code has domain context
+8.  **Domain Context**
+    - Explain specific logic (e.g., Scientific formulas).

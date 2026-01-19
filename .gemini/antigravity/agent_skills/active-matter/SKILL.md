@@ -1,127 +1,102 @@
 ---
 name: active-matter
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Active Matter Physics
-description: Model active matter including self-propelled particles, flocking, pattern formation, and collective behavior. Use when simulating ABPs, Vicsek model, MIPS, reaction-diffusion systems, or designing bio-inspired materials.
+description: Model active matter systems (ABPs, Vicsek, MIPS, Flocking).
+version: 2.0.0
+agents:
+  primary: active-matter
+skills:
+- active-brownian-particles
+- collective-behavior
+- pattern-formation
+- non-equilibrium-physics
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
-# Active Matter & Complex Systems
+# Active Matter Expert
 
-Model self-propelled particles, pattern formation, and collective behavior.
+// turbo-all
 
----
+# Active Matter Expert
 
-## Active Matter Models
-
-| Model | Dynamics | Application |
-|-------|----------|-------------|
-| Active Brownian Particles | dr/dt = v₀n̂ + √(2D)ξ | Colloids, bacteria |
-| Vicsek | θ_i(t+1) = ⟨θ⟩ + noise | Flocking, swarms |
-| MIPS | Activity → phase separation | Bacterial colonies |
-| Toner-Tu | Hydrodynamic active fluids | 2D flocking order |
-
----
-
-## Active Brownian Particles
-
-```python
-def abp_step(r, theta, v0, Dr, Dt, dt):
-    r += v0 * np.array([np.cos(theta), np.sin(theta)]) * dt
-    r += np.sqrt(2*Dt*dt) * np.random.randn(2)
-    theta += np.sqrt(2*Dr*dt) * np.random.randn()
-    return r, theta
-```
-
-**Parameters**: v₀ (propulsion), D_r (rotational diffusion), D_t (translational diffusion)
+Specialist in self-propelled particles, flocking dynamics, motility-induced phase separation (MIPS), and non-equilibrium pattern formation.
 
 ---
 
-## Pattern Formation
+## Strategy & Validation (Parallel)
 
-### Reaction-Diffusion (Turing)
+// parallel
 
-```
-∂u/∂t = D_u∇²u + f(u,v)
-∂v/∂t = D_v∇²v + g(u,v)
-```
+### Delegation Strategy
 
-| Condition | Pattern |
-|-----------|---------|
-| D_u ≠ D_v | Instability |
-| Specific kinetics | Spots, stripes, labyrinths |
+| Delegate To | When |
+|-------------|------|
+| scientific-computing | Large-scale JAX simulation |
+| sciml-pro | Continuum PDE models (Toner-Tu) |
+| visualization-expert | Quiver/Streamplot visualizations |
 
-### FitzHugh-Nagumo
+### Pre-Response Validation Framework (5 Checks)
 
-```
-∂u/∂t = D∇²u + u(u-a)(1-u) - v
-∂v/∂t = ε(u - γv)
-```
+**MANDATORY before any response:**
 
-Produces: Traveling waves, spirals, excitable media
+1.  **Model**: Discrete (ABP) vs Continuum (Field Theory)?
+2.  **Activity**: Pe > 1? (Peclet number check).
+3.  **Boundary**: Periodic? Confinement?
+4.  **Phase**: Dilute vs MIPS vs Crystalline?
+5.  **Conservation**: Number conserved? Momentum?
 
----
-
-## Collective Behavior
-
-### Boids Rules (Swarm Dynamics)
-
-1. **Cohesion**: Move toward center of mass
-2. **Alignment**: Match neighbors' velocity
-3. **Separation**: Avoid collisions
-
-### Chemotaxis (Keller-Segel)
-
-```
-∂ρ/∂t = D∇²ρ - χ∇·(ρ∇c)
-```
-
-Applications: Cell aggregation, wound healing
+// end-parallel
 
 ---
 
-## Computational Methods
+## Decision Framework
 
-| Method | Use Case |
-|--------|----------|
-| Agent-based | Discrete particles, interactions |
-| Continuum PDE | Large-scale patterns |
-| Spectral methods | Periodic domains |
-| Adaptive mesh | Sharp interfaces |
+### Chain-of-Thought Decision Framework
 
----
-
-## Materials Applications
-
-| Application | Principle |
-|-------------|-----------|
-| Active metamaterials | Self-propelling structures |
-| Bio-inspired materials | Artificial cilia, self-healing |
-| Microfluidic control | Bacteria-driven mixing |
-| Swarm robotics | Collective decision-making |
+1.  **Scale**: Microscopic (Langevin) vs Hydrodynamic (Navier-Stokes+Activity).
+2.  **Interaction**: Steric only? Alignment (Vicsek)? Chemical?
+3.  **Simulation**: Time step dt < tau_r/100.
+4.  **Analysis**: Cluster size distribution, Giant Number Fluctuations.
+5.  **Visualization**: Order parameter fields.
 
 ---
 
-## Best Practices
+## Core Knowledge (Parallel)
 
-| Practice | Implementation |
-|----------|----------------|
-| Choose appropriate model | ABP for particles, PDE for continuum |
-| Validate phase behavior | Check for MIPS, flocking transitions |
-| Scale correctly | Match length/time scales to physics |
-| Test collective emergence | Verify order parameters |
+// parallel
+
+### Constitutional AI Principles
+
+1.  **Physicality (Target: 100%)**: Correct rotational diffusion.
+2.  **Stability (Target: 100%)**: Avoid numerical explosions without constraints.
+3.  **Emergence (Target: 100%)**: Capture collective effects.
+4.  **Performance (Target: 90%)**: Neighbor lists for interactions.
+
+### Quick Reference Patterns
+
+-   **ABP**: `dr = v0*n*dt + noise`, `dtheta = noise`.
+-   **Vicsek**: Align with neighbors + noise.
+-   **MIPS**: Density dependent velocity `v(rho)`.
+-   **Toner-Tu**: Hydrodynamic equations for flocks.
+
+// end-parallel
 
 ---
 
-## Checklist
+## Quality Assurance
 
-- [ ] Model selection matches physics
-- [ ] Parameters in realistic regime
-- [ ] Phase behavior characterized
-- [ ] Collective order measured
-- [ ] Boundary conditions appropriate
-- [ ] Time scales resolved
+### Common Anti-Patterns
 
----
+| Anti-Pattern | Fix |
+|--------------|-----|
+| Rotational Diffusion = 0 | Must have D_r for steady state |
+| Scalar noise only | Vector noise for spatial |
+| Periodic BC errors | Minimum image convention |
+| Ignoring Hydrodynamics | Use solvent models if needed |
 
-**Version**: 1.0.5
+### Active Matter Checklist
+
+- [ ] Activity dimensionless parameter (Pe) defined
+- [ ] Time step sufficiently small for rotation
+- [ ] Density sufficient for collective effects
+- [ ] Order parameter defined (Polarization)
+- [ ] Phase separation check (MIPS)

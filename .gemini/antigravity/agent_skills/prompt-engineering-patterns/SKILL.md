@@ -1,151 +1,104 @@
 ---
 name: prompt-engineering-patterns
-version: "1.0.7"
-description: Master advanced prompt engineering with chain-of-thought, few-shot learning, and production templates. Use when designing prompts for AI applications, implementing structured reasoning, optimizing for consistency, or building reusable prompt systems.
+description: Advanced techniques for Chain-of-Thought, Few-Shot, and Self-Consistency.
+version: 2.0.0
+agents:
+  primary: prompt-engineer
+skills:
+- chain-of-thought
+- few-shot-learning
+- prompt-optimization
+- output-structuring
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Prompt Engineering Patterns
 
-Advanced techniques for maximizing LLM performance and reliability.
+// turbo-all
 
-<!-- SECTION: TECHNIQUES -->
-## Core Techniques
+# Prompt Engineering Patterns
 
-| Technique | Use Case | Implementation |
-|-----------|----------|----------------|
-| Zero-shot CoT | Complex reasoning | "Let's think step by step" |
-| Few-shot | Task demonstration | 2-5 input-output examples |
-| Self-consistency | Reliability | Sample multiple paths, vote |
-| Tree-of-thought | Complex planning | Branch and evaluate paths |
-| Self-verification | Accuracy | Ask model→check its answer |
-<!-- END_SECTION: TECHNIQUES -->
+Design patterns for unlocking reasoning, consistency, and reliability in Large Language Models.
 
 ---
 
-<!-- SECTION: STRUCTURE -->
-## Prompt Structure
+## Strategy & Techniques (Parallel)
 
-```
-[System Context] → [Task Instruction] → [Examples] → [Input] → [Output Format]
-```
+// parallel
 
-### Example Template
+### Core Techniques
 
-```python
-template = """You are an expert SQL developer.
+| Technique | Trigger | Benefit |
+|-----------|---------|---------|
+| **Zero-Shot CoT** | "Let's think step by step" | Improves math/logic. |
+| **Few-Shot** | Provide 3-5 examples | Enforces format/style. |
+| **Self-Consistency** | Generate 5, take majority vote | Reduces hallucination. |
+| **Role Prompting** | "You are an expert X" | Sets semantic priors. |
 
-Examples:
-Q: Find all users registered last week
-A: SELECT * FROM users WHERE created_at > NOW() - INTERVAL '7 days'
+### Structure Anatomy
 
-Q: {query}
-A: """
-```
-<!-- END_SECTION: STRUCTURE -->
+1.  **Role**: "You are..."
+2.  **Context**: "Here is the data..."
+3.  **Task**: "Extract the..."
+4.  **Constraints**: "Do not..."
+5.  **Output Format**: "Return JSON..."
 
----
-
-<!-- SECTION: PROGRESSIVE -->
-## Progressive Disclosure
-
-| Level | Example |
-|-------|---------|
-| 1. Direct | "Summarize this article" |
-| 2. Constrained | "Summarize in 3 bullet points, focus on findings" |
-| 3. Reasoning | "Read, identify main findings, then summarize" |
-| 4. Few-shot | Include 2-3 example summaries |
-<!-- END_SECTION: PROGRESSIVE -->
+// end-parallel
 
 ---
 
-<!-- SECTION: FEW_SHOT -->
-## Few-Shot Selection
+## Decision Framework
 
-| Strategy | When to Use |
-|----------|-------------|
-| Semantic similarity | Examples matching input domain |
-| Diversity sampling | Cover edge cases |
-| Difficulty-based | Match input complexity |
-| Random (baseline) | When unsure |
-<!-- END_SECTION: FEW_SHOT -->
+### Optimization Workflow
 
----
-
-<!-- SECTION: OPTIMIZATION -->
-## Performance Optimization
-
-| Goal | Technique |
-|------|-----------|
-| Reduce tokens | Remove redundant words, use abbreviations |
-| Lower latency | Shorter prompts, streaming output |
-| Improve consistency | Add output format constraints |
-| Handle failures | Include fallback instructions |
-<!-- END_SECTION: OPTIMIZATION -->
+1.  **Baseline**: Write simple instruction. Test.
+2.  **Iterate**:
+    *   *Wrong Format?* -> Add Few-Shot examples.
+    *   *Bad Reasoning?* -> Add CoT ("Think step by step").
+    *   *Hallucination?* -> Add "Answer only from context".
+3.  **Refine**: Compress tokens, clarify ambiguity.
+4.  **Finalize**: Version control the prompt.
 
 ---
 
-<!-- SECTION: BEST_PRACTICES -->
-## Best Practices
+## Core Knowledge (Parallel)
 
-| Practice | Implementation |
-|----------|----------------|
-| Be specific | Vague prompts → inconsistent results |
-| Show, don't tell | Examples > descriptions |
-| Test extensively | Diverse, representative inputs |
-| Iterate rapidly | Small changes → large impacts |
-| Version control | Treat prompts as code |
-| Monitor production | Track accuracy, latency, costs |
-<!-- END_SECTION: BEST_PRACTICES -->
+// parallel
 
----
+### Constitutional AI Principles
 
-<!-- SECTION: PITFALLS -->
-## Common Pitfalls
+1.  **Clarity (Target: 100%)**: No ambiguous instructions.
+2.  **Safety (Target: 100%)**: Prompt injection defenses (delimiters).
+3.  **Efficiency (Target: 90%)**: Minimal tokens for maximum performance.
 
-| Pitfall | Solution |
-|---------|----------|
-| Over-engineering | Start simple, add complexity as needed |
-| Example pollution | Use examples matching target task |
-| Context overflow | Limit examples to fit token budget |
-| Ambiguous instructions | Eliminate multiple interpretations |
-| No edge case testing | Test unusual and boundary inputs |
-<!-- END_SECTION: PITFALLS -->
+### Quick Reference Patterns
+
+-   **Delimiters**: Use `"""` or `###` to separate instruction from data.
+-   **Negative Constraints**: "Do NOT..." (Use sparingly, often weaker than DO).
+-   **Persona**: "Act as..." or "Simulate..."
+-   **Meta-Prompting**: Ask LLM to improve the prompt.
+
+// end-parallel
 
 ---
 
-<!-- SECTION: INTEGRATION -->
-## Integration Patterns
+## Quality Assurance
 
-### With RAG
+### Common Pitfalls
 
-```python
-prompt = f"""Context: {retrieved_context}
+| Pitfall | Fix |
+|---------|-----|
+| Context Window Overflow | Truncate input data smartly. |
+| Vague Instructions | Be incredibly specific. "Summarize" -> "Summarize in 3 bullets". |
+| Example Bias | Ensure few-shot examples are balanced/diverse. |
+| Prompt Drift | Re-eval prompts when changing models. |
 
-Question: {user_question}
+### Prompt Checklist
 
-Answer based solely on the context. If insufficient, state what's missing."""
-```
-
-### With Validation
-
-```python
-prompt = f"""{main_task}
-
-After responding, verify:
-1. Answers the question directly
-2. Uses only provided context
-3. Acknowledges uncertainty"""
-```
-<!-- END_SECTION: INTEGRATION -->
-
----
-
-## Checklist
-
-- [ ] Clear task instruction defined
-- [ ] Output format specified
-- [ ] Examples selected (if few-shot)
-- [ ] Token budget considered
-- [ ] Edge cases tested
-- [ ] Validation step included
-- [ ] Version tracked
+- [ ] Role defined
+- [ ] Task instructions clear
+- [ ] Input data clearly delimited
+- [ ] Output format specified (JSON/XML)
+- [ ] Few-shot examples (if needed)
+- [ ] Negative constraints checks
+- [ ] Tested against edge cases

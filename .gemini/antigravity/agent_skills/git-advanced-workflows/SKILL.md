@@ -1,283 +1,104 @@
 ---
 name: git-advanced-workflows
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Git History Management
-description: Master advanced Git including interactive rebase, cherry-pick, bisect, worktrees, and reflog for clean history and recovery. Use when cleaning up commits before PRs, applying fixes across branches, finding bug-introducing commits, or recovering from Git mistakes.
+description: Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery.
+version: 2.0.0
+agents:
+  primary: devops-engineer
+skills:
+- git-mastery
+- history-rewrite
+- branch-management
+- disaster-recovery
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
 # Git Advanced Workflows
 
-Clean history, cross-branch operations, and recovery techniques.
+// turbo-all
+
+# Git Advanced Workflows
+
+Surgical tools for history management and repository hygiene.
 
 ---
 
-## Interactive Rebase
+## Strategy & Operations (Parallel)
 
-| Command | Effect |
-|---------|--------|
-| `pick` | Keep commit as-is |
-| `reword` | Change message |
-| `edit` | Amend content |
-| `squash` | Combine with previous |
-| `fixup` | Combine, discard message |
-| `drop` | Remove commit |
+// parallel
 
-```bash
-# Rebase last 5 commits
-git rebase -i HEAD~5
+### Operation Types
 
-# Rebase all commits on branch
-git rebase -i $(git merge-base HEAD main)
-```
+| Operation | Command | Use Case |
+|-----------|---------|----------|
+| **Cleanup** | `rebase -i` | Squash/Fixup/Reword before push. |
+| **Debug** | `bisect` | Find regression commit (Binary Search). |
+| **Multitask** | `worktree` | Parallel branches without switching. |
+| **Port** | `cherry-pick` | Move specific commit to another branch. |
+| **Recover** | `reflog` | Restore lost commits/branches. |
 
----
+### Rebase Action Table
 
-## Cherry-Pick
+-   `pick`: Keep.
+-   `reword`: Edit message.
+-   `edit`: Pause to amend content.
+-   `squash`: Meld into previous.
+-   `fixup`: Meld (discard log).
+-   `drop`: Delete.
 
-```bash
-# Single commit
-git cherry-pick abc123
-
-# Range (exclusive start)
-git cherry-pick abc123..def456
-
-# Without committing (stage only)
-git cherry-pick -n abc123
-
-# Specific files from commit
-git checkout abc123 -- path/to/file
-git commit -m "cherry-pick: specific changes"
-```
+// end-parallel
 
 ---
 
-## Git Bisect
+## Decision Framework
 
-Binary search to find bug-introducing commit:
+### Bisect Workflow
 
-```bash
-# Manual bisect
-git bisect start
-git bisect bad HEAD
-git bisect good v1.0.0
-# Test, then:
-git bisect good  # or: git bisect bad
-# Repeat until found
-git bisect reset
-
-# Automated bisect
-git bisect start HEAD v1.0.0
-git bisect run npm test
-```
+1.  `git bisect start`
+2.  `git bisect bad` (Current broken state)
+3.  `git bisect good <sha>` (Last known working state)
+4.  Git checks out middle commit.
+5.  Run Test.
+6.  `git bisect good` | `git bisect bad`
+7.  Repeat until `first bad commit` found.
 
 ---
 
-## Worktrees
+## Core Knowledge (Parallel)
 
-Work on multiple branches simultaneously:
+// parallel
 
-```bash
-# List worktrees
-git worktree list
+### Constitutional AI Principles
 
-# Add worktree for existing branch
-git worktree add ../project-hotfix hotfix/critical
+1.  **Safety (Target: 100%)**: Never rewrite public history (unless communicated).
+2.  **Clarity (Target: 100%)**: Atomic commits with descriptive messages.
+3.  **Efficiency (Target: 95%)**: Use `autosquash` for rapid cleanup.
 
-# Add worktree with new branch
-git worktree add -b bugfix/urgent ../project-fix main
+### Quick Reference Commands
 
-# Remove worktree
-git worktree remove ../project-hotfix
-```
+-   `git push --force-with-lease` (Safe force).
+-   `git worktree add ../feature-b feature-b`.
+-   `git reflog` -> `git reset --hard HEAD@{n}`.
+-   `git commit --fixup <sha>`.
 
----
-
-## Reflog (Recovery)
-
-```bash
-# View reflog
-git reflog
-
-# Recover deleted commit
-git checkout abc123
-git branch recovered-branch
-
-# Recover after bad reset
-git reflog
-# Find: abc123 HEAD@{1}: commit: my changes
-git reset --hard abc123
-
-# Recover deleted branch
-git branch deleted-branch abc123
-```
+// end-parallel
 
 ---
 
-## Common Workflows
+## Quality Assurance
 
-### Clean Up Before PR
+### Common Pitfalls
 
-```bash
-git checkout feature/my-feature
-git rebase -i main
-# Squash fixups, reword messages
-git push --force-with-lease
-```
+| Pitfall | Fix |
+|---------|-----|
+| Force Pushing Master | Protect main branches. Use `--force-with-lease`. |
+| Lost Stash | Use `git rev-list --walk-reflogs stash`. |
+| Detached HEAD | Create a branch if you want to save (`git switch -c new-branch`). |
+| Merge Conflicts in Rebase | `git rebase --abort` if overwhelmed. |
 
-### Apply Hotfix to Multiple Releases
+### Git Checklist
 
-```bash
-git checkout main
-git commit -m "fix: critical security patch"
-
-git checkout release/2.0 && git cherry-pick abc123
-git checkout release/1.9 && git cherry-pick abc123
-```
-
-### Multi-Branch Development
-
-```bash
-# Create worktree for hotfix
-git worktree add ../myapp-hotfix hotfix/critical
-
-# Work in separate directory
-cd ../myapp-hotfix
-git commit -m "fix: resolve bug"
-git push origin hotfix/critical
-
-# Return to main work
-cd ~/projects/myapp
-git worktree remove ../myapp-hotfix
-```
-
----
-
-## Autosquash Workflow
-
-```bash
-# Initial commit
-git commit -m "feat: add feature"
-
-# Later, fix something
-git commit --fixup HEAD
-
-# Rebase with autosquash
-git rebase -i --autosquash main
-```
-
----
-
-## Split Commit
-
-```bash
-git rebase -i HEAD~3
-# Mark commit with 'edit'
-
-# Reset but keep changes
-git reset HEAD^
-
-# Commit in parts
-git add file1.py && git commit -m "feat: add validation"
-git add file2.py && git commit -m "feat: add error handling"
-
-git rebase --continue
-```
-
----
-
-## Rebase vs Merge
-
-| Situation | Use |
-|-----------|-----|
-| Local cleanup | Rebase |
-| Keeping branch current | Rebase |
-| Public/shared branches | Merge |
-| Preserving collaboration history | Merge |
-
-```bash
-# Update feature branch (rebase)
-git fetch origin
-git rebase origin/main
-
-# Resolve conflicts
-git add .
-git rebase --continue
-```
-
----
-
-## Safety Commands
-
-```bash
-# Safe force push
-git push --force-with-lease
-
-# Create backup before risky operation
-git branch backup-branch
-git rebase -i main
-# If failed:
-git reset --hard backup-branch
-
-# Abort operations
-git rebase --abort
-git cherry-pick --abort
-git merge --abort
-```
-
----
-
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| --force-with-lease | Safer than --force |
-| Rebase only local | Don't rebase pushed commits |
-| Atomic commits | One logical change per commit |
-| Backup before rebase | Create safety branch |
-| Test after rewrite | Ensure no breakage |
-
----
-
-## Common Pitfalls
-
-| Pitfall | Solution |
-|---------|----------|
-| Rebasing public branches | Causes team conflicts |
-| --force without lease | Can overwrite others' work |
-| Lost work in rebase | Use reflog to recover |
-| Orphaned worktrees | Clean with git worktree prune |
-| Bisect on dirty tree | Commit or stash first |
-
----
-
-## Recovery Quick Reference
-
-```bash
-# Undo last commit (keep changes)
-git reset --soft HEAD^
-
-# Undo last commit (discard changes)
-git reset --hard HEAD^
-
-# Restore file from commit
-git restore --source=abc123 path/to/file
-
-# Find lost commits
-git reflog
-git branch recovered abc123
-```
-
----
-
-## Checklist
-
-- [ ] Backup branch created before rebase
-- [ ] Commits atomic and well-described
-- [ ] Tests pass after history rewrite
-- [ ] Using --force-with-lease not --force
-- [ ] Reflog checked for recovery options
-
----
-
-**Version**: 1.0.5
+- [ ] Backup branch created before destructive ops
+- [ ] `git status` clean before starting
+- [ ] Bisect script automated (`git bisect run`)
+- [ ] Worktrees pruned after use
+- [ ] Reflog checked for "lost" code

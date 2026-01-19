@@ -1,174 +1,101 @@
 ---
 name: correlation-physical-systems
-version: "1.0.7"
-maturity: "5-Expert"
-specialization: Physical System Correlations
-description: Map correlation functions to physical systems including condensed matter (spin correlations, critical exponents ξ ~ |T-Tc|^(-ν)), soft matter (polymer Rouse/Zimm dynamics, colloidal g(r), glass χ₄), biological systems (protein folding, membrane fluctuations), and non-equilibrium (active matter, transfer entropy). Use for materials characterization, transport predictions, or connecting experiments to theory.
+description: Mapping correlation functions to Condensed Matter, Soft Matter, and Bio-systems.
+version: 2.0.0
+agents:
+  primary: correlation-function-expert
+skills:
+- condensed-matter-physics
+- soft-matter-physics
+- biophysics
+- non-equilibrium-thermodynamics
+allowed-tools: [Read, Write, Task, Bash]
 ---
 
-# Physical Systems & Correlation Functions
+# Physical Systems Correlations
 
-Bridge theoretical predictions with experimental observables across domains.
+// turbo-all
 
----
+# Physical Systems
 
-## Domain Selection
-
-| Domain | Key Correlations | Experiments |
-|--------|------------------|-------------|
-| Condensed Matter | Spin ⟨SᵢSⱼ⟩, density n(r)n(r') | Neutron/X-ray scattering |
-| Soft Matter | Polymer ⟨R²(t)⟩, colloidal g(r) | DLS, rheology |
-| Biological | Contact maps Cᵢⱼ(t), membrane ⟨h(r)h(0)⟩ | FRET, NMR |
-| Non-equilibrium | Active Cvv(r), transfer entropy | Microscopy, tracking |
-
----
-
-## Condensed Matter
-
-### Spin Correlations
-
-```python
-def ising_correlation_critical(r, xi, eta=0.036):
-    """Critical Ising correlation (d=3)."""
-    return (r/xi)**(-1+eta) * np.exp(-r/xi)
-```
-
-| Model | Correlation | Critical Behavior |
-|-------|-------------|-------------------|
-| Ising | ⟨SᵢSⱼ⟩ | C(r) ~ r^(-(d-2+η)) |
-| Heisenberg | ⟨Sᵢ·Sⱼ⟩ | Vector spins |
-| General | ξ ~ \|T-Tc\|^(-ν) | Correlation length diverges |
-
-### Density Correlations
-
-**Van Hove Function**: G(r,t) = ⟨ρ(r,t)ρ(0,0)⟩
-- **Self part** Gs: Single-particle propagator
-- **Distinct part** Gd: Inter-particle correlations
-- **Static limit**: g(r) = lim G(r,t)/ρ
+Mapping abstract correlation functions to concrete physical phenomena in Condensed Matter, Soft Matter, Biology, and Non-Equilibrium systems.
 
 ---
 
-## Soft Matter
+## Strategy & Validation (Parallel)
 
-### Polymer Dynamics
+// parallel
 
-| Model | Mean-Square Displacement | Regime |
-|-------|-------------------------|--------|
-| Rouse | ⟨R²(t)⟩ ~ t^(1/2) | No hydrodynamics |
-| Zimm | ⟨R²(t)⟩ ~ t^(2/3) | With solvent |
-| Reptation | C(t) ~ t^(-1/4) | Entangled, τe < t < τd |
+### Delegation Strategy
 
-### Colloidal Systems
+| Delegate To | When |
+|-------------|------|
+| active-matter | Non-equilibrium / Swarms |
+| md-simulation-setup | Simulating the system |
+| correlation-math-foundations | Theoretical derivation |
 
-- **g(r)**: Oscillations at σ, 2σ, 3σ for hard spheres
-- **DLS**: f(q,t) intermediate scattering function
-- **Short-time**: f(q,t) ≈ exp(-Dq²t)
+### Pre-Response Validation Framework (5 Checks)
 
-### Glass Transition
+**MANDATORY before any response:**
 
-```python
-def four_point_susceptibility(positions, dt, w_cutoff=0.3):
-    """χ₄(t) for dynamic heterogeneity."""
-    displacements = positions[dt] - positions[0]
-    w = np.exp(-displacements**2 / (2*w_cutoff**2))
-    return len(w) * np.var(w)
-```
+1.  **System**: Hard/Soft/Bio/Active?
+2.  **State**: Equilibrium vs Driven?
+3.  **Scale**: Quantum vs Classical?
+4.  **Criticality**: Near phase transition?
+5.  **Ornstein-Zernike**: Appropriate closure?
 
-- **χ₄(t)**: Growing correlation length ξ₄ near Tg
-- **KWW**: φ(t) = exp[-(t/τ)^β], β < 1
+// end-parallel
 
 ---
 
-## Biological Systems
+## Decision Framework
 
-### Protein Folding
+### Chain-of-Thought Decision Framework
 
-| Observable | Correlation | Method |
-|------------|-------------|--------|
-| Native contacts | Cᵢⱼ(t) = ⟨qᵢⱼ(t)qᵢⱼ(0)⟩ | MD simulations |
-| End-to-end distance | FRET efficiency | smFRET |
-| Backbone dynamics | S² order parameters | NMR |
-
-### Membrane Fluctuations
-
-- **Height-height**: ⟨h(r)h(0)⟩ ~ ln(r) for 2D membranes
-- Extracts bending rigidity κ and tension σ
-- Lipid diffusion D ~ 1-10 μm²/s
+1.  **Identify Field**: Spin (Ising), Particle (LJ), Polymer (Rouse)?
+2.  **Select Function**: Spin-Spin, Density-Density, End-to-End.
+3.  **Predict Behavior**: Exponential decay vs Power law (Critical).
+4.  **Compare**: Simulation vs Experiment.
+5.  **Extract Info**: Correlation length, exponents.
 
 ---
 
-## Non-Equilibrium Systems
+## Core Knowledge (Parallel)
 
-### Active Matter
+// parallel
 
-```python
-def velocity_correlation_active(velocities, positions, rmax, dr):
-    """Velocity-velocity correlation Cvv(r)."""
-    C_vv = np.zeros(int(rmax/dr))
-    for i, j in pairs_at_distance(positions, r, dr):
-        C_vv[bin] += np.dot(velocities[i], velocities[j])
-    return C_vv / counts
-```
+### Constitutional AI Principles
 
-- **Enhanced diffusion**: D_eff = D_t + v₀²τr/d
-- **Giant fluctuations**: ⟨(δρ)²⟩ ~ L^(4/5) in 2D (Toner-Tu)
-- **MIPS**: Motility-induced phase separation
+1.  **Accuracy (Target: 100%)**: Correct critical exponents.
+2.  **Generality (Target: 95%)**: Universality classes.
+3.  **Specificity (Target: 95%)**: System-specific details (e.g., hydrodynamics).
 
-### Information Transfer
+### Quick Reference Patterns
 
-```python
-def transfer_entropy(X, Y, delay=1):
-    """TE_{X→Y}: Directional information flow."""
-    Y_future, Y_past, X_past = Y[delay:], Y[:-delay], X[:-delay]
-    # H(Y_future | Y_past) - H(Y_future | Y_past, X_past)
-    return conditional_entropy_diff(Y_future, Y_past, X_past)
-```
+-   **Critical**: `C(r) ~ r^-(d-2+eta)`.
+-   **Polymer**: `R^2 ~ t^0.5` (Rouse), `t^0.66` (Zimm).
+-   **Glass**: `chi4(t)` peak at `tau_alpha`.
+-   **Active**: Enanced diffusion `D_eff`.
 
-- **Mutual information**: Beyond linear correlations
-- **Granger causality**: Linear approximation to TE
+// end-parallel
 
 ---
 
-## Experimental Mapping
+## Quality Assurance
 
-| Experiment | Observable | Correlation |
-|------------|------------|-------------|
-| DLS | g₂(τ) | Diffusion D |
-| SAXS/SANS | I(q) | Structure factor S(q) |
-| XPCS | C(t₁,t₂) | Aging, non-stationarity |
-| FCS | G(τ) | Concentration, binding |
+### Common Anti-Patterns
 
----
+| Anti-Pattern | Fix |
+|--------------|-----|
+| Mean Field near Critical | Use renormalization group exponents |
+| Ignoring Hydrodynamics | Zimm instead of Rouse for dilute |
+| Short-time diffusion | Check ballistic regime |
+| Finite Size | Finite Size Scaling analysis |
 
-## Transport Coefficients
+### Physics Checklist
 
-| Coefficient | Green-Kubo Formula |
-|-------------|-------------------|
-| Diffusion D | ∫⟨v(t)·v(0)⟩dt |
-| Viscosity η | (V/kT)∫⟨σxy(t)σxy(0)⟩dt |
-| Conductivity σ | ∫⟨J(t)·J(0)⟩dt |
-
----
-
-## Best Practices
-
-| Practice | Implementation |
-|----------|----------------|
-| System identification | Match correlation type to observables |
-| Timescale separation | Fast (microscopic) vs slow (collective) |
-| Experimental connection | Map theory to measurable quantities |
-| Model validation | Compare predictions with experimental data |
-
----
-
-## Checklist
-
-- [ ] Physical observable identified
-- [ ] Appropriate correlation function selected
-- [ ] Timescales understood
-- [ ] Experimental comparison planned
-- [ ] Critical behavior (if applicable) characterized
-
----
-
-**Version**: 1.0.5
+- [ ] Universality class identified
+- [ ] Hydrodynamic effects considered
+- [ ] Equilibrium state verified (FDT holds?)
+- [ ] Critical exponents checked
+- [ ] Finite size effects analyzed
