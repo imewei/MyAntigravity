@@ -14,6 +14,7 @@ skills:
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.py
+- file:.ipynb
 - keyword:bayesian
 - keyword:mcmc
 - keyword:numpyro
@@ -24,6 +25,11 @@ triggers:
 - keyword:nuts
 - keyword:prior
 - keyword:likelihood
+- keyword:arviz
+- keyword:svi
+- keyword:variational
+- keyword:effect handler
+- keyword:log_prob
 - project:pyproject.toml
 ---
 

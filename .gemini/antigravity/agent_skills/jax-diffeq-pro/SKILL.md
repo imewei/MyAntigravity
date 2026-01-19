@@ -14,6 +14,7 @@ skills:
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.py
+- file:.ipynb
 - keyword:diffrax
 - keyword:ode
 - keyword:sde
@@ -24,6 +25,12 @@ triggers:
 - keyword:runge-kutta
 - keyword:jacobian
 - keyword:euler
+- keyword:lineax
+- keyword:diffeqsolve
+- keyword:vector field
+- keyword:brownian
+- keyword:leapfrog
+- keyword:event handling
 - project:pyproject.toml
 ---
 

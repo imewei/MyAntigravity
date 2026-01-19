@@ -24,6 +24,13 @@ triggers:
 - keyword:equinox
 - keyword:flax
 - project:pyproject.toml
+- keyword:pytree
+- keyword:autodiff
+- keyword:spmd
+- keyword:custom_vjp
+- keyword:lax.scan
+- keyword:gradient
+- file:.ipynb
 ---
 
 # JAX Optimization Pro (v2.2)

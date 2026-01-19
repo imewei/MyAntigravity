@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T16:38:35.875789",
+  "generated_at": "2026-01-19T16:41:01.781503",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -57,6 +57,7 @@
       "description": "JAX-first Bayesian expert for inference-as-transformation, NumPyro/BlackJAX",
       "triggers": [
         "file:.py",
+        "file:.ipynb",
         "keyword:bayesian",
         "keyword:mcmc",
         "keyword:numpyro",
@@ -67,6 +68,11 @@
         "keyword:nuts",
         "keyword:prior",
         "keyword:likelihood",
+        "keyword:arviz",
+        "keyword:svi",
+        "keyword:variational",
+        "keyword:effect handler",
+        "keyword:log_prob",
         "project:pyproject.toml"
       ],
       "version": "2.2.0"
@@ -976,6 +982,7 @@
       "description": "JAX-first differential equations expert for Diffrax, stiff solvers, adjoint",
       "triggers": [
         "file:.py",
+        "file:.ipynb",
         "keyword:diffrax",
         "keyword:ode",
         "keyword:sde",
@@ -986,6 +993,12 @@
         "keyword:runge-kutta",
         "keyword:jacobian",
         "keyword:euler",
+        "keyword:lineax",
+        "keyword:diffeqsolve",
+        "keyword:vector field",
+        "keyword:brownian",
+        "keyword:leapfrog",
+        "keyword:event handling",
         "project:pyproject.toml"
       ],
       "version": "2.2.0"
@@ -1482,7 +1495,14 @@
         "keyword:optax",
         "keyword:equinox",
         "keyword:flax",
-        "project:pyproject.toml"
+        "project:pyproject.toml",
+        "keyword:pytree",
+        "keyword:autodiff",
+        "keyword:spmd",
+        "keyword:custom_vjp",
+        "keyword:lax.scan",
+        "keyword:gradient",
+        "file:.ipynb"
       ],
       "version": "2.2.0"
     }
