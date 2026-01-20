@@ -130,15 +130,18 @@ The `auto-solve` workflow automatically routes requests to appropriate skills:
 
 | Script | Purpose |
 |--------|---------|
-| `generate_skill_index.py` | Regenerate `skills_index.json` |
-| `find_relevant_skills.py` | Search for skills by query (Enhanced v2.3 with fuzzy/token matching) |
-| `build_skill_database.py` | Create centralized `skill_database.json` for analysis |
-| `test_skill_discovery_edges.py` | Verify skill discovery against edge cases |
-| `enhance_triggers.py` | Batch-update skill triggers |
-| `validate_agent.py` | Validate agent/skill syntax |
-| `validate_workflows.py` | Validate workflow structure |
-| `validate_plugin_syntax.py` | Check cross-references |
-| `deploy_to_user_level.py` | Copy to `~/.gemini` |
+| `deploy_to_user_level.py` | **Primary Deployment Tool**: Installs, regenerates index, and validates ecosystem. |
+| `generate_skill_index.py` | Scans directories to rebuild `skills_index.json`. |
+| `find_relevant_skills.py` | Semantic/Fuzzy search for skills based on user queries. |
+| `validate_agent.py` | Validates agent structure, metadata, and policies (with exclude support). |
+| `validate_workflows.py` | Validates workflow structure and triggers. |
+| `validate_plugin_syntax.py` | Checks dependencies and cross-references between plugins. |
+| `build_skill_database.py` | Aggregates triggers into `skill_database.json` for analysis. |
+| `enhance_triggers.py` | Batch-updates skill triggers based on usage patterns. |
+| `enrich_skills_with_triggers.py` | AI-driven trigger enrichment. |
+| `optimize_artifacts.py` | Cleans and optimizes artifact storage. |
+| `consolidate_workflows.py` | Merges fragmented workflow definitions. |
+| `test_skill_discovery_edges.py` | Unit tests for edge-case discovery logic. |
 
 ---
 
@@ -165,9 +168,9 @@ triggers:
 Instructions for the AI agent...
 ```
 
-3. Regenerate index:
+3. Deploy changes:
 ```bash
-python3 scripts/generate_skill_index.py
+uv run python3 scripts/deploy_to_user_level.py
 ```
 
 ### Trigger Types
@@ -180,34 +183,11 @@ python3 scripts/generate_skill_index.py
 
 ---
 
-## 📈 Ecosystem Health
-
-### Trigger Quality Metrics
-
-| Metric | Target | Current |
-|--------|--------|---------|
-| Multi-trigger (≥3) | >80% | **95%** ✅ |
-| File/Project triggers | >50% | **61%** ✅ |
-| Keyword-only | <10% | **0%** ✅ |
-
-### Validation Commands
-
-```bash
-# Regenerate and validate index
-cd ~/.gemini/antigravity
-python3 scripts/generate_skill_index.py
-
-# Find relevant skills for a query
-python3 scripts/find_relevant_skills.py --prompt "Bayesian optimization" --top 5
-```
-
----
-
 ## 📚 Documentation
 
-- **Knowledge Items**: See `~/.gemini/antigravity/knowledge/` for curated domain knowledge
-- **Skill Details**: Each skill contains inline documentation in `SKILL.md`
-- **Workflow Guide**: Workflows are self-documenting with step-by-step instructions
+- **Skill Details**: Each skill contains self-contained inline documentation in `SKILL.md`.
+- **Workflow Guide**: Workflows (`global_workflows/*.md`) are self-documenting with step-by-step instructions.
+- **Validation**: Run `deploy_to_user_level.py` to validate your local changes.
 
 ---
 
