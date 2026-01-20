@@ -54,34 +54,18 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 
 ## 🚀 Installation
 
-### Step 1: Clone to User Level
+### Automated Deployment
+
+Run the included deployment script to install the ecosystem to your user level (`~/.gemini/antigravity`). This script automatically:
+1.  **Deploys** all skills, workflows, and scripts.
+2.  **Regenerates** the skill index with correct user-level paths.
+3.  **Validates** the installation (Agent integrity, Workflow structure, Functional smoke test).
 
 ```bash
-# Create user-level .gemini directory
-mkdir -p ~/.gemini/antigravity
-
-# Copy from project to user level
-cp -r .gemini/antigravity/* ~/.gemini/antigravity/
+uv run python3 .gemini/antigravity/scripts/deploy_to_user_level.py
 ```
 
-### Step 2: Verify Installation
-
-```bash
-# Check skill count
-ls ~/.gemini/antigravity/agent_skills | wc -l
-# Expected: 127
-
-# Check workflow count
-ls ~/.gemini/antigravity/global_workflows | wc -l
-# Expected: 17
-```
-
-### Step 3: Regenerate Index (Optional)
-
-```bash
-cd ~/.gemini/antigravity
-python3 scripts/generate_skill_index.py
-```
+If successful, you will see `🚀 All Systems Go!`.
 
 ---
 
