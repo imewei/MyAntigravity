@@ -1,7 +1,7 @@
 ---
 name: speckit-constitution
 description: Create or update the project constitution from principle inputs.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: product-manager
 skills:

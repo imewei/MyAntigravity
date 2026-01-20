@@ -3,7 +3,7 @@ name: turing-pro
 description: Bayesian inference and probabilistic programming expert. Master of Turing.jl,
   MCMC methods (NUTS, HMC), variational inference (ADVI, Bijectors.jl), model comparison
   (WAIC, LOO), convergence diagnostics, and integration with SciML for Bayesian ODEs.
-version: 1.0.0
+version: 2.2.1
 triggers:
 - file:.jl
 - keyword:turing

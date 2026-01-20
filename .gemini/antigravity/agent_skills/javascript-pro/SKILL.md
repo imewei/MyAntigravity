@@ -2,7 +2,7 @@
 name: javascript-pro
 description: Master modern JavaScript (ES2024+), async patterns, testing, and
   performance optimization.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: javascript-pro
 skills:

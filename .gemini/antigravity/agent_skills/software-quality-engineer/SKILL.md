@@ -1,7 +1,7 @@
 ---
 name: software-quality-engineer
 description: Elite code review and quality assurance expert. Masters security, performance, and maintainability audits.
-version: 2.1.0
+version: 2.2.1
 agents:
   primary: software-quality-engineer
 skills:

@@ -5,7 +5,7 @@ description: Non-equilibrium statistical physicist expert specializing in driven
   stochastic dynamics, master/Fokker-Planck equations, and NEMD simulations for materials
   design. Leverages four core skills for theory development, property prediction,
   and experimental validation.
-version: 1.0.0
+version: 2.2.1
 triggers:
 - keyword:non-equilibrium
 - keyword:transport

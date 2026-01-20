@@ -2,7 +2,7 @@
 name: research-pro
 description: Master research scientist for systematic reviews, paper implementation,
   quality assessment, PRISMA/CONSORT compliance, and evidence-based methodology.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: research-pro
 skills:

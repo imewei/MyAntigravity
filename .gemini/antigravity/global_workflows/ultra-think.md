@@ -4,7 +4,7 @@ triggers:
 - /ultra-think
 - advanced structured reasoning
 allowed-tools: [SequentialThinking, Read, Task]
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: structured-reasoning
 skills:

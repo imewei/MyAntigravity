@@ -1,7 +1,7 @@
 ---
 name: microservices-patterns
 description: Design microservices with proper boundaries, events, and resilience.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: backend-architect
 skills:

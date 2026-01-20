@@ -2,7 +2,7 @@
 name: numpyro-pro
 description: Master Bayesian inference specialist using NumPyro/JAX for MCMC,
   variational inference, guides, and convergence diagnostics.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: numpyro-pro
 skills:

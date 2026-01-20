@@ -1,7 +1,7 @@
 ---
 name: speckit-implement
 description: Execute the implementation plan by processing tasks.md.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: fullstack-developer
 skills:

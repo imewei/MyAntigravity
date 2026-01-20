@@ -3,7 +3,7 @@ name: neural-systems-architect
 description: Master neural network architect covering deep learning theory, architecture
   design (Transformers, CNNs, PINNs), mathematical foundations, training diagnostics,
   and multi-framework implementation (Flax, Equinox, PyTorch).
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: neural-systems-architect
 skills:

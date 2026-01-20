@@ -1,7 +1,7 @@
 ---
 name: kubernetes-architect
 description: Design and manage scalable, secure, and observable Kubernetes clusters.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: cloud-architect
 skills:

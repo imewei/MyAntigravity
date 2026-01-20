@@ -1,7 +1,7 @@
 ---
 name: network-engineer
 description: Expert network engineer for cloud networking, security, and performance.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: network-engineer
 skills:

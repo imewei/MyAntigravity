@@ -100,7 +100,7 @@ def generate_index(root_dir):
                         "path": str(skill_file.relative_to(root_path)),
                         "description": metadata.get('description', ''),
                         "triggers": metadata.get('triggers', []),
-                        "version": metadata.get('version', '1.0.0')
+                        "version": metadata.get('version', '2.2.1')
                     }
 
                     index["skills"][skill_name] = entry
@@ -146,6 +146,7 @@ if __name__ == "__main__":
 
     skills_dir = REPO_ROOT / "agent_skills"
     workflows_dir = REPO_ROOT / "global_workflows"
+    OUTPUT_FILE = REPO_ROOT / "skills_index.json"
 
     # Index Skills
     print(f"Scanning skills in {skills_dir}...")
@@ -161,7 +162,7 @@ if __name__ == "__main__":
                         "path": str(skill_file),
                         "description": metadata.get('description', ''),
                         "triggers": metadata.get('triggers', []),
-                        "version": metadata.get('version', '1.0.0')
+                        "version": metadata.get('version', '2.2.1')
                     }
 
                     index["skills"][skill_name] = entry

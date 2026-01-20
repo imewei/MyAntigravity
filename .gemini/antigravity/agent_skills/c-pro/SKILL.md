@@ -1,7 +1,7 @@
 ---
 name: c-pro
 description: Master C programmer for systems, embedded, and high-performance code.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: c-pro
 skills:

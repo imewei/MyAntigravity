@@ -1,6 +1,6 @@
 ---
 name: python-packaging
-version: "1.0.7"
+version: 2.2.1
 description: Create distributable Python packages with pyproject.toml, proper project structure, and publishing to PyPI. Use when writing pyproject.toml or setup.py, creating package structures with __init__.py, building wheel/source distributions, setting up CLI entry points, configuring build backends (setuptools, hatchling), or publishing to PyPI/TestPyPI.
 triggers:
 - file:.ipynb
@@ -184,7 +184,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: { python-version: "3.12" }
+        with: { python-version: '3.11' }
       - run: pip install build twine
       - run: python -m build
       - run: twine check dist/*

@@ -1,7 +1,7 @@
 ---
 name: git-advanced-workflows
 description: "Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery."
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: devops-engineer
 skills:

@@ -1,7 +1,7 @@
 ---
 name: data-scientist
 description: Expert data scientist for analytics, ML modeling, and stats.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: data-scientist
 skills:

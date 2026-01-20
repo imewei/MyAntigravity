@@ -1,7 +1,7 @@
 ---
 name: ai-engineer
 description: Expert AI engineer for LLM apps, RAG systems, and Agents.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: ai-engineer
 skills:

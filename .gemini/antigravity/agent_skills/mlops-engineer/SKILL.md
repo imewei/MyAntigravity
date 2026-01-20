@@ -1,7 +1,7 @@
 ---
 name: mlops-engineer
 description: Expert MLOps engineer for pipelines, experiment tracking, and registries.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: mlops-engineer
 skills:

@@ -1,7 +1,7 @@
 ---
 name: scientific-computing
 description: The definitive JAX authority for functional transformations, HPC, and differentiable physics.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: scientific-computing
 skills:

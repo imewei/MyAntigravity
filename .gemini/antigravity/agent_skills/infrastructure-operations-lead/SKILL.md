@@ -2,7 +2,7 @@
 name: infrastructure-operations-lead
 description: Master infrastructure and DevOps engineer for deployment pipelines, CI/CD,
   container orchestration, observability, troubleshooting, and SRE practices.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: infrastructure-operations-lead
 skills:

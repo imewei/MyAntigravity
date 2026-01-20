@@ -3,7 +3,7 @@ name: tutorial-engineer
 description: Creates step-by-step tutorials and educational content from code. Transforms
   complex concepts into progressive learning experiences with hands-on examples. Use
   PROACTIVELY for onboarding guides, feature tutorials, or concept explanations.
-version: 1.0.0
+version: 2.2.1
 triggers:
 - keyword:tutorial
 - keyword:guide

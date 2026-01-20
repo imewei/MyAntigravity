@@ -1,7 +1,7 @@
 ---
 name: active-matter
 description: Model active matter systems (ABPs, Vicsek, MIPS, Flocking).
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: active-matter
 skills:

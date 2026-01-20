@@ -1,7 +1,7 @@
 ---
 name: llm-evaluation
 description: Quantitative and qualitative evaluation of LLM outputs (BLEU, ROUGE, BERTScore, LLM-as-Judge).
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: ai-engineer
 skills:

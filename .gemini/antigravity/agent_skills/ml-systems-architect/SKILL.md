@@ -1,7 +1,7 @@
 ---
 name: ml-systems-architect
 description: Expert in End-to-End ML Systems, from JAX/PyTorch model design to Kubernetes serving.
-version: 2.1.0
+version: 2.2.1
 agents:
   primary: ml-systems-architect
 skills:

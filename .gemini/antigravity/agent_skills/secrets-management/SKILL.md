@@ -1,7 +1,7 @@
 ---
 name: secrets-management
 description: Secure lifecycle for API keys, certificates, and credentials.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: security-auditor
 skills:

@@ -1,7 +1,7 @@
 ---
 name: rust-pro
 description: Master Rust developer for safe, concurrent, and high-performance systems.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: rust-pro
 skills:

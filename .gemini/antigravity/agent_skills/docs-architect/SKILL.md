@@ -1,7 +1,7 @@
 ---
 name: docs-architect
 description: Expert technical documentation architect for guides, API docs, and architecture manuals.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: docs-architect
 skills:

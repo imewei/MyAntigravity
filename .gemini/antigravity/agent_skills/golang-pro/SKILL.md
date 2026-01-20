@@ -1,7 +1,7 @@
 ---
 name: golang-pro
 description: Master Go developer for high-concurrency systems and microservices.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: golang-pro
 skills:

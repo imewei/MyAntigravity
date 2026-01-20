@@ -2,7 +2,7 @@
 name: typescript-pro
 description: Master TypeScript architect for advanced type systems, generics,
   conditional types, utility types, and enterprise patterns.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: typescript-pro
 skills:

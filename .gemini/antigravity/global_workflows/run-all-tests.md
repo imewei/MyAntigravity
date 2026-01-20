@@ -3,7 +3,7 @@ description: Iteratively run and fix tests until zero failures
 triggers:
 - /run-all-tests
 - workflow for run all tests
-version: 2.2.0
+version: 2.2.1
 allowed-tools: [Bash, Read, Edit, Task]
 agents:
   primary: test-engineer

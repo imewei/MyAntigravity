@@ -4,7 +4,7 @@ description: Master software architect specializing in modern architecture patte
   clean architecture, microservices, event-driven systems, and DDD. Reviews system
   designs and code changes for architectural integrity, scalability, and maintainability.
   Use PROACTIVELY for architectural decisions.
-version: 1.0.0
+version: 2.2.1
 triggers:
 - keyword:migration
 - keyword:framework

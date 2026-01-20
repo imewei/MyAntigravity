@@ -2,7 +2,7 @@
 name: multi-agent-systems-lead
 description: Master orchestrator for multi-agent workflows, team assembly, DAG execution,
   inter-agent messaging, task scheduling, and performance optimization of agent systems.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: multi-agent-systems-lead
 skills:

@@ -1,6 +1,6 @@
 ---
 name: multi-platform-mobile
-version: "2.0.0"
+version: 2.2.1
 maturity: "5-Expert"
 specialization: Unified Mobile Development (Flutter, React Native, Native)
 description: "The definitive authority on mobile development. Master of cross-platform frameworks (Flutter/React Native) and native ecosystems (iOS/Android). Use for ALL mobile tasks: architecture design, UI implementation, performance optimization, offline-first data sync, and app store deployment."

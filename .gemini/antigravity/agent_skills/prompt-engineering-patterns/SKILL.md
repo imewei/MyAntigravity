@@ -1,7 +1,7 @@
 ---
 name: prompt-engineering-patterns
 description: Advanced techniques for Chain-of-Thought, Few-Shot, and Self-Consistency.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: prompt-engineer
 skills:

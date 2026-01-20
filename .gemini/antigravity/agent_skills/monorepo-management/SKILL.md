@@ -1,6 +1,6 @@
 ---
 name: monorepo-management
-version: "1.0.7"
+version: 2.2.1
 description: Master monorepo management with Turborepo, Nx, and pnpm workspaces. Use when setting up turbo.json or nx.json, organizing apps/* and packages/* directories, optimizing builds with caching, managing workspace dependencies, implementing shared configs, setting up CI/CD for monorepos, or publishing packages with changesets.
 triggers:
 - keyword:monorepo
@@ -241,7 +241,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with: { version: 8 }
       - uses: actions/setup-node@v3
-        with: { node-version: 18, cache: 'pnpm' }
+        with: { node-version: '18' }
       - run: pnpm install --frozen-lockfile
       - run: pnpm turbo run build test lint
 ```

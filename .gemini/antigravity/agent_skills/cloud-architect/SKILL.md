@@ -1,7 +1,7 @@
 ---
 name: cloud-architect
 description: Expert cloud architect for AWS/Azure/GCP, IaC, and FinOps.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: cloud-architect
 skills:

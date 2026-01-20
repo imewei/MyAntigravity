@@ -15,7 +15,7 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 
 ---
 
-## 📊 Quick Stats (v2.2)
+## 📊 Quick Stats (v2.2.1)
 
 | Component | Count | Description |
 |-----------|-------|-------------|
@@ -102,7 +102,7 @@ Use nlsq-pro to fit this scattering model
 Use research-pro to review this methodology
 ```
 
-### Key Unified Personas (v2.2)
+### Key Unified Personas (v2.2.1)
 
 | Persona | Domain | Merged Skills |
 |---------|--------|---------------|
@@ -165,7 +165,7 @@ The `auto-solve` workflow automatically routes requests to appropriate skills:
 ---
 name: my-skill
 description: What this skill does
-version: 1.0.0
+version: 2.2.1
 triggers:
 - keyword:my-keyword
 - file:.ext
@@ -220,17 +220,6 @@ python3 scripts/find_relevant_skills.py --prompt "Bayesian optimization" --top 5
 - **Knowledge Items**: See `~/.gemini/antigravity/knowledge/` for curated domain knowledge
 - **Skill Details**: Each skill contains inline documentation in `SKILL.md`
 - **Workflow Guide**: Workflows are self-documenting with step-by-step instructions
-
----
-
-## 🏷️ Version History
-
-| Version | Changes |
-|---------|---------|
-| **v2.2** | Phase 5 consolidation: 127 skills, 95% trigger quality |
-| **v2.1** | Domain consolidations: 9 unified personas |
-| **v2.0** | Skill-first architecture, deprecated wrapper workflows |
-| **v1.0** | Initial workflow-centric design |
 
 ---
 

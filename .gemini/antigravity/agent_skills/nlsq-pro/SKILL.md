@@ -2,7 +2,7 @@
 name: nlsq-pro
 description: GPU-accelerated nonlinear least squares expert (JAX) for curve fitting,
   global optimization, streaming workflows, and advanced diagnostics.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: nlsq-pro
 skills:

@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-01-19T19:51:05.636722",
+  "generated_at": "2026-01-19T23:33:26.535924",
   "skills": {
     "machine-learning-essentials": {
-      "path": "agent_skills/machine-learning-essentials/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/machine-learning-essentials/SKILL.md",
       "description": "Core ML workflows with scikit-learn, XGBoost, LightGBM including algorithm selection, cross-validation, hyperparameter tuning (GridSearch, Optuna), handling imbalanced data (SMOTE), model evaluation, SHAP interpretability, and deployment. Use when building classification/regression models or evaluating ML performance.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "network-engineer": {
-      "path": "agent_skills/network-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/network-engineer/SKILL.md",
       "description": "Expert network engineer for cloud networking, security, and performance.",
       "triggers": [
         "keyword:audit",
@@ -20,40 +20,40 @@
         "keyword:cloud",
         "keyword:security"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "comprehensive-reflection-framework": {
-      "path": "agent_skills/comprehensive-reflection-framework/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/comprehensive-reflection-framework/SKILL.md",
       "description": "Orchestrate reflection across cognitive, technical, scientific, and strategic dimensions for integrated insights and cross-cutting patterns. Use for quarterly reviews, major milestones, grant proposals, strategic planning, or comprehensive project health assessments.",
       "triggers": [
         "keyword:reflection",
         "keyword:review",
         "keyword:retrospective"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "database-optimizer": {
-      "path": "agent_skills/database-optimizer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/database-optimizer/SKILL.md",
       "description": "Expert database optimizer specializing in modern performance tuning,",
       "triggers": [
         "file:.sql",
         "keyword:database",
         "keyword:sql"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "observability-engineer": {
-      "path": "agent_skills/observability-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/observability-engineer/SKILL.md",
       "description": "Expert observability engineer for monitoring, logging, tracing, and reliability.",
       "triggers": [
         "keyword:observability",
         "keyword:monitoring",
         "keyword:traces"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "jax-bayesian-pro": {
-      "path": "agent_skills/jax-bayesian-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/jax-bayesian-pro/SKILL.md",
       "description": "JAX-first Bayesian expert for inference-as-transformation, NumPyro/BlackJAX",
       "triggers": [
         "file:.py",
@@ -75,20 +75,20 @@
         "keyword:log_prob",
         "project:pyproject.toml"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "kubernetes-architect": {
-      "path": "agent_skills/kubernetes-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/kubernetes-architect/SKILL.md",
       "description": "Design and manage scalable, secure, and observable Kubernetes clusters.",
       "triggers": [
         "file:helm/**/*.yaml",
         "file:k8s*.yaml",
         "keyword:kubernetes"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "multi-platform-architecture": {
-      "path": "agent_skills/multi-platform-architecture/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/multi-platform-architecture/SKILL.md",
       "description": "Design multi-platform apps with clean architecture, code sharing (Flutter, React Native, KMP), BFF patterns, offline-first sync, and team organization. Use when planning mobile/web/desktop architecture, choosing frameworks, or maximizing code reuse.",
       "triggers": [
         "file:.jsx",
@@ -96,20 +96,20 @@
         "keyword:react",
         "project:package.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "dx-optimizer": {
-      "path": "agent_skills/dx-optimizer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/dx-optimizer/SKILL.md",
       "description": "Developer Experience specialist. Improves tooling, setup, and workflows.",
       "triggers": [
         "keyword:developer-experience",
         "keyword:tooling",
         "keyword:workflow"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "test-engineering-lead": {
-      "path": "agent_skills/test-engineering-lead/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/test-engineering-lead/SKILL.md",
       "description": "Expert in full-stack test automation, framework architecture, and TDD/CI strategies.",
       "triggers": [
         "keyword:qa",
@@ -118,20 +118,20 @@
         "file:.spec.ts",
         "file:conftest.py"
       ],
-      "version": "2.1.0"
+      "version": "2.2.1"
     },
     "web-development-julia": {
-      "path": "agent_skills/web-development-julia/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/web-development-julia/SKILL.md",
       "description": "Build web applications with Genie.jl MVC framework and HTTP.jl. Use when creating REST APIs, handling HTTP requests, or building web services in Julia.",
       "triggers": [
         "file:.jl",
         "keyword:julia",
         "project:Project.toml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "gpu-acceleration": {
-      "path": "agent_skills/gpu-acceleration/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/gpu-acceleration/SKILL.md",
       "description": "Implement and optimize GPU algorithms using CUDA/CuPy/CUDA.jl.",
       "triggers": [
         "keyword:gpu",
@@ -139,10 +139,10 @@
         "keyword:cupy",
         "file:.cu"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "frontend-developer": {
-      "path": "agent_skills/frontend-developer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/frontend-developer/SKILL.md",
       "description": "Build React components, implement responsive layouts, and handle client-side",
       "triggers": [
         "file:.jsx",
@@ -150,10 +150,10 @@
         "keyword:react",
         "project:package.json"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "terraform-specialist": {
-      "path": "agent_skills/terraform-specialist/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/terraform-specialist/SKILL.md",
       "description": "Infrastructure as Code (IaC) mastery using Terraform/OpenTofu.",
       "triggers": [
         "file:.tf",
@@ -165,20 +165,20 @@
         "keyword:state",
         "project:terraform.tfstate"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "api-design-principles": {
-      "path": "agent_skills/api-design-principles/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/api-design-principles/SKILL.md",
       "description": "REST, GraphQL, and gRPC design standards for scalable interfaces.",
       "triggers": [
         "keyword:api",
         "keyword:rest",
         "keyword:openapi"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "airflow-scientific-workflows": {
-      "path": "agent_skills/airflow-scientific-workflows/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/airflow-scientific-workflows/SKILL.md",
       "description": "Design Airflow DAGs for scientific pipelines, simulations, and data ingestion.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -187,10 +187,10 @@
         "keyword:ci-cd",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "python-packaging": {
-      "path": "agent_skills/python-packaging/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/python-packaging/SKILL.md",
       "description": "Create distributable Python packages with pyproject.toml, proper project structure, and publishing to PyPI. Use when writing pyproject.toml or setup.py, creating package structures with __init__.py, building wheel/source distributions, setting up CLI entry points, configuring build backends (setuptools, hatchling), or publishing to PyPI/TestPyPI.",
       "triggers": [
         "file:.ipynb",
@@ -203,20 +203,20 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "angular-migration": {
-      "path": "agent_skills/angular-migration/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/angular-migration/SKILL.md",
       "description": "Migrate AngularJS (1.x) to Angular (2+) using hybrid mode, ngUpgrade, component conversion, dependency injection updates, and routing migration. Use when upgrading legacy AngularJS apps incrementally or implementing hybrid AngularJS/Angular applications.",
       "triggers": [
         "keyword:angular",
         "keyword:ngupgrade",
         "file:.ts"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "rag-implementation": {
-      "path": "agent_skills/rag-implementation/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/rag-implementation/SKILL.md",
       "description": "Production RAG patterns: Chunking, Hybrid Search, Reranking, and Grounding.",
       "triggers": [
         "keyword:rag",
@@ -224,10 +224,10 @@
         "keyword:vector",
         "keyword:embedding"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "software-quality-engineer": {
-      "path": "agent_skills/software-quality-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/software-quality-engineer/SKILL.md",
       "description": "Elite code review and quality assurance expert. Masters security, performance, and maintainability audits.",
       "triggers": [
         "keyword:audit",
@@ -238,10 +238,10 @@
         "file:.ipynb",
         "file:PR_TEMPLATE.md"
       ],
-      "version": "2.1.0"
+      "version": "2.2.1"
     },
     "ml-pipeline-workflow": {
-      "path": "agent_skills/ml-pipeline-workflow/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/ml-pipeline-workflow/SKILL.md",
       "description": "Build end-to-end MLOps pipelines with Airflow, Dagster, Kubeflow, or Prefect for data preparation, training, validation, and deployment. Use when creating DAG definitions, workflow configs, or orchestrating ML lifecycle stages.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -250,10 +250,10 @@
         "keyword:ci-cd",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "interop-patterns": {
-      "path": "agent_skills/interop-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/interop-patterns/SKILL.md",
       "description": "Master cross-language integration with PythonCall.jl, RCall.jl, and CxxWrap.jl. Use when calling Python/R libraries from Julia or minimizing data transfer overhead.",
       "triggers": [
         "file:.jl",
@@ -264,20 +264,20 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "llm-evaluation": {
-      "path": "agent_skills/llm-evaluation/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/llm-evaluation/SKILL.md",
       "description": "Quantitative and qualitative evaluation of LLM outputs (BLEU, ROUGE, BERTScore, LLM-as-Judge).",
       "triggers": [
         "keyword:llm",
         "keyword:evaluation",
         "keyword:benchmark"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "numpyro-pro": {
-      "path": "agent_skills/numpyro-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/numpyro-pro/SKILL.md",
       "description": "Master Bayesian inference specialist using NumPyro/JAX for MCMC,",
       "triggers": [
         "keyword:numpyro",
@@ -285,30 +285,30 @@
         "keyword:mcmc",
         "keyword:svi"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "architecture-patterns": {
-      "path": "agent_skills/architecture-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/architecture-patterns/SKILL.md",
       "description": "Master Clean Architecture, Hexagonal Architecture, and DDD patterns including entities, value objects, aggregates, repositories, and domain events. Use when designing scalable backends, refactoring monoliths, or implementing domain-driven design.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "context-manager": {
-      "path": "agent_skills/context-manager/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/context-manager/SKILL.md",
       "description": "Orchestrate long-running context, memory retrieval, and 100k+ token windows.",
       "triggers": [
         "keyword:context",
         "keyword:memory",
         "keyword:long-context"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "django-pro": {
-      "path": "agent_skills/django-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/django-pro/SKILL.md",
       "description": "Master Django 5.x developer for scalable web apps and DRF APIs.",
       "triggers": [
         "file:.py",
@@ -316,10 +316,10 @@
         "keyword:web",
         "project:manage.py"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "scientific-visualization-lead": {
-      "path": "agent_skills/scientific-visualization-lead/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/scientific-visualization-lead/SKILL.md",
       "description": "Master scientific visualization expert for publication-quality figures,",
       "triggers": [
         "keyword:visualization",
@@ -329,10 +329,10 @@
         "keyword:graph",
         "keyword:dashboard"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "react-modernization": {
-      "path": "agent_skills/react-modernization/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/react-modernization/SKILL.md",
       "description": "Upgrade React 16\u219217\u219218, migrate class components to hooks (useState, useEffect, useContext), adopt concurrent features (Suspense, transitions), apply codemods, optimize with memo/useMemo/useCallback, and add TypeScript. Use for class-to-hooks migration, lifecycle conversion, or React 18 adoption.",
       "triggers": [
         "file:.jsx",
@@ -343,10 +343,10 @@
         "project:package.json",
         "project:tsconfig.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "performance-engineering-lead": {
-      "path": "agent_skills/performance-engineering-lead/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/performance-engineering-lead/SKILL.md",
       "description": "Master performance engineer for observability, optimization, scalability,",
       "triggers": [
         "keyword:performance",
@@ -358,10 +358,10 @@
         "keyword:scale",
         "keyword:benchmark"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "python-julia-visualization": {
-      "path": "agent_skills/python-julia-visualization/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/python-julia-visualization/SKILL.md",
       "description": "Cross-language visualization mastery: Matplotlib, Seaborn, Plotly, Bokeh, Plots.jl, Makie.jl.",
       "triggers": [
         "file:.jl",
@@ -374,10 +374,10 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "programming-scripting-languages": {
-      "path": "agent_skills/programming-scripting-languages/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/programming-scripting-languages/SKILL.md",
       "description": "Master CLI development across Python (Click, Typer), Bash, PowerShell, and Go (Cobra). Use when implementing argument parsing, creating shell automation scripts, building Go CLIs with Cobra, designing interactive prompts, handling subcommands, or creating cross-platform CLI tools.",
       "triggers": [
         "file:.py",
@@ -385,40 +385,40 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "golang-pro": {
-      "path": "agent_skills/golang-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/golang-pro/SKILL.md",
       "description": "Master Go developer for high-concurrency systems and microservices.",
       "triggers": [
         "file:.go",
         "keyword:golang",
         "keyword:go"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
-    "profile.displayName": {
-      "path": "agent_skills/auth-implementation-patterns/SKILL.md",
+    "auth-implementation-patterns": {
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/auth-implementation-patterns/SKILL.md",
       "description": "Master authentication patterns including JWT (access/refresh tokens), OAuth2/OpenID Connect, session-based auth, RBAC/ABAC, API keys, MFA, SSO, password hashing (bcrypt/argon2), secure cookies, and CSRF protection. Use when implementing auth systems, securing APIs, or designing access control.",
       "triggers": [
         "keyword:auth",
         "keyword:oauth",
         "keyword:jwt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "prompt-engineering-patterns": {
-      "path": "agent_skills/prompt-engineering-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/prompt-engineering-patterns/SKILL.md",
       "description": "Advanced techniques for Chain-of-Thought, Few-Shot, and Self-Consistency.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "multi-agent-systems-lead": {
-      "path": "agent_skills/multi-agent-systems-lead/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/multi-agent-systems-lead/SKILL.md",
       "description": "Master orchestrator for multi-agent workflows, team assembly, DAG execution,",
       "triggers": [
         "keyword:agent",
@@ -428,10 +428,10 @@
         "keyword:coordinate",
         "keyword:dag"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "skill-discovery": {
-      "path": "agent_skills/skill-discovery/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/skill-discovery/SKILL.md",
       "description": "Meta-skill for dynamically discovering and loading other Antigravity capabilities based on context or user intent.",
       "triggers": [
         "keyword:find",
@@ -440,30 +440,30 @@
         "keyword:skills",
         "keyword:capability"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "fastapi-pro": {
-      "path": "agent_skills/fastapi-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/fastapi-pro/SKILL.md",
       "description": "Master FastAPI developer for high-performance async APIs and Pydantic V2.",
       "triggers": [
         "file:.py",
         "keyword:api",
         "keyword:fastapi"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "code-reviewer-codebase-cleanup": {
-      "path": "agent_skills/code-reviewer-codebase-cleanup/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/code-reviewer-codebase-cleanup/SKILL.md",
       "description": "Elite code review expert specializing in modern AI-powered code analysis,",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "react-native-patterns": {
-      "path": "agent_skills/react-native-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/react-native-patterns/SKILL.md",
       "description": "Modern React Native patterns with New Architecture, TypeScript, and performance optimization. Use when building React Native components, optimizing FlatList performance, implementing state management (Redux Toolkit, Zustand), setting up React Navigation, integrating APIs with React Query, handling forms with React Hook Form, creating native modules, or implementing offline-first storage.",
       "triggers": [
         "file:.jsx",
@@ -474,10 +474,10 @@
         "project:package.json",
         "project:tsconfig.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "plugin-syntax-validator": {
-      "path": "agent_skills/plugin-syntax-validator/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/plugin-syntax-validator/SKILL.md",
       "description": "Validate Claude Code plugin syntax, structure, and cross-references with automated detection and auto-fixing of common errors. Use when validating agent/skill references, checking namespace syntax, or setting up CI validation pipelines.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -488,30 +488,30 @@
         "keyword:syntax",
         "keyword:claude"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "iterative-error-resolution": {
-      "path": "agent_skills/iterative-error-resolution/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/iterative-error-resolution/SKILL.md",
       "description": "Automated CI/CD troubleshooting, dependency conflict resolution, and self-correcting loops.",
       "triggers": [
         "keyword:error",
         "keyword:debug",
         "keyword:fix"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "prompt-engineer": {
-      "path": "agent_skills/prompt-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/prompt-engineer/SKILL.md",
       "description": "Expert prompt engineer for LLM optimization, CoT, and system prompts.",
       "triggers": [
         "keyword:prompt",
         "keyword:llm",
         "keyword:gpt"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
-    "CI": {
-      "path": "agent_skills/monorepo-management/SKILL.md",
+    "monorepo-management": {
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/monorepo-management/SKILL.md",
       "description": "Master monorepo management with Turborepo, Nx, and pnpm workspaces. Use when setting up turbo.json or nx.json, organizing apps/* and packages/* directories, optimizing builds with caching, managing workspace dependencies, implementing shared configs, setting up CI/CD for monorepos, or publishing packages with changesets.",
       "triggers": [
         "keyword:monorepo",
@@ -519,10 +519,10 @@
         "keyword:nx",
         "file:turbo.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "julia-pro": {
-      "path": "agent_skills/julia-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/julia-pro/SKILL.md",
       "description": "Master Julia programmer for HPC, scientific computing, performance",
       "triggers": [
         "file:.jl",
@@ -532,10 +532,10 @@
         "keyword:performance",
         "project:Project.toml"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "turing-pro": {
-      "path": "agent_skills/turing-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/turing-pro/SKILL.md",
       "description": "Bayesian inference and probabilistic programming expert. Master of Turing.jl,",
       "triggers": [
         "file:.jl",
@@ -543,50 +543,50 @@
         "keyword:bayesian",
         "project:Project.toml"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "tdd-orchestrator": {
-      "path": "agent_skills/tdd-orchestrator/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/tdd-orchestrator/SKILL.md",
       "description": "Master TDD orchestrator specializing in red-green-refactor discipline,",
       "triggers": [
         "keyword:tdd",
         "keyword:test-driven",
         "keyword:red-green"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "multiscale-modeling": {
-      "path": "agent_skills/multiscale-modeling/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/multiscale-modeling/SKILL.md",
       "description": "Bridge atomistic MD to mesoscale using coarse-graining, DPD, and nanoscale DEM. Use when developing CG models, implementing DPD simulations, or coupling scales.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "grafana-dashboards": {
-      "path": "agent_skills/grafana-dashboards/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/grafana-dashboards/SKILL.md",
       "description": "Create production Grafana dashboards with panels, variables, alerts, and templates using RED/USE methods. Use when building API monitoring, infrastructure, database, or SLO dashboards with Prometheus data sources.",
       "triggers": [
         "file:.sql",
         "keyword:database",
         "keyword:sql"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "legacy-modernizer": {
-      "path": "agent_skills/legacy-modernizer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/legacy-modernizer/SKILL.md",
       "description": "Strategies for Strangler Fig migration, brownfield refactoring, and safely killing spaghetti code.",
       "triggers": [
         "keyword:legacy",
         "keyword:modernize",
         "keyword:strangler"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "meta-cognitive-reflection": {
-      "path": "agent_skills/meta-cognitive-reflection/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/meta-cognitive-reflection/SKILL.md",
       "description": "Analyze reasoning patterns, detect biases, and improve AI decision quality.",
       "triggers": [
         "file:.ipynb",
@@ -595,10 +595,10 @@
         "keyword:qa",
         "keyword:testing"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "sciml-ecosystem": {
-      "path": "agent_skills/sciml-ecosystem/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/sciml-ecosystem/SKILL.md",
       "description": "Overview and selection guide for the Julia SciML ecosystem packages.",
       "triggers": [
         "file:.ipynb",
@@ -608,10 +608,10 @@
         "keyword:ml",
         "project:Project.toml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "uv-package-manager": {
-      "path": "agent_skills/uv-package-manager/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/uv-package-manager/SKILL.md",
       "description": "Master uv for blazing-fast Python dependency management, virtual environments, and lockfiles. Use when running uv commands (init, add, sync, venv, run), managing dependencies 10-100x faster than pip/poetry, installing Python versions, working with uv.lock for reproducible builds, optimizing Docker/CI builds, or migrating from pip/poetry to uv.",
       "triggers": [
         "file:.py",
@@ -622,30 +622,30 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "md-simulation-setup": {
-      "path": "agent_skills/md-simulation-setup/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/md-simulation-setup/SKILL.md",
       "description": "Setup and config expert for LAMMPS, GROMACS, and HOOMD-blue.",
       "triggers": [
         "keyword:lammps",
         "keyword:gromacs",
         "keyword:molecular"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "architect-review": {
-      "path": "agent_skills/architect-review/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/architect-review/SKILL.md",
       "description": "Master software architect for system design reviews and patterns.",
       "triggers": [
         "keyword:architecture",
         "keyword:design",
         "keyword:review"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "parallel-computing": {
-      "path": "agent_skills/parallel-computing/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/parallel-computing/SKILL.md",
       "description": "Master multi-threading, Distributed.jl, and GPU computing with CUDA.jl. Use when scaling computations across CPUs or GPUs for scientific computing.",
       "triggers": [
         "keyword:parallel",
@@ -653,10 +653,10 @@
         "keyword:distributed",
         "file:.jl"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "typescript-pro": {
-      "path": "agent_skills/typescript-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/typescript-pro/SKILL.md",
       "description": "Master TypeScript architect for advanced type systems, generics,",
       "triggers": [
         "file:.ts",
@@ -666,10 +666,10 @@
         "keyword:types",
         "project:tsconfig.json"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "variational-inference-patterns": {
-      "path": "agent_skills/variational-inference-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/variational-inference-patterns/SKILL.md",
       "description": "Master ADVI variational inference with Turing.jl and Bijectors.jl for scalable approximate Bayesian inference. Use when MCMC is too slow for large datasets.",
       "triggers": [
         "keyword:variational",
@@ -677,30 +677,30 @@
         "keyword:advi",
         "file:.jl"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "backend-architect": {
-      "path": "agent_skills/backend-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/backend-architect/SKILL.md",
       "description": "Expert backend architect specializing in scalable API design, microservices",
       "triggers": [
         "keyword:backend",
         "keyword:api",
         "keyword:microservice"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "microservices-patterns": {
-      "path": "agent_skills/microservices-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/microservices-patterns/SKILL.md",
       "description": "Design microservices with proper boundaries, events, and resilience.",
       "triggers": [
         "keyword:microservice",
         "keyword:saga",
         "keyword:cqrs"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "infrastructure-operations-lead": {
-      "path": "agent_skills/infrastructure-operations-lead/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/infrastructure-operations-lead/SKILL.md",
       "description": "Master infrastructure and DevOps engineer for deployment pipelines, CI/CD,",
       "triggers": [
         "keyword:deploy",
@@ -712,10 +712,10 @@
         "keyword:devops",
         "keyword:sre"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "data-engineer": {
-      "path": "agent_skills/data-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/data-engineer/SKILL.md",
       "description": "Expert data engineer for pipelines, ETL/ELT, and data quality.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -723,20 +723,20 @@
         "keyword:qa",
         "keyword:testing"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "error-handling-patterns": {
-      "path": "agent_skills/error-handling-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/error-handling-patterns/SKILL.md",
       "description": "Resilient error strategies: Circut breaking, Retries, and Graceful degradation.",
       "triggers": [
         "keyword:error",
         "keyword:retry",
         "keyword:circuit-breaker"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "catalyst-reactions": {
-      "path": "agent_skills/catalyst-reactions/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/catalyst-reactions/SKILL.md",
       "description": "Model chemical reaction networks with Catalyst.jl for deterministic and stochastic simulations. Use when modeling biochemical pathways or chemical kinetics.",
       "triggers": [
         "file:.jsx",
@@ -744,30 +744,30 @@
         "keyword:react",
         "project:package.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "docs-architect": {
-      "path": "agent_skills/docs-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/docs-architect/SKILL.md",
       "description": "Expert technical documentation architect for guides, API docs, and architecture manuals.",
       "triggers": [
         "keyword:docs",
         "keyword:documentation",
         "keyword:readme"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "package-development-workflow": {
-      "path": "agent_skills/package-development-workflow/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/package-development-workflow/SKILL.md",
       "description": "Create Julia packages following community standards with proper structure, exports, and PkgTemplates.jl. Use when creating new packages or organizing source code.",
       "triggers": [
         "file:.jl",
         "keyword:julia",
         "project:Project.toml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "git-pr-patterns": {
-      "path": "agent_skills/git-pr-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/git-pr-patterns/SKILL.md",
       "description": "Branching strategies, Conventional Commits, and PR Lifecycle management.",
       "triggers": [
         "file:.github/pull_request_template.md",
@@ -779,10 +779,10 @@
         "keyword:issue",
         "keyword:codeowners"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "scientific-code-adoptor": {
-      "path": "agent_skills/scientific-code-adoptor/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/scientific-code-adoptor/SKILL.md",
       "description": "Expert in modernizing legacy scientific code (Fortran/C/MATLAB) to JAX/Python/Julia.",
       "triggers": [
         "file:.jl",
@@ -793,10 +793,10 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "mlops-engineer": {
-      "path": "agent_skills/mlops-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/mlops-engineer/SKILL.md",
       "description": "Expert MLOps engineer for pipelines, experiment tracking, and registries.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -805,20 +805,20 @@
         "keyword:ci-cd",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "c-pro": {
-      "path": "agent_skills/c-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/c-pro/SKILL.md",
       "description": "Master C programmer for systems, embedded, and high-performance code.",
       "triggers": [
         "file:.c",
         "file:.h",
         "keyword:c"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "correlation-science-lead": {
-      "path": "agent_skills/correlation-science-lead/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/correlation-science-lead/SKILL.md",
       "description": "Master authority on correlation functions bridging statistical physics,",
       "triggers": [
         "keyword:correlation",
@@ -830,30 +830,30 @@
         "keyword:fcs",
         "keyword:structure-factor"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "tutorial-engineer": {
-      "path": "agent_skills/tutorial-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/tutorial-engineer/SKILL.md",
       "description": "Creates step-by-step tutorials and educational content from code. Transforms",
       "triggers": [
         "keyword:tutorial",
         "keyword:guide",
         "keyword:walkthrough"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "data-scientist": {
-      "path": "agent_skills/data-scientist/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/data-scientist/SKILL.md",
       "description": "Expert data scientist for analytics, ML modeling, and stats.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "neural-systems-architect": {
-      "path": "agent_skills/neural-systems-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/neural-systems-architect/SKILL.md",
       "description": "Master neural network architect covering deep learning theory, architecture",
       "triggers": [
         "keyword:neural",
@@ -864,10 +864,10 @@
         "keyword:pinn",
         "keyword:training"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "sciml-pro": {
-      "path": "agent_skills/sciml-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/sciml-pro/SKILL.md",
       "description": "Master of Julia SciML ecosystem (DiffEq, ModelingToolkit, NeuralPDE).",
       "triggers": [
         "file:.ipynb",
@@ -877,10 +877,10 @@
         "keyword:ml",
         "project:Project.toml"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "scientific-computing": {
-      "path": "agent_skills/scientific-computing/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/scientific-computing/SKILL.md",
       "description": "The definitive JAX authority for functional transformations, HPC, and differentiable physics.",
       "triggers": [
         "keyword:scientific",
@@ -888,10 +888,10 @@
         "file:.py",
         "file:.jl"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "active-matter": {
-      "path": "agent_skills/active-matter/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/active-matter/SKILL.md",
       "description": "Model active matter systems (ABPs, Vicsek, MIPS, Flocking).",
       "triggers": [
         "keyword:active-matter",
@@ -899,30 +899,30 @@
         "file:.jl",
         "file:.py"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "cpp-pro": {
-      "path": "agent_skills/cpp-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/cpp-pro/SKILL.md",
       "description": "Master C++ programmer for Modern C++ (11-23), RAII, and templates.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "secrets-management": {
-      "path": "agent_skills/secrets-management/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/secrets-management/SKILL.md",
       "description": "Secure lifecycle for API keys, certificates, and credentials.",
       "triggers": [
         "keyword:secrets",
         "keyword:vault",
         "keyword:credentials"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "multi-platform-mobile": {
-      "path": "agent_skills/multi-platform-mobile/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/multi-platform-mobile/SKILL.md",
       "description": "The definitive authority on mobile development. Master of cross-platform frameworks (Flutter/React Native) and native ecosystems (iOS/Android). Use for ALL mobile tasks: architecture design, UI implementation, performance optimization, offline-first data sync, and app store deployment.",
       "triggers": [
         "file:.jsx",
@@ -930,10 +930,10 @@
         "keyword:react",
         "project:package.json"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "data-wrangling-communication": {
-      "path": "agent_skills/data-wrangling-communication/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/data-wrangling-communication/SKILL.md",
       "description": "Comprehensive data wrangling, cleaning, feature engineering, and visualization workflows using pandas, NumPy, Matplotlib, Seaborn, and Plotly. Use when cleaning messy datasets, handling missing values, dealing with outliers, engineering features, performing EDA, creating statistical visualizations, building interactive dashboards with Plotly Dash or Streamlit, or presenting data-driven insights to stakeholders.",
       "triggers": [
         "file:.ipynb",
@@ -942,10 +942,10 @@
         "keyword:ml",
         "keyword:visualization"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "sql-optimization-patterns": {
-      "path": "agent_skills/sql-optimization-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/sql-optimization-patterns/SKILL.md",
       "description": "Master SQL optimization with EXPLAIN analysis, indexing strategies (B-Tree, GIN, partial, covering), N+1 elimination, pagination (cursor-based), aggregate optimization, materialized views, and partitioning. Use when debugging slow queries, designing schemas, or reducing database load.",
       "triggers": [
         "file:.ipynb",
@@ -955,10 +955,10 @@
         "keyword:ml",
         "keyword:sql"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "python-pro": {
-      "path": "agent_skills/python-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/python-pro/SKILL.md",
       "description": "Master Python developer (3.12+) for modern practices, async programming,",
       "triggers": [
         "file:.py",
@@ -970,10 +970,10 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "jax-diffeq-pro": {
-      "path": "agent_skills/jax-diffeq-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/jax-diffeq-pro/SKILL.md",
       "description": "JAX-first differential equations expert for Diffrax, stiff solvers, adjoint",
       "triggers": [
         "file:.py",
@@ -996,30 +996,30 @@
         "keyword:event handling",
         "project:pyproject.toml"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "nlsq-pro": {
-      "path": "agent_skills/nlsq-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/nlsq-pro/SKILL.md",
       "description": "GPU-accelerated nonlinear least squares expert (JAX) for curve fitting,",
       "triggers": [
         "keyword:nlsq",
         "keyword:curve-fit",
         "keyword:least-squares"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "command-systems-engineer": {
-      "path": "agent_skills/command-systems-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/command-systems-engineer/SKILL.md",
       "description": "Command systems engineer specializing in CLI tool design and developer",
       "triggers": [
         "keyword:cli",
         "keyword:command",
         "keyword:terminal"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "cli-tool-design-production": {
-      "path": "agent_skills/cli-tool-design-production/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/cli-tool-design-production/SKILL.md",
       "description": "Build production-ready CLI tools with Python Click/Typer, Node.js Commander/Inquirer, Go Cobra, and shell scripting. Use when creating command-line applications with interactive prompts, implementing developer workflow automation, designing project scaffolding tools, building TUIs with progress bars and spinners, or creating deployment and release automation tools.",
       "triggers": [
         "file:.js",
@@ -1030,10 +1030,10 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "package-management": {
-      "path": "agent_skills/package-management/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/package-management/SKILL.md",
       "description": "Master Julia package management with Pkg.jl, Project.toml, and Manifest.toml for reproducible environments. Use when managing dependencies, specifying compatibility bounds, or setting up project environments.",
       "triggers": [
         "file:.ipynb",
@@ -1043,10 +1043,10 @@
         "keyword:ml",
         "project:Project.toml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "computational-physics-expert": {
-      "path": "agent_skills/computational-physics-expert/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/computational-physics-expert/SKILL.md",
       "description": "Master computational physicist for numerical methods, simulation design,",
       "triggers": [
         "keyword:simulation",
@@ -1056,20 +1056,20 @@
         "keyword:modeling",
         "keyword:multiscale"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "structured-reasoning": {
-      "path": "agent_skills/structured-reasoning/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/structured-reasoning/SKILL.md",
       "description": "Apply systematic cognitive frameworks (First Principles, Root Cause, Decision Analysis) to complex problems.",
       "triggers": [
         "keyword:reasoning",
         "keyword:logic",
         "keyword:analysis"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "ui-ux-designer": {
-      "path": "agent_skills/ui-ux-designer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/ui-ux-designer/SKILL.md",
       "description": "Create interface designs, wireframes, and design systems. Masters user",
       "triggers": [
         "keyword:ui",
@@ -1077,20 +1077,20 @@
         "keyword:design",
         "keyword:figma"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "prometheus-configuration": {
-      "path": "agent_skills/prometheus-configuration/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/prometheus-configuration/SKILL.md",
       "description": "Configure Prometheus for metric collection, alerting, and monitoring with scrape configs, recording rules, alert rules, and service discovery. Use when setting up Prometheus servers, creating alert rules, or implementing Kubernetes monitoring.",
       "triggers": [
         "file:helm/**/*.yaml",
         "file:k8s*.yaml",
         "keyword:kubernetes"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "data-analysis": {
-      "path": "agent_skills/data-analysis/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/data-analysis/SKILL.md",
       "description": "Analyze experimental correlation data from DLS, SAXS/SANS, rheology, and microscopy using Green-Kubo relations, Bayesian inference (MCMC), and model validation. Use when interpreting scattering data, validating non-equilibrium theories, or predicting transport coefficients.",
       "triggers": [
         "keyword:data",
@@ -1098,50 +1098,50 @@
         "keyword:pandas",
         "file:.ipynb"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "slo-implementation": {
-      "path": "agent_skills/slo-implementation/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/slo-implementation/SKILL.md",
       "description": "Define SLIs, SLOs, error budgets, and burn rate alerting following SRE best practices. Use when establishing reliability targets, implementing error budget policies, creating SLO dashboards, or designing multi-window burn rate alerts.",
       "triggers": [
         "keyword:slo",
         "keyword:sla",
         "keyword:reliability"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "systems-programming-patterns": {
-      "path": "agent_skills/systems-programming-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/systems-programming-patterns/SKILL.md",
       "description": "Master systems programming patterns for memory management, concurrency, and performance optimization across C, C++, Rust, and Go. Use when implementing memory allocators, designing lock-free data structures, optimizing cache performance, debugging with sanitizers (ASan/TSan/Miri), or profiling with perf/flamegraph.",
       "triggers": [
         "file:.rs",
         "keyword:rust",
         "project:Cargo.toml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "training-diagnostics": {
-      "path": "agent_skills/training-diagnostics/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/training-diagnostics/SKILL.md",
       "description": "Diagnose and resolve neural network training failures through systematic analysis of gradient pathologies, loss curves, and convergence issues. Use when encountering vanishing/exploding gradients, dead ReLU neurons, loss anomalies (NaN, spikes, plateaus), overfitting/underfitting patterns, or when debugging training scripts requiring systematic troubleshooting.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "graphql-architect": {
-      "path": "agent_skills/graphql-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/graphql-architect/SKILL.md",
       "description": "Master GraphQL architect for schema design, federation, and optimization.",
       "triggers": [
         "keyword:graphql",
         "keyword:apollo",
         "file:.graphql"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "ml-systems-architect": {
-      "path": "agent_skills/ml-systems-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/ml-systems-architect/SKILL.md",
       "description": "Expert in End-to-End ML Systems, from JAX/PyTorch model design to Kubernetes serving.",
       "triggers": [
         "keyword:ai",
@@ -1153,10 +1153,10 @@
         "file:dvc.yaml",
         "file:mlruns"
       ],
-      "version": "2.1.0"
+      "version": "2.2.1"
     },
     "differential-equations": {
-      "path": "agent_skills/differential-equations/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/differential-equations/SKILL.md",
       "description": "Solve ODE/SDE/PDE with DifferentialEquations.jl. Use when defining differential equation systems, selecting solvers, implementing callbacks, or creating ensemble simulations.",
       "triggers": [
         "keyword:ode",
@@ -1164,20 +1164,20 @@
         "keyword:differential",
         "file:.jl"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "deep-learning-experimentation": {
-      "path": "agent_skills/deep-learning-experimentation/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/deep-learning-experimentation/SKILL.md",
       "description": "Design systematic deep learning experiments with hyperparameter optimization, ablation studies, and reproducible workflows. Use when tuning hyperparameters, conducting ablations, setting up experiment tracking (W&B, TensorBoard, MLflow), or managing reproducibility.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "statistical-analysis-fundamentals": {
-      "path": "agent_skills/statistical-analysis-fundamentals/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/statistical-analysis-fundamentals/SKILL.md",
       "description": "Comprehensive statistical analysis with scipy.stats, statsmodels, and PyMC3 including hypothesis testing, Bayesian methods, regression, experimental design, and causal inference. Use when conducting A/B tests, power analysis, or treatment effect estimation.",
       "triggers": [
         "file:.py",
@@ -1188,30 +1188,30 @@
         "keyword:a/b test",
         "keyword:causal"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "hpc-numerical-coordinator": {
-      "path": "agent_skills/hpc-numerical-coordinator/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/hpc-numerical-coordinator/SKILL.md",
       "description": "Coordinate HPC workflows, numerical methods, and scaling strategies.",
       "triggers": [
         "keyword:hpc",
         "keyword:cluster",
         "keyword:mpi"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "ml-force-fields": {
-      "path": "agent_skills/ml-force-fields/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/ml-force-fields/SKILL.md",
       "description": "Develop ML force fields (NequIP, MACE, DeepMD) achieving quantum accuracy with 1000x speedup. Use when training neural network potentials or deploying ML force fields in MD.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "dependency-upgrade": {
-      "path": "agent_skills/dependency-upgrade/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/dependency-upgrade/SKILL.md",
       "description": "Manage major dependency upgrades with semver analysis, compatibility matrices, staged rollouts, codemods, and testing. Use when upgrading frameworks (React, Angular, Vue), resolving peer dependency conflicts, or implementing automated updates with Renovate/Dependabot.",
       "triggers": [
         "file:.jsx",
@@ -1221,10 +1221,10 @@
         "keyword:testing",
         "project:package.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "security-auditor": {
-      "path": "agent_skills/security-auditor/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/security-auditor/SKILL.md",
       "description": "Expert security auditor specializing in DevSecOps, comprehensive cybersecurity,",
       "triggers": [
         "file:.py",
@@ -1236,20 +1236,20 @@
         "keyword:oauth",
         "keyword:compliance"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "ai-engineer": {
-      "path": "agent_skills/ai-engineer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/ai-engineer/SKILL.md",
       "description": "Expert AI engineer for LLM apps, RAG systems, and Agents.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "javascript-pro": {
-      "path": "agent_skills/javascript-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/javascript-pro/SKILL.md",
       "description": "Master modern JavaScript (ES2024+), async patterns, testing, and",
       "triggers": [
         "file:.js",
@@ -1260,10 +1260,10 @@
         "keyword:async",
         "project:package.json"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "comprehensive-validation-framework": {
-      "path": "agent_skills/comprehensive-validation-framework/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/comprehensive-validation-framework/SKILL.md",
       "description": "Systematic multi-dimensional validation framework for code, APIs, and systems. Use when validating before deployment, running security scans (OWASP Top 10, dependency vulnerabilities), checking test coverage (>80% target), verifying accessibility (WCAG 2.1 AA), profiling performance, validating breaking changes, or preparing deployment readiness reports.",
       "triggers": [
         "keyword:audit",
@@ -1271,10 +1271,10 @@
         "keyword:security",
         "keyword:testing"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "database-migration": {
-      "path": "agent_skills/database-migration/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/database-migration/SKILL.md",
       "description": "Execute database migrations across ORMs (Sequelize, TypeORM, Prisma, Django) with zero-downtime strategies, rollback procedures, and data transformations. Use when adding/removing columns, renaming tables, changing types, or implementing blue-green deployments.",
       "triggers": [
         "file:.py",
@@ -1285,20 +1285,20 @@
         "keyword:web",
         "project:manage.py"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "distributed-tracing": {
-      "path": "agent_skills/distributed-tracing/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/distributed-tracing/SKILL.md",
       "description": "Implement distributed tracing with OpenTelemetry, Jaeger, and Tempo including instrumentation, context propagation, sampling strategies, and trace analysis. Use when debugging latency issues, understanding service dependencies, or tracing error propagation across microservices.",
       "triggers": [
         "keyword:tracing",
         "keyword:opentelemetry",
         "keyword:jaeger"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "mcmc-diagnostics": {
-      "path": "agent_skills/mcmc-diagnostics/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/mcmc-diagnostics/SKILL.md",
       "description": "Master MCMC convergence diagnostics with R-hat, ESS, trace plots, and divergence checking. Use when validating Bayesian inference results from Turing.jl.",
       "triggers": [
         "file:.jl",
@@ -1310,40 +1310,40 @@
         "keyword:turing",
         "keyword:trace"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "architect-review-framework-migration": {
-      "path": "agent_skills/architect-review-framework-migration/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/architect-review-framework-migration/SKILL.md",
       "description": "Master software architect specializing in modern architecture patterns,",
       "triggers": [
         "keyword:migration",
         "keyword:framework",
         "keyword:upgrade"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "compiler-patterns": {
-      "path": "agent_skills/compiler-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/compiler-patterns/SKILL.md",
       "description": "Create system images and standalone executables with PackageCompiler.jl. Use when reducing startup time or deploying Julia applications without requiring Julia installation.",
       "triggers": [
         "file:.jl",
         "keyword:julia",
         "project:Project.toml"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "turing-model-design": {
-      "path": "agent_skills/turing-model-design/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/turing-model-design/SKILL.md",
       "description": "Design probabilistic models with Turing.jl including prior selection, hierarchical models, and non-centered parameterization. Use when building Bayesian models for inference.",
       "triggers": [
         "keyword:turing",
         "keyword:probabilistic",
         "file:.jl"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "debugging-pro": {
-      "path": "agent_skills/debugging-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/debugging-pro/SKILL.md",
       "description": "Master debugging specialist combining systematic investigation, AI-powered",
       "triggers": [
         "keyword:debug",
@@ -1355,10 +1355,10 @@
         "keyword:trace",
         "keyword:issue"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "ecosystem-selection": {
-      "path": "agent_skills/ecosystem-selection/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/ecosystem-selection/SKILL.md",
       "description": "Select optimal scientific computing ecosystems and manage multi-language workflows. Use when evaluating Python vs Julia for performance-critical numerical computing, implementing hybrid PyJulia/PyCall.jl interoperability, or setting up reproducible toolchains with Conda or Pkg.jl.",
       "triggers": [
         "file:.ipynb",
@@ -1372,10 +1372,10 @@
         "project:pyproject.toml",
         "project:requirements.txt"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "research-pro": {
-      "path": "agent_skills/research-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/research-pro/SKILL.md",
       "description": "Master research scientist for systematic reviews, paper implementation,",
       "triggers": [
         "keyword:research",
@@ -1384,10 +1384,10 @@
         "keyword:evidence",
         "keyword:prisma"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     },
     "security-ci-template": {
-      "path": "agent_skills/security-ci-template/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/security-ci-template/SKILL.md",
       "description": "Security scanning and lock file validation templates for CI/CD pipelines. Use when implementing SAST/DAST scanning, dependency vulnerability checks, lock file validation, or automated security gates in GitHub Actions or GitLab CI.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -1395,50 +1395,50 @@
         "keyword:ci-cd",
         "keyword:security"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "non-equilibrium-expert": {
-      "path": "agent_skills/non-equilibrium-expert/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/non-equilibrium-expert/SKILL.md",
       "description": "Non-equilibrium statistical physicist expert specializing in driven systems,",
       "triggers": [
         "keyword:non-equilibrium",
         "keyword:transport",
         "keyword:irreversible"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "julia-developer": {
-      "path": "agent_skills/julia-developer/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/julia-developer/SKILL.md",
       "description": "Package development specialist for creating robust Julia packages. Expert",
       "triggers": [
         "file:.jl",
         "keyword:julia",
         "project:Project.toml"
       ],
-      "version": "1.0.0"
+      "version": "2.2.1"
     },
     "rust-pro": {
-      "path": "agent_skills/rust-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/rust-pro/SKILL.md",
       "description": "Master Rust developer for safe, concurrent, and high-performance systems.",
       "triggers": [
         "file:.rs",
         "keyword:rust",
         "project:Cargo.toml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "langchain-architecture": {
-      "path": "agent_skills/langchain-architecture/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/langchain-architecture/SKILL.md",
       "description": "Patterns for Chains, Agents, Memory, and Tools using LangChain.",
       "triggers": [
         "file:.ipynb",
         "keyword:ai",
         "keyword:ml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "cloud-architect": {
-      "path": "agent_skills/cloud-architect/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/cloud-architect/SKILL.md",
       "description": "Expert cloud architect for AWS/Azure/GCP, IaC, and FinOps.",
       "triggers": [
         "file:.tf",
@@ -1451,10 +1451,10 @@
         "keyword:kubernetes",
         "project:terraform.tfstate"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "git-advanced-workflows": {
-      "path": "agent_skills/git-advanced-workflows/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/git-advanced-workflows/SKILL.md",
       "description": "Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery.",
       "triggers": [
         "file:.github/workflows/*.yml",
@@ -1468,10 +1468,10 @@
         "keyword:merge",
         "keyword:conflict"
       ],
-      "version": "2.0.0"
+      "version": "2.2.1"
     },
     "nodejs-backend-patterns": {
-      "path": "agent_skills/nodejs-backend-patterns/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/nodejs-backend-patterns/SKILL.md",
       "description": "Build scalable Node.js backends with Express/Fastify/NestJS. Implement middleware, authentication, database integration, and API design. Use when creating REST APIs, microservices, or backend services.",
       "triggers": [
         "file:.js",
@@ -1481,20 +1481,20 @@
         "keyword:sql",
         "project:package.json"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "stochastic-dynamics": {
-      "path": "agent_skills/stochastic-dynamics/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/stochastic-dynamics/SKILL.md",
       "description": "Model stochastic dynamics using master equations, Fokker-Planck, Langevin dynamics, and Green-Kubo transport theory. Use when simulating noise-driven systems, calculating transport coefficients, or modeling rare events.",
       "triggers": [
         "keyword:stochastic",
         "keyword:langevin",
         "keyword:brownian"
       ],
-      "version": "1.0.7"
+      "version": "2.2.1"
     },
     "jax-optimization-pro": {
-      "path": "agent_skills/jax-optimization-pro/SKILL.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/jax-optimization-pro/SKILL.md",
       "description": "JAX-first optimization engineer for compiler-centric, functional HPC",
       "triggers": [
         "file:.py",
@@ -1516,12 +1516,12 @@
         "keyword:gradient",
         "file:.ipynb"
       ],
-      "version": "2.2.0"
+      "version": "2.2.1"
     }
   },
   "workflows": {
     "speckit-specify": {
-      "path": "global_workflows/speckit-specify.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-specify.md",
       "description": "Create or update the feature specification from a natural language feature description.",
       "triggers": [
         "keyword:spec",
@@ -1530,7 +1530,7 @@
       ]
     },
     "run-all-tests": {
-      "path": "global_workflows/run-all-tests.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/run-all-tests.md",
       "description": "Iteratively run and fix tests until zero failures",
       "triggers": [
         "/run-all-tests",
@@ -1538,7 +1538,7 @@
       ]
     },
     "double-check": {
-      "path": "global_workflows/double-check.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/double-check.md",
       "description": "Multi-dimensional code validation (Lint, Test, Security, Perf)",
       "triggers": [
         "/double-check",
@@ -1546,7 +1546,7 @@
       ]
     },
     "speckit-constitution": {
-      "path": "global_workflows/speckit-constitution.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-constitution.md",
       "description": "Create or update the project constitution from principle inputs.",
       "triggers": [
         "keyword:speckit",
@@ -1554,7 +1554,7 @@
       ]
     },
     "git-workflow": {
-      "path": "global_workflows/git-workflow.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/git-workflow.md",
       "description": "Complete Git workflow orchestration from code review through PR creation with parallel validation",
       "triggers": [
         "/git-workflow",
@@ -1563,7 +1563,7 @@
       ]
     },
     "speckit-clarify": {
-      "path": "global_workflows/speckit-clarify.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-clarify.md",
       "description": "Identify underspecified areas in the feature spec by asking targeted clarification questions.",
       "triggers": [
         "keyword:speckit",
@@ -1571,7 +1571,7 @@
       ]
     },
     "auto-solve": {
-      "path": "global_workflows/auto-solve.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/auto-solve.md",
       "description": "Master orchestration workflow for intelligent request routing and context analysis.",
       "triggers": [
         "keyword:auto-solve",
@@ -1579,7 +1579,7 @@
       ]
     },
     "speckit-taskstoissues": {
-      "path": "global_workflows/speckit-taskstoissues.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-taskstoissues.md",
       "description": "Convert tasks.md into GitHub issues.",
       "triggers": [
         "keyword:speckit",
@@ -1588,7 +1588,7 @@
       ]
     },
     "speckit-checklist": {
-      "path": "global_workflows/speckit-checklist.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-checklist.md",
       "description": "Generate a custom checklist for the current feature based on user requirements.",
       "triggers": [
         "keyword:speckit",
@@ -1596,7 +1596,7 @@
       ]
     },
     "refactor-clean": {
-      "path": "global_workflows/refactor-clean.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/refactor-clean.md",
       "description": "Analyze and refactor code to improve quality using SOLID principles and design patterns",
       "triggers": [
         "/refactor-clean",
@@ -1604,7 +1604,7 @@
       ]
     },
     "speckit-plan": {
-      "path": "global_workflows/speckit-plan.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-plan.md",
       "description": "Execute implementation planning workflow to generate design artifacts.",
       "triggers": [
         "keyword:speckit",
@@ -1612,7 +1612,7 @@
       ]
     },
     "speckit-analyze": {
-      "path": "global_workflows/speckit-analyze.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-analyze.md",
       "description": "Perform a cross-artifact consistency analysis across spec.md, plan.md, and tasks.md.",
       "triggers": [
         "keyword:speckit",
@@ -1620,7 +1620,7 @@
       ]
     },
     "fix-commit-errors": {
-      "path": "global_workflows/fix-commit-errors.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/fix-commit-errors.md",
       "description": "Analyze and fix CI/CD failures using multi-agent error analysis",
       "triggers": [
         "/fix-commit-errors",
@@ -1628,7 +1628,7 @@
       ]
     },
     "speckit-tasks": {
-      "path": "global_workflows/speckit-tasks.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-tasks.md",
       "description": "Generate an actionable, dependency-ordered tasks.md for the feature.",
       "triggers": [
         "keyword:speckit",
@@ -1636,7 +1636,7 @@
       ]
     },
     "ultra-think": {
-      "path": "global_workflows/ultra-think.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/ultra-think.md",
       "description": "Advanced structured reasoning engine using sequential thinking for complex problem solving",
       "triggers": [
         "/ultra-think",
@@ -1644,7 +1644,7 @@
       ]
     },
     "commit": {
-      "path": "global_workflows/commit.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/commit.md",
       "description": "Intelligent git commit with automated analysis, quality validation, and atomic commit enforcement",
       "triggers": [
         "/commit",
@@ -1652,7 +1652,7 @@
       ]
     },
     "speckit-implement": {
-      "path": "global_workflows/speckit-implement.md",
+      "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/global_workflows/speckit-implement.md",
       "description": "Execute the implementation plan by processing tasks.md.",
       "triggers": [
         "keyword:speckit",

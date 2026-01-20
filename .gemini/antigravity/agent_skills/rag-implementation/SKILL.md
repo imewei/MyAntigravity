@@ -1,7 +1,7 @@
 ---
 name: rag-implementation
 description: "Production RAG patterns: Chunking, Hybrid Search, Reranking, and Grounding."
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: ai-engineer
 skills:

@@ -4,7 +4,7 @@ description: Create interface designs, wireframes, and design systems. Masters u
   research, accessibility standards, and modern design tools. Specializes in design
   tokens, component libraries, and inclusive design. Use PROACTIVELY for design systems,
   user flows, or interface optimization.
-version: 1.0.0
+version: 2.2.1
 triggers:
 - keyword:ui
 - keyword:ux

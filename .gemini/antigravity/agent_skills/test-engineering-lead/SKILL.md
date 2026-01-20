@@ -1,7 +1,7 @@
 ---
 name: test-engineering-lead
 description: Expert in full-stack test automation, framework architecture, and TDD/CI strategies.
-version: 2.1.0
+version: 2.2.1
 agents:
   primary: test-engineering-lead
 skills:

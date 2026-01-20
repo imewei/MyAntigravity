@@ -1,7 +1,7 @@
 ---
 name: context-manager
 description: Orchestrate long-running context, memory retrieval, and 100k+ token windows.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: context-manager
 skills:

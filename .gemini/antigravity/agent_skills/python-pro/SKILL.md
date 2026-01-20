@@ -2,7 +2,7 @@
 name: python-pro
 description: Master Python developer (3.12+) for modern practices, async programming,
   testing patterns, and performance optimization.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: python-pro
 skills:

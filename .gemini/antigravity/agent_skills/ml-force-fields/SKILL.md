@@ -1,6 +1,6 @@
 ---
 name: ml-force-fields
-version: "1.0.7"
+version: 2.2.1
 maturity: "5-Expert"
 specialization: ML Potentials
 description: Develop ML force fields (NequIP, MACE, DeepMD) achieving quantum accuracy with 1000x speedup. Use when training neural network potentials or deploying ML force fields in MD.

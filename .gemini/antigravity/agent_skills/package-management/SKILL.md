@@ -1,6 +1,6 @@
 ---
 name: package-management
-version: "1.0.7"
+version: 2.2.1
 maturity: "5-Expert"
 specialization: Julia Package Management
 description: Master Julia package management with Pkg.jl, Project.toml, and Manifest.toml for reproducible environments. Use when managing dependencies, specifying compatibility bounds, or setting up project environments.
@@ -30,7 +30,7 @@ version = "0.1.0"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 
 [compat]
-julia = "1.6"
+julia = "1.10"
 DataFrames = "1.3"
 
 [extras]

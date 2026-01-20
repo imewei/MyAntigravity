@@ -2,7 +2,7 @@
 name: julia-pro
 description: Master Julia programmer for HPC, scientific computing, performance
   optimization, and type-stable design.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: julia-pro
 skills:

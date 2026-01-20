@@ -1,7 +1,7 @@
 ---
 name: speckit-plan
 description: Execute implementation planning workflow to generate design artifacts.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: system-architect
 skills:

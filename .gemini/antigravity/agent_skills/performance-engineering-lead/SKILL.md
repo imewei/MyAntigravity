@@ -3,7 +3,7 @@ name: performance-engineering-lead
 description: Master performance engineer for observability, optimization, scalability,
   profiling, caching, and load testing. Expert in Core Web Vitals, APM, distributed
   tracing, and production performance tuning.
-version: 2.2.0
+version: 2.2.1
 agents:
   primary: performance-engineering-lead
 skills:

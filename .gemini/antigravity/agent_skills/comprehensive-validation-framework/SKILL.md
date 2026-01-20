@@ -1,6 +1,6 @@
 ---
 name: comprehensive-validation-framework
-version: "1.0.7"
+version: 2.2.1
 maturity: "5-Expert"
 specialization: Production Validation
 description: Systematic multi-dimensional validation framework for code, APIs, and systems. Use when validating before deployment, running security scans (OWASP Top 10, dependency vulnerabilities), checking test coverage (>80% target), verifying accessibility (WCAG 2.1 AA), profiling performance, validating breaking changes, or preparing deployment readiness reports.
@@ -162,7 +162,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: { python-version: '3.12' }
+        with: { python-version: '3.11' }
       - run: python scripts/run_all_validations.py
 ```
 

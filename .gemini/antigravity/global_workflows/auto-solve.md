@@ -1,7 +1,7 @@
 ---
 name: auto-solve
 description: Master orchestration workflow for intelligent request routing and context analysis.
-version: 2.2.0
+version: 2.2.1
 triggers:
 - keyword:auto-solve
 - keyword:solve

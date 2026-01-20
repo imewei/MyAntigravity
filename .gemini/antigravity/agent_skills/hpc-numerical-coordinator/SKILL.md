@@ -1,7 +1,7 @@
 ---
 name: hpc-numerical-coordinator
 description: Coordinate HPC workflows, numerical methods, and scaling strategies.
-version: 2.0.0
+version: 2.2.1
 agents:
   primary: hpc-numerical-coordinator
 skills:
