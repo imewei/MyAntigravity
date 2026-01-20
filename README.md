@@ -19,7 +19,7 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 
 | Component | Count | Description |
 |-----------|-------|-------------|
-| **Skills** | 130 | Specialized AI personas & capabilities |
+| **Skills** | 127 | Specialized AI personas & capabilities |
 | **Workflows** | 17 | Automated multi-step processes |
 | **Scripts** | 10 | Utility tools for management |
 | **Trigger Quality** | 98% | Multi-trigger discoverability |
@@ -30,7 +30,7 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 
 ```
 .gemini/antigravity/
-├── agent_skills/           # 130 specialized AI skills
+├── agent_skills/           # 127 specialized AI skills
 │   ├── python-pro/         # Python expertise + testing + async
 │   ├── julia-pro/          # Julia HPC + performance tuning
 │   ├── jax-optimization-pro/ # JAX High-Performance Computing
