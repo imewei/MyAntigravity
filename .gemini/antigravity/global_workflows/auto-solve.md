@@ -1,5 +1,6 @@
 ---
 description: Master orchestration workflow for intelligent request routing and context analysis.
+version: 2.2
 triggers:
 - keyword:auto-solve
 - keyword:solve
@@ -17,8 +18,8 @@ triggers:
     - Agent: `skill-discovery`
     - Action: Analyze the user request "{request}" using centralized skill definitions.
     - Resources:
-        - Index: `.gemini/antigravity/skills_index.json`
-        - DB: `.gemini/antigravity/skill_database.json` (for trigger verification)
+        - Index: `$HOME/.gemini/antigravity/skills_index.json`
+        - DB: `$HOME/.gemini/antigravity/skill_database.json` (for trigger verification)
     - Command: `uv run $HOME/.gemini/antigravity/scripts/find_relevant_skills.py --prompt "{request}" --top 3`
 
 2.  **Context Scan**

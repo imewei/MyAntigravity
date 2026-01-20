@@ -29,7 +29,7 @@ You have access to the `find_relevant_skills.py` utility which queries the seman
 
 **Command Pattern:**
 ```bash
-uv run .gemini/antigravity/scripts/find_relevant_skills.py --prompt "{user_intent}" --files {active_files}
+uv run $HOME/.gemini/antigravity/scripts/find_relevant_skills.py --prompt "{user_intent}" --files {active_files}
 ```
 
 ### 2. Output Format

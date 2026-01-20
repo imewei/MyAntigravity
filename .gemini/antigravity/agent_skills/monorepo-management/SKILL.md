@@ -1,12 +1,13 @@
 ---
 name: monorepo-management
 version: 2.2.1
-description: Master monorepo management with Turborepo, Nx, and pnpm workspaces. Use when setting up turbo.json or nx.json, organizing apps/* and packages/* directories, optimizing builds with caching, managing workspace dependencies, implementing shared configs, setting up CI/CD for monorepos, or publishing packages with changesets.
+description: Master monorepo management with Turborepo, Nx, and pnpm workspaces. Covers turbo.json, workspace organization, build caching, and CI/CD.
 triggers:
 - keyword:monorepo
 - keyword:turborepo
 - keyword:nx
 - file:turbo.json
+---
 
 # Monorepo Management
 

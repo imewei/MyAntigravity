@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T23:33:26.535924",
+  "generated_at": "2026-01-20T15:42:26.729969",
   "skills": {
     "machine-learning-essentials": {
       "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/machine-learning-essentials/SKILL.md",
@@ -222,7 +222,11 @@
         "keyword:rag",
         "keyword:retrieval",
         "keyword:vector",
-        "keyword:embedding"
+        "keyword:embedding",
+        "**Dense**: Semantic match (Vectors).",
+        "**Sparse**: Keyword match (BM25/Splade).",
+        "**Hybrid**: Weighted combination (0.7 Dense + 0.3 Sparse).",
+        "**Rerank**: Cross-Encoder step for Top-N refinement."
       ],
       "version": "2.2.1"
     },
@@ -272,7 +276,10 @@
       "triggers": [
         "keyword:llm",
         "keyword:evaluation",
-        "keyword:benchmark"
+        "keyword:benchmark",
+        "**Pairwise**: \"Compare A and B. Which is better?\" (Less bias).",
+        "**Pointwise**: \"Rate this 1-5 on accuracy.\"",
+        "**Reference**: \"Compare prediction against gold answer.\""
       ],
       "version": "2.2.1"
     },
@@ -397,7 +404,7 @@
       ],
       "version": "2.2.1"
     },
-    "auth-implementation-patterns": {
+    "profile.displayName": {
       "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/auth-implementation-patterns/SKILL.md",
       "description": "Master authentication patterns including JWT (access/refresh tokens), OAuth2/OpenID Connect, session-based auth, RBAC/ABAC, API keys, MFA, SSO, password hashing (bcrypt/argon2), secure cookies, and CSRF protection. Use when implementing auth systems, securing APIs, or designing access control.",
       "triggers": [
@@ -510,7 +517,7 @@
       ],
       "version": "2.2.1"
     },
-    "monorepo-management": {
+    "CI": {
       "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/monorepo-management/SKILL.md",
       "description": "Master monorepo management with Turborepo, Nx, and pnpm workspaces. Use when setting up turbo.json or nx.json, organizing apps/* and packages/* directories, optimizing builds with caching, managing workspace dependencies, implementing shared configs, setting up CI/CD for monorepos, or publishing packages with changesets.",
       "triggers": [
@@ -581,7 +588,10 @@
       "triggers": [
         "keyword:legacy",
         "keyword:modernize",
-        "keyword:strangler"
+        "keyword:strangler",
+        "**Golden Master Tests**: Capture output of old system for identical inputs.",
+        "**Characterization Tests**: \"Lock down\" existing behavior before changing.",
+        "**Feature Flags**: Kill switch for new code."
       ],
       "version": "2.2.1"
     },
@@ -731,7 +741,11 @@
       "triggers": [
         "keyword:error",
         "keyword:retry",
-        "keyword:circuit-breaker"
+        "keyword:circuit-breaker",
+        "**Retry**: Exponential Backoff (`sleep(2^n)`). Jitter is mandatory.",
+        "**Circuit Breaker**: Stop calling failing service. Fail fast -> Self-heal.",
+        "**Bulkhead**: Isolate pools (e.g., Reports thread pool vs API pool).",
+        "**Fallback**: Return cached data or default value."
       ],
       "version": "2.2.1"
     },
@@ -770,14 +784,16 @@
       "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/git-pr-patterns/SKILL.md",
       "description": "Branching strategies, Conventional Commits, and PR Lifecycle management.",
       "triggers": [
-        "file:.github/pull_request_template.md",
-        "file:.github/PULL_REQUEST_TEMPLATE.md",
         "keyword:pr",
         "keyword:pull-request",
         "keyword:review",
-        "keyword:github",
-        "keyword:issue",
-        "keyword:codeowners"
+        "`feat`: New feature.",
+        "`fix`: Bug fix.",
+        "`docs`: Documentation only.",
+        "`style`: Formatting (lint).",
+        "`refactor`: No logic change.",
+        "`test`: Add/Edit tests.",
+        "`chore`: Build/Tooling."
       ],
       "version": "2.2.1"
     },
@@ -1457,16 +1473,15 @@
       "path": "/Users/b80985/Projects/MyAntigravity/.gemini/antigravity/agent_skills/git-advanced-workflows/SKILL.md",
       "description": "Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery.",
       "triggers": [
-        "file:.github/workflows/*.yml",
-        "file:.github/CODEOWNERS",
         "keyword:git",
-        "keyword:github",
         "keyword:rebase",
         "keyword:bisect",
-        "keyword:branch",
-        "keyword:worktree",
-        "keyword:merge",
-        "keyword:conflict"
+        "`pick`: Keep.",
+        "`reword`: Edit message.",
+        "`edit`: Pause to amend content.",
+        "`squash`: Meld into previous.",
+        "`fixup`: Meld (discard log).",
+        "`drop`: Delete."
       ],
       "version": "2.2.1"
     },
