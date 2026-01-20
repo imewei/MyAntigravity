@@ -56,7 +56,7 @@ def parse_frontmatter(content):
                 
     return data
 
-def validate_agent(base_dir=None, strict=True):
+def validate_agent(base_dir=None, strict=True, excludes=None):
     """
     Unified validation script for the .agent system.
     Combines index validation, orphan detection, link checking, and policy enforcement.
@@ -67,8 +67,13 @@ def validate_agent(base_dir=None, strict=True):
         base_dir = os.path.dirname(script_dir) # .agent directory
 
     index_path = os.path.join(base_dir, "skills_index.json")
+    
+    # Normalize exclude list
+    excludes = set(excludes) if excludes else set()
 
     print(f"Validating agent system in: {base_dir}")
+    if excludes:
+        print(f"Excluding directories: {', '.join(excludes)}")
     print("=" * 60)
 
     errors = []
@@ -90,7 +95,8 @@ def validate_agent(base_dir=None, strict=True):
     print("Building filesystem map...")
     all_files_set = set()
     for root, dirs, files in os.walk(base_dir):
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        # Filter excludes
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in excludes]
         for d in dirs:
             all_files_set.add(os.path.abspath(os.path.join(root, d)))
         for file in files:
@@ -153,6 +159,8 @@ def validate_agent(base_dir=None, strict=True):
     # --- 4. Orphan Detection ---
     print("\n--- Phase 2: Orphan Detection ---")
     ignored_dirs = {'scripts', 'assets', 'references', 'docs', '.git', 'test-corpus', 'reports'}
+    ignored_dirs.update(excludes) # Add CLI excludes
+    
     ignored_files = {'engine.py', '__init__.py', 'COMPREHENSIVE_REVIEW_REPORT.md', 'TECH_DEBT_REPORT.md'}
 
     for root, dirs, files in os.walk(base_dir):
@@ -183,7 +191,8 @@ def validate_agent(base_dir=None, strict=True):
     torch_import_pattern = re.compile(r'^\s*(import torch|from torch)', re.MULTILINE)
 
     for root, dirs, files in os.walk(base_dir):
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        # Apply excludes here too
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in excludes]
         for file in files:
             file_path = os.path.join(root, file)
             rel_path = os.path.relpath(file_path, base_dir)
@@ -258,6 +267,8 @@ def validate_agent(base_dir=None, strict=True):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Validate Agent System Integrity")
     parser.add_argument("--relaxed", action="store_true", help="Treat policy violations as warnings instead of errors")
+    parser.add_argument("--exclude", nargs='*', default=[], help="List of directories to exclude from validation")
     args = parser.parse_args()
 
-    validate_agent(strict=not args.relaxed)
+    # Pass args.exclude to the function
+    validate_agent(strict=not args.relaxed, excludes=args.exclude)

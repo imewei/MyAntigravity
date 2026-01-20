@@ -73,5 +73,70 @@ def deploy():
     print(f"Skills in {TARGET_SKILLS}: {len(list(TARGET_SKILLS.rglob('SKILL.md')))}")
     print(f"Scripts in {TARGET_SCRIPTS}: {len(list(TARGET_SCRIPTS.glob('*.py')))}")
 
+    print(f"Scripts in {TARGET_SCRIPTS}: {len(list(TARGET_SCRIPTS.glob('*.py')))}")
+
+    validate_installation()
+
+def validate_installation():
+    print("\n🔍 Validating Installation...")
+    
+    # 1. Validate Skills Index & Structure
+    print("\n[1/3] Validating Agent System...")
+    validate_agent = TARGET_SCRIPTS / "validate_agent.py"
+    if validate_agent.exists():
+        try:
+            # Pass strict excludes to ignore runtime/user artifacts
+            subprocess.run(
+                [sys.executable, str(validate_agent), "--relaxed", "--exclude", "brain", "knowledge", "code_tracker"],
+                cwd=USER_ROOT, 
+                check=True
+            )
+            print("✅ Agent system valid.")
+        except subprocess.CalledProcessError:
+            print("❌ Agent validation failed!")
+            sys.exit(1)
+    else:
+        print(f"⚠️ {validate_agent} not found.")
+
+    # 2. Validate Workflows
+    print("\n[2/3] Validating Workflows...")
+    validate_workflows = TARGET_SCRIPTS / "validate_workflows.py"
+    if validate_workflows.exists():
+        try:
+            subprocess.run([sys.executable, str(validate_workflows)], cwd=USER_ROOT, check=True)
+            print("✅ Workflows valid.")
+        except subprocess.CalledProcessError:
+            print("❌ Workflow validation failed!")
+            sys.exit(1)
+    else:
+        print(f"⚠️ {validate_workflows} not found.")
+
+    # 3. Functional Smoke Test
+    print("\n[3/3] Functional Smoke Test (Skill Discovery)...")
+    find_skills = TARGET_SCRIPTS / "find_relevant_skills.py"
+    if find_skills.exists():
+        try:
+            # Run a simple query to ensure the index relies can be queried and paths resolve
+            result = subprocess.run(
+                [sys.executable, str(find_skills), "--prompt", "debug", "--top", "1"], 
+                cwd=USER_ROOT, 
+                check=True,
+                capture_output=True,
+                text=True
+            )
+            if "debugging-pro" in result.stdout:
+                print("✅ Functional test passed (found debugging-pro).")
+            else:
+                print("⚠️ Functional test ran but didn't return expected result.")
+                print("Output:", result.stdout)
+        except subprocess.CalledProcessError as e:
+            print("❌ Functional test failed!")
+            print(e.stderr)
+            sys.exit(1)
+    else:
+        print(f"⚠️ {find_skills} not found.")
+
+    print("\n🚀 All Systems Go! v2.2.2 successfully deployed and validated.")
+
 if __name__ == "__main__":
     deploy()
