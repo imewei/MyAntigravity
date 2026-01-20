@@ -1,7 +1,7 @@
 ---
 name: cpp-pro
 description: Master C++ programmer for Modern C++ (11-23), RAII, and templates.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: cpp-pro
 skills:

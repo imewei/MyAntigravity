@@ -3,7 +3,7 @@ name: debugging-pro
 description: Master debugging specialist combining systematic investigation, AI-powered
   RCA, distributed tracing, memory/performance profiling, and test-driven debugging.
   Expert in production incident response and preventive engineering.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: debugging-pro
 skills:

@@ -2,7 +2,7 @@
 name: computational-physics-expert
 description: Master computational physicist for numerical methods, simulation design,
   trajectory analysis, multiscale modeling, and scientific modeling toolkit expertise.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: computational-physics-expert
 skills:

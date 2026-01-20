@@ -1,7 +1,7 @@
 ---
 name: md-simulation-setup
 description: Setup and config expert for LAMMPS, GROMACS, and HOOMD-blue.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: simulation-expert
 skills:

@@ -1,7 +1,7 @@
 ---
 name: legacy-modernizer
 description: Strategies for Strangler Fig migration, brownfield refactoring, and safely killing spaghetti code.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: legacy-modernizer
 skills:

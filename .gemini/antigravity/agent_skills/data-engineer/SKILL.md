@@ -1,7 +1,7 @@
 ---
 name: data-engineer
 description: Expert data engineer for pipelines, ETL/ELT, and data quality.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: data-engineer
 skills:

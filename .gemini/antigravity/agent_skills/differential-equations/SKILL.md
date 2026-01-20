@@ -1,6 +1,6 @@
 ---
 name: differential-equations
-version: 2.2.1
+version: 2.2.2
 maturity: "5-Expert"
 specialization: Julia DiffEq
 description: Solve ODE/SDE/PDE with DifferentialEquations.jl. Use when defining differential equation systems, selecting solvers, implementing callbacks, or creating ensemble simulations.

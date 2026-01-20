@@ -1,7 +1,7 @@
 ---
 name: api-design-principles
 description: REST, GraphQL, and gRPC design standards for scalable interfaces.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: backend-architect
 skills:

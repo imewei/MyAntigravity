@@ -3,7 +3,7 @@ description: Multi-dimensional code validation (Lint, Test, Security, Perf)
 triggers:
 - /double-check
 - workflow for double check
-version: 2.2.1
+version: 2.2.2
 allowed-tools: [Read, Task, Bash]
 agents:
   primary: qa-engineer
@@ -16,7 +16,7 @@ skills:
 argument-hint: '[--deep] [--security]'
 ---
 
-# Comprehensive Validator (v2.0)
+# Comprehensive Validator (v2.2.2)
 
 // turbo-all
 

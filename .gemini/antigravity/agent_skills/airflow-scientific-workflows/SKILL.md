@@ -1,7 +1,7 @@
 ---
 name: airflow-scientific-workflows
 description: Design Airflow DAGs for scientific pipelines, simulations, and data ingestion.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: airflow-scientific-workflows
 skills:

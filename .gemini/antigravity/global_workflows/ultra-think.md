@@ -4,7 +4,7 @@ triggers:
 - /ultra-think
 - advanced structured reasoning
 allowed-tools: [SequentialThinking, Read, Task]
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: structured-reasoning
 skills:
@@ -13,7 +13,7 @@ skills:
 argument-hint: '[problem-statement] [--mode=quick|standard|deep] [--depth=int]'
 ---
 
-# Ultra-Think Engine (v2.0)
+# Ultra-Think Engine (v2.2.2)
 
 // turbo-all
 

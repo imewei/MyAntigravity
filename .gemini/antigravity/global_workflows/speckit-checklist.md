@@ -1,7 +1,7 @@
 ---
 name: speckit-checklist
 description: Generate a custom checklist for the current feature based on user requirements.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: qa-engineer
 skills:

@@ -1,7 +1,7 @@
 ---
 name: prompt-engineer
 description: Expert prompt engineer for LLM optimization, CoT, and system prompts.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: prompt-engineer
 skills:

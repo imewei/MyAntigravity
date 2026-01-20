@@ -3,7 +3,7 @@ name: scientific-visualization-lead
 description: Master scientific visualization expert for publication-quality figures,
   interactive interfaces, data visualization patterns, and UX design for scientific
   applications.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: scientific-visualization-lead
 skills:

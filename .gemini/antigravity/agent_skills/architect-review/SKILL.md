@@ -1,7 +1,7 @@
 ---
 name: architect-review
 description: Master software architect for system design reviews and patterns.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: architect-review
 skills:

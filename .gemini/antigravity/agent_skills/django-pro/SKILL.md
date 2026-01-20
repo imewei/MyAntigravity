@@ -1,7 +1,7 @@
 ---
 name: django-pro
 description: Master Django 5.x developer for scalable web apps and DRF APIs.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: django-pro
 skills:

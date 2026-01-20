@@ -1,7 +1,7 @@
 ---
 name: error-handling-patterns
 description: "Resilient error strategies: Circut breaking, Retries, and Graceful degradation."
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: backend-architect
 skills:

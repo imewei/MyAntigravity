@@ -1,7 +1,7 @@
 ---
 name: meta-cognitive-reflection
 description: Analyze reasoning patterns, detect biases, and improve AI decision quality.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: ai-engineer
 skills:

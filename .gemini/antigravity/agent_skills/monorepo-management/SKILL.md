@@ -1,6 +1,6 @@
 ---
 name: monorepo-management
-version: 2.2.1
+version: 2.2.2
 description: Master monorepo management with Turborepo, Nx, and pnpm workspaces. Covers turbo.json, workspace organization, build caching, and CI/CD.
 triggers:
 - keyword:monorepo

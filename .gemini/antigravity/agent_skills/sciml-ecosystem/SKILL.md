@@ -1,7 +1,7 @@
 ---
 name: sciml-ecosystem
 description: Overview and selection guide for the Julia SciML ecosystem packages.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: sciml-pro
 skills:

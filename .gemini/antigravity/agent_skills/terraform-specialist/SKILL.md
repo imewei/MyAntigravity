@@ -1,7 +1,7 @@
 ---
 name: terraform-specialist
 description: Infrastructure as Code (IaC) mastery using Terraform/OpenTofu.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: cloud-architect
 skills:

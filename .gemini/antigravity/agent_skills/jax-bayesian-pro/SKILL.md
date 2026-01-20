@@ -2,7 +2,7 @@
 name: jax-bayesian-pro
 description: JAX-first Bayesian expert for inference-as-transformation, NumPyro/BlackJAX
   mastery, differentiable physics, and soft matter applications.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: jax-bayesian-pro
 skills:

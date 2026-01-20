@@ -1,7 +1,7 @@
 ---
 name: graphql-architect
 description: Master GraphQL architect for schema design, federation, and optimization.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: graphql-architect
 skills:

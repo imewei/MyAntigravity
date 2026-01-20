@@ -1,6 +1,6 @@
 ---
 name: auth-implementation-patterns
-version: 2.2.1
+version: 2.2.2
 description: Master authentication patterns including JWT, OAuth2, session-based auth, RBAC/ABAC, API keys, MFA, SSO, password hashing, and CSRF protection.
 triggers:
 - keyword:auth

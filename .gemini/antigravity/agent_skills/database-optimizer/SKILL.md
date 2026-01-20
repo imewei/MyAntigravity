@@ -5,7 +5,7 @@ description: Expert database optimizer specializing in modern performance tuning
   multi-tier caching, partitioning strategies, and cloud database optimization. Handles
   complex query analysis, migration strategies, and performance monitoring. Use PROACTIVELY
   for database optimization, performance issues, or scalability challenges.
-version: 2.2.1
+version: 2.2.2
 triggers:
 - file:.sql
 - keyword:database

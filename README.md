@@ -15,7 +15,7 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 
 ---
 
-## 📊 Quick Stats (v2.2.1)
+## 📊 Quick Stats (v2.2.2)
 
 | Component | Count | Description |
 |-----------|-------|-------------|
@@ -104,7 +104,7 @@ Use nlsq-pro to fit this scattering model
 Use research-pro to review this methodology
 ```
 
-### Key Unified Personas (v2.2.1)
+### Key Unified Personas (v2.2.2)
 
 | Persona | Domain | Merged Skills |
 |---------|--------|---------------|
@@ -169,7 +169,7 @@ The `auto-solve` workflow automatically routes requests to appropriate skills:
 ---
 name: my-skill
 description: What this skill does
-version: 2.2.1
+version: 2.2.2
 triggers:
 - keyword:my-keyword
 - file:.ext

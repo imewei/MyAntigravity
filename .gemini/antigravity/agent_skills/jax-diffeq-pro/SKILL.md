@@ -2,7 +2,7 @@
 name: jax-diffeq-pro
 description: JAX-first differential equations expert for Diffrax, stiff solvers, adjoint
   methods, SDEs, and soft matter physics engines.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: jax-diffeq-pro
 skills:

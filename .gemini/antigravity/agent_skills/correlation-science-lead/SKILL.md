@@ -3,7 +3,7 @@ name: correlation-science-lead
 description: Master authority on correlation functions bridging statistical physics,
   scattering theory, computational methods, and experimental data analysis (DLS/SAXS/XPCS/FCS).
   Expert in FFT algorithms, multi-tau correlators, and physical interpretation.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: correlation-science-lead
 skills:

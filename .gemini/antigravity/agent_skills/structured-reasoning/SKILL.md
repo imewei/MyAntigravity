@@ -1,7 +1,7 @@
 ---
 name: structured-reasoning
 description: Apply systematic cognitive frameworks (First Principles, Root Cause, Decision Analysis) to complex problems.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: ai-engineer
 skills:

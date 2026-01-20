@@ -3,7 +3,7 @@ description: Intelligent git commit with automated analysis, quality validation,
 triggers:
 - /commit
 - workflow for commit
-version: 2.2.1
+version: 2.2.2
 allowed-tools: "[Bash(git:*), Read, Grep]"
 agents:
   primary: code-reviewer
@@ -14,7 +14,7 @@ argument-hint: '[commit-message] [--quick] [--split] [--amend] [--no-verify]'
 color: green
 ---
 
-# Smart Commit Ecosystem (v2.0)
+# Smart Commit Ecosystem (v2.2.2)
 
 // turbo-all
 

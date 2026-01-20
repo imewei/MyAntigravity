@@ -2,7 +2,7 @@
 name: jax-optimization-pro
 description: JAX-first optimization engineer for compiler-centric, functional HPC
   with XLA/HLO analysis, SPMD sharding, and scientific computing patterns.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: jax-optimization-pro
 skills:

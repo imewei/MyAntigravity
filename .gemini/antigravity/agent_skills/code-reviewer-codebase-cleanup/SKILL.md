@@ -4,7 +4,7 @@ description: Elite code review expert specializing in modern AI-powered code ana
   security vulnerabilities, performance optimization, and production reliability.
   Masters static analysis tools, security scanning, and configuration review with
   2024/2025 best practices. Use PROACTIVELY for code quality assurance.
-version: 2.2.1
+version: 2.2.2
 triggers:
 - file:.ipynb
 - keyword:ai

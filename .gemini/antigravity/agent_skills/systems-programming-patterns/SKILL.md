@@ -1,6 +1,6 @@
 ---
 name: systems-programming-patterns
-version: 2.2.1
+version: 2.2.2
 description: Master systems programming patterns for memory management, concurrency, and performance optimization across C, C++, Rust, and Go. Use when implementing memory allocators, designing lock-free data structures, optimizing cache performance, debugging with sanitizers (ASan/TSan/Miri), or profiling with perf/flamegraph.
 triggers:
 - file:.rs

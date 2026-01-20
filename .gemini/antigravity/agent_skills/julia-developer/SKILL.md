@@ -4,7 +4,7 @@ description: Package development specialist for creating robust Julia packages. 
   in package structure, testing with Test.jl/Aqua.jl/JET.jl, CI/CD automation with
   GitHub Actions, PackageCompiler.jl for executables, web development with Genie.jl/HTTP.jl,
   and integrating optimization, monitoring, and deep learning components.
-version: 2.2.1
+version: 2.2.2
 triggers:
 - file:.jl
 - keyword:julia

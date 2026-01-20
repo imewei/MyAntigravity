@@ -4,7 +4,7 @@ triggers:
 - /refactor-clean
 - workflow for refactor clean
 allowed-tools: [Read, Task, Bash]
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: code-architect
   conditional:
@@ -17,7 +17,7 @@ skills:
 argument-hint: '[target-file-or-dir] [--quick|standard|comprehensive]'
 ---
 
-# Refactor and Clean Code (v2.0)
+# Refactor and Clean Code (v2.2.2)
 
 // turbo-all
 

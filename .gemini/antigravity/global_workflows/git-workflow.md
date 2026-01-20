@@ -4,7 +4,7 @@ triggers:
 - /git-workflow
 - /github
 - workflow for git workflow
-version: 2.2.1
+version: 2.2.2
 allowed-tools: "[Bash(git:*), Read, Grep, Task]"
 agents:
   primary: git-orchestrator
@@ -20,7 +20,7 @@ skills:
 argument-hint: '[target-branch] [--skip-tests] [--draft-pr] [--no-push] [--squash]'
 ---
 
-# Git Workflow Orchestration (v2.0)
+# Git Workflow Orchestration (v2.2.2)
 
 // turbo-all
 

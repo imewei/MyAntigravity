@@ -1,7 +1,7 @@
 ---
 name: speckit-taskstoissues
 description: Convert tasks.md into GitHub issues.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: project-manager
 skills:

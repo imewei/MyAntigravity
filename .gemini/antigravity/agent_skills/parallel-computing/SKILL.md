@@ -1,6 +1,6 @@
 ---
 name: parallel-computing
-version: 2.2.1
+version: 2.2.2
 maturity: "5-Expert"
 specialization: Julia Parallelism
 description: Master multi-threading, Distributed.jl, and GPU computing with CUDA.jl. Use when scaling computations across CPUs or GPUs for scientific computing.

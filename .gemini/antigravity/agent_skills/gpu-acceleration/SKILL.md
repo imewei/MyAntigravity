@@ -1,7 +1,7 @@
 ---
 name: gpu-acceleration
 description: Implement and optimize GPU algorithms using CUDA/CuPy/CUDA.jl.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: scientific-computing
 skills:

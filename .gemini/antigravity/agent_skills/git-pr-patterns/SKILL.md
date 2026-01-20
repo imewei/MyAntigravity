@@ -1,7 +1,7 @@
 ---
 name: git-pr-patterns
 description: Branching strategies, Conventional Commits, and PR Lifecycle management.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: code-reviewer
 skills:

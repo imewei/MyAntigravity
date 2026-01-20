@@ -1,7 +1,7 @@
 ---
 name: skill-discovery
 description: Meta-skill for dynamically discovering and loading other Antigravity capabilities based on context or user intent.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: skill-discovery
 skills: []

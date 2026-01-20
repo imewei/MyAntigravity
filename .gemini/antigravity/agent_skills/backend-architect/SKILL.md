@@ -5,7 +5,7 @@ description: Expert backend architect specializing in scalable API design, micro
   architectures, service mesh patterns, and modern backend frameworks. Handles service
   boundary definition, inter-service communication, resilience patterns, and observability.
   Use PROACTIVELY when creating new backend services or APIs.
-version: 2.2.1
+version: 2.2.2
 triggers:
 - keyword:backend
 - keyword:api

@@ -3,7 +3,7 @@ description: Iteratively run and fix tests until zero failures
 triggers:
 - /run-all-tests
 - workflow for run all tests
-version: 2.2.1
+version: 2.2.2
 allowed-tools: [Bash, Read, Edit, Task]
 agents:
   primary: test-engineer
@@ -12,7 +12,7 @@ skills:
 argument-hint: '[--fix] [--max-iterations=10]'
 ---
 
-# Iterative Test Fixer (v2.0)
+# Iterative Test Fixer (v2.2.2)
 
 // turbo-all
 

@@ -1,7 +1,7 @@
 ---
 name: langchain-architecture
 description: Patterns for Chains, Agents, Memory, and Tools using LangChain.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: ai-engineer
 skills:

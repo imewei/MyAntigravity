@@ -1,7 +1,7 @@
 ---
 name: fastapi-pro
 description: Master FastAPI developer for high-performance async APIs and Pydantic V2.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: fastapi-pro
 skills:

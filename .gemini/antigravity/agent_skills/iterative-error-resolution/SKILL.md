@@ -1,7 +1,7 @@
 ---
 name: iterative-error-resolution
 description: Automated CI/CD troubleshooting, dependency conflict resolution, and self-correcting loops.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: devops-troubleshooter
 skills:

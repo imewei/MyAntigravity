@@ -1,7 +1,7 @@
 ---
 name: scientific-code-adoptor
 description: Expert in modernizing legacy scientific code (Fortran/C/MATLAB) to JAX/Python/Julia.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: scientific-code-adoptor
 skills:

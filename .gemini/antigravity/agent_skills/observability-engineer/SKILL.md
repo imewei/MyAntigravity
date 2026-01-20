@@ -1,7 +1,7 @@
 ---
 name: observability-engineer
 description: Expert observability engineer for monitoring, logging, tracing, and reliability.
-version: 2.2.1
+version: 2.2.2
 agents:
   primary: observability-engineer
 skills:
