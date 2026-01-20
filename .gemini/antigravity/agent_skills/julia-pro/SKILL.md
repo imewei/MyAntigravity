@@ -154,6 +154,18 @@ When asked to create/scaffold a new Julia package, **ALWAYS** follow this standa
 
 ---
 
+### Mathematical Programming (JuMP)
+
+```julia
+using JuMP, HiGHS
+# LP/MIP/QP Modeling
+model = Model(HiGHS.Optimizer)
+@variable(model, x >= 0)
+@objective(model, Max, 40x)
+@constraint(model, 2x <= 100)
+optimize!(model)
+```
+
 ## Performance Tuning (Absorbed)
 
 ```julia

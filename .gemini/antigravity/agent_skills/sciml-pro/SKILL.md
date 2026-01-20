@@ -91,13 +91,30 @@ You are an expert in the Julia SciML ecosystem, specializing in DifferentialEqua
 
 // end-parallel
 
-### SciML Scaffolding Standards (Absorbed from sciml-setup)
+### Optimization.jl (Parameter Estimation)
+
+```julia
+using Optimization, OptimizationOptimJL
+
+function loss(p, data)
+    prob_p = remake(prob, p=p)
+    sol = solve(prob_p, Tsit5(), saveat=0.1)
+    return sum(abs2, sol[1, :] .- data)
+end
+
+opt_prob = OptimizationProblem(loss, p_init, measured_data)
+result = solve(opt_prob, BFGS())
+```
+
+### SciML Scaffolding Standards
 
 When asked to setup a Scientific Machine Learning project:
 
 1.  **Dependencies**:
-    -   `DifferentialEquations.jl` (Core solvers).
-    -   `ModelingToolkit.jl` (Symbolic layer).
+    -   `DifferentialEquations`: Solvers
+    -   `ModelingToolkit`: Symbolic definition
+    -   `Optimization`: Parameter fitting
+    -   `RecursiveArrayTools`: Data structures ('VectorOfArray')
     -   `Plots.jl` or `Makie.jl` (Visualization).
     -   `DiffEqFlux.jl` / `Lux.jl` (Learning integration).
 
