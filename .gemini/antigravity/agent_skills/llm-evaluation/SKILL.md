@@ -14,6 +14,7 @@ triggers:
 - keyword:llm
 - keyword:evaluation
 - keyword:benchmark
+---
 
 # LLM Evaluation
 
@@ -23,7 +24,7 @@ triggers:
 
 Move beyond "vibes" to rigorous, scientific evaluation of LLM performance.
 
----
+
 
 ## Strategy & Metrics (Parallel)
 

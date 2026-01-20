@@ -8,12 +8,13 @@ triggers:
 - keyword:angular
 - keyword:ngupgrade
 - file:.ts
+---
 
 # Angular Migration
 
 AngularJS to Angular migration with hybrid apps and incremental conversion.
 
----
+
 
 ## Migration Strategies
 

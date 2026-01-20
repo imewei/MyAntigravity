@@ -1,3 +1,8 @@
+---
+name: gradient-pathologies-reference
+description: Documentation for gradient-pathologies-reference
+---
+
 # allow-torch
 # Gradient Pathologies - Complete Reference
 

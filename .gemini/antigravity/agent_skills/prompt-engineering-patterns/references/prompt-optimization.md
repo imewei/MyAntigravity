@@ -1,3 +1,8 @@
+---
+name: prompt-optimization
+description: Documentation for prompt-optimization
+---
+
 # Prompt Optimization Guide
 
 ## Systematic Refinement Process

@@ -1,3 +1,8 @@
+---
+name: prompt-template-library
+description: Documentation for prompt-template-library
+---
+
 # Prompt Template Library
 
 ## Classification Templates

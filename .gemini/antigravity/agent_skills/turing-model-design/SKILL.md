@@ -8,12 +8,13 @@ triggers:
 - keyword:turing
 - keyword:probabilistic
 - file:.jl
+---
 
 # Turing.jl Model Design
 
 Probabilistic model specification for Bayesian inference.
 
----
+
 
 ## Basic Model
 

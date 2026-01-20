@@ -1,3 +1,8 @@
+---
+name: ultra_think_report_template
+description: Documentation for ultra_think_report_template
+---
+
 # Ultra-Think Analysis Report
 
 **Date**: YYYY-MM-DD

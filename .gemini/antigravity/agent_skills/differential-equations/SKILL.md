@@ -9,12 +9,13 @@ triggers:
 - keyword:pde
 - keyword:differential
 - file:.jl
+---
 
 # DifferentialEquations.jl
 
 Solve differential equations with the SciML ecosystem.
 
----
+
 
 ## ODE Template
 

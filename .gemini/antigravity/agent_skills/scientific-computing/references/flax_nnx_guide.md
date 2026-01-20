@@ -1,3 +1,8 @@
+---
+name: flax_nnx_guide
+description: Documentation for flax_nnx_guide
+---
+
 # Flax NNX - Comprehensive Guide
 
 ## Overview

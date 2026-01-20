@@ -1,3 +1,8 @@
+---
+name: breaking-changes-guide
+description: Documentation for breaking-changes-guide
+---
+
 # Breaking Changes Guide
 
 Comprehensive guide to managing API compatibility, migrations, and rollback strategies.

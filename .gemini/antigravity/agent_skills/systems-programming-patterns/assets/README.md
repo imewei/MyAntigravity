@@ -1,3 +1,8 @@
+---
+name: README
+description: Documentation for README
+---
+
 # Systems Programming Patterns - Assets
 
 This directory contains diagrams and visual aids for understanding systems programming patterns.

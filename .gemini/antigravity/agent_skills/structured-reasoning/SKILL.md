@@ -14,6 +14,7 @@ triggers:
 - keyword:reasoning
 - keyword:logic
 - keyword:analysis
+---
 
 # Structured Reasoning
 
@@ -23,7 +24,7 @@ triggers:
 
 Systematic problem-solving engine using explicit reasoning chains, auditability, and multiple mental models.
 
----
+
 
 ## Strategy & Frameworks (Parallel)
 

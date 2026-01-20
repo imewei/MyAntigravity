@@ -1,3 +1,8 @@
+---
+name: README
+description: Documentation for README
+---
+
 # Example Package
 
 > A modern Python package template with best practices for 2024/2025

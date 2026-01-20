@@ -19,6 +19,7 @@ triggers:
 - keyword:github
 - keyword:issue
 - keyword:codeowners
+---
 
 # Git & PR Patterns
 
@@ -28,7 +29,7 @@ triggers:
 
 Standards for collaboration, version control, and change management.
 
----
+
 
 ## Strategy & Standards (Parallel)
 

@@ -1,3 +1,8 @@
+---
+name: optax_optimizers
+description: Documentation for optax_optimizers
+---
+
 # Optax Optimizers - Complete Reference
 
 ## Overview

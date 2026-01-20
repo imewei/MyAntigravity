@@ -1,3 +1,8 @@
+---
+name: rest-best-practices
+description: Documentation for rest-best-practices
+---
+
 # REST API Best Practices
 
 ## URL Structure

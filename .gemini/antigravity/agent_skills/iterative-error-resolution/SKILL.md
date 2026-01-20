@@ -14,6 +14,7 @@ triggers:
 - keyword:error
 - keyword:debug
 - keyword:fix
+---
 
 # Iterative Error Resolution
 
@@ -23,7 +24,7 @@ triggers:
 
 Systematic engine for resolving persistent failures in CI/CD, builds, and tests through iterative diagnosis and repair.
 
----
+
 
 ## Strategy & Diagnosis (Parallel)
 

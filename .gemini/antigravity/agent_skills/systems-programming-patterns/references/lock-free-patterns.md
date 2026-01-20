@@ -1,3 +1,8 @@
+---
+name: lock-free-patterns
+description: Documentation for lock-free-patterns
+---
+
 # Lock-Free Data Structure Patterns
 
 ## Overview

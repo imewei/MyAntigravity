@@ -1,6 +1,6 @@
 ---
 name: rag-implementation
-description: Production RAG patterns: Chunking, Hybrid Search, Reranking, and Grounding.
+description: "Production RAG patterns: Chunking, Hybrid Search, Reranking, and Grounding."
 version: 2.0.0
 agents:
   primary: ai-engineer
@@ -15,6 +15,7 @@ triggers:
 - keyword:retrieval
 - keyword:vector
 - keyword:embedding
+---
 
 # RAG Implementation
 
@@ -24,7 +25,7 @@ triggers:
 
 Building the bridge between private knowledge and LLM reasoning.
 
----
+
 
 ## Strategy & Pipeline (Parallel)
 

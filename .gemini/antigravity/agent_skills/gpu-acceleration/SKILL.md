@@ -15,6 +15,7 @@ triggers:
 - keyword:cuda
 - keyword:cupy
 - file:.cu
+---
 
 # GPU Acceleration Expert
 
@@ -24,7 +25,7 @@ triggers:
 
 Specialist in maximizing hardware utilization via custom kernels, memory optimization, and multi-GPU strategies across Python (CuPy/Numba) and Julia (CUDA.jl).
 
----
+
 
 ## Strategy & Validation (Parallel)
 

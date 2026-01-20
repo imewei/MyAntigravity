@@ -4,7 +4,7 @@ triggers:
 - /fix-commit-errors
 - workflow for fix commit errors
 version: 2.2.0
-allowed-tools: [Bash(gh:*), Bash(git:*), Bash(npm:*), Bash(pip:*), Read]
+allowed-tools: "[Bash(gh:*), Bash(git:*), Bash(npm:*), Bash(pip:*), Read]"
 agents:
   primary: devops-troubleshooter
   conditional:

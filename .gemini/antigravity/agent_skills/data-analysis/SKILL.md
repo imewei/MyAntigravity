@@ -9,12 +9,13 @@ triggers:
 - keyword:analysis
 - keyword:pandas
 - file:.ipynb
+---
 
 # Data Analysis & Model Validation
 
 Statistical analysis of experimental data with Bayesian inference and model validation.
 
----
+
 
 ## Correlation Functions
 

@@ -13,6 +13,7 @@ triggers:
 - keyword:microservice
 - keyword:saga
 - keyword:cqrs
+---
 
 # Skill: Microservices Patterns (v2.0)
 
@@ -22,7 +23,7 @@ triggers:
 
 A comprehensive guide to service boundaries, communication, data management, and resilience patterns in distributed systems.
 
----
+
 
 ## Core Patterns (Parallel)
 

@@ -8,12 +8,13 @@ triggers:
 - keyword:reflection
 - keyword:review
 - keyword:retrospective
+---
 
 # Comprehensive Reflection Framework
 
 Multi-dimensional analysis integrating cognitive, technical, research, and strategic perspectives.
 
----
+
 
 ## Reflection Dimensions
 

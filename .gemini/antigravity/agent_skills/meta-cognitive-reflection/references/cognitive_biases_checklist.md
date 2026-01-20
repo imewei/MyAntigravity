@@ -1,3 +1,8 @@
+---
+name: cognitive_biases_checklist
+description: Documentation for cognitive_biases_checklist
+---
+
 # Cognitive Biases Checklist
 
 ## Overview

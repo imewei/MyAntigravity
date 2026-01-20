@@ -14,6 +14,7 @@ triggers:
 - keyword:context
 - keyword:memory
 - keyword:long-context
+---
 
 # Context Manager
 
@@ -23,7 +24,7 @@ triggers:
 
 Expert in managing the "Brain" of AI systems: Retrieval, Memory retention, and Context Window optimization.
 
----
+
 
 ## Strategy & Validation (Parallel)
 

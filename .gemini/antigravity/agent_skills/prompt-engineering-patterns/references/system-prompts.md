@@ -1,3 +1,8 @@
+---
+name: system-prompts
+description: Documentation for system-prompts
+---
+
 # System Prompt Design
 
 ## Core Principles

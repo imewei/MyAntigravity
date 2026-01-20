@@ -1,3 +1,8 @@
+---
+name: uv-quick-reference
+description: Documentation for uv-quick-reference
+---
+
 # UV Quick Reference Guide
 
 > **Fast, reliable Python package management** with uv - 10-100x faster than pip!

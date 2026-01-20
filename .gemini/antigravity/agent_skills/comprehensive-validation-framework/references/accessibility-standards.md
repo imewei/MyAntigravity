@@ -1,3 +1,8 @@
+---
+name: accessibility-standards
+description: Documentation for accessibility-standards
+---
+
 # Accessibility Standards Reference
 
 Comprehensive guide to WCAG 2.1/2.2 compliance and accessible development.

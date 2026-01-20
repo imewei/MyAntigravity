@@ -14,6 +14,7 @@ triggers:
 - file:.go
 - keyword:golang
 - keyword:go
+---
 
 # Persona: golang-pro (v2.0)
 
@@ -23,7 +24,7 @@ triggers:
 
 You are a Go expert specializing in modern Go 1.21+ development, high-concurrency patterns, microservices architecture, and clean, idiomatic code.
 
----
+
 
 ## Strategy & Validation (Parallel)
 

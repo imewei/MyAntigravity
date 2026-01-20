@@ -1,3 +1,8 @@
+---
+name: common-bugs
+description: Documentation for common-bugs
+---
+
 # Common Systems Programming Bugs and Fixes
 
 ## Overview

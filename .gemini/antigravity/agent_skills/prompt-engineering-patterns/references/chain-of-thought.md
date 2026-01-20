@@ -1,3 +1,8 @@
+---
+name: chain-of-thought
+description: Documentation for chain-of-thought
+---
+
 # Chain-of-Thought Prompting
 
 ## Overview

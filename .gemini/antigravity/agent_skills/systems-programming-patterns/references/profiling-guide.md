@@ -1,3 +1,8 @@
+---
+name: profiling-guide
+description: Documentation for profiling-guide
+---
+
 # Comprehensive Profiling Guide
 
 ## CPU Profiling Workflow

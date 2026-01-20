@@ -1,3 +1,8 @@
+---
+name: testing-best-practices
+description: Documentation for testing-best-practices
+---
+
 # Testing Best Practices Reference
 
 Comprehensive guide to test strategies, coverage, and quality assurance.

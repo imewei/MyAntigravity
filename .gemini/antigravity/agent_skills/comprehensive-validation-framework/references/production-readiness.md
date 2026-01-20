@@ -1,3 +1,8 @@
+---
+name: production-readiness
+description: Documentation for production-readiness
+---
+
 # Production Readiness Reference
 
 Comprehensive checklist for deploying systems to production.

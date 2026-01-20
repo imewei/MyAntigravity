@@ -1,3 +1,8 @@
+---
+name: README
+description: Documentation for README
+---
+
 # allow-torch
 # Training Diagnostics Scripts
 

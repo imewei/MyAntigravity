@@ -1,3 +1,8 @@
+---
+name: memory-pool-structure
+description: Documentation for memory-pool-structure
+---
+
 # Memory Pool Internal Structure
 
 ## Concept

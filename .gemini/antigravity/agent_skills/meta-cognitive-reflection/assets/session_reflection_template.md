@@ -1,3 +1,8 @@
+---
+name: session_reflection_template
+description: Documentation for session_reflection_template
+---
+
 # Session Reflection Report
 
 **Date**: YYYY-MM-DD

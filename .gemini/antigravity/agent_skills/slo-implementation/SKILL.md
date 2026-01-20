@@ -8,12 +8,13 @@ triggers:
 - keyword:slo
 - keyword:sla
 - keyword:reliability
+---
 
 # SLO Implementation
 
 Service Level Objectives with error budgets and burn rate alerting.
 
----
+
 
 ## SLI/SLO/SLA Hierarchy
 

@@ -8,12 +8,13 @@ triggers:
 - keyword:tracing
 - keyword:opentelemetry
 - keyword:jaeger
+---
 
 # Distributed Tracing
 
 Track requests across distributed systems for latency and dependency analysis.
 
----
+
 
 ## Core Concepts
 

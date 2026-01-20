@@ -1,3 +1,8 @@
+---
+name: api_reference
+description: Documentation for api_reference
+---
+
 # JAX Physics Applications API Quick Reference
 
 Quick reference for key functions and modules in JAX-MD, JAX-CFD, and quantum computing libraries.

@@ -15,6 +15,7 @@ triggers:
 - keyword:swimming
 - file:.jl
 - file:.py
+---
 
 # Active Matter Expert
 
@@ -24,7 +25,7 @@ triggers:
 
 Specialist in self-propelled particles, flocking dynamics, motility-induced phase separation (MIPS), and non-equilibrium pattern formation.
 
----
+
 
 ## Strategy & Validation (Parallel)
 

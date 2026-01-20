@@ -1,3 +1,8 @@
+---
+name: reasoning_patterns_taxonomy
+description: Documentation for reasoning_patterns_taxonomy
+---
+
 # Reasoning Patterns Taxonomy
 
 ## Overview

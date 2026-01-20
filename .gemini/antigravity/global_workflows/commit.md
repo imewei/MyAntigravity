@@ -4,7 +4,7 @@ triggers:
 - /commit
 - workflow for commit
 version: 2.2.0
-allowed-tools: [Bash(git:*), Read, Grep]
+allowed-tools: "[Bash(git:*), Read, Grep]"
 agents:
   primary: code-reviewer
   conditional:

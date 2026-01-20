@@ -1,3 +1,8 @@
+---
+name: comprehensive_reflection_template
+description: Documentation for comprehensive_reflection_template
+---
+
 # Comprehensive Multi-Dimensional Reflection Report
 
 **Date**: YYYY-MM-DD

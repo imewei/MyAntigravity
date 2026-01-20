@@ -1,3 +1,8 @@
+---
+name: security-deep-dive
+description: Documentation for security-deep-dive
+---
+
 # Security Deep Dive Reference
 
 Comprehensive security validation checklist and best practices across all dimensions.

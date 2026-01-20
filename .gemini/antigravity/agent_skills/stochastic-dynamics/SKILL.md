@@ -8,12 +8,13 @@ triggers:
 - keyword:stochastic
 - keyword:langevin
 - keyword:brownian
+---
 
 # Stochastic Dynamics & Transport
 
 Stochastic processes and transport properties from microscopic dynamics.
 
----
+
 
 ## Framework Selection
 

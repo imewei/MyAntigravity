@@ -1,3 +1,8 @@
+---
+name: graphql-schema-design
+description: Documentation for graphql-schema-design
+---
+
 # GraphQL Schema Design Patterns
 
 ## Schema Organization

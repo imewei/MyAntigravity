@@ -5,7 +5,7 @@ triggers:
 - /github
 - workflow for git workflow
 version: 2.2.0
-allowed-tools: [Bash(git:*), Read, Grep, Task]
+allowed-tools: "[Bash(git:*), Read, Grep, Task]"
 agents:
   primary: git-orchestrator
   conditional:

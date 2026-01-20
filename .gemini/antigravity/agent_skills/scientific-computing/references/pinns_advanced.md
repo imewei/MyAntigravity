@@ -1,3 +1,8 @@
+---
+name: pinns_advanced
+description: Documentation for pinns_advanced
+---
+
 # Advanced PINN Techniques
 
 ## Adaptive Loss Weighting

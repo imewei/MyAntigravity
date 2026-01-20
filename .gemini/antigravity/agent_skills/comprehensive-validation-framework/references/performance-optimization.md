@@ -1,3 +1,8 @@
+---
+name: performance-optimization
+description: Documentation for performance-optimization
+---
+
 # Performance Optimization Reference
 
 Comprehensive guide to profiling, optimizing, and load testing applications.

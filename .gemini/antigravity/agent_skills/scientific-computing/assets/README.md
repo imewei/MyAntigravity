@@ -1,3 +1,8 @@
+---
+name: README
+description: Documentation for README
+---
+
 # JAX Core Programming Assets
 
 This directory contains visual assets and diagrams for JAX Core Programming workflows.

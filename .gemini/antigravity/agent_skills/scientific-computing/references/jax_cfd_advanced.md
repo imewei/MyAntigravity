@@ -1,3 +1,8 @@
+---
+name: jax_cfd_advanced
+description: Documentation for jax_cfd_advanced
+---
+
 # Advanced JAX-CFD Patterns
 
 ## Compressible Flow Solvers

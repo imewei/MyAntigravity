@@ -9,12 +9,13 @@ triggers:
 - keyword:svi
 - keyword:advi
 - file:.jl
+---
 
 # Variational Inference
 
 ADVI for scalable approximate Bayesian inference.
 
----
+
 
 ## ADVI Pattern
 

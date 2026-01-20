@@ -1,6 +1,6 @@
 ---
 name: git-advanced-workflows
-description: Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery.
+description: "Advanced Git operations: Interactive Rebase, Bisect, Worktrees, and Recovery."
 version: 2.0.0
 agents:
   primary: devops-engineer
@@ -21,6 +21,7 @@ triggers:
 - keyword:worktree
 - keyword:merge
 - keyword:conflict
+---
 
 # Git Advanced Workflows
 
@@ -30,7 +31,7 @@ triggers:
 
 Surgical tools for history management and repository hygiene.
 
----
+
 
 ## Strategy & Operations (Parallel)
 

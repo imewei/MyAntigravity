@@ -14,6 +14,7 @@ triggers:
 - keyword:legacy
 - keyword:modernize
 - keyword:strangler
+---
 
 # Legacy Modernizer
 
@@ -23,7 +24,7 @@ triggers:
 
 Turning "Technical Debt" into "Technical Equity".
 
----
+
 
 ## Strategy & Patterns (Parallel)
 

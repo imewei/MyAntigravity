@@ -9,12 +9,13 @@ triggers:
 - keyword:threading
 - keyword:distributed
 - file:.jl
+---
 
 # Julia Parallel Computing
 
 Multi-threading, distributed, and GPU parallelism.
 
----
+
 
 ## Multi-Threading
 

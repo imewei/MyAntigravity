@@ -1,3 +1,8 @@
+---
+name: raii-patterns
+description: Documentation for raii-patterns
+---
+
 # RAII and Resource Management Patterns
 
 ## Overview

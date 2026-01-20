@@ -1,3 +1,8 @@
+---
+name: README
+description: Documentation for README
+---
+
 # JAX Core Programming References
 
 Detailed reference documentation for JAX ecosystem components.

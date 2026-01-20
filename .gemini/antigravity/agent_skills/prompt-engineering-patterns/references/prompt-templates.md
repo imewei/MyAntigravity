@@ -1,3 +1,8 @@
+---
+name: prompt-templates
+description: Documentation for prompt-templates
+---
+
 # Prompt Template Systems
 
 ## Template Architecture

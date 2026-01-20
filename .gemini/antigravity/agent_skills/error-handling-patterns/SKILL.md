@@ -1,6 +1,6 @@
 ---
 name: error-handling-patterns
-description: Resilient error strategies: Circut breaking, Retries, and Graceful degradation.
+description: "Resilient error strategies: Circut breaking, Retries, and Graceful degradation."
 version: 2.0.0
 agents:
   primary: backend-architect
@@ -14,6 +14,7 @@ triggers:
 - keyword:error
 - keyword:retry
 - keyword:circuit-breaker
+---
 
 # Error Handling Patterns
 
@@ -23,7 +24,7 @@ triggers:
 
 Building systems that bend but don't break.
 
----
+
 
 ## Strategy & Recovery (Parallel)
 

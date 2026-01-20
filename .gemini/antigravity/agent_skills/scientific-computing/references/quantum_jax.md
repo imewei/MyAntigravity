@@ -1,3 +1,8 @@
+---
+name: quantum_jax
+description: Documentation for quantum_jax
+---
+
 # Quantum Computing with JAX
 
 ## QAOA (Quantum Approximate Optimization Algorithm)

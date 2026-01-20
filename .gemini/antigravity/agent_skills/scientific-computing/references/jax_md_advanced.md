@@ -1,3 +1,8 @@
+---
+name: jax_md_advanced
+description: Documentation for jax_md_advanced
+---
+
 # Advanced JAX-MD Patterns
 
 ## Table of Contents

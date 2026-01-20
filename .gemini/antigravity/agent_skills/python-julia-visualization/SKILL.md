@@ -1,6 +1,6 @@
 ---
 name: python-julia-visualization
-description: Cross-language visualization mastery: Matplotlib, Seaborn, Plotly, Bokeh, Plots.jl, Makie.jl.
+description: "Cross-language visualization mastery: Matplotlib, Seaborn, Plotly, Bokeh, Plots.jl, Makie.jl."
 version: 2.0.0
 agents:
   primary: scientific-data-visualization

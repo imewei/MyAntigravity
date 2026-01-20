@@ -1,3 +1,8 @@
+---
+name: rcu-patterns
+description: Documentation for rcu-patterns
+---
+
 # Read-Copy-Update (RCU) Patterns
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: numpyro_bayesian
+description: Documentation for numpyro_bayesian
+---
+
 # NumPyro Bayesian Patterns - Quick Reference
 
 ## Overview

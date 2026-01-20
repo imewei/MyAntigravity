@@ -1,3 +1,8 @@
+---
+name: framework_guide
+description: Documentation for framework_guide
+---
+
 # Cognitive Frameworks Guide
 
 ## Framework 1: First Principles

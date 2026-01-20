@@ -14,6 +14,7 @@ triggers:
 - keyword:secrets
 - keyword:vault
 - keyword:credentials
+---
 
 # Secrets Management
 
@@ -23,7 +24,7 @@ triggers:
 
 "Zero Trust" credential handling: Store, Inject, Rotate, Audit.
 
----
+
 
 ## Strategy & Storage (Parallel)
 

@@ -14,6 +14,7 @@ triggers:
 - keyword:lammps
 - keyword:gromacs
 - keyword:molecular
+---
 
 # MD Simulation Setup Expert
 
@@ -23,7 +24,7 @@ triggers:
 
 Architect of molecular dynamics simulation inputs, force field selection, and equilibration protocols for LAMMPS, GROMACS, and HOOMD-blue.
 
----
+
 
 ## Strategy & Validation (Parallel)
 

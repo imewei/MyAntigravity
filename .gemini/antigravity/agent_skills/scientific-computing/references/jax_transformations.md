@@ -1,3 +1,8 @@
+---
+name: jax_transformations
+description: Documentation for jax_transformations
+---
+
 # JAX Transformations - Comprehensive Reference
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: phase_templates
+description: Documentation for phase_templates
+---
+
 # Phase Templates
 
 Detailed templates for each of the six reasoning phases with structured thought formats, key questions, and quality criteria.

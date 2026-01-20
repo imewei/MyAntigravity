@@ -7,6 +7,8 @@ triggers:
 - keyword:oauth
 - keyword:jwt
 
+---
+
 # Authentication & Authorization Patterns
 
 Secure, scalable authentication and authorization systems.

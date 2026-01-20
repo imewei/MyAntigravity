@@ -1,3 +1,8 @@
+---
+name: memory-pools
+description: Documentation for memory-pools
+---
+
 # Memory Pool Allocation Patterns
 
 ## Overview

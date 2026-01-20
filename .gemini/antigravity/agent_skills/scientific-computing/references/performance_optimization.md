@@ -1,3 +1,8 @@
+---
+name: performance_optimization
+description: Documentation for performance_optimization
+---
+
 # JAX Performance Optimization Guide
 
 ## Overview

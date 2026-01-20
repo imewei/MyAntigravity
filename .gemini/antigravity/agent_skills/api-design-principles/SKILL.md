@@ -14,6 +14,7 @@ triggers:
 - keyword:api
 - keyword:rest
 - keyword:openapi
+---
 
 # API Design Principles
 
@@ -23,7 +24,7 @@ triggers:
 
 Architecting intuitive, consistent, and lasting interfaces.
 
----
+
 
 ## Strategy & Paradigms (Parallel)
 
