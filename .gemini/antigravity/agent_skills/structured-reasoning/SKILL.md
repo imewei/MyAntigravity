@@ -14,7 +14,6 @@ triggers:
 - keyword:reasoning
 - keyword:logic
 - keyword:analysis
----
 
 # Structured Reasoning
 

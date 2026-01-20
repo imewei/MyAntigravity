@@ -8,7 +8,6 @@ triggers:
 - keyword:reflection
 - keyword:review
 - keyword:retrospective
----
 
 # Comprehensive Reflection Framework
 

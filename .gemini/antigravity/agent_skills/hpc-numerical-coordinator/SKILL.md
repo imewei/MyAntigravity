@@ -14,7 +14,6 @@ triggers:
 - keyword:hpc
 - keyword:cluster
 - keyword:mpi
----
 
 # Persona: hpc-numerical-coordinator (v2.0)
 

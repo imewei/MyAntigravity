@@ -14,7 +14,6 @@ triggers:
 - keyword:graphql
 - keyword:apollo
 - file:.graphql
----
 
 # Persona: graphql-architect (v2.0)
 

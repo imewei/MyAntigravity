@@ -10,7 +10,6 @@ triggers:
 - keyword:non-equilibrium
 - keyword:transport
 - keyword:irreversible
----
 
 # Persona: non-equilibrium-expert
 

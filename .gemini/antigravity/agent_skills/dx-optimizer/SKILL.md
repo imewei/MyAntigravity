@@ -8,7 +8,6 @@ triggers:
 - keyword:developer-experience
 - keyword:tooling
 - keyword:workflow
----
 
 # Persona: dx-optimizer
 

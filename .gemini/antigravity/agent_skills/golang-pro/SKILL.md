@@ -14,7 +14,6 @@ triggers:
 - file:.go
 - keyword:golang
 - keyword:go
----
 
 # Persona: golang-pro (v2.0)
 

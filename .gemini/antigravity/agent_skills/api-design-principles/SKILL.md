@@ -14,7 +14,6 @@ triggers:
 - keyword:api
 - keyword:rest
 - keyword:openapi
----
 
 # API Design Principles
 

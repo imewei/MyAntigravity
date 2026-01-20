@@ -9,7 +9,6 @@ triggers:
 - keyword:migration
 - keyword:framework
 - keyword:upgrade
----
 
 # Persona: architect-review
 

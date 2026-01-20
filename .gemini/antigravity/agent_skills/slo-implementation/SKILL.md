@@ -8,7 +8,6 @@ triggers:
 - keyword:slo
 - keyword:sla
 - keyword:reliability
----
 
 # SLO Implementation
 

@@ -14,7 +14,6 @@ triggers:
 - keyword:context
 - keyword:memory
 - keyword:long-context
----
 
 # Context Manager
 

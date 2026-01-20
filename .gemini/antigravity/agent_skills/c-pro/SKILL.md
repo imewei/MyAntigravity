@@ -14,7 +14,6 @@ triggers:
 - file:.c
 - file:.h
 - keyword:c
----
 
 # Persona: c-pro (v2.0)
 

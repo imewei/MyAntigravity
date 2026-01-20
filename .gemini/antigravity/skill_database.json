@@ -1,0 +1,1276 @@
+{
+  "file:.c": [
+    "c-pro"
+  ],
+  "file:.cu": [
+    "gpu-acceleration"
+  ],
+  "file:.github/CODEOWNERS": [
+    "git-advanced-workflows"
+  ],
+  "file:.github/PULL_REQUEST_TEMPLATE.md": [
+    "git-pr-patterns"
+  ],
+  "file:.github/pull_request_template.md": [
+    "git-pr-patterns"
+  ],
+  "file:.github/workflows/*.yml": [
+    "airflow-scientific-workflows",
+    "data-engineer",
+    "git-advanced-workflows",
+    "ml-pipeline-workflow",
+    "mlops-engineer",
+    "plugin-syntax-validator",
+    "security-ci-template"
+  ],
+  "file:.go": [
+    "golang-pro"
+  ],
+  "file:.graphql": [
+    "graphql-architect"
+  ],
+  "file:.h": [
+    "c-pro"
+  ],
+  "file:.ipynb": [
+    "ai-engineer",
+    "airflow-scientific-workflows",
+    "architecture-patterns",
+    "code-reviewer-codebase-cleanup",
+    "cpp-pro",
+    "data-analysis",
+    "data-scientist",
+    "data-wrangling-communication",
+    "deep-learning-experimentation",
+    "ecosystem-selection",
+    "jax-bayesian-pro",
+    "jax-diffeq-pro",
+    "jax-optimization-pro",
+    "langchain-architecture",
+    "machine-learning-essentials",
+    "meta-cognitive-reflection",
+    "ml-force-fields",
+    "ml-pipeline-workflow",
+    "ml-systems-architect",
+    "mlops-engineer",
+    "multiscale-modeling",
+    "package-management",
+    "prompt-engineering-patterns",
+    "python-packaging",
+    "sciml-ecosystem",
+    "sciml-pro",
+    "software-quality-engineer",
+    "sql-optimization-patterns",
+    "training-diagnostics"
+  ],
+  "file:.jl": [
+    "active-matter",
+    "compiler-patterns",
+    "differential-equations",
+    "ecosystem-selection",
+    "interop-patterns",
+    "julia-developer",
+    "julia-pro",
+    "mcmc-diagnostics",
+    "package-development-workflow",
+    "package-management",
+    "parallel-computing",
+    "python-julia-visualization",
+    "scientific-code-adoptor",
+    "scientific-computing",
+    "sciml-ecosystem",
+    "sciml-pro",
+    "turing-model-design",
+    "turing-pro",
+    "variational-inference-patterns",
+    "web-development-julia"
+  ],
+  "file:.js": [
+    "cli-tool-design-production",
+    "javascript-pro",
+    "nodejs-backend-patterns"
+  ],
+  "file:.jsx": [
+    "catalyst-reactions",
+    "dependency-upgrade",
+    "frontend-developer",
+    "multi-platform-architecture",
+    "multi-platform-mobile",
+    "react-modernization",
+    "react-native-patterns"
+  ],
+  "file:.md": [
+    "plugin-syntax-validator"
+  ],
+  "file:.py": [
+    "active-matter",
+    "cli-tool-design-production",
+    "database-migration",
+    "django-pro",
+    "ecosystem-selection",
+    "fastapi-pro",
+    "interop-patterns",
+    "jax-bayesian-pro",
+    "jax-diffeq-pro",
+    "jax-optimization-pro",
+    "programming-scripting-languages",
+    "python-julia-visualization",
+    "python-packaging",
+    "python-pro",
+    "scientific-code-adoptor",
+    "scientific-computing",
+    "security-auditor",
+    "statistical-analysis-fundamentals",
+    "uv-package-manager"
+  ],
+  "file:.rs": [
+    "rust-pro",
+    "systems-programming-patterns"
+  ],
+  "file:.spec.ts": [
+    "test-engineering-lead"
+  ],
+  "file:.sql": [
+    "database-migration",
+    "database-optimizer",
+    "grafana-dashboards",
+    "nodejs-backend-patterns",
+    "sql-optimization-patterns"
+  ],
+  "file:.tf": [
+    "cloud-architect",
+    "terraform-specialist"
+  ],
+  "file:.tfvars": [
+    "terraform-specialist"
+  ],
+  "file:.ts": [
+    "angular-migration",
+    "react-modernization",
+    "react-native-patterns",
+    "typescript-pro"
+  ],
+  "file:.tsx": [
+    "catalyst-reactions",
+    "dependency-upgrade",
+    "frontend-developer",
+    "multi-platform-architecture",
+    "multi-platform-mobile",
+    "react-modernization",
+    "react-native-patterns",
+    "typescript-pro"
+  ],
+  "file:.yaml": [
+    "cloud-architect"
+  ],
+  "file:Dockerfile": [
+    "uv-package-manager"
+  ],
+  "file:PR_TEMPLATE.md": [
+    "software-quality-engineer"
+  ],
+  "file:conftest.py": [
+    "test-engineering-lead"
+  ],
+  "file:docker-compose.yml": [
+    "uv-package-manager"
+  ],
+  "file:dvc.yaml": [
+    "ml-systems-architect"
+  ],
+  "file:helm/**/*.yaml": [
+    "kubernetes-architect",
+    "prometheus-configuration"
+  ],
+  "file:k8s*.yaml": [
+    "kubernetes-architect",
+    "prometheus-configuration"
+  ],
+  "file:mlruns": [
+    "ml-systems-architect"
+  ],
+  "file:turbo.json": [
+    "monorepo-management"
+  ],
+  "keyword:a/b test": [
+    "statistical-analysis-fundamentals"
+  ],
+  "keyword:active-matter": [
+    "active-matter"
+  ],
+  "keyword:adjoint": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:advi": [
+    "variational-inference-patterns"
+  ],
+  "keyword:agent": [
+    "multi-agent-systems-lead"
+  ],
+  "keyword:ai": [
+    "ai-engineer",
+    "airflow-scientific-workflows",
+    "architecture-patterns",
+    "code-reviewer-codebase-cleanup",
+    "cpp-pro",
+    "data-scientist",
+    "data-wrangling-communication",
+    "deep-learning-experimentation",
+    "ecosystem-selection",
+    "langchain-architecture",
+    "machine-learning-essentials",
+    "meta-cognitive-reflection",
+    "ml-force-fields",
+    "ml-pipeline-workflow",
+    "ml-systems-architect",
+    "mlops-engineer",
+    "multiscale-modeling",
+    "package-management",
+    "prompt-engineering-patterns",
+    "python-packaging",
+    "sciml-ecosystem",
+    "sciml-pro",
+    "sql-optimization-patterns",
+    "training-diagnostics"
+  ],
+  "keyword:analysis": [
+    "data-analysis",
+    "structured-reasoning"
+  ],
+  "keyword:angular": [
+    "angular-migration"
+  ],
+  "keyword:api": [
+    "api-design-principles",
+    "backend-architect",
+    "fastapi-pro"
+  ],
+  "keyword:apollo": [
+    "graphql-architect"
+  ],
+  "keyword:architecture": [
+    "architect-review",
+    "neural-systems-architect"
+  ],
+  "keyword:arviz": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:async": [
+    "javascript-pro",
+    "python-pro"
+  ],
+  "keyword:asyncio": [
+    "python-pro"
+  ],
+  "keyword:audit": [
+    "comprehensive-validation-framework",
+    "network-engineer",
+    "security-auditor",
+    "security-ci-template",
+    "software-quality-engineer"
+  ],
+  "keyword:auth": [
+    "auth-implementation-patterns"
+  ],
+  "keyword:authentication": [
+    "security-auditor"
+  ],
+  "keyword:autocorrelation": [
+    "correlation-science-lead"
+  ],
+  "keyword:autodiff": [
+    "jax-optimization-pro"
+  ],
+  "keyword:automation": [
+    "test-engineering-lead"
+  ],
+  "keyword:aws": [
+    "cloud-architect",
+    "network-engineer"
+  ],
+  "keyword:azure": [
+    "cloud-architect"
+  ],
+  "keyword:backend": [
+    "backend-architect"
+  ],
+  "keyword:bayesian": [
+    "jax-bayesian-pro",
+    "numpyro-pro",
+    "statistical-analysis-fundamentals",
+    "turing-pro"
+  ],
+  "keyword:benchmark": [
+    "llm-evaluation",
+    "performance-engineering-lead"
+  ],
+  "keyword:bisect": [
+    "git-advanced-workflows"
+  ],
+  "keyword:blackjax": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:branch": [
+    "git-advanced-workflows"
+  ],
+  "keyword:brownian": [
+    "jax-diffeq-pro",
+    "stochastic-dynamics"
+  ],
+  "keyword:bug": [
+    "debugging-pro"
+  ],
+  "keyword:c": [
+    "c-pro"
+  ],
+  "keyword:cache": [
+    "performance-engineering-lead"
+  ],
+  "keyword:capability": [
+    "skill-discovery"
+  ],
+  "keyword:causal": [
+    "statistical-analysis-fundamentals"
+  ],
+  "keyword:cd": [
+    "infrastructure-operations-lead"
+  ],
+  "keyword:chart": [
+    "scientific-visualization-lead"
+  ],
+  "keyword:ci": [
+    "infrastructure-operations-lead"
+  ],
+  "keyword:ci-cd": [
+    "airflow-scientific-workflows",
+    "data-engineer",
+    "ml-pipeline-workflow",
+    "mlops-engineer",
+    "plugin-syntax-validator",
+    "security-ci-template"
+  ],
+  "keyword:circuit-breaker": [
+    "error-handling-patterns"
+  ],
+  "keyword:claude": [
+    "plugin-syntax-validator"
+  ],
+  "keyword:cli": [
+    "command-systems-engineer"
+  ],
+  "keyword:cloud": [
+    "cloud-architect",
+    "network-engineer"
+  ],
+  "keyword:cluster": [
+    "hpc-numerical-coordinator"
+  ],
+  "keyword:cnn": [
+    "neural-systems-architect"
+  ],
+  "keyword:codeowners": [
+    "git-pr-patterns"
+  ],
+  "keyword:command": [
+    "command-systems-engineer"
+  ],
+  "keyword:compliance": [
+    "security-auditor"
+  ],
+  "keyword:conflict": [
+    "git-advanced-workflows"
+  ],
+  "keyword:context": [
+    "context-manager"
+  ],
+  "keyword:convergence": [
+    "mcmc-diagnostics"
+  ],
+  "keyword:coordinate": [
+    "multi-agent-systems-lead"
+  ],
+  "keyword:correlation": [
+    "correlation-science-lead"
+  ],
+  "keyword:cqrs": [
+    "microservices-patterns"
+  ],
+  "keyword:crash": [
+    "debugging-pro"
+  ],
+  "keyword:credentials": [
+    "secrets-management"
+  ],
+  "keyword:cuda": [
+    "gpu-acceleration"
+  ],
+  "keyword:cupy": [
+    "gpu-acceleration"
+  ],
+  "keyword:curve-fit": [
+    "nlsq-pro"
+  ],
+  "keyword:custom_vjp": [
+    "jax-optimization-pro"
+  ],
+  "keyword:dag": [
+    "multi-agent-systems-lead"
+  ],
+  "keyword:dashboard": [
+    "scientific-visualization-lead"
+  ],
+  "keyword:data": [
+    "data-analysis",
+    "data-wrangling-communication",
+    "python-julia-visualization"
+  ],
+  "keyword:database": [
+    "database-migration",
+    "database-optimizer",
+    "grafana-dashboards",
+    "nodejs-backend-patterns",
+    "sql-optimization-patterns"
+  ],
+  "keyword:debug": [
+    "debugging-pro",
+    "iterative-error-resolution"
+  ],
+  "keyword:deep-learning": [
+    "neural-systems-architect"
+  ],
+  "keyword:deploy": [
+    "infrastructure-operations-lead"
+  ],
+  "keyword:design": [
+    "architect-review",
+    "ui-ux-designer"
+  ],
+  "keyword:developer-experience": [
+    "dx-optimizer"
+  ],
+  "keyword:devops": [
+    "infrastructure-operations-lead"
+  ],
+  "keyword:diagnostics": [
+    "mcmc-diagnostics"
+  ],
+  "keyword:diffeqsolve": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:differential": [
+    "differential-equations",
+    "jax-diffeq-pro"
+  ],
+  "keyword:diffrax": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:distributed": [
+    "parallel-computing"
+  ],
+  "keyword:django": [
+    "database-migration",
+    "django-pro"
+  ],
+  "keyword:dls": [
+    "correlation-science-lead"
+  ],
+  "keyword:docker": [
+    "infrastructure-operations-lead",
+    "uv-package-manager"
+  ],
+  "keyword:docs": [
+    "docs-architect"
+  ],
+  "keyword:documentation": [
+    "docs-architect"
+  ],
+  "keyword:effect handler": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:embedding": [
+    "rag-implementation"
+  ],
+  "keyword:equinox": [
+    "jax-optimization-pro"
+  ],
+  "keyword:error": [
+    "debugging-pro",
+    "error-handling-patterns",
+    "iterative-error-resolution"
+  ],
+  "keyword:ess": [
+    "mcmc-diagnostics"
+  ],
+  "keyword:euler": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:evaluation": [
+    "llm-evaluation"
+  ],
+  "keyword:event handling": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:evidence": [
+    "research-pro"
+  ],
+  "keyword:failure": [
+    "debugging-pro"
+  ],
+  "keyword:fastapi": [
+    "fastapi-pro"
+  ],
+  "keyword:fcs": [
+    "correlation-science-lead"
+  ],
+  "keyword:figma": [
+    "ui-ux-designer"
+  ],
+  "keyword:figure": [
+    "scientific-visualization-lead"
+  ],
+  "keyword:find": [
+    "skill-discovery"
+  ],
+  "keyword:fix": [
+    "iterative-error-resolution"
+  ],
+  "keyword:flax": [
+    "jax-optimization-pro"
+  ],
+  "keyword:framework": [
+    "architect-review-framework-migration"
+  ],
+  "keyword:gcp": [
+    "cloud-architect"
+  ],
+  "keyword:generics": [
+    "typescript-pro"
+  ],
+  "keyword:git": [
+    "git-advanced-workflows"
+  ],
+  "keyword:github": [
+    "git-advanced-workflows",
+    "git-pr-patterns"
+  ],
+  "keyword:go": [
+    "golang-pro"
+  ],
+  "keyword:golang": [
+    "golang-pro"
+  ],
+  "keyword:gpt": [
+    "prompt-engineer"
+  ],
+  "keyword:gpu": [
+    "gpu-acceleration"
+  ],
+  "keyword:gradient": [
+    "jax-optimization-pro"
+  ],
+  "keyword:graph": [
+    "scientific-visualization-lead"
+  ],
+  "keyword:graphql": [
+    "graphql-architect"
+  ],
+  "keyword:gromacs": [
+    "md-simulation-setup"
+  ],
+  "keyword:guide": [
+    "tutorial-engineer"
+  ],
+  "keyword:help": [
+    "skill-discovery"
+  ],
+  "keyword:hmc": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:hpc": [
+    "hpc-numerical-coordinator"
+  ],
+  "keyword:hypothesis": [
+    "statistical-analysis-fundamentals"
+  ],
+  "keyword:iac": [
+    "terraform-specialist"
+  ],
+  "keyword:inference": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:infrastructure": [
+    "infrastructure-operations-lead",
+    "terraform-specialist"
+  ],
+  "keyword:irreversible": [
+    "non-equilibrium-expert"
+  ],
+  "keyword:issue": [
+    "debugging-pro",
+    "git-pr-patterns"
+  ],
+  "keyword:jacobian": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:jaeger": [
+    "distributed-tracing"
+  ],
+  "keyword:javascript": [
+    "javascript-pro"
+  ],
+  "keyword:jax": [
+    "jax-optimization-pro",
+    "ml-systems-architect"
+  ],
+  "keyword:jest": [
+    "javascript-pro"
+  ],
+  "keyword:jit": [
+    "jax-optimization-pro"
+  ],
+  "keyword:julia": [
+    "compiler-patterns",
+    "ecosystem-selection",
+    "interop-patterns",
+    "julia-developer",
+    "julia-pro",
+    "package-development-workflow",
+    "package-management",
+    "python-julia-visualization",
+    "scientific-code-adoptor",
+    "sciml-ecosystem",
+    "sciml-pro",
+    "web-development-julia"
+  ],
+  "keyword:jwt": [
+    "auth-implementation-patterns"
+  ],
+  "keyword:kubernetes": [
+    "cloud-architect",
+    "infrastructure-operations-lead",
+    "kubernetes-architect",
+    "prometheus-configuration"
+  ],
+  "keyword:lammps": [
+    "md-simulation-setup"
+  ],
+  "keyword:langevin": [
+    "stochastic-dynamics"
+  ],
+  "keyword:latency": [
+    "performance-engineering-lead"
+  ],
+  "keyword:lax.scan": [
+    "jax-optimization-pro"
+  ],
+  "keyword:leapfrog": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:least-squares": [
+    "nlsq-pro"
+  ],
+  "keyword:legacy": [
+    "legacy-modernizer"
+  ],
+  "keyword:likelihood": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:lineax": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:llm": [
+    "llm-evaluation",
+    "prompt-engineer"
+  ],
+  "keyword:log_prob": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:logic": [
+    "structured-reasoning"
+  ],
+  "keyword:long-context": [
+    "context-manager"
+  ],
+  "keyword:mcmc": [
+    "jax-bayesian-pro",
+    "mcmc-diagnostics",
+    "numpyro-pro"
+  ],
+  "keyword:memory": [
+    "context-manager"
+  ],
+  "keyword:merge": [
+    "git-advanced-workflows"
+  ],
+  "keyword:microservice": [
+    "backend-architect",
+    "microservices-patterns"
+  ],
+  "keyword:migration": [
+    "architect-review-framework-migration"
+  ],
+  "keyword:ml": [
+    "ai-engineer",
+    "airflow-scientific-workflows",
+    "architecture-patterns",
+    "code-reviewer-codebase-cleanup",
+    "cpp-pro",
+    "data-scientist",
+    "data-wrangling-communication",
+    "deep-learning-experimentation",
+    "ecosystem-selection",
+    "langchain-architecture",
+    "machine-learning-essentials",
+    "meta-cognitive-reflection",
+    "ml-force-fields",
+    "ml-pipeline-workflow",
+    "ml-systems-architect",
+    "mlops-engineer",
+    "multiscale-modeling",
+    "package-management",
+    "prompt-engineering-patterns",
+    "python-packaging",
+    "sciml-ecosystem",
+    "sciml-pro",
+    "sql-optimization-patterns",
+    "training-diagnostics"
+  ],
+  "keyword:modeling": [
+    "computational-physics-expert"
+  ],
+  "keyword:modernize": [
+    "legacy-modernizer"
+  ],
+  "keyword:molecular": [
+    "md-simulation-setup"
+  ],
+  "keyword:monitoring": [
+    "observability-engineer"
+  ],
+  "keyword:monorepo": [
+    "monorepo-management"
+  ],
+  "keyword:mpi": [
+    "hpc-numerical-coordinator"
+  ],
+  "keyword:multi-agent": [
+    "multi-agent-systems-lead"
+  ],
+  "keyword:multiscale": [
+    "computational-physics-expert"
+  ],
+  "keyword:neural": [
+    "neural-systems-architect"
+  ],
+  "keyword:ngupgrade": [
+    "angular-migration"
+  ],
+  "keyword:nlsq": [
+    "nlsq-pro"
+  ],
+  "keyword:node": [
+    "cli-tool-design-production",
+    "nodejs-backend-patterns"
+  ],
+  "keyword:non-equilibrium": [
+    "non-equilibrium-expert"
+  ],
+  "keyword:numerical": [
+    "computational-physics-expert",
+    "scientific-computing"
+  ],
+  "keyword:numpyro": [
+    "jax-bayesian-pro",
+    "numpyro-pro"
+  ],
+  "keyword:nuts": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:nx": [
+    "monorepo-management"
+  ],
+  "keyword:oauth": [
+    "auth-implementation-patterns",
+    "security-auditor"
+  ],
+  "keyword:observability": [
+    "observability-engineer"
+  ],
+  "keyword:ode": [
+    "differential-equations",
+    "jax-diffeq-pro"
+  ],
+  "keyword:openapi": [
+    "api-design-principles"
+  ],
+  "keyword:opentelemetry": [
+    "distributed-tracing"
+  ],
+  "keyword:opentofu": [
+    "terraform-specialist"
+  ],
+  "keyword:optax": [
+    "jax-optimization-pro"
+  ],
+  "keyword:optimize": [
+    "julia-pro",
+    "performance-engineering-lead"
+  ],
+  "keyword:orchestrate": [
+    "multi-agent-systems-lead"
+  ],
+  "keyword:owasp": [
+    "security-auditor"
+  ],
+  "keyword:pandas": [
+    "data-analysis"
+  ],
+  "keyword:paper": [
+    "research-pro"
+  ],
+  "keyword:parallel": [
+    "parallel-computing"
+  ],
+  "keyword:pde": [
+    "differential-equations"
+  ],
+  "keyword:performance": [
+    "julia-pro",
+    "performance-engineering-lead"
+  ],
+  "keyword:physics": [
+    "computational-physics-expert"
+  ],
+  "keyword:pinn": [
+    "neural-systems-architect"
+  ],
+  "keyword:plot": [
+    "scientific-visualization-lead"
+  ],
+  "keyword:plugin": [
+    "plugin-syntax-validator"
+  ],
+  "keyword:pmap": [
+    "jax-optimization-pro"
+  ],
+  "keyword:posterior": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:pr": [
+    "git-pr-patterns"
+  ],
+  "keyword:prior": [
+    "jax-bayesian-pro"
+  ],
+  "keyword:prisma": [
+    "research-pro"
+  ],
+  "keyword:probabilistic": [
+    "turing-model-design"
+  ],
+  "keyword:profile": [
+    "julia-pro",
+    "performance-engineering-lead"
+  ],
+  "keyword:prompt": [
+    "prompt-engineer"
+  ],
+  "keyword:pull-request": [
+    "git-pr-patterns"
+  ],
+  "keyword:pytest": [
+    "python-pro"
+  ],
+  "keyword:python": [
+    "cli-tool-design-production",
+    "ecosystem-selection",
+    "interop-patterns",
+    "programming-scripting-languages",
+    "python-julia-visualization",
+    "python-packaging",
+    "python-pro",
+    "scientific-code-adoptor",
+    "uv-package-manager"
+  ],
+  "keyword:pytorch": [
+    "ml-systems-architect"
+  ],
+  "keyword:pytree": [
+    "jax-optimization-pro"
+  ],
+  "keyword:qa": [
+    "comprehensive-validation-framework",
+    "data-engineer",
+    "dependency-upgrade",
+    "meta-cognitive-reflection",
+    "python-packaging",
+    "software-quality-engineer",
+    "test-engineering-lead"
+  ],
+  "keyword:r-hat": [
+    "mcmc-diagnostics"
+  ],
+  "keyword:rag": [
+    "rag-implementation"
+  ],
+  "keyword:rca": [
+    "debugging-pro"
+  ],
+  "keyword:react": [
+    "catalyst-reactions",
+    "dependency-upgrade",
+    "frontend-developer",
+    "multi-platform-architecture",
+    "multi-platform-mobile",
+    "react-modernization",
+    "react-native-patterns"
+  ],
+  "keyword:readme": [
+    "docs-architect"
+  ],
+  "keyword:reasoning": [
+    "structured-reasoning"
+  ],
+  "keyword:rebase": [
+    "git-advanced-workflows"
+  ],
+  "keyword:red-green": [
+    "tdd-orchestrator"
+  ],
+  "keyword:reflection": [
+    "comprehensive-reflection-framework"
+  ],
+  "keyword:regression": [
+    "statistical-analysis-fundamentals"
+  ],
+  "keyword:reliability": [
+    "slo-implementation"
+  ],
+  "keyword:research": [
+    "research-pro"
+  ],
+  "keyword:rest": [
+    "api-design-principles"
+  ],
+  "keyword:retrieval": [
+    "rag-implementation"
+  ],
+  "keyword:retrospective": [
+    "comprehensive-reflection-framework"
+  ],
+  "keyword:retry": [
+    "error-handling-patterns"
+  ],
+  "keyword:review": [
+    "architect-review",
+    "comprehensive-reflection-framework",
+    "git-pr-patterns",
+    "software-quality-engineer"
+  ],
+  "keyword:runge-kutta": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:rust": [
+    "rust-pro",
+    "systems-programming-patterns"
+  ],
+  "keyword:saga": [
+    "microservices-patterns"
+  ],
+  "keyword:saxs": [
+    "correlation-science-lead"
+  ],
+  "keyword:scale": [
+    "performance-engineering-lead"
+  ],
+  "keyword:scattering": [
+    "correlation-science-lead"
+  ],
+  "keyword:scientific": [
+    "scientific-computing"
+  ],
+  "keyword:sde": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:search": [
+    "skill-discovery"
+  ],
+  "keyword:secrets": [
+    "secrets-management"
+  ],
+  "keyword:security": [
+    "comprehensive-validation-framework",
+    "network-engineer",
+    "security-auditor",
+    "security-ci-template",
+    "software-quality-engineer"
+  ],
+  "keyword:sharding": [
+    "jax-optimization-pro"
+  ],
+  "keyword:simulation": [
+    "computational-physics-expert"
+  ],
+  "keyword:skills": [
+    "skill-discovery"
+  ],
+  "keyword:sla": [
+    "slo-implementation"
+  ],
+  "keyword:slo": [
+    "slo-implementation"
+  ],
+  "keyword:slow": [
+    "performance-engineering-lead"
+  ],
+  "keyword:solver": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:spmd": [
+    "jax-optimization-pro"
+  ],
+  "keyword:sql": [
+    "database-migration",
+    "database-optimizer",
+    "grafana-dashboards",
+    "nodejs-backend-patterns",
+    "sql-optimization-patterns"
+  ],
+  "keyword:sre": [
+    "infrastructure-operations-lead"
+  ],
+  "keyword:state": [
+    "terraform-specialist"
+  ],
+  "keyword:statistics": [
+    "statistical-analysis-fundamentals"
+  ],
+  "keyword:stiff": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:stochastic": [
+    "stochastic-dynamics"
+  ],
+  "keyword:strangler": [
+    "legacy-modernizer"
+  ],
+  "keyword:structure-factor": [
+    "correlation-science-lead"
+  ],
+  "keyword:svi": [
+    "jax-bayesian-pro",
+    "numpyro-pro",
+    "variational-inference-patterns"
+  ],
+  "keyword:swimming": [
+    "active-matter"
+  ],
+  "keyword:syntax": [
+    "plugin-syntax-validator"
+  ],
+  "keyword:systematic": [
+    "research-pro"
+  ],
+  "keyword:tdd": [
+    "tdd-orchestrator"
+  ],
+  "keyword:terminal": [
+    "command-systems-engineer"
+  ],
+  "keyword:terraform": [
+    "cloud-architect",
+    "terraform-specialist"
+  ],
+  "keyword:test": [
+    "software-quality-engineer",
+    "test-engineering-lead"
+  ],
+  "keyword:test-driven": [
+    "tdd-orchestrator"
+  ],
+  "keyword:testing": [
+    "comprehensive-validation-framework",
+    "data-engineer",
+    "dependency-upgrade",
+    "javascript-pro",
+    "meta-cognitive-reflection",
+    "python-packaging",
+    "python-pro"
+  ],
+  "keyword:threading": [
+    "parallel-computing"
+  ],
+  "keyword:tooling": [
+    "dx-optimizer"
+  ],
+  "keyword:trace": [
+    "debugging-pro",
+    "mcmc-diagnostics"
+  ],
+  "keyword:traces": [
+    "observability-engineer"
+  ],
+  "keyword:tracing": [
+    "distributed-tracing"
+  ],
+  "keyword:training": [
+    "ml-systems-architect",
+    "neural-systems-architect"
+  ],
+  "keyword:trajectory": [
+    "computational-physics-expert"
+  ],
+  "keyword:transformer": [
+    "neural-systems-architect"
+  ],
+  "keyword:transport": [
+    "non-equilibrium-expert"
+  ],
+  "keyword:turborepo": [
+    "monorepo-management"
+  ],
+  "keyword:turing": [
+    "mcmc-diagnostics",
+    "turing-model-design",
+    "turing-pro"
+  ],
+  "keyword:tutorial": [
+    "tutorial-engineer"
+  ],
+  "keyword:types": [
+    "typescript-pro"
+  ],
+  "keyword:typescript": [
+    "react-modernization",
+    "react-native-patterns",
+    "typescript-pro"
+  ],
+  "keyword:ui": [
+    "ui-ux-designer"
+  ],
+  "keyword:upgrade": [
+    "architect-review-framework-migration"
+  ],
+  "keyword:ux": [
+    "ui-ux-designer"
+  ],
+  "keyword:validation": [
+    "plugin-syntax-validator"
+  ],
+  "keyword:variational": [
+    "jax-bayesian-pro",
+    "variational-inference-patterns"
+  ],
+  "keyword:vault": [
+    "secrets-management"
+  ],
+  "keyword:vector": [
+    "rag-implementation"
+  ],
+  "keyword:vector field": [
+    "jax-diffeq-pro"
+  ],
+  "keyword:visualization": [
+    "data-wrangling-communication",
+    "python-julia-visualization",
+    "scientific-visualization-lead"
+  ],
+  "keyword:vitest": [
+    "javascript-pro"
+  ],
+  "keyword:vmap": [
+    "jax-optimization-pro"
+  ],
+  "keyword:vulnerability": [
+    "security-auditor"
+  ],
+  "keyword:walkthrough": [
+    "tutorial-engineer"
+  ],
+  "keyword:web": [
+    "database-migration",
+    "django-pro"
+  ],
+  "keyword:workflow": [
+    "dx-optimizer",
+    "multi-agent-systems-lead"
+  ],
+  "keyword:worktree": [
+    "git-advanced-workflows"
+  ],
+  "keyword:xla": [
+    "jax-optimization-pro"
+  ],
+  "keyword:xpcs": [
+    "correlation-science-lead"
+  ],
+  "project:Cargo.toml": [
+    "rust-pro",
+    "systems-programming-patterns"
+  ],
+  "project:Project.toml": [
+    "compiler-patterns",
+    "ecosystem-selection",
+    "interop-patterns",
+    "julia-developer",
+    "julia-pro",
+    "package-development-workflow",
+    "package-management",
+    "python-julia-visualization",
+    "scientific-code-adoptor",
+    "sciml-ecosystem",
+    "sciml-pro",
+    "turing-pro",
+    "web-development-julia"
+  ],
+  "project:manage.py": [
+    "database-migration",
+    "django-pro"
+  ],
+  "project:package.json": [
+    "catalyst-reactions",
+    "cli-tool-design-production",
+    "dependency-upgrade",
+    "frontend-developer",
+    "javascript-pro",
+    "multi-platform-architecture",
+    "multi-platform-mobile",
+    "nodejs-backend-patterns",
+    "react-modernization",
+    "react-native-patterns"
+  ],
+  "project:pyproject.toml": [
+    "cli-tool-design-production",
+    "ecosystem-selection",
+    "interop-patterns",
+    "jax-bayesian-pro",
+    "jax-diffeq-pro",
+    "jax-optimization-pro",
+    "programming-scripting-languages",
+    "python-julia-visualization",
+    "python-packaging",
+    "python-pro",
+    "scientific-code-adoptor",
+    "uv-package-manager"
+  ],
+  "project:requirements.txt": [
+    "cli-tool-design-production",
+    "ecosystem-selection",
+    "interop-patterns",
+    "programming-scripting-languages",
+    "python-julia-visualization",
+    "python-packaging",
+    "python-pro",
+    "scientific-code-adoptor",
+    "uv-package-manager"
+  ],
+  "project:terraform.tfstate": [
+    "cloud-architect",
+    "terraform-specialist"
+  ],
+  "project:tsconfig.json": [
+    "react-modernization",
+    "react-native-patterns",
+    "typescript-pro"
+  ]
+}

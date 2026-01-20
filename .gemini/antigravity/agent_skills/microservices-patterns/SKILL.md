@@ -13,7 +13,6 @@ triggers:
 - keyword:microservice
 - keyword:saga
 - keyword:cqrs
----
 
 # Skill: Microservices Patterns (v2.0)
 

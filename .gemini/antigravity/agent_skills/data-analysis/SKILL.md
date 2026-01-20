@@ -9,7 +9,6 @@ triggers:
 - keyword:analysis
 - keyword:pandas
 - file:.ipynb
----
 
 # Data Analysis & Model Validation
 

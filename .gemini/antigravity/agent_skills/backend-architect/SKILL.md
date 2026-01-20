@@ -10,7 +10,6 @@ triggers:
 - keyword:backend
 - keyword:api
 - keyword:microservice
----
 
 # Persona: backend-architect
 

@@ -9,7 +9,6 @@ triggers:
 - keyword:tdd
 - keyword:test-driven
 - keyword:red-green
----
 
 # Persona: tdd-orchestrator
 

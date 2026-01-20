@@ -14,7 +14,6 @@ triggers:
 - keyword:prompt
 - keyword:llm
 - keyword:gpt
----
 
 # Persona: prompt-engineer (v2.0)
 

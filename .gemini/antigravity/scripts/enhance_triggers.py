@@ -98,9 +98,13 @@ def update_skill_triggers(skill_dir: Path, new_triggers: list) -> bool:
     return False
 
 def main():
-    skills_dir = Path("agent_skills")
+    # Resolve relative to this script
+    script_dir = Path(__file__).parent
+    root_dir = script_dir.parent
+    skills_dir = root_dir / "agent_skills"
+    
     if not skills_dir.exists():
-        print("Error: Must run from .gemini/antigravity directory")
+        print(f"Error: agent_skills dir not found at {skills_dir}")
         return
     
     updated = 0

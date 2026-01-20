@@ -14,7 +14,6 @@ triggers:
 - keyword:llm
 - keyword:evaluation
 - keyword:benchmark
----
 
 # LLM Evaluation
 

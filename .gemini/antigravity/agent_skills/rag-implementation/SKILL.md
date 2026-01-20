@@ -15,7 +15,6 @@ triggers:
 - keyword:retrieval
 - keyword:vector
 - keyword:embedding
----
 
 # RAG Implementation
 

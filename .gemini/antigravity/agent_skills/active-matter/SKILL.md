@@ -15,7 +15,6 @@ triggers:
 - keyword:swimming
 - file:.jl
 - file:.py
----
 
 # Active Matter Expert
 

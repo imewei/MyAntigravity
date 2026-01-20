@@ -15,7 +15,6 @@ triggers:
 - keyword:numerical
 - file:.py
 - file:.jl
----
 
 # Scientific Computing & JAX Expert
 

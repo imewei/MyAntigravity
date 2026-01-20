@@ -10,7 +10,6 @@ triggers:
 - keyword:ux
 - keyword:design
 - keyword:figma
----
 
 # Persona: ui-ux-designer
 

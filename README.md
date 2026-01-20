@@ -43,9 +43,11 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 │   └── ...
 ├── scripts/                # Management utilities
 │   ├── generate_skill_index.py
-│   ├── find_relevant_skills.py
+│   ├── find_relevant_skills.py # Key: Fuzzy/Token Matching
+│   ├── build_skill_database.py # Key: Trigger Aggregation
 │   └── enhance_triggers.py
-└── skills_index.json       # Searchable skill registry
+├── skills_index.json       # Searchable skill registry
+└── skill_database.json     # Flattened Trigger DB for verification
 ```
 
 ---
@@ -145,7 +147,9 @@ The `auto-solve` workflow automatically routes requests to appropriate skills:
 | Script | Purpose |
 |--------|---------|
 | `generate_skill_index.py` | Regenerate `skills_index.json` |
-| `find_relevant_skills.py` | Search for skills by query |
+| `find_relevant_skills.py` | Search for skills by query (Enhanced v2.3 with fuzzy/token matching) |
+| `build_skill_database.py` | Create centralized `skill_database.json` for analysis |
+| `test_skill_discovery_edges.py` | Verify skill discovery against edge cases |
 | `enhance_triggers.py` | Batch-update skill triggers |
 | `validate_agent.py` | Validate agent/skill syntax |
 | `validate_workflows.py` | Validate workflow structure |

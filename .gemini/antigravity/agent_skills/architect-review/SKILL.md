@@ -14,7 +14,6 @@ triggers:
 - keyword:architecture
 - keyword:design
 - keyword:review
----
 
 # Persona: architect-review (v2.0)
 

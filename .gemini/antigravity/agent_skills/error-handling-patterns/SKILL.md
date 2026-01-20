@@ -14,7 +14,6 @@ triggers:
 - keyword:error
 - keyword:retry
 - keyword:circuit-breaker
----
 
 # Error Handling Patterns
 

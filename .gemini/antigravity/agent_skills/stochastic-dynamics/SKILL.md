@@ -8,7 +8,6 @@ triggers:
 - keyword:stochastic
 - keyword:langevin
 - keyword:brownian
----
 
 # Stochastic Dynamics & Transport
 

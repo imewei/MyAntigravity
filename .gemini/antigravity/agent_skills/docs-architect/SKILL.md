@@ -13,7 +13,6 @@ triggers:
 - keyword:docs
 - keyword:documentation
 - keyword:readme
----
 
 # Persona: docs-architect (v2.0)
 

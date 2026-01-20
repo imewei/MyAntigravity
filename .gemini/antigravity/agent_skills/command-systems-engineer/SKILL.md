@@ -8,7 +8,6 @@ triggers:
 - keyword:cli
 - keyword:command
 - keyword:terminal
----
 
 # Persona: command-systems-engineer
 

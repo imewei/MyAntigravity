@@ -9,7 +9,6 @@ triggers:
 - keyword:threading
 - keyword:distributed
 - file:.jl
----
 
 # Julia Parallel Computing
 

@@ -15,7 +15,6 @@ triggers:
 - keyword:cuda
 - keyword:cupy
 - file:.cu
----
 
 # GPU Acceleration Expert
 

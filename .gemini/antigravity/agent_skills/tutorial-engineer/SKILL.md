@@ -8,7 +8,6 @@ triggers:
 - keyword:tutorial
 - keyword:guide
 - keyword:walkthrough
----
 
 # Persona: tutorial-engineer
 

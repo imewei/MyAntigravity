@@ -11,15 +11,9 @@ skills:
 - code-review
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
-- file:.github/pull_request_template.md
-- file:.github/PULL_REQUEST_TEMPLATE.md
 - keyword:pr
 - keyword:pull-request
 - keyword:review
-- keyword:github
-- keyword:issue
-- keyword:codeowners
----
 
 # Git & PR Patterns
 

@@ -14,7 +14,6 @@ triggers:
 - keyword:secrets
 - keyword:vault
 - keyword:credentials
----
 
 # Secrets Management
 

@@ -9,7 +9,6 @@ triggers:
 - keyword:pde
 - keyword:differential
 - file:.jl
----
 
 # DifferentialEquations.jl
 

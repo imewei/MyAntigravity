@@ -85,10 +85,14 @@ def validate_workflow(file_path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--workflows-dir", required=True)
+    parser.add_argument("--workflows-dir", help="Path to workflows directory", default=None)
     args = parser.parse_args()
     
-    workflows_dir = Path(args.workflows_dir)
+    if args.workflows_dir:
+        workflows_dir = Path(args.workflows_dir)
+    else:
+        # Default to relative path
+        workflows_dir = Path(__file__).parent.parent / "global_workflows"
     if not workflows_dir.exists():
         print(f"Error: {workflows_dir} not found")
         return

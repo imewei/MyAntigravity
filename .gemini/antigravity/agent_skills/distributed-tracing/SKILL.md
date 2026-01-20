@@ -8,7 +8,6 @@ triggers:
 - keyword:tracing
 - keyword:opentelemetry
 - keyword:jaeger
----
 
 # Distributed Tracing
 

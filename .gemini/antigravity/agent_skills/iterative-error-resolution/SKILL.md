@@ -14,7 +14,6 @@ triggers:
 - keyword:error
 - keyword:debug
 - keyword:fix
----
 
 # Iterative Error Resolution
 

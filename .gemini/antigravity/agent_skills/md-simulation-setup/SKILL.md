@@ -14,7 +14,6 @@ triggers:
 - keyword:lammps
 - keyword:gromacs
 - keyword:molecular
----
 
 # MD Simulation Setup Expert
 

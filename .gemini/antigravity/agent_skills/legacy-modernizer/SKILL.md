@@ -14,7 +14,6 @@ triggers:
 - keyword:legacy
 - keyword:modernize
 - keyword:strangler
----
 
 # Legacy Modernizer
 

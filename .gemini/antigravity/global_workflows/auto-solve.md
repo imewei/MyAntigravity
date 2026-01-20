@@ -1,7 +1,5 @@
 ---
-name: auto-solve
 description: Master orchestration workflow for intelligent request routing and context analysis.
-version: 2.2.1
 triggers:
 - keyword:auto-solve
 - keyword:solve
@@ -17,8 +15,11 @@ triggers:
 
 1.  **Analyze Request**
     - Agent: `skill-discovery`
-    - Action: Analyze the user request "{request}".
-    - Command: `uv run .gemini/antigravity/scripts/find_relevant_skills.py --prompt "{request}" --top 3`
+    - Action: Analyze the user request "{request}" using centralized skill definitions.
+    - Resources:
+        - Index: `.gemini/antigravity/skills_index.json`
+        - DB: `.gemini/antigravity/skill_database.json` (for trigger verification)
+    - Command: `uv run $HOME/.gemini/antigravity/scripts/find_relevant_skills.py --prompt "{request}" --top 3`
 
 2.  **Context Scan**
     - Agent: `skill-discovery`
@@ -58,4 +59,3 @@ triggers:
 
 4.  **Triage**
     - If no relevant skill found, default to `python-pro` or `generalist`.
-

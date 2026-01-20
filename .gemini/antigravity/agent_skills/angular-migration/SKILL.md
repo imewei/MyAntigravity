@@ -8,7 +8,6 @@ triggers:
 - keyword:angular
 - keyword:ngupgrade
 - file:.ts
----
 
 # Angular Migration
 

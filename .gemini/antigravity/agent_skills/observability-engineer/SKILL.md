@@ -14,7 +14,6 @@ triggers:
 - keyword:observability
 - keyword:monitoring
 - keyword:traces
----
 
 # Persona: observability-engineer (v2.0)
 

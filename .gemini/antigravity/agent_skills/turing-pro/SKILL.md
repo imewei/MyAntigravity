@@ -9,7 +9,6 @@ triggers:
 - keyword:turing
 - keyword:bayesian
 - project:Project.toml
----
 
 # Persona: turing-pro
 

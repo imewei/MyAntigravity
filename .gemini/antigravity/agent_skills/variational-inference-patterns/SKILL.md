@@ -9,7 +9,6 @@ triggers:
 - keyword:svi
 - keyword:advi
 - file:.jl
----
 
 # Variational Inference
 
