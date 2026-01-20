@@ -4,7 +4,7 @@ description: Build React components, implement responsive layouts, and handle cl
   state management. Masters React 19, Next.js 15, and modern frontend architecture.
   Optimizes performance and ensures accessibility. Use PROACTIVELY when creating UI
   components or fixing frontend issues.
-version: 1.0.0
+version: 2.2.0
 triggers:
 - file:.jsx
 - file:.tsx

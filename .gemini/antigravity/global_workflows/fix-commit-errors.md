@@ -3,7 +3,7 @@ description: Analyze and fix CI/CD failures using multi-agent error analysis
 triggers:
 - /fix-commit-errors
 - workflow for fix commit errors
-version: 2.0.0
+version: 2.2.0
 allowed-tools: [Bash(gh:*), Bash(git:*), Bash(npm:*), Bash(pip:*), Read]
 agents:
   primary: devops-troubleshooter

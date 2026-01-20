@@ -4,7 +4,7 @@ triggers:
 - /refactor-clean
 - workflow for refactor clean
 allowed-tools: [Read, Task, Bash]
-version: 2.0.0
+version: 2.2.0
 agents:
   primary: code-architect
   conditional:

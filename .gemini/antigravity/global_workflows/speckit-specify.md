@@ -1,7 +1,7 @@
 ---
 name: speckit-specify
 description: Create or update the feature specification from a natural language feature description.
-version: 2.0.0
+version: 2.2.0
 agents:
   primary: product-manager
 skills:

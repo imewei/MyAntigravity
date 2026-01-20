@@ -1,7 +1,7 @@
 ---
 name: sciml-pro
 description: Master of Julia SciML ecosystem (DiffEq, ModelingToolkit, NeuralPDE).
-version: 2.0.0
+version: 2.2.0
 agents:
   primary: sciml-pro
 skills:

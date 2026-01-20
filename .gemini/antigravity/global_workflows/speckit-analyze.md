@@ -1,7 +1,7 @@
 ---
 name: speckit-analyze
 description: Perform a cross-artifact consistency analysis across spec.md, plan.md, and tasks.md.
-version: 2.0.0
+version: 2.2.0
 agents:
   primary: tech-lead
 skills:

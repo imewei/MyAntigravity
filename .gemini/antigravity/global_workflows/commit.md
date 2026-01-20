@@ -3,7 +3,7 @@ description: Intelligent git commit with automated analysis, quality validation,
 triggers:
 - /commit
 - workflow for commit
-version: 2.0.0
+version: 2.2.0
 allowed-tools: [Bash(git:*), Read, Grep]
 agents:
   primary: code-reviewer

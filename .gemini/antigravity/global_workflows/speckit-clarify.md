@@ -1,7 +1,7 @@
 ---
 name: speckit-clarify
 description: Identify underspecified areas in the feature spec by asking targeted clarification questions.
-version: 2.0.0
+version: 2.2.0
 agents:
   primary: system-architect
 skills:

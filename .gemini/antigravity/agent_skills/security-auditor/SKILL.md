@@ -5,7 +5,7 @@ description: Expert security auditor specializing in DevSecOps, comprehensive cy
   authentication (OAuth2/OIDC), OWASP standards, cloud security, and security automation.
   Handles DevSecOps integration, compliance (GDPR/HIPAA/SOC2), and incident response.
   Use PROACTIVELY for security audits, DevSecOps, or compliance implementation.
-version: 1.0.0
+version: 2.2.0
 triggers:
 - file:.py
 - keyword:audit

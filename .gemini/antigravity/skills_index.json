@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T18:36:51.877445",
+  "generated_at": "2026-01-19T19:51:05.636722",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -150,7 +150,7 @@
         "keyword:react",
         "project:package.json"
       ],
-      "version": "1.0.0"
+      "version": "2.2.0"
     },
     "terraform-specialist": {
       "path": "agent_skills/terraform-specialist/SKILL.md",
@@ -687,7 +687,7 @@
         "keyword:api",
         "keyword:microservice"
       ],
-      "version": "1.0.0"
+      "version": "2.2.0"
     },
     "microservices-patterns": {
       "path": "agent_skills/microservices-patterns/SKILL.md",
@@ -877,7 +877,7 @@
         "keyword:ml",
         "project:Project.toml"
       ],
-      "version": "2.0.0"
+      "version": "2.2.0"
     },
     "scientific-computing": {
       "path": "agent_skills/scientific-computing/SKILL.md",
@@ -1236,7 +1236,7 @@
         "keyword:oauth",
         "keyword:compliance"
       ],
-      "version": "1.0.0"
+      "version": "2.2.0"
     },
     "ai-engineer": {
       "path": "agent_skills/ai-engineer/SKILL.md",

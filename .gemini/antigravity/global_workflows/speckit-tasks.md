@@ -1,7 +1,7 @@
 ---
 name: speckit-tasks
 description: Generate an actionable, dependency-ordered tasks.md for the feature.
-version: 2.0.0
+version: 2.2.0
 agents:
   primary: tech-lead
 skills:
