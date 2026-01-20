@@ -3,8 +3,54 @@ import json
 import os
 import sys
 import re
-import yaml
 import argparse
+
+def parse_frontmatter(content):
+    """
+    Manually parses YAML frontmatter without requiring PyYAML.
+    """
+    if not content.startswith('---'):
+        return None
+
+    parts = content.split('---', 2)
+    if len(parts) < 3:
+        return None
+
+    yaml_block = parts[1]
+    data = {}
+    
+    current_key = None
+    
+    for line in yaml_block.split('\n'):
+        line = line.rstrip()
+        stripped = line.strip()
+        
+        if not stripped or stripped.startswith('#'):
+            continue
+            
+        if ':' in line and not stripped.startswith('-'):
+            parts = line.split(':', 1)
+            key = parts[0].strip()
+            val = parts[1].strip()
+            
+            if not val:
+                data[key] = []
+                current_key = key
+            else:
+                if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                    val = val[1:-1]
+                data[key] = val
+                current_key = None
+        
+        elif stripped.startswith('-'):
+            val = stripped[1:].strip()
+            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                    val = val[1:-1]
+                    
+            if current_key and isinstance(data.get(current_key), list):
+                data[current_key].append(val)
+                
+    return data
 
 def validate_agent(base_dir=None, strict=True):
     """
@@ -84,19 +130,14 @@ def validate_agent(base_dir=None, strict=True):
                         errors.append(f"No frontmatter in {rel_path}")
                         continue
 
-                    parts = content.split('---', 2)
-                    if len(parts) < 3:
-                        errors.append(f"Malformed frontmatter in {rel_path}")
-                        continue
-
-                    meta = yaml.safe_load(parts[1])
+                    meta = parse_frontmatter(content)
                     if not meta:
-                        errors.append(f"Empty frontmatter in {rel_path}")
+                        errors.append(f"Empty or malformed frontmatter in {rel_path}")
                         continue
 
                     required = ['version', 'description']
                     if category == 'workflows':
-                        required.append('allowed-tools')
+                        required.append('triggers')
 
                     for field in required:
                         if field not in meta:

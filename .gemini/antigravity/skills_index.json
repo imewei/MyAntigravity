@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-19T18:31:38.572355",
+  "generated_at": "2026-01-19T18:36:51.877445",
   "skills": {
     "machine-learning-essentials": {
       "path": "agent_skills/machine-learning-essentials/SKILL.md",
@@ -1464,7 +1464,9 @@
         "keyword:rebase",
         "keyword:bisect",
         "keyword:branch",
-        "keyword:worktree"
+        "keyword:worktree",
+        "keyword:merge",
+        "keyword:conflict"
       ],
       "version": "2.0.0"
     },
@@ -1521,7 +1523,11 @@
     "speckit-specify": {
       "path": "global_workflows/speckit-specify.md",
       "description": "Create or update the feature specification from a natural language feature description.",
-      "triggers": []
+      "triggers": [
+        "keyword:spec",
+        "keyword:specify",
+        "file:.specify/spec.md"
+      ]
     },
     "run-all-tests": {
       "path": "global_workflows/run-all-tests.md",
@@ -1542,7 +1548,10 @@
     "speckit-constitution": {
       "path": "global_workflows/speckit-constitution.md",
       "description": "Create or update the project constitution from principle inputs.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     },
     "git-workflow": {
       "path": "global_workflows/git-workflow.md",
@@ -1556,22 +1565,35 @@
     "speckit-clarify": {
       "path": "global_workflows/speckit-clarify.md",
       "description": "Identify underspecified areas in the feature spec by asking targeted clarification questions.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     },
     "auto-solve": {
       "path": "global_workflows/auto-solve.md",
-      "description": "",
-      "triggers": []
+      "description": "Master orchestration workflow for intelligent request routing and context analysis.",
+      "triggers": [
+        "keyword:auto-solve",
+        "keyword:solve"
+      ]
     },
     "speckit-taskstoissues": {
       "path": "global_workflows/speckit-taskstoissues.md",
       "description": "Convert tasks.md into GitHub issues.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:issues",
+        "file:tasks.md"
+      ]
     },
     "speckit-checklist": {
       "path": "global_workflows/speckit-checklist.md",
       "description": "Generate a custom checklist for the current feature based on user requirements.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     },
     "refactor-clean": {
       "path": "global_workflows/refactor-clean.md",
@@ -1584,12 +1606,18 @@
     "speckit-plan": {
       "path": "global_workflows/speckit-plan.md",
       "description": "Execute implementation planning workflow to generate design artifacts.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     },
     "speckit-analyze": {
       "path": "global_workflows/speckit-analyze.md",
       "description": "Perform a cross-artifact consistency analysis across spec.md, plan.md, and tasks.md.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     },
     "fix-commit-errors": {
       "path": "global_workflows/fix-commit-errors.md",
@@ -1602,7 +1630,10 @@
     "speckit-tasks": {
       "path": "global_workflows/speckit-tasks.md",
       "description": "Generate an actionable, dependency-ordered tasks.md for the feature.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     },
     "ultra-think": {
       "path": "global_workflows/ultra-think.md",
@@ -1623,7 +1654,10 @@
     "speckit-implement": {
       "path": "global_workflows/speckit-implement.md",
       "description": "Execute the implementation plan by processing tasks.md.",
-      "triggers": []
+      "triggers": [
+        "keyword:speckit",
+        "keyword:spec"
+      ]
     }
   }
 }

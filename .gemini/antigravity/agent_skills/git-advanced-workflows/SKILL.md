@@ -19,6 +19,8 @@ triggers:
 - keyword:bisect
 - keyword:branch
 - keyword:worktree
+- keyword:merge
+- keyword:conflict
 
 # Git Advanced Workflows
 

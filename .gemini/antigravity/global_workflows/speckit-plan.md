@@ -9,6 +9,10 @@ skills:
 - technical-planning
 - research-intelligence
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:speckit
+- keyword:spec
+
 handoffs: 
   - label: Create Tasks
     agent: speckit.tasks

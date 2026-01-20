@@ -9,6 +9,10 @@ skills:
 - requirement-analysis
 - checklist-validation
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:spec
+- keyword:specify
+- file:.specify/spec.md
 handoffs: 
   - label: Build Technical Plan
     agent: speckit.plan

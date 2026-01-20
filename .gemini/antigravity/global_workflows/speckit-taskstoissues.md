@@ -9,6 +9,10 @@ skills:
 - git-integration
 - task-sync
 allowed-tools: [Read, Write, Task, Bash, GitHub]
+triggers:
+- keyword:speckit
+- keyword:issues
+- file:tasks.md
 ---
 
 # Tasks to Issues Workflow

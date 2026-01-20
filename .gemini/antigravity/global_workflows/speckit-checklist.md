@@ -9,6 +9,10 @@ skills:
 - requirement-validation
 - static-analysis
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:speckit
+- keyword:spec
+
 ---
 
 # Checklist Generation Workflow

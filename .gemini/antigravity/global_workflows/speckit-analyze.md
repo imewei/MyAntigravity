@@ -9,6 +9,10 @@ skills:
 - consistency-check
 - constitution-compliance
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:speckit
+- keyword:spec
+
 ---
 
 # Specification & Plan Analysis Workflow

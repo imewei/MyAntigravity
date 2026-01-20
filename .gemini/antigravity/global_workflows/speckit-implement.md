@@ -10,6 +10,10 @@ skills:
 - dependency-management
 - task-execution
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:speckit
+- keyword:spec
+
 ---
 
 # Feature Implementation Workflow

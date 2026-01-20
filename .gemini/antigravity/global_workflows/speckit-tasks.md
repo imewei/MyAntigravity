@@ -9,6 +9,10 @@ skills:
 - project-planning
 - dependency-management
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:speckit
+- keyword:spec
+
 handoffs: 
   - label: Analyze Consistency
     agent: speckit.analyze

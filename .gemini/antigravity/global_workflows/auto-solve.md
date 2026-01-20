@@ -1,3 +1,12 @@
+---
+name: auto-solve
+description: Master orchestration workflow for intelligent request routing and context analysis.
+version: 2.2.0
+triggers:
+- keyword:auto-solve
+- keyword:solve
+---
+
 # Auto-Solve Workflow (v2.2)
 
 // turbo-all

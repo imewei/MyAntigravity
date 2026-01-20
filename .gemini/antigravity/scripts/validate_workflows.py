@@ -1,8 +1,54 @@
 import os
-import yaml
 import re
 from pathlib import Path
 import argparse
+
+def parse_frontmatter(content):
+    """
+    Manually parses YAML frontmatter without requiring PyYAML.
+    """
+    if not content.startswith('---\n'):
+        return None
+
+    match = re.search(r'^---\n(.*?)\n---', content, re.DOTALL)
+    if not match:
+        return None
+
+    yaml_block = match.group(1)
+    data = {}
+    
+    current_key = None
+    
+    for line in yaml_block.split('\n'):
+        line = line.rstrip()
+        stripped = line.strip()
+        
+        if not stripped or stripped.startswith('#'):
+            continue
+            
+        if ':' in line and not stripped.startswith('-'):
+            parts = line.split(':', 1)
+            key = parts[0].strip()
+            val = parts[1].strip()
+            
+            if not val:
+                data[key] = []
+                current_key = key
+            else:
+                if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                    val = val[1:-1]
+                data[key] = val
+                current_key = None
+        
+        elif stripped.startswith('-'):
+            val = stripped[1:].strip()
+            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                    val = val[1:-1]
+                    
+            if current_key and isinstance(data.get(current_key), list):
+                data[current_key].append(val)
+                
+    return data
 
 def validate_workflow(file_path):
     issues = []
@@ -15,15 +61,14 @@ def validate_workflow(file_path):
         else:
             try:
                 # Extract frontmatter
-                match = re.search(r'^---\n(.*?)\n---', content, re.DOTALL)
-                if match:
-                    frontmatter = yaml.safe_load(match.group(1))
+                frontmatter = parse_frontmatter(content)
+                if frontmatter:
                     if 'description' not in frontmatter:
                         issues.append("Missing 'description' in frontmatter")
                 else:
                     issues.append("Invalid or missing YAML frontmatter closing")
             except Exception as e:
-                issues.append(f"YAML Error: {e}")
+                issues.append(f"Parse Error: {e}")
 
         # Check for turbo directives
         if "// turbo" in content or "// turbo-all" in content:

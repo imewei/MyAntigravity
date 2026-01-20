@@ -9,6 +9,10 @@ skills:
 - compliance
 - principles-design
 allowed-tools: [Read, Write, Task, Bash]
+triggers:
+- keyword:speckit
+- keyword:spec
+
 handoffs: 
   - label: Build Specification
     agent: speckit.specify
