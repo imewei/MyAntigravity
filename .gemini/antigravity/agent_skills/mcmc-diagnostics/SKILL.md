@@ -5,8 +5,14 @@ maturity: "5-Expert"
 specialization: Bayesian Diagnostics
 description: Master MCMC convergence diagnostics with R-hat, ESS, trace plots, and divergence checking. Use when validating Bayesian inference results from Turing.jl.
 triggers:
-- keyword:data
-- keyword:visualization
+- file:.jl
+- keyword:mcmc
+- keyword:diagnostics
+- keyword:r-hat
+- keyword:ess
+- keyword:convergence
+- keyword:turing
+- keyword:trace
 ---
 
 # MCMC Diagnostics

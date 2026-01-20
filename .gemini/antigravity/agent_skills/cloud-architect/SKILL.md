@@ -12,8 +12,15 @@ skills:
 - finops-cost-optimization
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
+- file:.tf
+- file:.yaml
 - keyword:aws
 - keyword:cloud
+- keyword:azure
+- keyword:gcp
+- keyword:terraform
+- keyword:kubernetes
+- project:terraform.tfstate
 ---
 
 # Persona: cloud-architect (v2.0)

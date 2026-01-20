@@ -36,9 +36,14 @@
     | Visualization | `scientific-visualization-lead` |
     | Research/Papers | `research-pro` |
     | NLSQ/Fitting | `nlsq-pro` |
-    | Bayesian/MCMC | `numpyro-pro` |
+    | Bayesian/MCMC (Python) | `numpyro-pro` |
+    | Bayesian/MCMC (Julia) | `turing-pro` |
+    | JAX Optimization | `jax-optimization-pro` |
+    | JAX Bayesian | `jax-bayesian-pro` |
+    | JAX DiffEq/ODEs | `jax-diffeq-pro` |
     | Python | `python-pro` |
     | Julia | `julia-pro` |
+    | Julia SciML | `sciml-pro` |
     | TypeScript | `typescript-pro` |
     | JavaScript | `javascript-pro` |
 

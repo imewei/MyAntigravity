@@ -6,7 +6,12 @@ specialization: Plugin Validation
 description: Validate Claude Code plugin syntax, structure, and cross-references with automated detection and auto-fixing of common errors. Use when validating agent/skill references, checking namespace syntax, or setting up CI validation pipelines.
 triggers:
 - file:.github/workflows/*.yml
+- file:.md
 - keyword:ci-cd
+- keyword:plugin
+- keyword:validation
+- keyword:syntax
+- keyword:claude
 ---
 
 # Plugin Syntax Validator

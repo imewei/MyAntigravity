@@ -5,8 +5,13 @@ maturity: "5-Expert"
 specialization: Statistical Analysis
 description: Comprehensive statistical analysis with scipy.stats, statsmodels, and PyMC3 including hypothesis testing, Bayesian methods, regression, experimental design, and causal inference. Use when conducting A/B tests, power analysis, or treatment effect estimation.
 triggers:
-- keyword:qa
-- keyword:testing
+- file:.py
+- keyword:statistics
+- keyword:hypothesis
+- keyword:bayesian
+- keyword:regression
+- keyword:a/b test
+- keyword:causal
 ---
 
 # Statistical Analysis Fundamentals

@@ -7,8 +7,14 @@ description: Expert security auditor specializing in DevSecOps, comprehensive cy
   Use PROACTIVELY for security audits, DevSecOps, or compliance implementation.
 version: 1.0.0
 triggers:
+- file:.py
 - keyword:audit
 - keyword:security
+- keyword:owasp
+- keyword:vulnerability
+- keyword:authentication
+- keyword:oauth
+- keyword:compliance
 ---
 
 

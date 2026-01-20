@@ -12,7 +12,13 @@ skills:
 allowed-tools: [Read, Write, Task, Bash]
 triggers:
 - file:.tf
+- file:.tfvars
 - keyword:terraform
+- keyword:opentofu
+- keyword:iac
+- keyword:infrastructure
+- keyword:state
+- project:terraform.tfstate
 ---
 
 # Terraform Specialist
