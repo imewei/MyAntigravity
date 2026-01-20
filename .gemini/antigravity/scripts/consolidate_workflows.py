@@ -2,7 +2,11 @@
 import shutil
 from pathlib import Path
 
-WORKFLOWS_DIR = Path("global_workflows")
+# Determine repo root relative to this script
+SCRIPT_DIR = Path(__file__).parent.resolve()
+REPO_ROOT = SCRIPT_DIR.parent
+
+WORKFLOWS_DIR = REPO_ROOT / "global_workflows"
 
 TAXONOMY = {
     # 1. AI Engineering

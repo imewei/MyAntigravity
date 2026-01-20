@@ -2,9 +2,13 @@
 import shutil
 from pathlib import Path
 
-# Paths
-SOURCE_WORKFLOWS = Path(".agent/workflows")
-SOURCE_SKILLS = Path(".agent/skills")
+# Determine script directory to ensure correct relative paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+REPO_ROOT = SCRIPT_DIR.parent
+
+# Source Paths (Local Repository)
+SOURCE_WORKFLOWS = REPO_ROOT / "global_workflows"
+SOURCE_SKILLS = REPO_ROOT / "agent_skills"
 
 USER_ROOT = Path.home() / ".gemini/antigravity"
 TARGET_WORKFLOWS = USER_ROOT / "global_workflows"

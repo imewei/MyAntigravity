@@ -83,8 +83,8 @@ def generate_index(root_dir):
     }
 
     root_path = Path(root_dir)
-    skills_dir = root_path / "skills"
-    workflows_dir = root_path / "workflows"
+    skills_dir = root_path / "agent_skills"
+    workflows_dir = root_path / "global_workflows"
 
     # Index Skills
     print(f"Scanning skills in {skills_dir}...")
@@ -129,12 +129,13 @@ def generate_index(root_dir):
 if __name__ == "__main__":
     import datetime
 
-    ROOT_DIR = "."
-    OUTPUT_FILE = "skills_index.json"
+    # Determine repo root relative to this script
+    SCRIPT_DIR = Path(__file__).parent.resolve()
+    REPO_ROOT = SCRIPT_DIR.parent
 
-    # Ensure we are running from the project root or adjust paths
-    if not os.path.exists("agent_skills") and not os.path.exists("global_workflows"):
-         print("Error: Must run from project root conforming to v2.0 structure.")
+    # Check for correct v2 structure
+    if not (REPO_ROOT / "agent_skills").exists() and not (REPO_ROOT / "global_workflows").exists():
+         print(f"Error: Could not find agent_skills or global_workflows in {REPO_ROOT}")
          exit(1)
 
     index = {
@@ -143,8 +144,8 @@ if __name__ == "__main__":
         "workflows": {}
     }
 
-    skills_dir = Path("agent_skills")
-    workflows_dir = Path("global_workflows")
+    skills_dir = REPO_ROOT / "agent_skills"
+    workflows_dir = REPO_ROOT / "global_workflows"
 
     # Index Skills
     print(f"Scanning skills in {skills_dir}...")

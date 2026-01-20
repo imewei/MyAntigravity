@@ -12,11 +12,15 @@ def parse_frontmatter(content):
     if not content.startswith('---'):
         return None
 
-    parts = content.split('---', 2)
-    if len(parts) < 3:
+    # Use regex to find the second delimiter to handle cases with content
+    # The pattern looks for start ---, then content, then end ---
+    # DOTALL allows . to match newlines
+    match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
+    
+    if not match:
         return None
 
-    yaml_block = parts[1]
+    yaml_block = match.group(1)
     data = {}
     
     current_key = None
