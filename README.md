@@ -2,7 +2,7 @@
 
 > **Intelligent AI Agent Skills & Workflow Ecosystem for Scientific Computing**
 
-A modular, extensible platform providing 127 specialized AI agent skills and 17 automated workflows for scientific computing, software engineering, and research applications.
+A modular, extensible platform providing 127 specialized AI agent skills and 22 automated workflows for scientific computing, software engineering, and research applications.
 
 ## 🎯 What is MyAntigravity?
 
@@ -20,7 +20,7 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 | Component | Count | Description |
 |-----------|-------|-------------|
 | **Skills** | 127 | Specialized AI personas & capabilities |
-| **Workflows** | 17 | Automated multi-step processes |
+| **Workflows** | 22 | Automated multi-step processes |
 | **Scripts** | 10 | Utility tools for management |
 | **Trigger Quality** | 98% | Multi-trigger discoverability |
 
@@ -37,7 +37,7 @@ MyAntigravity is a skill-based AI augmentation system designed for:
 │   ├── jax-bayesian-pro/   # NumPyro/BlackJAX Inference
 │   ├── jax-diffeq-pro/     # Diffrax/Neural ODEs
 │   └── ...
-├── global_workflows/       # 17 automated workflows
+├── global_workflows/       # 22 automated workflows
 │   ├── auto-solve.md       # Meta-orchestrator for routing
 │   ├── commit.md           # Smart git commit workflow
 │   └── ...
